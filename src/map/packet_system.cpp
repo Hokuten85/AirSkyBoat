@@ -647,6 +647,8 @@ void SmallPacket0x015(map_session_data_t* const PSession, CCharEntity* const PCh
             PChar->loc.p.rotation != newRotation;
         // clang-format on
 
+        bool isUpdate = moved || PChar->updatemask & UPDATE_POS;
+
         // Cache previous location
         PChar->m_previousLocation = PChar->loc;
 
@@ -662,7 +664,7 @@ void SmallPacket0x015(map_session_data_t* const PSession, CCharEntity* const PCh
             PChar->m_TargID = newTargID;
         }
 
-        if (moved)
+        if (isUpdate)
         {
             PChar->updatemask |= UPDATE_POS; // Indicate that we want to update this PChar's PChar->loc or targID
 

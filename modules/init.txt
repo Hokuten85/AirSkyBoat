@@ -41,26 +41,27 @@
 #-----------------------
 #      General Lua
 #-----------------------
-era/commands/
-era/lua/
+ivalice/commands/
+ivalice/lua/
 #-----------------------
 #      General C++
 #-----------------------
-era/cpp/
+ivalice/cpp/
 #-----------------------
 #      General SQL
 #-----------------------
-era/sql/
+ivalice/back_date_sqls/
+ivalice/sql/
 #-----------------------
 #        Dynamis
 #-----------------------
 # This loads special due to requirements between globals
-era/lua_dynamis/globals/era_dynamis.lua
-era/lua_dynamis/globals/era_dynamis_spawning.lua
-era/lua_dynamis/mobskills/era_pet_skills.lua
-era/lua_dynamis/mobskills/era_regain_skills.lua
-era/lua_dynamis/globals/era_dynamis_zones.lua
-era/sql_dynamis/
+ivalice/lua_dynamis/globals/era_dynamis.lua
+ivalice/lua_dynamis/globals/era_dynamis_spawning.lua
+ivalice/lua_dynamis/mobskills/era_pet_skills.lua
+ivalice/lua_dynamis/mobskills/era_regain_skills.lua
+ivalice/lua_dynamis/globals/era_dynamis_zones.lua
+ivalice/sql_dynamis/
 #-----------------------
 #        Renamer
 #-----------------------
