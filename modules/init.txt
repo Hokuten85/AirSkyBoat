@@ -70,3 +70,4 @@ renamer
 #		Custom
 #-----------------------
 #custom/sql/starlight_celebrations.sql
+ivalice/ivalice_custom
