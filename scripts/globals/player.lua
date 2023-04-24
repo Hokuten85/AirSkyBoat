@@ -125,6 +125,11 @@ xi.player.charCreate = function(player)
     if xi.settings.main.START_INVENTORY > 30 then
         player:changeContainerSize(xi.inv.INVENTORY, xi.settings.main.START_INVENTORY - 30)
         player:changeContainerSize(xi.inv.MOGSATCHEL, xi.settings.main.START_INVENTORY - 30)
+		player:changeContainerSize(xi.inv.MOGSAFE, xi.settings.main.START_INVENTORY)
+		player:changeContainerSize(xi.inv.MOGLOCKER, xi.settings.main.START_INVENTORY)
+	   
+		player:setCharVar("mog-locker-access-type", 1);
+		player:setCharVar("mog-locker-expiry-timestamp", 1767139200);
     end
 
     --[[

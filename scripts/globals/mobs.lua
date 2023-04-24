@@ -142,7 +142,7 @@ xi.mob.phOnDespawn = function(ph, phList, chance, cooldown, immediate)
     end
 
     if xi.settings.main.NM_LOTTERY_COOLDOWN then
-        cooldown = xi.settings.main.NM_LOTTERY_COOLDOWN >= 0 and (cooldown * xi.settings.main.NM_LOTTERY_COOLDOWN) or cooldown
+        cooldown = math.min(xi.settings.main.NM_LOTTERY_COOLDOWN, cooldown) 
     end
 
     local phId = ph:getID()

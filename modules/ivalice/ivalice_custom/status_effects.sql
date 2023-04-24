@@ -1,0 +1,1 @@
+UPDATE status_effects SET flags = flags + 0x0002 WHERE id = 16; -- Amnesia eraseable

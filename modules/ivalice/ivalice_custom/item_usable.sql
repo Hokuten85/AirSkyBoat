@@ -1,0 +1,1 @@
+UPDATE item_usable SET animation = 25 WHERE name = 'black_drop';
