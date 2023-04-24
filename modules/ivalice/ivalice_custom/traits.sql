@@ -23,7 +23,7 @@ INSERT INTO traits VALUES (107, 'fencer', 7, 50, 1, 903, 200, NULL, 0);
 INSERT INTO traits VALUES (107, 'fencer', 7, 50, 1, 904, 2, NULL, 0);
 
 -- GIVE THF TA AT 30
-INSERT INTO traits VALUES (16, 'triple attack', 6, 30, 1, 302, 3, NULL, 0;
+INSERT INTO traits VALUES (16, 'triple attack', 6, 30, 1, 302, 3, NULL, 0);
 UPDATE traits SET rank = 2 WHERE traitid = 16 and job = 6 and level = 55;
 UPDATE traits SET level = 75, rank = 3 WHERE traitid = 16 and job = 6 and level = 95;
 -- GIVE THF DUAL WIELD AT 60
