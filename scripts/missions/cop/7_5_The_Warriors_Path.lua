@@ -22,6 +22,7 @@ mission.reward =
 {
     title = xi.title.SEEKER_OF_THE_LIGHT,
     nextMission = { xi.mission.log_id.COP, xi.mission.id.cop.GARDEN_OF_ANTIQUITY },
+    item = xi.items.RED_DROP+math.random(0,7),
 }
 
 local stolenKeyTable =

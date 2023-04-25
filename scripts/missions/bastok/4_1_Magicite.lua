@@ -43,6 +43,7 @@ mission.reward =
     rank    = 5,
     gil     = 10000,
     keyItem = xi.ki.MESSAGE_TO_JEUNO_BASTOK,
+    item = xi.items.RED_DROP+math.random(0,7),
 }
 
 mission.sections =

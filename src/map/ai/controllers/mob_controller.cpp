@@ -203,6 +203,7 @@ void CMobController::TryLink()
         // Handle monster linking if they are close enough
         if (PMob->PParty != nullptr)
         {
+            auto superLink = PMob->getMobMod(MOBMOD_SUPERLINK);
             for (auto& member : PMob->PParty->members)
             {
                 CMobEntity* PPartyMember = dynamic_cast<CMobEntity*>(member);
@@ -211,7 +212,7 @@ void CMobController::TryLink()
                     continue;
                 }
 
-                if (PPartyMember->PAI->IsRoaming() && PPartyMember->CanLink(&PMob->loc.p, PMob->getMobMod(MOBMOD_SUPERLINK)))
+                if (PPartyMember->PAI->IsRoaming() && PPartyMember->CanLink(&PMob->loc.p, superLink))
                 {
                     PPartyMember->PEnmityContainer->AddBaseEnmity(PTarget);
 

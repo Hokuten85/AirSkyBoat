@@ -44,6 +44,7 @@ mission.reward =
 {
     title       = xi.title.TREADER_OF_AN_ICY_PAST,
     nextMission = { xi.mission.log_id.COP, xi.mission.id.cop.FOR_WHOM_THE_VERSE_IS_SUNG },
+    item = xi.items.RED_DROP+math.random(0,7),
 }
 
 local eventArgOffset =

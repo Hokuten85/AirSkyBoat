@@ -20,6 +20,7 @@ mission.reward =
 {
     title       = xi.title.KARABABAS_BODYGUARD,
     nextMission = { xi.mission.log_id.TOAU, xi.mission.id.toau.SOCIAL_GRACES },
+    item = xi.items.RED_DROP+math.random(0,7),
 }
 
 mission.sections =

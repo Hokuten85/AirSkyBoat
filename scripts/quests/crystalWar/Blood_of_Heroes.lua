@@ -18,6 +18,7 @@ quest.reward =
 {
     item  = xi.items.RAM_STAFF,
     title = xi.title.HOUSE_AURCHIAT_RETAINER,
+    item = xi.items.RED_DROP+math.random(0,7),
 }
 
 quest.sections =

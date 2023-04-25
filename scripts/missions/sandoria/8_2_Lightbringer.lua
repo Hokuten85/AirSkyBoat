@@ -34,6 +34,7 @@ mission.reward =
 {
     rank = 9,
     gil = 80000,
+    item = xi.items.RED_DROP+math.random(0,7),
 }
 
 local handleAcceptMission = function(player, csid, option, npc)

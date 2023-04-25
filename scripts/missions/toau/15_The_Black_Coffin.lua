@@ -19,6 +19,7 @@ local mission = Mission:new(xi.mission.log_id.TOAU, xi.mission.id.toau.THE_BLACK
 mission.reward =
 {
     nextMission = { xi.mission.log_id.TOAU, xi.mission.id.toau.GHOSTS_OF_THE_PAST },
+    item = xi.items.RED_DROP+math.random(0,7),
 }
 
 mission.sections =

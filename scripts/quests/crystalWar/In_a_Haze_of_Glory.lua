@@ -18,6 +18,7 @@ local quest = Quest:new(xi.quest.log_id.CRYSTAL_WAR, xi.quest.id.crystalWar.IN_A
 quest.reward =
 {
     item = xi.items.FULLMETAL_BULLET,
+    item = xi.items.RED_DROP+math.random(0,7),
 }
 
 quest.sections =

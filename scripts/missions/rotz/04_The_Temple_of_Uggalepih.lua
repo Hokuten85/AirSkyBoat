@@ -20,6 +20,7 @@ mission.reward =
     keyItem     = xi.ki.DARK_FRAGMENT,
     title       = xi.title.BEARER_OF_THE_WISEWOMANS_HOPE,
     nextMission = { xi.mission.log_id.ZILART, xi.mission.id.zilart.HEADSTONE_PILGRIMAGE },
+    item = xi.items.RED_DROP+math.random(0,7),
 }
 
 mission.sections =

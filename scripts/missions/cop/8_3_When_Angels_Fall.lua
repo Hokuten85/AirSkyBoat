@@ -59,6 +59,7 @@ end
 mission.reward =
 {
     nextMission = { xi.mission.log_id.COP, xi.mission.id.cop.DAWN },
+    item = xi.items.RED_DROP+math.random(0,7),
 }
 
 mission.sections =

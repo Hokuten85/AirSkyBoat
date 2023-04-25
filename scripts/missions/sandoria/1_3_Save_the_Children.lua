@@ -44,6 +44,7 @@ local handleCompleteEventFinish = function(player, csid, option, npc)
     if not player:hasCompletedMission(mission.areaId, mission.missionId) then
         player:setRank(2)
         npcUtil.giveCurrency(player, 'gil', 1000)
+        npcUtil.giveItem(player, xi.items.RED_DROP+math.random(0,7))
     else
         player:addRankPoints(250)
     end

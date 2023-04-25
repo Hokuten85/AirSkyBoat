@@ -27,6 +27,7 @@ mission.reward =
     rank = 10,
     gil = 100000,
     title = xi.title.SAN_DORIAN_ROYAL_HEIR,
+    item = xi.items.RED_DROP+math.random(0,7),
 }
 
 local handleAcceptMission = function(player, csid, option, npc)

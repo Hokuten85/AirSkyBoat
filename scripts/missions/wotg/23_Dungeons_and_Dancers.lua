@@ -17,6 +17,7 @@ mission.reward =
 {
     keyItem     = xi.ki.UMBRA_BUG,
     nextMission = { xi.mission.log_id.WOTG, xi.mission.id.wotg.DISTORTER_OF_TIME },
+    item = xi.items.RED_DROP+math.random(0,7),
 }
 
 mission.sections =
