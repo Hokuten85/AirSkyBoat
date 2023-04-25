@@ -840,6 +840,24 @@ namespace charutils
             PChar->m_FieldChocobo = sql->GetUIntData(0);
         }
 
+        fmtQuery = "SELECT modid, value"
+                   " FROM char_mods"
+                   " WHERE charid = %u;";
+
+        ret = sql->Query(fmtQuery, PChar->id);
+
+        if (ret != SQL_ERROR && sql->NumRows() != 0)
+        {
+            while (sql->NextRow() == SQL_SUCCESS)
+            {
+                Mod   ModID    = (Mod)sql->GetUIntData(0);
+                int16 ModValue = (int16)sql->GetUIntData(1);
+
+                PChar->addModifier(ModID, ModValue);
+                PChar->setCharMod(ModID, ModValue);
+            }
+        }
+
         charutils::LoadInventory(PChar);
 
         CalculateStats(PChar);
@@ -4390,7 +4408,7 @@ namespace charutils
                                     exp *= 1.5f;
                                     break;
                                 default:
-                                    exp *= 1.5f;
+                                    exp *= 1.5f + PMember->expChain.chainNumber * 0.005f;
                                     break;
                             }
                         }
@@ -7234,6 +7252,24 @@ namespace charutils
         PChar->pushPacket(new CReleasePacket(PChar, releaseType));
         PChar->pushPacket(new CReleasePacket(PChar, RELEASE_TYPE::EVENT));
         PChar->endCurrentEvent();
+    }
+
+    void AddCharMod(CCharEntity* PChar, Mod type, int value)
+    {
+        PChar->addModifier(type, value);
+        PChar->addCharMod(type, value);
+
+        auto fmtQuery = "INSERT INTO char_mods (charid, modid, value) VALUES(%u, %u, %u) ON DUPLICATE KEY UPDATE value = %u;";
+        auto ret = sql->Query(fmtQuery,
+                              PChar->id,
+                              (int)type,
+                              PChar->getCharMod(type),
+                              PChar->getCharMod(type));
+
+        if (ret == SQL_ERROR)
+        {
+            ShowError("Error writing char mod for: '%s'", PChar->name.c_str());
+        }
     }
 
 }; // namespace charutils

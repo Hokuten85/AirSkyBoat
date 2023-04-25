@@ -2994,3 +2994,17 @@ void CCharEntity::clearCharVarsWithPrefix(std::string const& prefix)
 
     sql->Query("DELETE FROM char_vars WHERE charid = %u AND varname LIKE '%s%%';", this->id, prefix.c_str());
 }
+
+void CCharEntity::setCharMod(Mod type, int16 value)
+{
+    m_charModStat[type] = value;
+}
+int16 CCharEntity::getCharMod(Mod type)
+{
+    return m_charModStat[type];
+}
+
+void CCharEntity::addCharMod(Mod type, int16 value)
+{
+    m_charModStat[type] += value;
+}

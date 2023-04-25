@@ -17,8 +17,17 @@ itemObject.onItemCheck = function(target)
 end
 
 itemObject.onItemUse = function(target)
+    target:addStatusEffect(xi.effect.MAX_HP_BOOST, 5, 0, 900)
+    target:addStatusEffect(xi.effect.MAX_MP_BOOST, 5, 0, 900)
     target:addStatusEffect(xi.effect.MEDICINE, 0, 0, 3600)
-    target:warp()
+
+    if target:getCharMod(xi.mod.HP) < 120 then
+        target:addCharMod(xi.mod.HP,6)
+    end
+    if target:getCharMod(xi.mod.MP) < 60 then
+        target:addCharMod(xi.mod.MP,3)
+    end
+
 end
 
 return itemObject

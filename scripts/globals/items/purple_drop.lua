@@ -19,6 +19,10 @@ end
 itemObject.onItemUse = function(target)
     target:addStatusEffect(xi.effect.DEX_BOOST, 5, 0, 900)
     target:addStatusEffect(xi.effect.MEDICINE, 0, 0, 3600)
+
+    if target:getCharMod(xi.mod.DEX) < 20 then
+        target:addCharMod(xi.mod.DEX,1)
+    end
 end
 
 return itemObject

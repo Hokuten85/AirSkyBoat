@@ -114,7 +114,16 @@ xi.job_utils.paladin.useHolyCircle = function(player, target, ability)
         power = 5
     end
 
-    target:addStatusEffect(xi.effect.HOLY_CIRCLE, power, 0, duration)
+    local subPower = 0
+    if (player:getID() ~= target:getID()) then
+        subPower = 5
+    
+        if (player:getMainLvl() > 50) then
+            subPower = subPower + math.floor((player:getMainLvl() - 50) / 8);
+        end
+    end
+
+    target:addStatusEffect(xi.effect.HOLY_CIRCLE, power, 0, duration, subPower)
 end
 
 xi.job_utils.paladin.useIntervene = function(player, target, ability)

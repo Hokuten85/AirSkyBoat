@@ -610,6 +610,10 @@ public:
 
     void clearCharVarsWithPrefix(std::string const& prefix);
 
+    void  setCharMod(Mod type, int16 value);
+    int16 getCharMod(Mod type);
+    void  addCharMod(Mod type, int16 value);
+
     bool m_Locked; // Is the player locked in a cutscene
 
     CCharEntity();
@@ -652,6 +656,8 @@ private:
     PacketList_t                                     PacketList;           // the list of packets to be sent to the character during the next network cycle
     std::unordered_map<uint32, CCharPacket*>         PendingCharPackets;   // Keep track of which char packets are queued up for this char, such that they can be updated
     std::unordered_map<uint32, CEntityUpdatePacket*> PendingEntityPackets; // Keep track of which entity update packets are queued up for this char, such that they can be updated
+
+    std::unordered_map<Mod, int16> m_charModStat;
 };
 
 #endif

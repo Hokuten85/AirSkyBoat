@@ -42,6 +42,7 @@ xi.job_utils.warrior.useAggressor = function(player, target, ability)
 end
 
 xi.job_utils.warrior.useBerserk = function(player, target, ability)
+    player:delStatusEffect(xi.effect.DEFENDER);
     player:addStatusEffect(xi.effect.BERSERK, 25 + player:getMod(xi.mod.BERSERK_POTENCY), 0, 180 + player:getMod(xi.mod.BERSERK_DURATION))
 end
 
@@ -63,6 +64,7 @@ xi.job_utils.warrior.useBrazenRush = function(player, target, ability)
 end
 
 xi.job_utils.warrior.useDefender = function(player, target, ability)
+    player:delStatusEffect(xi.effect.BERSERK);
     player:addStatusEffect(xi.effect.DEFENDER, 1, 0, 180 + player:getMod(xi.mod.DEFENDER_DURATION))
 end
 

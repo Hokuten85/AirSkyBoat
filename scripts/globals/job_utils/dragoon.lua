@@ -252,7 +252,16 @@ xi.job_utils.dragoon.useAncientCircle = function(player, target, ability)
         power = 15 + jpValue
     end
 
-    target:addStatusEffect(xi.effect.ANCIENT_CIRCLE, power, 0, duration)
+    local subPower = 0
+    if (player:getID() ~= target:getID()) then
+        subPower = 10
+
+        if (player:getMainLvl() >= 50) then
+            subPower = subPower + math.floor((player:getMainLvl() - 50) / 5)
+        end
+    end
+
+    target:addStatusEffect(xi.effect.ANCIENT_CIRCLE, power, 0, duration, subPower)
 end
 
 xi.job_utils.dragoon.useJump = function(player, target, ability, action)

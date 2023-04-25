@@ -5590,8 +5590,8 @@ void SmallPacket0x0BE(map_session_data_t* const PSession, CCharEntity* const PCh
         break;
         case 3: // change merit
         {
-            if (PChar->m_moghouseID)
-            {
+            /*if (PChar->m_moghouseID)
+            {*/
                 MERIT_TYPE merit = (MERIT_TYPE)(data.ref<uint16>(0x06) << 1);
 
                 if (PChar->PMeritPoints->IsMeritExist(merit))
@@ -5635,7 +5635,7 @@ void SmallPacket0x0BE(map_session_data_t* const PSession, CCharEntity* const PCh
                     PChar->pushPacket(new CCharJobExtraPacket(PChar, true));
                     PChar->pushPacket(new CCharSyncPacket(PChar));
                 }
-            }
+            /*}*/
         }
         break;
     }

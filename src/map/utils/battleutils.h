@@ -269,6 +269,8 @@ namespace battleutils
     void           ConvertDmgToMP(CBattleEntity* PDefender, int32 damage, bool IsCovered);
     float          CheckLiementAbsorb(CBattleEntity* PBattleEntity, DAMAGE_TYPE DamageType);
     int16          CalculateReturnedTPWS(CBattleEntity* PAttacker, bool isRanged, CItemWeapon* weapon);
+
+    int32          getTraitValue(CBattleEntity* PEntity, uint8 TraitID);
 }; // namespace battleutils
 
 #endif

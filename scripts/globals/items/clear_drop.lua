@@ -17,8 +17,12 @@ itemObject.onItemCheck = function(target)
 end
 
 itemObject.onItemUse = function(target)
-    target:addStatusEffect(xi.effect.INT_BOOST, 5, 0, 600)
+    target:addStatusEffect(xi.effect.INT_BOOST, 5, 0, 900)
     target:addStatusEffect(xi.effect.MEDICINE, 0, 0, 3600)
+
+    if target:getCharMod(xi.mod.INT) < 20 then
+        target:addCharMod(xi.mod.INT,1)
+    end
 end
 
 return itemObject

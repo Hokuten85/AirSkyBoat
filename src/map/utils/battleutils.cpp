@@ -659,6 +659,8 @@ namespace battleutils
         uint32  obi[8]                 = { 15435, 15436, 15437, 15438, 15439, 15440, 15441, 15442 };
         Mod     resistarray[8]         = { Mod::FIRE_MEVA, Mod::ICE_MEVA, Mod::WIND_MEVA, Mod::EARTH_MEVA,
                                            Mod::THUNDER_MEVA, Mod::WATER_MEVA, Mod::LIGHT_MEVA, Mod::DARK_MEVA };
+        Mod     mdefarray[8]           = { Mod::FIRE_SDT, Mod::ICE_SDT, Mod::WIND_SDT, Mod::EARTH_SDT,
+                                           Mod::THUNDER_SDT, Mod::WATER_SDT, Mod::LIGHT_SDT, Mod::DARK_SDT };
         bool    obiBonus               = false;
 
         double half      = (double)(PDefender->getMod(resistarray[element - 1])) / 100;
@@ -722,6 +724,8 @@ namespace battleutils
         {
             dBonus -= 0.25f;
         }
+
+        dBonus -= (float)(PDefender->getMod(mdefarray[element - 1])) / 10000; // negative value is increase in damage, positive is decrease in damage
 
         damage = (int32)(damage * resist);
         damage = (int32)(damage * dBonus);
@@ -2650,7 +2654,7 @@ namespace battleutils
             // Grasshopper Broth / Noisy Grasshopper Broth / Mole Broth / Lively Mole Broth / Blood Broth / Clear Blood Broth / Antica Broth / Fragrant Antica
             // Broth
 
-            int32 maxHitRate  = 95;
+            int32 maxHitRate  = 99;
             auto* targ_weapon = PAttacker ? dynamic_cast<CItemWeapon*>(PAttacker->m_Weapons[SLOT_MAIN]) : nullptr;
 
             // As far as I can tell kick attacks fall under Hand-to-Hand so ignoring them and letting them go to 99
@@ -4687,7 +4691,7 @@ namespace battleutils
 
             if (bonusDamage >= 1)
             {
-                m_PChar->addHP(-HandleStoneskin(m_PChar, (int32)(bonusDamage * stalwartSoulBonus)));
+                m_PChar->addHP(-HandleStoneskin(m_PChar, (int32)(bonusDamage * stalwartSoulBonus * 0.5f)));
 
                 if (m_PChar->GetMJob() == JOB_DRK)
                 {
@@ -7337,5 +7341,28 @@ namespace battleutils
         }
 
         return baseTp;
+    }
+
+    int32 getTraitValue(CBattleEntity* PEntity, uint8 TraitID)
+    {
+        if (PEntity->objtype == TYPE_PC)
+        {
+            for (uint8 j = 0; j < PEntity->TraitList.size(); ++j)
+            {
+                CTrait* PEntityTrait = PEntity->TraitList.at(j);
+
+                if (PEntityTrait->getID() == TraitID)
+                {
+                    return PEntityTrait->getValue();
+                }
+            }
+        }
+        else
+        {
+            ShowError("charutils::getTraitValue Attempt to reference a trait from a non-character entity: %s %i", PEntity->name.c_str(), PEntity->id);
+            return 0;
+        }
+
+        return 0;
     }
 }; // namespace battleutils
