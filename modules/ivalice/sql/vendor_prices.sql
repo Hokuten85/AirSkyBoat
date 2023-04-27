@@ -24,7 +24,8 @@ DROP TABLE IF EXISTS `vendor_prices`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `vendor_prices` (
   `itemid` smallint(5) unsigned DEFAULT NULL,
-  `price` int(10) unsigned DEFAULT NULL
+  `price` int(10) unsigned DEFAULT NULL,
+  PRIMARY KEY (`itemid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
