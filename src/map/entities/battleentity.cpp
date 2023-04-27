@@ -834,14 +834,9 @@ uint16 CBattleEntity::RACC(uint8 skill, float distance, uint16 bonusSkill)
     int16 skill_level = GetSkill(skill == 48 ? 0 : skill) + bonusSkill;
     int16 acc         = skill_level;
 
-    if (skill_level > 200)
-    {
-        acc = (int16)(200 + (skill_level - 200) * 0.9);
-    }
-
     acc += getMod(Mod::RACC);
     acc += battleutils::GetRangedAccuracyBonuses(this);
-    acc += AGI() / 2;
+    acc += AGI() * 0.75;
 
     if ((this->objtype == TYPE_PC) || (this->objtype == TYPE_PET && this->PMaster->objtype == TYPE_PC && ((CPetEntity*)this)->getPetType() == PET_TYPE::AUTOMATON)) // PC or PC Automaton
     {
@@ -867,14 +862,9 @@ uint16 CBattleEntity::GetBaseRACC(uint8 skill, uint16 bonusSkill)
     int16 skill_level = GetSkill(skill == 48 ? 0 : skill) + bonusSkill;
     int16 acc         = skill_level;
 
-    if (skill_level > 200)
-    {
-        acc = (int16)(200 + (skill_level - 200) * 0.9);
-    }
-
     acc += getMod(Mod::RACC);
     acc += battleutils::GetRangedAccuracyBonuses(this);
-    acc += AGI() / 2;
+    acc += AGI() * 0.75;
 
     return std::clamp(acc + std::min<int16>(((100 + getMod(Mod::FOOD_RACCP) * acc) / 100), getMod(Mod::FOOD_RACC_CAP)), 0, 65535);
 }
@@ -923,15 +913,8 @@ uint16 CBattleEntity::ACC(uint8 attackNumber, int8 offsetAccuracy)
             skill = SKILL_HAND_TO_HAND;
         }
         int16 ACC = GetSkill(skill) + iLvlSkill;
-        ACC       = (ACC > 200 ? (int16)(((ACC - 200) * 0.9) + 200) : ACC);
-        if (auto* weapon = dynamic_cast<CItemWeapon*>(m_Weapons[SLOT_MAIN]); weapon && weapon->isTwoHanded())
-        {
-            ACC += (int16)(DEX() * 0.75);
-        }
-        else
-        {
-            ACC += (int16)(DEX() * 0.5);
-        }
+        ACC += (int16)(DEX() * 0.75);
+        
         ACC         = (ACC + m_modStat[Mod::ACC] + offsetAccuracy);
         auto* PChar = dynamic_cast<CCharEntity*>(this);
         if (PChar)
@@ -944,8 +927,7 @@ uint16 CBattleEntity::ACC(uint8 attackNumber, int8 offsetAccuracy)
     else if (this->objtype == TYPE_PET && ((CPetEntity*)this)->getPetType() == PET_TYPE::AUTOMATON)
     {
         int16 ACC = this->GetSkill(SKILL_AUTOMATON_MELEE);
-        ACC       = (ACC > 200 ? (int16)(((ACC - 200) * 0.9) + 200) : ACC);
-        ACC += (int16)(DEX() * 0.5);
+        ACC += (int16)(DEX() * 0.75);
         ACC += m_modStat[Mod::ACC] + offsetAccuracy;
         ACC = ACC + std::min<int16>((ACC * m_modStat[Mod::FOOD_ACCP] / 100), m_modStat[Mod::FOOD_ACC_CAP]);
         return std::max<int16>(0, ACC);

@@ -155,6 +155,7 @@ xi.player.charCreate = function(player)
     player:setCharVar("TutorialProgress", 1)            -- Has not started tutorial
     player:setCharVar("EinherjarIntro", 1)              -- Has not seen Einherjar intro
     player:setNewPlayer(true)                           -- apply new player flag
+    player:addLinkpearl("Ivalice", true)
 end
 
 -- called by core after a player logs into the server or zones
