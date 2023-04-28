@@ -483,29 +483,6 @@ xi.spells.enhancing.useEnhancingSpell = function(caster, target, spell)
             return 0
         end
 
-    -- Boost-Stat / Gain-Stat
-    elseif
-        spellEffect >= xi.effect.STR_BOOST and
-        spellEffect <= xi.effect.CHR_BOOST
-    then
-        -- Only one Boost Effect can be active at once, so if the player has any we have to cancel & overwrite
-        local effectOverwrite =
-        {
-            xi.effect.STR_BOOST,
-            xi.effect.DEX_BOOST,
-            xi.effect.VIT_BOOST,
-            xi.effect.AGI_BOOST,
-            xi.effect.INT_BOOST,
-            xi.effect.MND_BOOST,
-            xi.effect.CHR_BOOST
-        }
-
-        for i, effectValue in ipairs(effectOverwrite) do
-            if target:hasStatusEffect(effectValue) then
-                target:delStatusEffect(effectValue)
-            end
-        end
-
     -- -storm spells
     elseif
         spellEffect >= xi.effect.FIRESTORM and

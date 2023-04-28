@@ -1848,6 +1848,9 @@ xi.mod =
     -- 570 - 825 used by WS DMG mods these are not spares.
     -- For Next ID, see modifier.h
     -- Spares start at: 1166
+
+    ENMITY_CAP                  = 2000,
+    DMG_II                      = 2001,
 }
 
 xi.immunity =

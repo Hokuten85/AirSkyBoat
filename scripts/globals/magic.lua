@@ -1465,15 +1465,15 @@ end
 xi.magic.getElementalDebuffDOT = function(INT)
     local DOT = 0
     if INT <= 39 then
-        DOT = 1
-    elseif INT <= 69 then
-        DOT = 2
-    elseif INT <= 99 then
         DOT = 3
-    elseif INT <= 149 then
+    elseif INT <= 69 then
         DOT = 4
-    else
+    elseif INT <= 99 then
         DOT = 5
+    elseif INT <= 149 then
+        DOT = 6
+    else
+        DOT = 7
     end
 
     return DOT

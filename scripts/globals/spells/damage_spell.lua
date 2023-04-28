@@ -214,7 +214,7 @@ xi.spells.damage.calculateBaseDamage = function(caster, target, spell, spellId, 
     -- STEP 1: baseSpellDamage (V)
     -----------------------------------
     if caster:isPC() and not xi.settings.main.USE_OLD_MAGIC_DAMAGE then
-        baseSpellDamage = pTable[spellId][vPC] -- vPC
+        baseSpellDamage = calculateElementalNukeV(caster, spellId) or pTable[spellId][vPC]
     else
         baseSpellDamage = pTable[spellId][vNPC] -- vNPC
     end
@@ -261,7 +261,7 @@ xi.spells.damage.calculateBaseDamage = function(caster, target, spell, spellId, 
         (skillType == xi.skill.ELEMENTAL_MAGIC and not caster:isPC())
     then
         local spellMultiplier = pTable[spellId][mNPC] -- M
-        local inflexionPoint  = pTable[spellId][inflectionPoint] -- I
+        local inflexionPoint  =pTable[spellId][inflectionPoint] -- I
         if statDiff <= 0 then
             statDiffBonus = statDiff
         elseif statDiff > 0 and statDiff <= inflexionPoint then
@@ -633,7 +633,7 @@ xi.spells.damage.calculateIfMagicBurst = function(caster, target, spell, spellEl
     local _, skillchainCount = xi.magic.FormMagicBurst(spellElement, target) -- External function. Not present in magic.lua.
 
     if skillchainCount > 0 and target:hasStatusEffect(xi.effect.SKILLCHAIN) then
-        magicBurst = 1.25 + (0.1 * skillchainCount) -- Here we add SDT DAMAGE bonus for magic bursts aswell, once SDT is implemented. https://www.bg-wiki.com/ffxi/Resist#SDT_and_Magic_Bursting
+        magicBurst = 1.75 + (0.1 * skillchainCount) -- Here we add SDT DAMAGE bonus for magic bursts aswell, once SDT is implemented. https://www.bg-wiki.com/ffxi/Resist#SDT_and_Magic_Bursting
     end
 
     return magicBurst
@@ -1072,4 +1072,101 @@ xi.spells.damage.useDamageSpell = function(caster, target, spell)
     end
 
     return finalDamage
+end
+
+local spellTier =
+{
+-- Single target black magic spells:
+-- Structure:           [spellId] = { SpellTier, aoe },
+    [xi.magic.spell.AERO        ] = {         1,   0 },
+    [xi.magic.spell.AERO_II     ] = {         2,   0 },
+    [xi.magic.spell.AERO_III    ] = {         3,   0 },
+    [xi.magic.spell.AERO_IV     ] = {         4,   0 },
+    [xi.magic.spell.TORNADO     ] = {         5,   0 },
+    [xi.magic.spell.BLIZZARD    ] = {         1,   0 },
+    [xi.magic.spell.BLIZZARD_II ] = {         2,   0 },
+    [xi.magic.spell.BLIZZARD_III] = {         3,   0 },
+    [xi.magic.spell.BLIZZARD_IV ] = {         4,   0 },
+    [xi.magic.spell.FREEZE      ] = {         5,   0 },
+    [xi.magic.spell.FIRE        ] = {         1,   0 },
+    [xi.magic.spell.FIRE_II     ] = {         2,   0 },
+    [xi.magic.spell.FIRE_III    ] = {         3,   0 },
+    [xi.magic.spell.FIRE_IV     ] = {         4,   0 },
+    [xi.magic.spell.FLARE       ] = {         5,   0 },
+    [xi.magic.spell.STONE       ] = {         1,   0 },
+    [xi.magic.spell.STONE_II    ] = {         2,   0 },
+    [xi.magic.spell.STONE_III   ] = {         3,   0 },
+    [xi.magic.spell.STONE_IV    ] = {         4,   0 },
+    [xi.magic.spell.QUAKE       ] = {         5,   0 },
+    [xi.magic.spell.THUNDER     ] = {         1,   0 },
+    [xi.magic.spell.THUNDER_II  ] = {         2,   0 },
+    [xi.magic.spell.THUNDER_III ] = {         3,   0 },
+    [xi.magic.spell.THUNDER_IV  ] = {         4,   0 },
+    [xi.magic.spell.BURST       ] = {         5,   0 },
+    [xi.magic.spell.WATER       ] = {         1,   0 },
+    [xi.magic.spell.WATER_II    ] = {         2,   0 },
+    [xi.magic.spell.WATER_III   ] = {         3,   0 },
+    [xi.magic.spell.WATER_IV    ] = {         4,   0 },
+    [xi.magic.spell.FLOOD       ] = {         5,   0 },
+
+-- Multiple target spells:
+-- Structure:           [spellId] = { SpellTier, aoe },
+    [xi.magic.spell.AEROGA      ] = {         1,   1 },
+    [xi.magic.spell.AEROGA_II   ] = {         2,   1 },
+    [xi.magic.spell.AEROGA_III  ] = {         3,   1 },
+    [xi.magic.spell.AERA        ] = {         1,   2 },
+    [xi.magic.spell.AERA_II     ] = {         2,   2 },
+    [xi.magic.spell.BLIZZAGA    ] = {         1,   1 },
+    [xi.magic.spell.BLIZZAGA_II ] = {         2,   1 },
+    [xi.magic.spell.BLIZZAGA_III] = {         3,   1 },
+    [xi.magic.spell.BLIZZARA    ] = {         1,   2 },
+    [xi.magic.spell.BLIZZARA_II ] = {         2,   2 },
+    [xi.magic.spell.FIRAGA      ] = {         1,   1 },
+    [xi.magic.spell.FIRAGA_II   ] = {         2,   1 },
+    [xi.magic.spell.FIRAGA_III  ] = {         3,   1 },
+    [xi.magic.spell.FIRA        ] = {         1,   2 },
+    [xi.magic.spell.FIRA_II     ] = {         2,   2 },
+    [xi.magic.spell.STONEGA     ] = {         1,   1 },
+    [xi.magic.spell.STONEGA_II  ] = {         2,   1 },
+    [xi.magic.spell.STONEGA_III ] = {         3,   1 },
+    [xi.magic.spell.STONERA     ] = {         1,   2 },
+    [xi.magic.spell.STONERA_II  ] = {         2,   2 },
+    [xi.magic.spell.THUNDAGA    ] = {         1,   1 },
+    [xi.magic.spell.THUNDAGA_II ] = {         2,   1 },
+    [xi.magic.spell.THUNDAGA_III] = {         3,   1 },
+    [xi.magic.spell.THUNDARA    ] = {         1,   2 },
+    [xi.magic.spell.THUNDARA_II ] = {         2,   2 },
+    [xi.magic.spell.WATERGA     ] = {         1,   1 },
+    [xi.magic.spell.WATERGA_II  ] = {         2,   1 },
+    [xi.magic.spell.WATERGA_III ] = {         3,   1 },
+    [xi.magic.spell.WATERA      ] = {         1,   2 },
+    [xi.magic.spell.WATERA_II   ] = {         2,   2 },
+}
+
+local spellTierToV_I = {
+-- Structure: [tier] = { [aoe] = { V_M, V_B, V_Min, V_Max } },
+    [1] = { [0] = { 0.76,      10,  10,  60 },
+            [1] = { 1.84,  -32.38,  56, 172 },
+            [2] = { 0.24,      38,  56,  74 }, },
+    [2] = { [0] = { 1.67,     -52,  78, 178 },
+            [1] = { 2.39,  -92.66, 201, 392 },
+            [2] = { 1.03,   -53.2, 201, 232 }, },
+    [3] = { [0] = { 1.71,   -51.5, 210, 345 },
+            [1] = { 5.37, -703.88, 434, 697 }, },
+    [4] = { [0] = {    4,    -563, 381, 541 }, },
+    [5] = { [0] = { 0.54,  494.75, 577, 603 }, },
+}
+
+function calculateElementalNukeV(caster, spell)
+    if spellTier[spell] ~= nil then
+        local tier = spellTier[spell][1]
+        local aoe = spellTier[spell][2]
+
+        if spellTierToV_I[tier] and spellTierToV_I[tier][aoe] then
+            local skillLevel = caster:getSkillLevel(xi.skill.ELEMENTAL_MAGIC) + caster:getMod(79 + xi.skill.ELEMENTAL_MAGIC)
+            local config = spellTierToV_I[tier][aoe]
+
+            return math.min(math.max(config[1] * skillLevel + config[2], config[3]), config[4])
+        end
+    end
 end
