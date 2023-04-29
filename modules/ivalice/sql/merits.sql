@@ -47,8 +47,8 @@ REPLACE INTO `merits` (`meritid`, `name`, `upgrade`, `value`, `jobs`, `upgradeid
     (2178, 'devotion', 5, 150, 4, 7, 33),
     (2180, 'protectra_v', 5, 2, 4, 7, 33),
     (2182, 'shellra_v', 5, 1, 4, 7, 33),
-    (2184, 'animus_solace', 5, 0, 4, 7, 33),    -- Out of era - Zeroing for now
-    (2186, 'animus_misery', 5, 0, 4, 7, 33),    -- Out of era - Zeroing for now
+    -- (2184, 'animus_solace', 5, 0, 4, 7, 33),    -- Out of era - Zeroing for now
+    -- (2186, 'animus_misery', 5, 0, 4, 7, 33),    -- Out of era - Zeroing for now
 
     -- BLM Group 2
     (2252, 'anc_magic_attack_bonus', 5, 5, 8, 7, 34),
@@ -56,7 +56,7 @@ REPLACE INTO `merits` (`meritid`, `name`, `upgrade`, `value`, `jobs`, `upgradeid
     (2256, 'ele_magic_acc', 5, 5, 8, 7, 34),
     (2258, 'ele_magic_debuff_duration', 5, 12, 8, 7, 34),
     (2260, 'ele_magic_debuff_effect', 5, 2, 8, 7, 34),
-    (2262, 'aspir_absorption_amount', 5, 0, 8, 7, 34),      -- ???
+    -- (2262, 'aspir_absorption_amount', 5, 0, 8, 7, 34),      -- ???
 
     -- RDM Group 1: +3 MAcc in era (+2 retail) per merit
     (642, 'fire_magic_accuracy', 5, 3, 16, 6, 9),
@@ -104,8 +104,8 @@ REPLACE INTO `merits` (`meritid`, `name`, `upgrade`, `value`, `jobs`, `upgradeid
     (2624, 'nightingale', 5, 150, 512, 7, 40),
     (2626, 'troubadour', 5, 150, 512, 7, 40),
     (2630, 'adventurers_dirge', 5, 3, 512, 7, 40),
-    (2632, 'con_anima', 5, 0, 512, 7, 40),      -- Out of Era.  Zeroized for now.
-    (2634, 'con_brio', 5, 0, 512, 7, 40),       -- Out of Era.  Zeroized for now.
+    -- (2632, 'con_anima', 5, 0, 512, 7, 40),      -- Out of Era.  Zeroized for now.
+    -- (2634, 'con_brio', 5, 0, 512, 7, 40),       -- Out of Era.  Zeroized for now.
 
     -- RNG Group 1: Scavenge recast updated for era values
     (1024, 'scavenge_effect', 5, 10, 1024, 6, 15),
@@ -120,8 +120,8 @@ REPLACE INTO `merits` (`meritid`, `name`, `upgrade`, `value`, `jobs`, `upgradeid
 
     -- NIN Group 2
     (2816, 'sange', 5, 150, 4096, 7, 43),
-    (2832, 'yonin_effect', 5, 50, 4096, 7, 43),     -- Out of Era.  Zeroized for now 
-    (2834, 'innin_effect', 5, 1, 4096, 7, 43),      -- Out of Era.  Zeroized for now 
+    -- (2832, 'yonin_effect', 5, 50, 4096, 7, 43),     -- Out of Era.  Zeroized for now 
+    -- (2834, 'innin_effect', 5, 1, 4096, 7, 43),      -- Out of Era.  Zeroized for now 
     (2836, 'nin_magic_accuracy', 5, 5, 4096, 7, 43),
     (2838, 'nin_magic_attack', 5, 5, 4096, 7, 43),
 

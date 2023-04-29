@@ -2051,12 +2051,12 @@ void CCharEntity::OnRaise()
         // add weakness effect (75% reduction in HP/MP)
         if (GetLocalVar("MijinGakure") == 0)
         {
-            uint32 weaknessTime = 300;
+            uint32 weaknessTime = 150;
 
             // Arise has a reduced weakness time of 3 mins
             if (m_hasArise)
             {
-                weaknessTime = 180;
+                weaknessTime = 90;
             }
 
             CStatusEffect* PWeaknessEffect = new CStatusEffect(EFFECT_WEAKNESS, EFFECT_WEAKNESS, m_weaknessLvl, 0, weaknessTime);

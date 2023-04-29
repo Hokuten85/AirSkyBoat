@@ -400,7 +400,7 @@ xi.job_utils.dragoon.useSpiritLink = function(player, target, ability)
         end
     end
 
-    local drainamount = (math.random(25, 35) / 100) * playerHP
+    local drainamount = (math.random(10, 15) / 100) * playerHP
     local jpValue = player:getJobPointLevel(xi.jp.SPIRIT_LINK_EFFECT)
 
     drainamount = drainamount * (1 - (0.01 * jpValue))
@@ -429,7 +429,7 @@ xi.job_utils.dragoon.useSpiritLink = function(player, target, ability)
         player:takeDamage(drainamount)
     end
 
-    local healPet = drainamount * 2
+    local healPet = drainamount * 5
 
     -- TODO: replace with item mod
     if player:getEquipID(xi.slot.HEAD) == 15238 then

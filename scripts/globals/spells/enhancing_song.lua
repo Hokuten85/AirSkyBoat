@@ -224,7 +224,7 @@ end
 
 -- Enhancing Song Duration function. (2/2)
 xi.spells.enhancing.calculateSongDuration = function(caster, target, spell, instrumentBoost, soulVoicePower)
-    local duration = 120 -- The variable we want to calculate.
+    local duration = 300 -- The variable we want to calculate.
 
     -- Additional duration from "Song Bonus" (from instruments) and "Duration Bonus" Modifier
     duration = math.floor(duration * ((instrumentBoost * 0.1) + (caster:getMod(xi.mod.SONG_DURATION_BONUS) / 100) + 1))

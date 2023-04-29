@@ -14,8 +14,11 @@ INSERT INTO traits VALUES ('151','enmity cap','13','75','3','2000','3000',null,0
 INSERT INTO traits VALUES ('151','enmity cap','13','99','4','2000','4000',null,0);
 
 -- -DT% II
-INSERT INTO traits VALUES ('153','damage taken II','7','10','1','2001','5',null,0);
-INSERT INTO traits VALUES ('153','damage taken II','7','75','2','2001','10',null,0);
+INSERT INTO traits VALUES ('153','damage taken II','7','10','1','2001','2',null,0);
+INSERT INTO traits VALUES ('153','damage taken II','7','25','2','2001','4',null,0);
+INSERT INTO traits VALUES ('153','damage taken II','7','40','3','2001','6',null,0);
+INSERT INTO traits VALUES ('153','damage taken II','7','55','4','2001','8',null,0);
+INSERT INTO traits VALUES ('153','damage taken II','7','75','5','2001','10',null,0);
 -- GIVE PLD CRIT ATT DEF
 UPDATE traits SET level = 50 WHERE traitid = 99 and job = 7 and rank = 1;
 -- GIVE PLD FENCER

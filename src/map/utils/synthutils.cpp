@@ -275,7 +275,7 @@ namespace synthutils
             if (checkSkill != 0)
             {
                 synthDiff = getSynthDifficulty(PChar, skillID); // Get synth difficulty again, for each skill involved.
-                success   = 0.95;
+                success   = 0.99;
 
                 if (PChar->CraftContainer->getCraftType() == CRAFT_DESYNTHESIS) // if it's a desynth lower success rate
                 {
@@ -287,7 +287,7 @@ namespace synthutils
                     success -= (synthDiff / 10);
                 }
 
-                success = std::clamp(success, 0.05, 0.95);
+                success = std::clamp(success, 0.05, 0.99);
 
                 // Apply synthesis success rate modifier
                 modSynthSuccess = PChar->CraftContainer->getCraftType() == CRAFT_DESYNTHESIS ? PChar->getMod(Mod::DESYNTH_SUCCESS) : PChar->getMod(Mod::SYNTH_SUCCESS);

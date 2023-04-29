@@ -2289,9 +2289,9 @@ namespace battleutils
             if (giveTPtoVictim)
             {
                 // account for attacker's subtle blow which reduces the baseTP gain for the defender
-                float sBlow1    = std::clamp((float)PAttacker->getMod(Mod::SUBTLE_BLOW), -50.0f, 50.0f);
+                float sBlow1    = std::clamp((float)PAttacker->getMod(Mod::SUBTLE_BLOW), -50.0f, 60.0f);
                 float sBlow2    = std::clamp((float)PAttacker->getMod(Mod::SUBTLE_BLOW_II), -50.0f, 50.0f);
-                float sBlowMult = ((100.0f - std::clamp(sBlow1 + sBlow2, -75.0f, 75.0f)) / 100.0f);
+                float sBlowMult = ((100.0f - std::clamp(sBlow1 + sBlow2, -75.0f, 85.0f)) / 100.0f);
 
                 // mobs hit get basetp+30 whereas pcs hit get basetp/3
                 if (PDefender->objtype == TYPE_PC || (PDefender->objtype == TYPE_PET && PDefender->PMaster && PDefender->PMaster->objtype == TYPE_PC))
@@ -2407,9 +2407,9 @@ namespace battleutils
             }
 
             // account for attacker's subtle blow which reduces the baseTP gain for the defender
-            float sBlow1    = std::clamp((float)PAttacker->getMod(Mod::SUBTLE_BLOW), -50.0f, 50.0f);
+            float sBlow1    = std::clamp((float)PAttacker->getMod(Mod::SUBTLE_BLOW), -50.0f, 60.0f);
             float sBlow2    = std::clamp((float)PAttacker->getMod(Mod::SUBTLE_BLOW_II), -50.0f, 50.0f);
-            float sBlowMult = (100.0f - std::clamp(sBlow1 + sBlow2, -75.0f, 75.0f)) / 100.0f;
+            float sBlowMult = (100.0f - std::clamp(sBlow1 + sBlow2, -75.0f, 85.0f)) / 100.0f;
 
             // mobs hit get basetp+30 whereas pcs hit get basetp/3
             if (PDefender->objtype == TYPE_PC)
@@ -4827,17 +4827,21 @@ namespace battleutils
         {
             shotCount += 4;
         }
-        else if (lvl < 90)
+        else if (lvl < 76)
         {
             shotCount += 5;
         }
-        else if (lvl < 99)
+        else if (lvl < 90)
         {
             shotCount += 6;
         }
-        else
+        else if (lvl < 99)
         {
             shotCount += 7;
+        }
+        else
+        {
+            shotCount += 8;
         }
 
         // make sure we have enough ammo for all these shots
@@ -5386,8 +5390,13 @@ namespace battleutils
 
         resist = std::max(resist, 0.5f); // assuming if its floored at .5f its capped at 1.5f but who's stacking +dmgtaken equip anyway???
 
+        resist += PDefender->getMod(Mod::DMG_II) / 100.0f;
+        resist = std::max(resist, 0.1f); // allows for DT II to take reduction to 90%
+
+
         resist += PDefender->getMod(Mod::UDMG) + PDefender->getMod(Mod::UDMGBREATH) / 10000.f;
         resist = std::max(resist, 0.f);
+
         damage = (int32)(damage * resist);
 
         if (xirand::GetRandomNumber(100) < PDefender->getMod(Mod::ABSORB_DMG_CHANCE))
@@ -5429,6 +5438,9 @@ namespace battleutils
 
         resist += PDefender->getMod(Mod::DMGMAGIC_II) / 10000.f;
         resist = std::max(resist, 0.125f); // Total cap with MDT-% II included is 87.5%
+
+        resist += PDefender->getMod(Mod::DMG_II) / 100.0f;
+        resist = std::max(resist, 0.1f); // allows for DT II to take reduction to 90%
 
         resist += PDefender->getMod(Mod::UDMG) + PDefender->getMod(Mod::UDMGMAGIC) / 10000.f;
         resist = std::max(resist, 0.f);
@@ -5473,6 +5485,9 @@ namespace battleutils
         resist += PDefender->getMod(Mod::DMGPHYS_II) / 10000.f; // Add Burtgang reduction after 50% cap. Extends cap to -68%
         resist = std::max(resist, 0.32f);                       // Total cap with MDT-% II included is 87.5%
 
+        resist += PDefender->getMod(Mod::DMG_II) / 100.0f;
+        resist = std::max(resist, 0.1f); // allows for DT II to take reduction to 90%
+
         resist += PDefender->getMod(Mod::UDMG) + PDefender->getMod(Mod::UDMGPHYS) / 10000.f;
         resist = std::max(resist, 0.f);
         damage = (int32)(damage * resist);
@@ -5516,8 +5531,10 @@ namespace battleutils
     int32 RangedDmgTaken(CBattleEntity* PDefender, int32 damage, DAMAGE_TYPE damageType, bool IsCovered)
     {
         float resist = 1.0f + PDefender->getMod(Mod::DMGRANGE) / 10000.f + PDefender->getMod(Mod::DMG) / 10000.f;
-
         resist = std::max(resist, 0.5f);
+
+        resist += PDefender->getMod(Mod::DMG_II) / 100.0f;
+        resist = std::max(resist, 0.1f); // allows for DT II to take reduction to 90%
 
         resist += PDefender->getMod(Mod::UDMG) + PDefender->getMod(Mod::UDMGRANGE) / 10000.f;
         resist = std::max(resist, 0.f);

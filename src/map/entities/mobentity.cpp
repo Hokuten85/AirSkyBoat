@@ -1325,6 +1325,12 @@ void CMobEntity::DropItems(CCharEntity* PChar)
             }
         }
 
+        if (this->GetMLevel() >= 85 && this->m_Type & MOBTYPE_NOTORIOUS)
+        {
+            uint16 itemId = coloredDrops[xirand::GetRandomNumber(coloredDrops.size())];
+            UpdateDroprateOrAddToList(DropList.Items, DROP_NORMAL, itemId, 240);
+        }
+
         for (const DropItem_t& item : DropList.Items)
         {
             for (int16 roll = 0; roll < maxRolls; ++roll)

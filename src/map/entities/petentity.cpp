@@ -357,7 +357,7 @@ bool CPetEntity::ValidTarget(CBattleEntity* PInitiator, uint16 targetFlags)
 {
     if (targetFlags & TARGET_PLAYER && PInitiator->allegiance == allegiance)
     {
-        return false;
+        return true;
     }
     return CMobEntity::ValidTarget(PInitiator, targetFlags);
 }

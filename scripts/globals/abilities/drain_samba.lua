@@ -28,7 +28,7 @@ abilityObject.onUseAbility = function(player, target, ability)
         player:delTP(100)
     end
 
-    local duration = 120 + player:getMod(xi.mod.SAMBA_DURATION) + (player:getJobPointLevel(xi.jp.SAMBA_DURATION) * 2)
+    local duration = 180 + player:getMod(xi.mod.SAMBA_DURATION) + (player:getJobPointLevel(xi.jp.SAMBA_DURATION) * 2)
     duration       = duration * (100 + player:getMod(xi.mod.SAMBA_PDURATION)) / 100
 
     player:delStatusEffect(xi.effect.HASTE_SAMBA)

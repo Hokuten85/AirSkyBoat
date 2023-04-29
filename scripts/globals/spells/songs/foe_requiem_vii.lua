@@ -15,7 +15,7 @@ end
 spellObject.onSpellCast = function(caster, target, spell)
     local effect = xi.effect.REQUIEM
     local duration = 160
-    local power = 8
+    local power = 9
 
     -- local pCHR = caster:getStat(xi.mod.CHR)
     -- local mCHR = target:getStat(xi.mod.CHR)

@@ -18,7 +18,7 @@ CREATE or replace PROCEDURE determine_item_pricing(IN pItemId INT, OUT pPrice IN
 start_label: BEGIN
 	DECLARE totalPrice INT DEFAULT 0;
     DECLARE done INT DEFAULT FALSE;
-    DECLARE vID, vIngredient1, vIngredient2, vIngredient3, vIngredient4, vIngredient5, vIngredient6, vIngredient7, vIngredient8, vResult, vResultHQ1, vResultHQ2, vResultHQ3, vResultQty, vResultHQ1Qty, vResultHQ2Qty, vResultHQ3Qty, vRecipePrice, vitemPrice, vhqBonus INT;
+    DECLARE vID, vIngredient1, vIngredient2, vIngredient3, vIngredient4, vIngredient5, vIngredient6, vIngredient7, vIngredient8, vResult, vResultHQ1, vResultHQ2, vResultHQ3, vResultQty, vResultHQ1Qty, vResultHQ2Qty, vResultHQ3Qty, vRecipePrice, vitemPrice, vhqBonus, vPrice INT;
     DECLARE vIsFound BOOL;
 	DECLARE cur1 CURSOR FOR SELECT ID, Ingredient1, Ingredient2, Ingredient3, Ingredient4, Ingredient5, Ingredient6, Ingredient7, Ingredient8, Result, ResultHQ1, ResultHQ2, ResultHQ3, ResultQty, ResultHQ1Qty, ResultHQ2Qty, ResultHQ3Qty 
 								FROM synth_recipes WHERE pItemId IN (Result,ResultHQ1,ResultHQ2,ResultHQ3) AND Desynth = 0;
@@ -41,6 +41,7 @@ start_label: BEGIN
                 SET vRecipePrice = 0;
                 SET vIsFound = TRUE;
                 SET vitemPrice = NULL;
+				SET vPrice = 0;
 
 				IF (vIngredient1 != 0) THEN
 					IF(EXISTS(SELECT 1 FROM item_pricing WHERE item_id = vIngredient1)) THEN
@@ -149,22 +150,28 @@ start_label: BEGIN
                 IF(vIsFound != FALSE AND (pPrice IS NULL OR vRecipePrice < pPrice)) THEN
 					IF (pItemId = vResult) THEN
 						SET pPrice = vRecipePrice DIV vResultQty;
-						SET vhqBonus = 1;
+						SET vhqBonus = 5;
                     ELSEIF (pItemId = vResultHQ1) THEN
 						SET pPrice = vRecipePrice DIV vResultHQ1Qty;
-						SET vhqBonus = 5;
+						SET vhqBonus = 15;
                     ELSEIF (pItemId = vResultHQ2) THEN
 						SET pPrice = vRecipePrice DIV vResultHQ2Qty;
-						SET vhqBonus = 10;
+						SET vhqBonus = 18;
                     ELSEIF (pItemId = vResultHQ3) THEN
 						SET pPrice = vRecipePrice DIV vResultHQ3Qty;
-						SET vhqBonus = 20;
+						SET vhqBonus = 22;
                     END IF;
                 END IF;
                 
 			END LOOP read_loop;
 			CLOSE cur1;  
             
+			SET vPrice = (SELECT price FROM vendor_prices WHERE itemid = pItemId);
+		
+			IF pPrice > vPrice THEN
+				SET pPrice = vPrice;
+			END IF;
+
             IF pPrice > 0 THEN
 				INSERT INTO item_pricing VALUES (pItemId, pPrice, vhqBonus);
 			ELSEIF (EXISTS(SELECT 1 FROM vendor_prices WHERE itemid = pItemId)) THEN
@@ -207,7 +214,7 @@ INNER JOIN item_pricing ip
 	ON ib.itemid = ip.item_id
 LEFT OUTER JOIN vendor_prices vp
 	ON ib.itemid = vp.itemid
-SET ib.BaseSell = FLOOR(IF(vp.itemid IS NULL OR ip.price * 1.5 * ip.hqBonus < vp.price, ip.price * 1.5 * ip.hqBonus, vp.price))
+SET ib.BaseSell = FLOOR(IF(vp.itemid IS NULL OR ip.price * (ip.hqBonus/10) < vp.price, ip.price * (ip.hqBonus/10), vp.price))
 WHERE aH NOT IN (15, 35, 36, 49);
 
 DROP TABLE item_pricing;

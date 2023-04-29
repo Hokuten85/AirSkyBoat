@@ -1072,11 +1072,6 @@ namespace petutils
         // Based on testing this value appears to be Level now instead of Level * 0.74f
         // uint16 weaponDamage = 1 + mLvl;
         uint16 weaponDamage = 10 + (mLvl * 0.5);
-        if (petID == PETID_CARBUNCLE || petID == PETID_CAIT_SITH)
-        {
-            weaponDamage = 3 + (mLvl * 0.5);
-            // weaponDamage = static_cast<uint16>(floor(mLvl * 0.9f));
-        }
 
         static_cast<CItemWeapon*>(PPet->m_Weapons[SLOT_MAIN])->setDamage(weaponDamage);
         static_cast<CItemWeapon*>(PPet->m_Weapons[SLOT_MAIN])->setBaseDelay((uint16)(floor(1000.0f * (PPetData->cmbDelay / 60.0f))));
@@ -1084,7 +1079,7 @@ namespace petutils
         PPet->setModifier(Mod::DEF, mobutils::GetDefense(PPet, PPet->defRank));
         PPet->setModifier(Mod::EVA, mobutils::GetBase(PPet, PPet->evaRank));
         PPet->setModifier(Mod::ATT, mobutils::GetBase(PPet, PPet->attRank));
-        PPet->setModifier(Mod::ACC, mobutils::GetBase(PPet, PPet->accRank));
+        PPet->setModifier(Mod::ACC, 1.1 * mobutils::GetBase(PPet, PPet->accRank));
 
         // Fenrir has been proven to have an additional 30% ATK
         if (petID == PETID_FENRIR)
@@ -1121,16 +1116,34 @@ namespace petutils
         if (PMaster->objtype == TYPE_PC)
         {
             CCharEntity* PChar = static_cast<CCharEntity*>(PMaster);
-            PPet->addModifier(Mod::MATT, PChar->PMeritPoints->GetMeritValue(MERIT_AVATAR_MAGICAL_ATTACK, PChar));
-            PPet->addModifier(Mod::ATT, PChar->PMeritPoints->GetMeritValue(MERIT_AVATAR_PHYSICAL_ATTACK, PChar));
-            PPet->addModifier(Mod::MACC, PChar->PMeritPoints->GetMeritValue(MERIT_AVATAR_MAGICAL_ACCURACY, PChar));
-            PPet->addModifier(Mod::ACC, PChar->PMeritPoints->GetMeritValue(MERIT_AVATAR_PHYSICAL_ACCURACY, PChar));
+            uint16       maxSkill  = battleutils::GetMaxSkill(SKILL_SUMMONING_MAGIC, JOB_SMN, PChar->GetMLevel());
+            int16        plusSkill = std::max<uint16>(PChar->GetSkill(SKILL_SUMMONING_MAGIC) - maxSkill, 0); // skill added by gear will get you over the max
+
+            PPet->addModifier(Mod::HP, plusSkill);
+            PPet->addModifier(Mod::MP, plusSkill);
+
+            PPet->addModifier(Mod::MATT, PChar->PMeritPoints->GetMeritValue(MERIT_AVATAR_MAGICAL_ATTACK, PChar) + plusSkill / 2);
+            PPet->addModifier(Mod::ATT, PChar->PMeritPoints->GetMeritValue(MERIT_AVATAR_PHYSICAL_ATTACK, PChar) + plusSkill / 2);
+            PPet->addModifier(Mod::MACC, PChar->PMeritPoints->GetMeritValue(MERIT_AVATAR_MAGICAL_ACCURACY, PChar) + plusSkill / 2);
+            PPet->addModifier(Mod::ACC, PChar->PMeritPoints->GetMeritValue(MERIT_AVATAR_PHYSICAL_ACCURACY, PChar) + plusSkill / 2);
 
             PPet->addModifier(Mod::ACC, PChar->PJobPoints->GetJobPointValue(JP_SUMMON_ACC_BONUS));
             PPet->addModifier(Mod::MACC, PChar->PJobPoints->GetJobPointValue(JP_SUMMON_MAGIC_ACC_BONUS));
             PPet->addModifier(Mod::ATT, PChar->PJobPoints->GetJobPointValue(JP_SUMMON_PHYS_ATK_BONUS) * 2);
             PPet->addModifier(Mod::MAGIC_DAMAGE, PChar->PJobPoints->GetJobPointValue(JP_SUMMON_MAGIC_DMG_BONUS) * 5);
             PPet->addModifier(Mod::BP_DAMAGE, PChar->PJobPoints->GetJobPointValue(JP_BLOOD_PACT_DMG_BONUS) * 3);
+
+            PPet->addModifier(Mod::MATT, plusSkill / 2);
+            PPet->addModifier(Mod::ATT,  plusSkill / 2);
+            PPet->addModifier(Mod::MACC, plusSkill / 2);
+            PPet->addModifier(Mod::ACC,  plusSkill / 2);
+            PPet->addModifier(Mod::STR,  plusSkill / 4);
+            PPet->addModifier(Mod::DEX,  plusSkill / 4);
+            PPet->addModifier(Mod::AGI,  plusSkill / 4);
+            PPet->addModifier(Mod::VIT,  plusSkill / 4);
+            PPet->addModifier(Mod::INT,  plusSkill / 4);
+            PPet->addModifier(Mod::MND,  plusSkill / 4);
+            PPet->addModifier(Mod::CHR,  plusSkill / 4);
         }
 
         PMaster->setModifier(Mod::AVATAR_PERPETUATION, PerpetuationCost(petID, mLvl));
@@ -1152,9 +1165,9 @@ namespace petutils
         PPet->SetSLevel(1); // Subjob level for Wyvern is always 1
 
         LoadAvatarStats(PMaster, PPet);                                                                               // follows PC calcs (w/o SJ)
-        static_cast<CItemWeapon*>(PPet->m_Weapons[SLOT_MAIN])->setDelay((uint16)(floor(1000.0f * (320.0f / 60.0f)))); // 320 delay
+        static_cast<CItemWeapon*>(PPet->m_Weapons[SLOT_MAIN])->setDelay((uint16)(floor(1000.0f * (280.0f / 60.0f)))); // 280 delay
         static_cast<CItemWeapon*>(PPet->m_Weapons[SLOT_MAIN])->setBaseDelay((uint16)(floor(1000.0f * (320.0f / 60.0f))));
-        static_cast<CItemWeapon*>(PPet->m_Weapons[SLOT_MAIN])->setDamage((uint16)(floor(mLvl / 2) + 3));
+        static_cast<CItemWeapon*>(PPet->m_Weapons[SLOT_MAIN])->setDamage((uint16)(floor(mLvl / 1.75) + 3));
         // Set stat modifiers
         PPet->setModifier(Mod::DEF, mobutils::GetDefense(PPet, PPet->defRank));
         PPet->setModifier(Mod::EVA, mobutils::GetBase(PPet, PPet->evaRank));
@@ -1822,7 +1835,7 @@ namespace petutils
             }
         }
 
-        return cost;
+        return std::max<uint16>(1, cost / 2);
     }
 
     /*

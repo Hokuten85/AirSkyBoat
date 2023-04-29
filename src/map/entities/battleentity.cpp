@@ -946,18 +946,7 @@ uint16 CBattleEntity::DEF()
 
     if (this->StatusEffectContainer->HasStatusEffect(EFFECT_COUNTERSTANCE, 0))
     {
-        DEF = 1 + VIT() / 2;
-
-        if (this->StatusEffectContainer->HasStatusEffect(EFFECT_MINNE))
-        {
-            DEF += this->StatusEffectContainer->GetStatusEffect(EFFECT_MINNE)->GetPower();
-        }
-
-        int32 defModApplicatble = 0;
-
-        defModApplicatble += std::clamp((DEF * std::clamp((int)m_modStat[Mod::DEFP], -100, 0) / 100), -999, 0);
-
-        return std::clamp(DEF + defModApplicatble, 0, 65535);
+        return std::clamp((int)(DEF * 0.85), 0, 65535);
     }
 
     return std::clamp(DEF + (DEF * m_modStat[Mod::DEFP] / 100) + std::min<int16>((DEF * m_modStat[Mod::FOOD_DEFP] / 100), m_modStat[Mod::FOOD_DEF_CAP]), 0, 65535);
@@ -966,12 +955,6 @@ uint16 CBattleEntity::DEF()
 uint16 CBattleEntity::EVA()
 {
     int16 evasion = GetSkill(SKILL_EVASION);
-
-    // This check is for Players Only
-    if (evasion > 200)
-    { // Evasion skill is 0.9 evasion post-200
-        evasion = (int16)(200 + (evasion - 200) * 0.9);
-    }
 
     // Mobs do not have SKILL_EVASION. Their stats are set in the mobutils.cpp. This will correctly set their evasion
     if (this->objtype == TYPE_MOB || this->objtype == TYPE_PET)
@@ -1192,6 +1175,10 @@ void CBattleEntity::addEquipModifiers(std::vector<CModifier>* modList, uint8 ite
                 {
                     m_modStat[Mod::SUB_DMG_RANK] += i.getModAmount();
                 }
+                else if (i.getModID() == Mod::MAIN_DMG_RATING)
+                {
+                    m_modStat[Mod::SUB_DMG_RATING] += i.getModAmount();
+                }
                 else
                 {
                     m_modStat[i.getModID()] += i.getModAmount();
@@ -1255,6 +1242,10 @@ void CBattleEntity::addEquipModifiers(std::vector<CModifier>* modList, uint8 ite
                 if (i.getModID() == Mod::MAIN_DMG_RANK)
                 {
                     m_modStat[Mod::SUB_DMG_RANK] += modAmount;
+                }
+                else if (i.getModID() == Mod::MAIN_DMG_RATING)
+                {
+                    m_modStat[Mod::SUB_DMG_RATING] += modAmount;
                 }
                 else
                 {
@@ -1367,6 +1358,10 @@ void CBattleEntity::delEquipModifiers(std::vector<CModifier>* modList, uint8 ite
                 {
                     m_modStat[Mod::SUB_DMG_RANK] -= i.getModAmount();
                 }
+                else if (i.getModID() == Mod::MAIN_DMG_RATING)
+                {
+                    m_modStat[Mod::SUB_DMG_RATING] -= i.getModAmount();
+                }
                 else
                 {
                     m_modStat[i.getModID()] -= i.getModAmount();
@@ -1438,6 +1433,10 @@ void CBattleEntity::delEquipModifiers(std::vector<CModifier>* modList, uint8 ite
                 if (i.getModID() == Mod::MAIN_DMG_RANK)
                 {
                     m_modStat[Mod::SUB_DMG_RANK] -= modAmount;
+                }
+                else if (i.getModID() == Mod::MAIN_DMG_RATING)
+                {
+                    m_modStat[Mod::SUB_DMG_RATING] -= modAmount;
                 }
                 else
                 {

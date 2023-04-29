@@ -17,7 +17,7 @@ abilityObject.onAbilityCheck = function(player, target, ability)
         return xi.msg.basic.UNABLE_TO_USE_JA2, 0
     elseif player:hasStatusEffect(xi.effect.TRANCE) then
         return 0, 0
-    elseif player:getTP() < 200 then
+    elseif player:getTP() < 100 then
         return xi.msg.basic.NOT_ENOUGH_TP, 0
     else
         --[[ Apply "Waltz Ability Delay" reduction
@@ -44,7 +44,7 @@ end
 abilityObject.onUseAbility = function(player, target, ability)
     -- Only remove TP if the player doesn't have Trance.
     if not player:hasStatusEffect(xi.effect.TRANCE) then
-        player:delTP(200)
+        player:delTP(100)
     end
 
     local effect = target:healingWaltz()

@@ -2605,6 +2605,9 @@ namespace charutils
                 }
             }
         }
+
+        charutils::BuildingCharSkillsTable(PChar);
+
         if (equipSlotID == SLOT_MAIN || equipSlotID == SLOT_RANGED || equipSlotID == SLOT_SUB)
         {
             if (!PItem || (!PItem->isType(ITEM_EQUIPMENT) && PItem->getID() != 0) ||

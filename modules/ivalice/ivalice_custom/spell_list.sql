@@ -23,7 +23,7 @@ UPDATE spell_list SET mpCost = 10, recastTime = 50000, VE = 320 WHERE spellid = 
 UPDATE spell_list SET mpCost = 10, recastTime = 50000, VE = 320 WHERE spellid = 271; -- absorb-mnd
 UPDATE spell_list SET mpCost = 10, recastTime = 50000, VE = 320 WHERE spellid = 272; -- absorb-chr
 
-UPDATE spell_list SET jobs = 0x0000000000004B000000000000000000000000000000 WHERE spellid = 310; -- enlight PLD 99
+UPDATE spell_list SET jobs = 0x0000000000004B000000000000000000000000000000 WHERE spellid = 310; -- enlight PLD 75
 
 UPDATE spell_list SET validTargets = 3, spell_range = 204 WHERE name IN ('enfire_ii','enblizzard_ii','enaero_ii','enstone_ii','enthunder_ii','enwater_ii');
 

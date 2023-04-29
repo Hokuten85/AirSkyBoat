@@ -35,7 +35,7 @@ end
 -- Ability Use Functions
 -----------------------------------
 xi.job_utils.monk.useBoost = function(player, target, ability)
-    local power = 12.5 + (0.10 * player:getMod(xi.mod.BOOST_EFFECT))
+    local power = 15 + (0.10 * player:getMod(xi.mod.BOOST_EFFECT))
 
     if player:hasStatusEffect(xi.effect.BOOST) then
         local effect = player:getStatusEffect(xi.effect.BOOST)
@@ -47,6 +47,17 @@ xi.job_utils.monk.useBoost = function(player, target, ability)
 end
 
 xi.job_utils.monk.useChakra = function(player, target, ability)
+    if (player:getID() ~= target:getID()) then
+        local power = 20
+        if player:getSubJob() == tpz.job.MNK then
+            power = math.floor(power / 2);
+        end
+        
+        target:addStatusEffect(tpz.effect.SUBTLE_BLOW_PLUS,power,0,120);
+        ability:setMsg(0);
+        return;
+    end
+
     local chakraRemoval = player:getMod(xi.mod.CHAKRA_REMOVAL)
     for k, v in pairs(chakraStatusEffects) do
         if bit.band(chakraRemoval, v) == v then
@@ -72,7 +83,7 @@ end
 
 xi.job_utils.monk.useChiBlast = function(player, target, ability)
     local boost = player:getStatusEffect(xi.effect.BOOST)
-    local multiplier = 1.0
+    local multiplier = 2.0
     if boost ~= nil then
         multiplier = (boost:getPower() / 100) * 4 -- power is the raw % atk boost
     end
@@ -96,15 +107,15 @@ xi.job_utils.monk.useCounterstance = function(player, target, ability)
 end
 
 xi.job_utils.monk.useDodge = function(player, target, ability)
-    local power = 20 + player:getMod(xi.mod.DODGE_EFFECT)
+    local power = 25 + player:getMod(xi.mod.DODGE_EFFECT)
 
-    player:addStatusEffect(xi.effect.DODGE, power, 0, 120)
+    player:addStatusEffect(xi.effect.DODGE, power, 0, 180)
 end
 
 xi.job_utils.monk.useFocus = function(player, target, ability)
-    local power = 20 + player:getMod(xi.mod.FOCUS_EFFECT)
+    local power = 25 + player:getMod(xi.mod.FOCUS_EFFECT)
 
-    player:addStatusEffect(xi.effect.FOCUS, power, 0, 120)
+    player:addStatusEffect(xi.effect.FOCUS, power, 0, 180)
 end
 
 xi.job_utils.monk.useFootwork = function(player, target, ability)

@@ -1,1 +1,0 @@
-update item_mods set value = 25 where modid = 501 and value < 25;

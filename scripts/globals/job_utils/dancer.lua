@@ -92,7 +92,7 @@ xi.job_utils.dancer.useStepAbility = function(player, target, ability, action, s
         player:delTP(100)
     end
 
-    if math.random() <= xi.weaponskills.getHitRate(player, target, true, player:getMod(xi.mod.STEP_ACCURACY)) then
+    if math.random() <= math.max(0.8,xi.weaponskills.getHitRate(player, target, true, player:getMod(xi.mod.STEP_ACCURACY))) then
         local debuffEffect = target:getStatusEffect(stepEffect)
         hitType            = hitId
 
@@ -122,7 +122,7 @@ xi.job_utils.dancer.useStepAbility = function(player, target, ability, action, s
             target:delStatusEffectSilent(stepEffect)
         end
 
-        target:addStatusEffect(stepEffect, debuffStacks, 0, debuffDuration)
+        target:addStatusEffect(stepEffect, debuffStacks, 0, debuffDuration+45)
     else
         ability:setMsg(xi.msg.basic.JA_MISS)
     end
@@ -196,7 +196,7 @@ xi.job_utils.dancer.useReverseFlourishAbility = function(player, target, ability
     local usedMoves = math.min(numMoves, 5)
     tpGained = (95 + reverseFlourishBonus) * usedMoves + (5 + gearMod) * usedMoves ^ 2 + 30 * numMerits
 
-    player:addTP(tpGained)
+    player:addTP(tpGained * 1.05)
     setFinishingMoves(player, numMoves - usedMoves)
 
     return tpGained
@@ -238,8 +238,8 @@ xi.job_utils.dancer.useDesperateFlourishAbility = function(player, target, abili
     setFinishingMoves(player, numMoves - 1)
 
     if
-        math.random() <= xi.weaponskills.getHitRate(player, target, true, player:getJobPointLevel(xi.jp.FLOURISH_I_EFFECT)) or
-        (player:hasStatusEffect(xi.effect.SNEAK_ATTACK) and player:isBehind(target))
+        math.random() <= math.max(0.8,xi.weaponskills.getHitRate(player, target, true, player:getJobPointLevel(xi.jp.FLOURISH_I_EFFECT)) or
+        (player:hasStatusEffect(xi.effect.SNEAK_ATTACK) and player:isBehind(target)))
     then
         local spell  = GetSpell(xi.magic.spell.GRAVITY)
         local params =
@@ -337,13 +337,13 @@ end
 local waltzAbilities =
 {
 --  Spell ID                           { tpCost, statMultiplier, baseHp }
-    [xi.jobAbility.CURING_WALTZ    ] = { 200, 0.25,  60 },
-    [xi.jobAbility.CURING_WALTZ_II ] = { 350, 0.50, 130 },
-    [xi.jobAbility.CURING_WALTZ_III] = { 500, 0.75, 270 },
-    [xi.jobAbility.CURING_WALTZ_IV ] = { 650, 1.00, 450 },
+    [xi.jobAbility.CURING_WALTZ    ] = { 150, 0.30,  60 },
+    [xi.jobAbility.CURING_WALTZ_II ] = { 300, 0.55, 130 },
+    [xi.jobAbility.CURING_WALTZ_III] = { 450, 0.80, 270 },
+    [xi.jobAbility.CURING_WALTZ_IV ] = { 600, 1.05, 450 },
     [xi.jobAbility.CURING_WALTZ_V  ] = { 800, 1.25, 600 },
-    [xi.jobAbility.DIVINE_WALTZ    ] = { 400, 0.25,  60 },
-    [xi.jobAbility.DIVINE_WALTZ_II ] = { 800, 0.75, 270 },
+    [xi.jobAbility.DIVINE_WALTZ    ] = { 300, 0.30,  60 },
+    [xi.jobAbility.DIVINE_WALTZ_II ] = { 700, 0.80, 270 },
 }
 
 xi.job_utils.dancer.checkWaltzAbility = function(player, target, ability)

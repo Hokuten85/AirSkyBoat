@@ -1,1 +1,0 @@
-UPDATE augments SET multiplier = 10 WHERE augmentId = 153;
