@@ -53,7 +53,7 @@ SET mg.dropid = nd.newDropId;
 
 -- INSERT CHAPTERS -- USER FOR AUGMENTING SYSTEM
 INSERT INTO mob_droplist
-SELECT dropid, dropType, groupid, groupRate, itemId, itemRate + 10 * lvlBucket AS itemRate
+SELECT dropid, dropType, groupid, groupRate, itemId, itemRate
 FROM (
 	SELECT DISTINCT mg.dropid, 0 AS dropType, 0 AS groupId, 1000 as groupRate, mg.minlevel DIV 10 AS lvlBucket,
 		CASE mg.minlevel DIV 10
@@ -69,7 +69,7 @@ FROM (
 			WHEN 9 THEN 4073
 			ELSE 4064
 		END AS itemId,	
-		300 AS itemRate
+		240 AS itemRate
 	FROM mob_spawn_points msp
 	INNER JOIN mob_groups mg
 		ON msp.groupid = mg.groupid

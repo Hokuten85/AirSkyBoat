@@ -437,6 +437,43 @@ namespace itemutils
                         ((CItemWeapon*)PItem)->setMaxHit(sql->GetUIntData(33));
                         ((CItemWeapon*)PItem)->setTotalUnlockPointsNeeded(sql->GetUIntData(34));
 
+                        switch (((CItemWeapon*)PItem)->getSkillType())
+                        {
+                            case SKILLTYPE::SKILL_CLUB:
+                            case SKILLTYPE::SKILL_DAGGER:
+                                ((CItemEquipment*)PItem)->addModifier(CModifier(Mod::CRITHITRATE, 6));
+                                break;
+                            case SKILLTYPE::SKILL_HAND_TO_HAND:
+                                ((CItemEquipment*)PItem)->addModifier(CModifier(Mod::CRITHITRATE, 4));
+                                break;
+                            case SKILLTYPE::SKILL_SWORD:
+                                ((CItemEquipment*)PItem)->addModifier(CModifier(Mod::CRITHITRATE, 2));
+                                break;
+                            case SKILLTYPE::SKILL_AXE: // THESE GUYS GET NOTHING FOR NOW
+                            case SKILLTYPE::SKILL_KATANA:
+                                break;
+                            case SKILLTYPE::SKILL_SCYTHE:
+                            case SKILLTYPE::SKILL_STAFF:
+                                ((CItemEquipment*)PItem)->addModifier(CModifier(Mod::CRIT_DMG_INCREASE, 6));
+                                break;
+                            case SKILLTYPE::SKILL_POLEARM:
+                                ((CItemEquipment*)PItem)->addModifier(CModifier(Mod::CRIT_DMG_INCREASE, 5));
+                                break;
+                            case SKILLTYPE::SKILL_GREAT_SWORD:
+                                ((CItemEquipment*)PItem)->addModifier(CModifier(Mod::CRIT_DMG_INCREASE, 4));
+                                break;
+                            case SKILLTYPE::SKILL_GREAT_KATANA:
+                                ((CItemEquipment*)PItem)->addModifier(CModifier(Mod::CRIT_DMG_INCREASE, 3));
+                                break;
+                            case SKILLTYPE::SKILL_ARCHERY:
+                                ((CItemEquipment*)PItem)->addModifier(CModifier(Mod::CRITHITRATE, 2));
+                                ((CItemEquipment*)PItem)->addModifier(CModifier(Mod::CRIT_DMG_INCREASE, 2));
+                                break;
+                            case SKILLTYPE::SKILL_MARKSMANSHIP: // THESE GUYS GET NOTHING FOR NOW
+                            case SKILLTYPE::SKILL_THROWING:
+                                break;
+                        }
+
                         int  dmg   = sql->GetUIntData(31);
                         int  delay = sql->GetIntData(30);
                         bool isH2H = ((CItemWeapon*)PItem)->getSkillType() == SKILL_HAND_TO_HAND;

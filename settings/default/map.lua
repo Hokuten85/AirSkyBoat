@@ -133,6 +133,9 @@ xi.settings.map =
     -- Enable/disable skill-ups from bloodpacts
     SKILLUP_BLOODPACT = true,
 
+    -- Start level for mob HP and stat scale
+    MOB_STAT_SCALE_START_LEVEL = 30,
+
     -- Adjust rate of TP gain for mobs, pets (includes charmed pets), fellows, trusts and players.
     -- Acts as a multiplier, so default is 1.
     MOB_TP_MULTIPLIER    = 1.0,
@@ -142,14 +145,14 @@ xi.settings.map =
     FELLOW_TP_MULTIPLIER = 1.0,
 
     -- Adjust max HP pool for NMs, regular mobs, players, and trusts/fellows. Acts as a multiplier, so default is 1.
-    NM_HP_MULTIPLIER        = 1.0,
-    MOB_HP_MULTIPLIER       = 1.0,
+    NM_HP_MULTIPLIER        = 1.2,
+    MOB_HP_MULTIPLIER       = 1.2,
     PLAYER_HP_MULTIPLIER    = 1.0,
     ALTER_EGO_HP_MULTIPLIER = 1.0,
 
     -- Adjust max MP pool for NMs, regular mobs, players, and trusts/fellows. Acts as a multiplier, so default is 1.
-    NM_MP_MULTIPLIER        = 1.0,
-    MOB_MP_MULTIPLIER       = 1.0,
+    NM_MP_MULTIPLIER        = 1.2,
+    MOB_MP_MULTIPLIER       = 1.2,
     PLAYER_MP_MULTIPLIER    = 1.0,
     ALTER_EGO_MP_MULTIPLIER = 1.0,
 
@@ -167,8 +170,8 @@ xi.settings.map =
     INCLUDE_MOB_SJ = false,
 
     -- Adjust base stats (str/vit/etc.) for NMs, regular mobs, players, and trusts/fellows. Acts as a multiplier, so default is 1.
-    NM_STAT_MULTIPLIER        = 1.0,
-    MOB_STAT_MULTIPLIER       = 1.0,
+    NM_STAT_MULTIPLIER        = 1.2,
+    MOB_STAT_MULTIPLIER       = 1.2,
     PLAYER_STAT_MULTIPLIER    = 1.0,
     ALTER_EGO_STAT_MULTIPLIER = 1.0,
 

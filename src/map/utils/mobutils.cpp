@@ -311,11 +311,17 @@ namespace mobutils
 
             if (isNM)
             {
-                PMob->health.maxhp = (int32)(PMob->health.maxhp * settings::get<float>("map.NM_HP_MULTIPLIER"));
+                if (PMob->GetMLevel() >= settings::get<int>("map.MOB_STAT_SCALE_START_LEVEL"))
+                {
+                    PMob->health.maxhp = (int32)(PMob->health.maxhp * settings::get<float>("map.NM_HP_MULTIPLIER"));
+                }
             }
             else
             {
-                PMob->health.maxhp = (int32)(PMob->health.maxhp * settings::get<float>("map.MOB_HP_MULTIPLIER"));
+                if (PMob->GetMLevel() >= settings::get<int>("map.MOB_STAT_SCALE_START_LEVEL"))
+                {
+                    PMob->health.maxhp = (int32)(PMob->health.maxhp * settings::get<float>("map.MOB_HP_MULTIPLIER"));
+                }
             }
 
             bool hasMp = false;
@@ -377,11 +383,17 @@ namespace mobutils
 
                 if (isNM)
                 {
-                    PMob->health.maxmp = (int32)(PMob->health.maxmp * settings::get<float>("map.NM_MP_MULTIPLIER"));
+                    if (PMob->GetMLevel() >= settings::get<int>("map.MOB_STAT_SCALE_START_LEVEL"))
+                    {
+                        PMob->health.maxmp = (int32)(PMob->health.maxmp * settings::get<float>("map.NM_MP_MULTIPLIER"));
+                    }
                 }
                 else
                 {
-                    PMob->health.maxmp = (int32)(PMob->health.maxmp * settings::get<float>("map.MOB_MP_MULTIPLIER"));
+                    if (PMob->GetMLevel() >= settings::get<int>("map.MOB_STAT_SCALE_START_LEVEL"))
+                    {
+                        PMob->health.maxmp = (int32)(PMob->health.maxmp * settings::get<float>("map.MOB_MP_MULTIPLIER"));
+                    }
                 }
             }
         }
@@ -467,7 +479,11 @@ namespace mobutils
         PMob->stats.MND = fMND + mMND + sMND;
         PMob->stats.CHR = fCHR + mCHR + sCHR;
 
-        auto statMultiplier = isNM ? settings::get<float>("map.NM_STAT_MULTIPLIER") : settings::get<float>("map.MOB_STAT_MULTIPLIER");
+        auto statMultiplier = 1;
+        if (PMob->GetMLevel() >= settings::get<int>("map.MOB_STAT_SCALE_START_LEVEL"))
+        {
+            statMultiplier = isNM ? settings::get<float>("map.NM_STAT_MULTIPLIER") : settings::get<float>("map.MOB_STAT_MULTIPLIER");
+        }
         PMob->stats.STR     = (uint16)(PMob->stats.STR * statMultiplier);
         PMob->stats.DEX     = (uint16)(PMob->stats.DEX * statMultiplier);
         PMob->stats.VIT     = (uint16)(PMob->stats.VIT * statMultiplier);

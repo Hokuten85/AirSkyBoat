@@ -39,6 +39,8 @@ UPDATE traits SET level = 75 WHERE traitid = 98 and job = 6 and rank = 2;
 UPDATE traits SET level = 25 WHERE traitid = 106 AND job = 12 AND level = 78 AND rank = 1 AND modifier = 174;
 UPDATE traits SET level = 50 WHERE traitid = 106 AND job = 12 AND level = 88 AND rank = 2 AND modifier = 174;
 UPDATE traits SET level = 75 WHERE traitid = 106 AND job = 12 AND level = 98 AND rank = 3 AND modifier = 174;
+-- GIVE SAM CONSERVE TP
+UPDATE traits SET level = 50 WHERE traitid = 108 and job = 11 and rank = 1;
 
 -- GIVE MONK COUNTER TIER 2
 UPDATE traits SET level = 75 WHERE traitid = 17 and job = 2 and rank = 2;
@@ -62,9 +64,6 @@ UPDATE traits SET level = 10, value = 10 WHERE traitid IN (32,33,34,35,36,37,38)
 -- GIVE BST STOUT SERVANT EARLY
 UPDATE traits SET level = 50 WHERE traitid = 103 and job = 9 and rank = 1;
 UPDATE traits SET level = 75 WHERE traitid = 103 and job = 9 and rank = 2;
-
--- GIVE SAM CONSERVE TP
-UPDATE traits SET level = 50 WHERE traitid = 108 and job = 11 and rank = 1;
 
 -- GIVE NIN TACTICAL PARRY
 UPDATE traits SET level = 25 WHERE traitid = 100 and job = 13 and rank = 1;

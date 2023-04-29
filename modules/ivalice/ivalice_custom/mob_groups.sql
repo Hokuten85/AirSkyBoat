@@ -28,7 +28,7 @@ AND mg.minLevel > 85;
 UPDATE mob_groups mg
 INNER JOIN mob_pools mp
 	ON mg.poolid = mp.poolid
-SET mg.respawntime = 900
+SET mg.respawntime = 600
 WHERE mp.mobType & 0x02
 AND mg.spawntype = 0
 AND mg.respawntime > 900;

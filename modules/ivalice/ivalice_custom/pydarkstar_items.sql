@@ -33,7 +33,6 @@ CREATE TABLE `pydarkstar_items` (
   `buy12` tinyint(1) DEFAULT NULL,
   `price12` int(10) unsigned DEFAULT NULL,
   `stock12` tinyint(2) DEFAULT NULL,
-  PRIMARY KEY (`itemid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
