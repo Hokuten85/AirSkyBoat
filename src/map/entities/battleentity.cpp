@@ -2212,7 +2212,7 @@ bool CBattleEntity::OnAttack(CAttackState& state, action_t& action)
 
                 actionTarget.param =
                     battleutils::TakePhysicalDamage(this, PTarget, attack.GetAttackType(), attack.GetDamage(), attack.IsBlocked(), weaponSlot, 1,
-                                                    attackRound.GetTAEntity(), true, true, attack.IsCountered(), attack.IsCovered(), POriginalTarget);
+                                                    attackRound.GetTAEntity(), true, true, attack.IsCountered(), attack.IsCovered(), POriginalTarget, attack.IsCritical());
                 if (actionTarget.param < 0)
                 {
                     actionTarget.param     = -(actionTarget.param);

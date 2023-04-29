@@ -2010,7 +2010,7 @@ namespace battleutils
 
     int32 TakePhysicalDamage(CBattleEntity* PAttacker, CBattleEntity* PDefender, PHYSICAL_ATTACK_TYPE physicalAttackType, int32 damage, bool isBlocked,
                              uint8 slot, uint16 tpMultiplier, CBattleEntity* taChar, bool giveTPtoVictim, bool giveTPtoAttacker, bool isCounter, bool isCovered,
-                             CBattleEntity* POriginalTarget)
+                             CBattleEntity* POriginalTarget, bool isCritical)
     {
         auto* weapon           = GetEntityWeapon(PAttacker, (SLOTTYPE)slot);
         giveTPtoAttacker       = giveTPtoAttacker && !PAttacker->StatusEffectContainer->HasStatusEffect(EFFECT_MEIKYO_SHISUI);
@@ -2283,7 +2283,7 @@ namespace battleutils
                 }
 
                 PAttacker->addTP(
-                    (int16)(tpMultiplier * (baseTp * (1.0f + 0.01f * (float)((PAttacker->getMod(Mod::STORETP) + getStoreTPbonusFromMerit(PAttacker)))))));
+                    (int16)(tpMultiplier * ((isCritical ? 25 : 0) + baseTp * (1.0f + 0.01f * (float)((PAttacker->getMod(Mod::STORETP) + getStoreTPbonusFromMerit(PAttacker)))))));
             }
 
             if (giveTPtoVictim)
