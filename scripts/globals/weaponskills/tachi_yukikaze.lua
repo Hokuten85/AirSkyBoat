@@ -22,12 +22,12 @@ local weaponskillObject = {}
 weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary, action, taChar)
     local params = {}
     params.numHits = 1
-    params.ftp100 = 1.5625 params.ftp200 = 1.88 params.ftp300 = 2.5
+    params.ftp100 = 1.7 params.ftp200 = 2 params.ftp300 = 2.5
     params.str_wsc = 0.75 params.dex_wsc = 0.0 params.vit_wsc = 0.0 params.agi_wsc = 0.0 params.int_wsc = 0.0 params.mnd_wsc = 0.0 params.chr_wsc = 0.0
     params.crit100 = 0.0 params.crit200 = 0.0 params.crit300 = 0.0
     params.canCrit = false
     params.acc100 = 1.00 params.acc200 = 1.00 params.acc300 = 1.00
-    params.atk100 = 1.33 params.atk200 = 1.33 params.atk300 = 1.33
+    params.atk100 = 2 params.atk200 = 2 params.atk300 = 2
 
     local effectParams = {}
     effectParams.element = xi.magic.ele.DARK

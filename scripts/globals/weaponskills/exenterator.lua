@@ -28,6 +28,7 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     params.canCrit = false
     params.acc100 = 1 params.acc200 = 1 params.acc300 = 1
     params.atk100 = 1 params.atk200 = 1 params.atk300 = 1
+    params.multiHitfTP = true
 
     local effectParams = {}
     effectParams.element = xi.magic.ele.EARTH

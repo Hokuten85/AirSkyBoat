@@ -30,6 +30,7 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     params.element = xi.magic.ele.FIRE
     params.skillType = xi.skill.MARKSMANSHIP
     params.includemab = true
+    params.hybridWS = true
 
     -- TODO: needs to give enmity down at varying tp percent's that is treated separately than the gear cap of -50% enmity http://www.bg-wiki.com/bg/Wildfire
 

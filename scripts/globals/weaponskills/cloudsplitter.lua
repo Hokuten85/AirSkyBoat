@@ -21,10 +21,11 @@ local weaponskillObject = {}
 weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary, action, taChar)
     local params = {}
     params.ftp100 = 3.75 params.ftp200 = 5.0 params.ftp300 = 6.0
-    params.str_wsc = 0.4 params.dex_wsc = 0.0 params.vit_wsc = 0.0 params.agi_wsc = 0.0 params.int_wsc = 0.0 params.mnd_wsc = 0.4 params.chr_wsc = 0.0
+    params.str_wsc = 0.45 params.dex_wsc = 0.0 params.vit_wsc = 0.0 params.agi_wsc = 0.0 params.int_wsc = 0.0 params.mnd_wsc = 0.45 params.chr_wsc = 0.0
     params.element = xi.magic.ele.LIGHTNING
     params.skillType = xi.skill.AXE
     params.includemab = true
+    params.hybridWS = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.ftp200 = 6.7 params.ftp300 = 8.5

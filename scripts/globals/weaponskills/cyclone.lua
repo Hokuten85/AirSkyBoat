@@ -26,6 +26,7 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     params.element = xi.magic.ele.WIND
     params.skillType = xi.skill.DAGGER
     params.includemab = true
+    params.hybridWS = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.dex_wsc = 0.4 params.int_wsc = 0.4

@@ -28,13 +28,14 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     params.element = xi.magic.ele.LIGHT
     params.skillType = xi.skill.STAFF
     params.includemab = true
+    params.hybridWS = true
 
     local effectParams = {}
     effectParams.element = xi.magic.ele.LIGHT
     effectParams.effect = xi.effect.DEFENSE_DOWN
     effectParams.skillType = xi.skill.STAFF
     effectParams.duration = 30 + tp / 1000 * 30
-    effectParams.power = 12.5
+    effectParams.power = 12.5 + tp / 1000 * 2.5
     effectParams.tick = 0
     effectParams.maccBonus = 0
 

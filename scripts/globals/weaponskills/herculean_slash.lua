@@ -21,10 +21,11 @@ local weaponskillObject = {}
 weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary, action, taChar)
     local params = {}
     params.ftp100 = 3.5 params.ftp200 = 3.5 params.ftp300 = 3.5
-    params.str_wsc = 0.0 params.dex_wsc = 0.0 params.vit_wsc = 0.6 params.agi_wsc = 0.0 params.int_wsc = 0.0 params.mnd_wsc = 0.0 params.chr_wsc = 0.0
+    params.str_wsc = 0.2 params.dex_wsc = 0.0 params.vit_wsc = 0.6 params.agi_wsc = 0.0 params.int_wsc = 0.0 params.mnd_wsc = 0.0 params.chr_wsc = 0.0
     params.element = xi.magic.ele.ICE
     params.skillType = xi.skill.GREAT_SWORD
     params.includemab = true
+    params.hybridWS = true
 
     local effectParams = {}
     effectParams.element = xi.magic.ele.ICE

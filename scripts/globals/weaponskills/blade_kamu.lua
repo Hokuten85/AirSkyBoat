@@ -23,7 +23,7 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     local params = {}
     params.numHits = 1
     params.ftp100 = 1 params.ftp200 = 1 params.ftp300 = 1
-    params.str_wsc = 0.5 params.dex_wsc = 0.0 params.vit_wsc = 0.0 params.agi_wsc = 0.0 params.int_wsc = 0.5
+    params.str_wsc = 0.5 params.dex_wsc = 0.0 params.vit_wsc = 0.0 params.agi_wsc = 0.3 params.int_wsc = 0.5
     params.mnd_wsc = 0.0 params.chr_wsc = 0.0
     params.crit100 = 0.0 params.crit200 = 0.0 params.crit300 = 0.0
     params.canCrit = false
@@ -35,7 +35,7 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     effectParams.effect = xi.effect.ACCURACY_DOWN
     effectParams.skillType = xi.skill.KATANA
     effectParams.duration = tp / 1000 * 60
-    effectParams.power = 10
+    effectParams.power = 10 + tp / 1000 * 5
     effectParams.tick = 0
     effectParams.maccBonus = 0
 

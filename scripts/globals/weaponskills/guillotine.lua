@@ -17,9 +17,9 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     local params = {}
     params.numHits = 4
     -- ftp damage mods (for Damage Varies with TP lines are calculated in the function
-    params.ftp100 = 0.875 params.ftp200 = 0.875 params.ftp300 = 0.875
+    params.ftp100 = 1.0 params.ftp200 = 1.1 params.ftp300 = 1.2
     -- wscs are in % so 0.2=20%
-    params.str_wsc = 0.25 params.dex_wsc = 0.0 params.vit_wsc = 0.0 params.agi_wsc = 0.0 params.int_wsc = 0.0 params.mnd_wsc = 0.25 params.chr_wsc = 0.0
+    params.str_wsc = 0.25 params.dex_wsc = 0.1 params.vit_wsc = 0.0 params.agi_wsc = 0.0 params.int_wsc = 0.0 params.mnd_wsc = 0.25 params.chr_wsc = 0.0
     -- critical mods, again in % (ONLY USE FOR critICAL HIT VARIES WITH TP)
     params.crit100 = 0.0 params.crit200 = 0.0 params.crit300 = 0.0
     params.canCrit = false
@@ -27,6 +27,7 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     params.acc100 = 0 params.acc200 = 0 params.acc300 = 0
     -- attack multiplier (only some WSes use this, this varies the actual ratio value, see Tachi: Kasha) 1 is default.
     params.atk100 = 1; params.atk200 = 1; params.atk300 = 1
+    params.multiHitfTP = true
 
     local effectParams = {}
     effectParams.element = xi.magic.ele.WIND

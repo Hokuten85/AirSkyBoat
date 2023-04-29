@@ -30,8 +30,8 @@ local weaponskillObject = {}
 weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary, action, taChar)
     local params = {}
     params.numHits = 2
-    params.ftp100 = 1 params.ftp200 = 1.25 params.ftp300 = 1.5
-    params.str_wsc = 0.4 params.dex_wsc = 0.0 params.vit_wsc = 0.5 params.agi_wsc = 0.0 params.int_wsc = 0.0
+    params.ftp100 = 2 params.ftp200 = 3 params.ftp300 = 4
+    params.str_wsc = 0.5 params.dex_wsc = 0.0 params.vit_wsc = 0.5 params.agi_wsc = 0.0 params.int_wsc = 0.0
     params.mnd_wsc = 0.0 params.chr_wsc = 0.0
     params.crit100 = 0.0 params.crit200 = 0.0 params.crit300 = 0.0
     params.canCrit = false
@@ -81,7 +81,7 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
             dmg = math.floor(target:getCE(player) * ceMod) + math.floor(target:getVE(player) * veMod)
         end
 
-        dmg = utils.clamp(dmg, 0, player:getMainLvl() * 10) -- Damage is capped to player's level * 10, before WS damage mods
+        dmg = utils.clamp(dmg, 0, player:getMainLvl() * 20) -- Damage is capped to player's level * 10, before WS damage mods
         damage = target:breathDmgTaken(dmg)
         if player:getMod(xi.mod.WEAPONSKILL_DAMAGE_BASE + wsID) > 0 then
             damage = damage * (100 + player:getMod(xi.mod.WEAPONSKILL_DAMAGE_BASE + wsID)) / 100

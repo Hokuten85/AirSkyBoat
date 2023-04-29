@@ -33,7 +33,7 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     effectParams.effect = xi.effect.DEFENSE_DOWN
     effectParams.skillType = xi.skill.STAFF
     effectParams.duration = 120 + (tp / 1000 * 60)
-    effectParams.power = 25
+    effectParams.power = 25 + (tp / 1000 * 5)
     effectParams.tick = 0
     effectParams.maccBonus = 0
 

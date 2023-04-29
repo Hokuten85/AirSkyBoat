@@ -26,6 +26,8 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     params.chr_wsc = 0.0
     params.skillType = xi.skill.STAFF
     params.includemab = true
+    params.hybridWS = true
+
     -- 50/50 shot of being light or dark
     params.element = xi.magic.ele.LIGHT
     if math.random() < 0.5 then

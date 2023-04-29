@@ -29,7 +29,7 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     params.acc100 = 1.0 params.acc200 = 1.0 params.acc300 = 1.0
     params.atk100 = 1; params.atk200 = 1; params.atk300 = 1
     params.ignoresDef = true
-    params.ignored100 = 0.15
+    params.ignored100 = 0.20
     params.ignored200 = 0.35
     params.ignored300 = 0.5
 

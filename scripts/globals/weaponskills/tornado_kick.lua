@@ -37,6 +37,7 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     -- attack multiplier (only some WSes use this, this varies the actual ratio value, see Tachi: Kasha) 1 is default.
     params.atk100 = 1; params.atk200 = 1; params.atk300 = 1
     params.kick = true -- https://www.bluegartr.com/threads/112776-Dev-Tracker-Findings-Posts-%28NO-DISCUSSION%29?p=6712150&viewfull=1#post6712150
+    params.multiHitfTP = true -- http://wiki.ffo.jp/html/20199.html
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.ftp100 = 1.7 params.ftp200 = 2.8 params.ftp300 = 4.5

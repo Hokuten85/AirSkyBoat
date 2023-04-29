@@ -21,7 +21,7 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     params.numHits = 1
     -- This is a 2 hit ws but H2H ws are done in a different way, the off hand hit is been taking into account in another place
     -- stat-modifiers (0.0 = 0%, 0.2 = 20%, 0.5 = 50%..etc)
-    params.str_wsc = 0.0        params.dex_wsc = 0.0
+    params.str_wsc = 0.4        params.dex_wsc = 0.0
     params.vit_wsc = 0.6        params.agi_wsc = 0.0
     params.int_wsc = 0.0        params.mnd_wsc = 0.0
     params.chr_wsc = 0.0

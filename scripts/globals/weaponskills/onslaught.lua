@@ -25,7 +25,7 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     local params = {}
     params.numHits = 1
     params.ftp100 = 2.75 params.ftp200 = 2.75 params.ftp300 = 2.75
-    params.str_wsc = 0.0 params.dex_wsc = 0.6 params.vit_wsc = 0.0 params.agi_wsc = 0.0 params.int_wsc = 0.0 params.mnd_wsc = 0.0 params.chr_wsc = 0.0
+    params.str_wsc = 0.4 params.dex_wsc = 0.6 params.vit_wsc = 0.0 params.agi_wsc = 0.0 params.int_wsc = 0.0 params.mnd_wsc = 0.0 params.chr_wsc = 0.0
     params.crit100 = 0.0 params.crit200 = 0.0 params.crit300 = 0.0
     params.canCrit = false
     params.acc100 = 1 params.acc200 = 1 params.acc300 = 1
@@ -36,7 +36,7 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     effectParams.effect = xi.effect.ACCURACY_DOWN
     effectParams.skillType = xi.skill.AXE
     effectParams.duration = tp / 1000 * 20
-    effectParams.power = 20
+    effectParams.power = 20 + tp / 1000 * 5
     effectParams.tick = 0
     effectParams.maccBonus = 0
 

@@ -26,7 +26,7 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     local params = {}
     params.numHits = 1
     params.ftp100 = 1 params.ftp200 = 1 params.ftp300 = 1
-    params.str_wsc = 0.5 params.dex_wsc = 0.0 params.vit_wsc = 0.5 params.agi_wsc = 0.0 params.int_wsc = 0.0 params.mnd_wsc = 0.0 params.chr_wsc = 0.0
+    params.str_wsc = 0.5 params.dex_wsc = 0.2 params.vit_wsc = 0.5 params.agi_wsc = 0.0 params.int_wsc = 0.0 params.mnd_wsc = 0.0 params.chr_wsc = 0.0
     params.crit100 = 0.0 params.crit200 = 0.0 params.crit300 = 0.0
     params.canCrit = false
     params.acc100 = 1 params.acc200 = 1 params.acc300 = 1
@@ -37,7 +37,7 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     effectParams.effect = xi.effect.DEFENSE_DOWN
     effectParams.skillType = xi.skill.GREAT_AXE
     effectParams.duration = (tp / 1000 * 60) + 120
-    effectParams.power = 12.5
+    effectParams.power = 12.5 + (tp / 1000 * 2.5)
     effectParams.tick = 0
     effectParams.maccBonus = 0
 
@@ -46,7 +46,7 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     effectParams2.effect = xi.effect.ATTACK_DOWN
     effectParams2.skillType = xi.skill.GREAT_AXE
     effectParams2.duration = (tp / 1000 * 60) + 120
-    effectParams2.power = 12.5
+    effectParams2.power = 12.5 + (tp / 1000 * 2.5)
     effectParams2.tick = 0
     effectParams2.maccBonus = 0
 
@@ -55,7 +55,7 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     effectParams3.effect = xi.effect.EVASION_DOWN
     effectParams3.skillType = xi.skill.GREAT_AXE
     effectParams3.duration = (tp / 1000 * 60) + 120
-    effectParams3.power = 20
+    effectParams3.power = 20 + (tp / 1000 * 4)
     effectParams3.tick = 0
     effectParams3.maccBonus = 0
 
@@ -64,7 +64,7 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     effectParams4.effect = xi.effect.ACCURACY_DOWN
     effectParams4.skillType = xi.skill.GREAT_AXE
     effectParams4.duration = (tp / 1000 * 60) + 120
-    effectParams4.power = 20
+    effectParams4.power = 20 + (tp / 1000 * 4)
     effectParams4.tick = 0
     effectParams4.maccBonus = 0
 
