@@ -67,7 +67,7 @@ namespace synthutils
         const char* fmtQuery =
 
             "SELECT ID, KeyItem, Wood, Smith, Gold, Cloth, Leather, Bone, Alchemy, Cook, Result, ResultHQ1, \
-            ResultHQ2, ResultHQ3, ResultQty, ResultHQ1Qty, ResultHQ2Qty, ResultHQ3Qty, Desynth, ContentTag \
+            ResultHQ2, ResultHQ3, ResultQty, ResultHQ1Qty, ResultHQ2Qty, ResultHQ3Qty, Desynth \
         FROM synth_recipes \
         WHERE (Crystal = %u OR HQCrystal = %u) \
             AND Ingredient1 = %u \
@@ -101,14 +101,6 @@ namespace synthutils
 
                 uint16 skillValue   = 0;
                 uint16 currentSkill = 0;
-
-                const char* contentTag = (const char*)sql->GetData(19);
-
-                if (!luautils::IsContentEnabled(contentTag))
-                {
-                    PChar->pushPacket(new CSynthMessagePacket(PChar, SYNTH_BADRECIPE));
-                    return false;
-                }
 
                 for (uint8 skillID = SKILL_WOODWORKING; skillID <= SKILL_COOKING; ++skillID) // range for all 8 synth skills
                 {
