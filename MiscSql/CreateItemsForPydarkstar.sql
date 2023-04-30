@@ -1,4 +1,5 @@
-SELECT p.itemid, ib.name, sell01, 0, price, 10, sell12, 0, price12, 10
+select * from (
+SELECT p.itemid, ib.name, sell01, 0 as buy01, price, 10 as stock01, sell12, 0 as buy12, price12, 10 as stock12
 FROM pydarkstar_items p
 INNER JOIN item_basic ib
 	ON p.itemid = ib.itemid
@@ -37,3 +38,5 @@ inner join pydarkstar_items pi2
 where ah = 51
 AND NoSale = 0
 AND NOT flags & (0x4000 | 0x8000)
+) a
+order by itemid
