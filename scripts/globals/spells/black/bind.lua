@@ -12,6 +12,11 @@ spellObject.onMagicCastingCheck = function(caster, target, spell)
 end
 
 spellObject.onSpellCast = function(caster, target, spell)
+    if target:hasImmunity(xi.immunity.BIND) then
+        spell:setMsg(xi.msg.basic.MAGIC_NO_EFFECT)
+        return
+    end
+
     -- Pull base stats.
     local dINT = caster:getStat(xi.mod.INT) - target:getStat(xi.mod.INT)
 
@@ -31,11 +36,9 @@ spellObject.onSpellCast = function(caster, target, spell)
 
         resduration = xi.magic.calculateBuildDuration(target, resduration, params.effect, caster)
 
-        if resduration == 0 then
-            spell:setMsg(xi.msg.basic.NONE)
-        --Try to erase a weaker bind.
-        elseif target:addStatusEffect(params.effect, target:getSpeed(), 0 , resduration) then
+        if target:addStatusEffect(params.effect, target:getSpeed(), 0 , resduration) then
             spell:setMsg(xi.msg.basic.MAGIC_ENFEEB_IS)
+            xi.magic.handleBurstMsg(caster, target, spell)
         else
             spell:setMsg(xi.msg.basic.MAGIC_NO_EFFECT)
         end

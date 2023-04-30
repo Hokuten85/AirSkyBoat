@@ -14,6 +14,11 @@ spellObject.onMagicCastingCheck = function(caster, target, spell)
 end
 
 spellObject.onSpellCast = function(caster, target, spell)
+    if target:hasImmunity(xi.immunity.PARALYZE) then
+        spell:setMsg(xi.msg.basic.MAGIC_NO_EFFECT)
+        return
+    end
+
     -- Pull base stats
     local dMND = caster:getStat(xi.mod.MND) - target:getStat(xi.mod.MND)
 
@@ -42,10 +47,9 @@ spellObject.onSpellCast = function(caster, target, spell)
 
         resduration = xi.magic.calculateBuildDuration(target, resduration, params.effect, caster)
 
-        if resduration == 0 then
-            spell:setMsg(xi.msg.basic.NONE)
-        elseif target:addStatusEffect(params.effect, potency, 0, resduration, 0, params.tier) then
+        if target:addStatusEffect(params.effect, potency, 0, resduration, 0, params.tier) then
             spell:setMsg(xi.msg.basic.MAGIC_ENFEEB_IS)
+            xi.magic.handleBurstMsg(caster, target, spell)
         else
             spell:setMsg(xi.msg.basic.MAGIC_NO_EFFECT)
         end

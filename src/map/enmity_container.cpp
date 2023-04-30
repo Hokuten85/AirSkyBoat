@@ -109,7 +109,11 @@ void CEnmityContainer::LogoutReset(uint32 EntityID)
 void CEnmityContainer::AddBaseEnmity(CBattleEntity* PChar)
 {
     TracyZoneScoped;
-    m_EnmityList.emplace(PChar->id, EnmityObject_t{ PChar, 0, 0, false, 0 });
+    if (PChar->getZone() != m_EnmityHolder->getZone())
+    {
+        return;
+    }
+    m_EnmityList.emplace(PChar->id, EnmityObject_t{ PChar, 0, 0, false });
     PChar->PNotorietyContainer->add(m_EnmityHolder);
 }
 
@@ -145,7 +149,7 @@ float CEnmityContainer::CalculateEnmityBonus(CBattleEntity* PEntity)
  *                                                                       *
  ************************************************************************/
 
-void CEnmityContainer::UpdateEnmity(CBattleEntity* PEntity, int32 CE, int32 VE, bool withMaster, bool tameable)
+void CEnmityContainer::UpdateEnmity(CBattleEntity* PEntity, int32 CE, int32 VE, bool withMaster, bool tameable, bool directAction)
 {
     TracyZoneScoped;
 
@@ -162,6 +166,12 @@ void CEnmityContainer::UpdateEnmity(CBattleEntity* PEntity, int32 CE, int32 VE, 
     }
 
     int32 EnmityMax = EnmityCap + PEntity->getMod(Mod::ENMITY_CAP);
+
+    // Apply TH only if this was a direct action
+    if (directAction && PEntity->getMod(Mod::TREASURE_HUNTER) > m_EnmityHolder->m_THLvl)
+    {
+        m_EnmityHolder->m_THLvl = PEntity->getMod(Mod::TREASURE_HUNTER);
+    }
 
     auto enmity_obj = m_EnmityList.find(PEntity->id);
 
@@ -180,11 +190,6 @@ void CEnmityContainer::UpdateEnmity(CBattleEntity* PEntity, int32 CE, int32 VE, 
         enmity_obj->second.CE     = std::clamp(newCE, 0, EnmityMax);
         enmity_obj->second.VE     = std::clamp(newVE, 0, EnmityMax);
         enmity_obj->second.active = true;
-
-        if (CE + VE > 0 && PEntity->getMod(Mod::TREASURE_HUNTER) > enmity_obj->second.maxTH)
-        {
-            enmity_obj->second.maxTH = PEntity->getMod(Mod::TREASURE_HUNTER);
-        }
     }
     else if (CE >= 0 && VE >= 0)
     {
@@ -198,8 +203,6 @@ void CEnmityContainer::UpdateEnmity(CBattleEntity* PEntity, int32 CE, int32 VE, 
             }
         }
 
-        int16 maxTH = CE + VE > 0 ? PEntity->getMod(Mod::TREASURE_HUNTER) : 0;
-
         if (initial)
         {
             CE += 200;
@@ -211,7 +214,7 @@ void CEnmityContainer::UpdateEnmity(CBattleEntity* PEntity, int32 CE, int32 VE, 
         CE = std::clamp((int32)(CE * bonus), 0, EnmityMax);
         VE = std::clamp((int32)(VE * bonus), 0, EnmityMax);
 
-        m_EnmityList.emplace(PEntity->id, EnmityObject_t{ PEntity, CE, VE, true, maxTH });
+        m_EnmityList.emplace(PEntity->id, EnmityObject_t{ PEntity, CE, VE, true });
         PEntity->PNotorietyContainer->add(m_EnmityHolder);
 
         if (withMaster && PEntity->PMaster != nullptr)
@@ -281,7 +284,7 @@ void CEnmityContainer::UpdateEnmityFromCure(CBattleEntity* PEntity, uint8 level,
     }
     else
     {
-        m_EnmityList.emplace(PEntity->id, EnmityObject_t{ PEntity, std::clamp(CE, 0, EnmityMax), std::clamp(VE, 0, EnmityMax), true, 0 });
+        m_EnmityList.emplace(PEntity->id, EnmityObject_t{ PEntity, std::clamp(CE, 0, EnmityMax), std::clamp(VE, 0, EnmityMax), true });
         PEntity->PNotorietyContainer->add(m_EnmityHolder);
     }
 }
@@ -475,27 +478,12 @@ void CEnmityContainer::DecayEnmity()
 
 bool CEnmityContainer::IsWithinEnmityRange(CBattleEntity* PEntity) const
 {
+    if (PEntity->getZone() != m_EnmityHolder->getZone())
+    {
+        return false;
+    }
     float maxRange = square(m_EnmityHolder->m_Type == MOBTYPE_NOTORIOUS ? 28.f : 25.f);
     return distanceSquared(m_EnmityHolder->loc.p, PEntity->loc.p) <= maxRange;
-}
-
-int16 CEnmityContainer::GetHighestTH() const
-{
-    CBattleEntity* PEntity = nullptr;
-    int16          THLvl   = 0;
-
-    for (const auto& it : m_EnmityList)
-    {
-        const EnmityObject_t& PEnmityObject = it.second;
-        PEntity                             = PEnmityObject.PEnmityOwner;
-
-        if (PEntity != nullptr && !PEntity->isDead() && PEnmityObject.maxTH > THLvl)
-        {
-            THLvl = PEnmityObject.maxTH;
-        }
-    }
-
-    return THLvl;
 }
 
 EnmityList_t* CEnmityContainer::GetEnmityList()
