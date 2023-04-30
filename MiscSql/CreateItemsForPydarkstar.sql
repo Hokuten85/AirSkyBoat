@@ -1,5 +1,5 @@
 select * from (
-SELECT p.itemid, ib.name, sell01, 0 as buy01, price, 10 as stock01, sell12, 0 as buy12, price12, 10 as stock12
+SELECT p.itemid, ib.name, sell01, 0 as buy01, p.price, 10 as stock01, sell12, 0 as buy12, p.price12, 10 as stock12
 FROM pydarkstar_items p
 INNER JOIN item_basic ib
 	ON p.itemid = ib.itemid

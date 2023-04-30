@@ -150,16 +150,16 @@ start_label: BEGIN
                 IF(vIsFound != FALSE AND (pPrice IS NULL OR vRecipePrice < pPrice)) THEN
 					IF (pItemId = vResult) THEN
 						SET pPrice = vRecipePrice DIV vResultQty;
-						SET vhqBonus = 5;
+						SET vhqBonus = 75;
                     ELSEIF (pItemId = vResultHQ1) THEN
 						SET pPrice = vRecipePrice DIV vResultHQ1Qty;
-						SET vhqBonus = 15;
+						SET vhqBonus = 200;
                     ELSEIF (pItemId = vResultHQ2) THEN
 						SET pPrice = vRecipePrice DIV vResultHQ2Qty;
-						SET vhqBonus = 18;
+						SET vhqBonus = 400;
                     ELSEIF (pItemId = vResultHQ3) THEN
 						SET pPrice = vRecipePrice DIV vResultHQ3Qty;
-						SET vhqBonus = 22;
+						SET vhqBonus = 800;
                     END IF;
                 END IF;
                 
@@ -214,7 +214,7 @@ INNER JOIN item_pricing ip
 	ON ib.itemid = ip.item_id
 LEFT OUTER JOIN vendor_prices vp
 	ON ib.itemid = vp.itemid
-SET ib.BaseSell = FLOOR(IF(vp.itemid IS NULL OR ip.price * (ip.hqBonus/10) < vp.price, ip.price * (ip.hqBonus/10), vp.price))
+SET ib.BaseSell = FLOOR(IF(vp.itemid IS NULL OR ip.price * (ip.hqBonus/100) < vp.price, ip.price * (ip.hqBonus/100), vp.price))
 WHERE aH NOT IN (15, 35, 36, 49);
 
 DROP TABLE item_pricing;
