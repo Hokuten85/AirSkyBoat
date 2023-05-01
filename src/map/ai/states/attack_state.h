@@ -48,6 +48,7 @@ public:
     }
 
     void ResetAttackTimer();
+    void SetAttackTimer(int milliseconds);
 
 protected:
     virtual void UpdateTarget(uint16 = 0) override;

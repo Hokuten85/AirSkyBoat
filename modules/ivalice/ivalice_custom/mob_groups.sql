@@ -31,4 +31,4 @@ INNER JOIN mob_pools mp
 SET mg.respawntime = 600
 WHERE mp.mobType & 0x02
 AND mg.spawntype = 0
-AND mg.respawntime > 900;
+AND mg.respawntime > 600;

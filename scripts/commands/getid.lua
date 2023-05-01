@@ -1,3 +1,4 @@
+
 -----------------------------------
 -- func: getid
 -- desc: Prints the ID of the currently selected target under the cursor
@@ -5,7 +6,7 @@
 
 cmdprops =
 {
-    permission = 1,
+    permission = 0,
     parameters = ""
 }
 
