@@ -170,8 +170,8 @@ xi.settings.map =
     INCLUDE_MOB_SJ = false,
 
     -- Adjust base stats (str/vit/etc.) for NMs, regular mobs, players, and trusts/fellows. Acts as a multiplier, so default is 1.
-    NM_STAT_MULTIPLIER        = 1.2,
-    MOB_STAT_MULTIPLIER       = 1.2,
+    NM_STAT_MULTIPLIER        = 1.1,
+    MOB_STAT_MULTIPLIER       = 1.1,
     PLAYER_STAT_MULTIPLIER    = 1.0,
     ALTER_EGO_STAT_MULTIPLIER = 1.0,
 

@@ -487,7 +487,7 @@ namespace mobutils
         PMob->stats.STR     = (uint16)(PMob->stats.STR * statMultiplier);
         PMob->stats.DEX     = (uint16)(PMob->stats.DEX * statMultiplier);
         PMob->stats.VIT     = (uint16)(PMob->stats.VIT * statMultiplier);
-        PMob->stats.AGI     = (uint16)(PMob->stats.AGI * statMultiplier);
+        //PMob->stats.AGI     = (uint16)(PMob->stats.AGI * statMultiplier); //Don't make them more evasive
         PMob->stats.INT     = (uint16)(PMob->stats.INT * statMultiplier);
         PMob->stats.MND     = (uint16)(PMob->stats.MND * statMultiplier);
         PMob->stats.CHR     = (uint16)(PMob->stats.CHR * statMultiplier);
