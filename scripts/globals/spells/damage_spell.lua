@@ -216,7 +216,7 @@ xi.spells.damage.calculateBaseDamage = function(caster, target, spell, spellId, 
     if caster:isPC() and not xi.settings.main.USE_OLD_MAGIC_DAMAGE then
         baseSpellDamage = calculateElementalNukeV(caster, spellId) or pTable[spellId][vPC]
     else
-        baseSpellDamage = pTable[spellId][vNPC] -- vNPC
+        baseSpellDamage = calculateElementalNukeV(caster, spellId) or pTable[spellId][vNPC] -- vNPC
     end
 
     -----------------------------------

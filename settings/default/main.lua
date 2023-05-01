@@ -217,7 +217,7 @@ xi.settings.main =
     ABSORB_SPELL_TICK               = 9,     -- duration of 1 absorb spell tick
     SNEAK_INVIS_DURATION_MULTIPLIER = 1,     -- multiplies duration of sneak, invis, deodorize to reduce player torture. 1 = retail behavior.
     USE_OLD_CURE_FORMULA            = true, -- true/false. if true, uses older cure formula (3*MND + VIT + 3*(healing skill/5)) // cure 6 will use the newer formula
-    USE_OLD_MAGIC_DAMAGE            = false, -- true/false. if true, uses older magic damage formulas
+    USE_OLD_MAGIC_DAMAGE            = true, -- true/false. if true, uses older magic damage formulas
 
     -- CELEBRATIONS
     EXPLORER_MOOGLE_LV              = 0, -- Enables Explorer Moogle teleports and sets required level. Zero to disable.
