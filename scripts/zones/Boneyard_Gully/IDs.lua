@@ -28,23 +28,18 @@ zones[xi.zone.BONEYARD_GULLY] =
         SINS_JUDGED                   = 7720, -- Your sins will be judged!
         I_LOST                        = 7727, -- I...I can't have lost...
         READY_TO_REAP                 = 7728, -- Ready to rrrreap!
-        MASSACRE_BEGIN                = 7729, -- Let the massacrrrre begin!
         SUGARPLUM                     = 7730, -- Just for you, sugarplum!
         HONEYCAKES                    = 7731, -- In your eye, honeycakes!
         READY_TO_RUMBLE               = 7739, -- Ready to rrrumble!
         MITHRAN_TRACKERS              = 7740, -- Mithran Trackers! Time to hunt!
-        MY_TURN                       = 7741, -- My turn! My Turn!
         YOURE_MINE                    = 7742, -- You're mine!
         TUCHULCHA_SANDPIT             = 7751, -- Tuchulcha retreats beneath the soil!
         GIANT_ANTLION                 = 7752, -- A giant antlion appears! This one may be carrying an armoury crate!
         ANTLION_ESCAPED               = 7753, -- It's the antlion that escaped earlier!
         SMALL_ANTLION                 = 7754, -- A small antlion appears! It doesn't seem large enough to carry an armoury crate.
-        TUCHCULA_CRATE                = 7755, -- Tuchulcha drops an armoury crate!
         BLOOD_RACING                  = 7806, -- I'll get your blood rrracing!
-        SCENT_OF_BLOOD                = 7808, -- Ah, the scent of frrrresh blood!
         AT_MY_BEST                    = 7810, -- Even at my best...
         END_THE_HUNT                  = 7811, -- Time to end the hunt! Go for the jugular!
-        ADVENTURER_STEAK              = 7812, -- Dinner time! Tonight we're having "Adventurer Steak"!
     },
     mob =
     {

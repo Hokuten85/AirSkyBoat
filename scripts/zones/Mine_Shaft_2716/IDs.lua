@@ -16,15 +16,12 @@ zones[xi.zone.MINE_SHAFT_2716] =
         KEYITEM_OBTAINED              = 6393, -- Obtained key item: <keyitem>.
         CARRIED_OVER_POINTS           = 7001, -- You have carried over <number> login point[/s].
         LOGIN_CAMPAIGN_UNDERWAY       = 7002, -- The [/January/February/March/April/May/June/July/August/September/October/November/December] <number> Login Campaign is currently underway!
-        LOGIN_NUMBER                  = 7003, -- In celebration of your most recent login (login no. <number>), we have provIDed you with <number> points! You currently have a total of <number> points.
         MEMBERS_LEVELS_ARE_RESTRICTED = 7023, -- Your party is unable to participate because certain members' levels are restricted.
         PARTY_MEMBERS_HAVE_FALLEN     = 7410, -- All party members have fallen in battle. Now leaving the battlefield.
         THE_PARTY_WILL_BE_REMOVED     = 7417, -- If all party members' HP are still zero after # minute[/s], the party will be removed from the battlefield.
         CONQUEST_BASE                 = 7432, -- Tallying conquest results...
-        -- Moblin Fantocciniman Combat Dialogue
         TIME_FOR_GOODEBYONGO          = 7855, -- Ho-ho, ho-ho! Time for goodebyongo!
         HERE_TO_STAY                  = 7856, -- Hey-hey, hey-hey! Are you here to stay?
-        ROLY_POLY                     = 7857, -- Roly-poly, roly-poly♪
         DICE_LIKE_YOU                 = 7858, -- Hoo-hoo, hoo-hoo. Maybe dice like you!
         DICE_LIKE_ME                  = 7859, -- Hee-hee, hee-hee! Today, dice like me!
         GO_GO                         = 7860, -- Go-go, go-go!

@@ -21,7 +21,6 @@ zones[xi.zone.SPIRE_OF_VAHZL] =
         FAINT_SCRAPING                = 7092, -- You can hear a faint scraping sound from within, but the way is barred by some strange membrane...
         PARTY_MEMBERS_HAVE_FALLEN     = 7410, -- All party members have fallen in battle. Now leaving the battlefield.
         THE_PARTY_WILL_BE_REMOVED     = 7417, -- If all party members' HP are still zero after # minute[/s], the party will be removed from the battlefield.
-        CENSER_FADES                  = 7425, -- The <keyItem> fades into nothingness...
     },
     mob =
     {

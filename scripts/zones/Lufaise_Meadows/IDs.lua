@@ -10,6 +10,7 @@ zones[xi.zone.LUFAISE_MEADOWS] =
 {
     text =
     {
+        AMALTHEIA_WRONG_TRADE         = 119,  -- Nothing happens...
         ITEM_CANNOT_BE_OBTAINED       = 6384, -- You cannot obtain the <item>. Come back after sorting your inventory.
         ITEM_OBTAINED                 = 6390, -- Obtained: <item>.
         GIL_OBTAINED                  = 6391, -- Obtained <number> gil.
@@ -31,12 +32,9 @@ zones[xi.zone.LUFAISE_MEADOWS] =
         MURDEROUS_PRESENCE            = 7747, -- Wait, you sense a murderous presence...!
         YOU_CAN_SEE_FOR_MALMS         = 7748, -- You can see for malms in every direction.
         SPINE_CHILLING_PRESENCE       = 7750, -- You sense a spine-chilling presence!
-        AMALTHEIA_TRIGGER             = 7789, -- A message has been engraved into the rock: “Offer up the ancient shield, and the pact shall be honored.”
         AMALTHEIA_SPAWN1              = 7790, -- Very well, I shall test thy mettle...
         AMALTHEIA_SPAWN2              = 7791, -- I am Amaltheia the Omnipotent. My almighty horns shall seal thy fate this day!
-        AMALTHEIA_WRONG_TRADE         = 7792, -- Nothing happens...
         KURREA_TRIGGER                = 7793, -- The stench of rotten flesh fills the air around you. Some scavenger must have made this place its territory.
-        KURREA_SPAWN                  = 7794, -- You set <number> <items> on the ground. The smell becomes almost unbearable. Suddenly, a huge creature approaches and starts sniffing around!
         KURREA_WRONG_TRADE            = 7795, -- Nothing happens.
         KURREA_SLURPS                 = 7796, -- Kurrea slurps down the adamantoise soup!
         KURREA_MUSCLES                = 7797, -- Kurrea's muscles bulge crazily!

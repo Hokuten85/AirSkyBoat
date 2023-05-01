@@ -23,7 +23,6 @@ zones[xi.zone.CASTLE_ZVAHL_BAILEYS] =
         LOGIN_NUMBER                  = 7162, -- In celebration of your most recent login (login no. <number>), we have provided you with <number> points! You currently have a total of <number> points.
         MEMBERS_LEVELS_ARE_RESTRICTED = 7182, -- Your party is unable to participate because certain members' levels are restricted.
         CHEST_UNLOCKED                = 7234, -- You unlock the chest!
-        MOBLIN_EARPLUG                = 7560, -- You see a moblin earplug on the ground. Could Zeelok have met his end here?
         MINIONS_ATTACK                = 7561, -- Marquis Andrealphus and his minions attack!
         BEGONE                        = 7563, -- Insolent adventurer! Begone from these halls!
         COMMON_SENSE_SURVIVAL         = 7609, -- It appears that you have arrived at a new survival guide provided by the Adventurers' Mutual Aid Network. Common sense dictates that you should now be able to teleport here from similar tomes throughout the world.
