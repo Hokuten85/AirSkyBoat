@@ -1,5 +1,5 @@
 select * from (
-SELECT p.itemid, ib.name, sell01, 0 as buy01, p.price, 10 as stock01, sell12, 0 as buy12, p.price12, 10 as stock12
+SELECT p.itemid, ib.name, sell01, 0 as buy01, p.price, 20 as stock01, sell12, 0 as buy12, p.price12, 20 as stock12
 FROM pydarkstar_items p
 INNER JOIN item_basic ib
 	ON p.itemid = ib.itemid
@@ -23,7 +23,7 @@ AND NOT ib.flags & (0x4000 | 0x8000)
 AND ib.aH NOT IN (15, 35, 36, 49)
 AND NOT ib.flags & 0x80
 UNION -- Ranged
-SELECT pi2.itemid, ib.name, pi2.sell01, 0 as buy01, 1000 div ib.stackSize as price, 10 as stock01, sell12, 0 as buy12, 1000 as price12, 10 as stock12
+SELECT pi2.itemid, ib.name, pi2.sell01, 0 as buy01, 1000 div ib.stackSize as price, 20 as stock01, sell12, 0 as buy12, 1000 as price12, 20 as stock12
 FROM item_basic ib
 inner join pydarkstar_items pi2 
 	on ib.itemid = pi2.itemid 
@@ -31,7 +31,7 @@ WHERE aH IN (15, 35, 36, 49)
 AND NoSale = 0
 AND NOT flags & (0x4000 | 0x8000)
 UNION -- fish
-SELECT pi2.itemid, ib.name, pi2.sell01, 0 as buy01, price, 10 as stock01, sell12, 0 as buy12, price12, 10 as stock12
+SELECT pi2.itemid, ib.name, pi2.sell01, 0 as buy01, price, 20 as stock01, sell12, 0 as buy12, price12, 20 as stock12
 FROM item_basic ib
 inner join pydarkstar_items pi2 
 	on ib.itemid = pi2.itemid 
