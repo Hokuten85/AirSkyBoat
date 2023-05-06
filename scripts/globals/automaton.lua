@@ -339,7 +339,7 @@ xi.automaton.onUseManeuver = function(player, target, ability, action)
         end
 
         local duration = player:getPet():getLocalVar("MANEUVER_DURATION")
-        target:addStatusEffect(maneuverInfo[1], bonus, 0, utils.clamp(duration, 60, 300))
+        target:addStatusEffect(maneuverInfo[1], bonus, 0, utils.clamp(duration, 120, 300))
     end
 
     return target:getOverloadChance(maneuverInfo[2] - 1)

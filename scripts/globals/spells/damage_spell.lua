@@ -213,10 +213,14 @@ xi.spells.damage.calculateBaseDamage = function(caster, target, spell, spellId, 
     -----------------------------------
     -- STEP 1: baseSpellDamage (V)
     -----------------------------------
-    if caster:isPC() and not xi.settings.main.USE_OLD_MAGIC_DAMAGE then
-        baseSpellDamage = calculateElementalNukeV(caster, spellId) or pTable[spellId][vPC]
+    if caster:isPC() then
+        if xi.settings.main.USE_OLD_MAGIC_DAMAGE then
+            baseSpellDamage = calculateElementalNukeV(caster, spellId) or pTable[spellId][vNPC] -- vNPC
+        else
+            baseSpellDamage = calculateElementalNukeV(caster, spellId) or pTable[spellId][vPC]
+        end
     else
-        baseSpellDamage = calculateElementalNukeV(caster, spellId) or pTable[spellId][vNPC] -- vNPC
+        baseSpellDamage = pTable[spellId][vNPC]
     end
 
     -----------------------------------
@@ -633,7 +637,7 @@ xi.spells.damage.calculateIfMagicBurst = function(caster, target, spell, spellEl
     local _, skillchainCount = xi.magic.FormMagicBurst(spellElement, target) -- External function. Not present in magic.lua.
 
     if skillchainCount > 0 and target:hasStatusEffect(xi.effect.SKILLCHAIN) then
-        magicBurst = 1.75 + (0.1 * skillchainCount) -- Here we add SDT DAMAGE bonus for magic bursts aswell, once SDT is implemented. https://www.bg-wiki.com/ffxi/Resist#SDT_and_Magic_Bursting
+        magicBurst = 1.5 + (0.1 * skillchainCount) -- Here we add SDT DAMAGE bonus for magic bursts aswell, once SDT is implemented. https://www.bg-wiki.com/ffxi/Resist#SDT_and_Magic_Bursting
     end
 
     return magicBurst

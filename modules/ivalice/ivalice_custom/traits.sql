@@ -1,6 +1,14 @@
 -- MOD_CRIT_DMG_INCREASE
-INSERT INTO traits VALUES ('150','crit dmg bonus','6','1','1','421','10',null,0); -- THF
-INSERT INTO traits VALUES ('150','crit dmg bonus','13','1','1','421','10',null,0); -- NIN
+INSERT INTO traits VALUES ('150','critrate bonus','6','10','1','165','2',null,0); -- THF
+INSERT INTO traits VALUES ('150','critrate bonus','6','30','2','165','4',null,0); -- THF
+INSERT INTO traits VALUES ('150','critrate bonus','6','50','3','165','6',null,0); -- THF
+INSERT INTO traits VALUES ('150','critrate bonus','6','70','4','165','8',null,0); -- THF
+INSERT INTO traits VALUES ('150','critrate bonus','6','75','5','165','10',null,0); -- THF
+INSERT INTO traits VALUES ('150','crit dmg bonus','13','10','1','421','2',null,0); -- NIN
+INSERT INTO traits VALUES ('150','crit dmg bonus','13','30','2','421','4',null,0); -- NIN
+INSERT INTO traits VALUES ('150','crit dmg bonus','13','50','3','421','6',null,0); -- NIN
+INSERT INTO traits VALUES ('150','crit dmg bonus','13','70','4','421','8',null,0); -- NIN
+INSERT INTO traits VALUES ('150','crit dmg bonus','13','75','5','421','10',null,0); -- NIN
 
 -- Adjust th enmit cap
 INSERT INTO traits VALUES ('151','enmity cap','7','25','1','2000','1000',null,0); -- PLD

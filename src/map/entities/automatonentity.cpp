@@ -166,7 +166,7 @@ uint8 CAutomatonEntity::addBurden(uint8 element, int8 burden)
     if (burden > 0)
     {
         // check for overload
-        int16 thresh = 30 + PMaster->getMod(Mod::OVERLOAD_THRESH);
+        int16 thresh = 60 + PMaster->getMod(Mod::OVERLOAD_THRESH);
         if (m_Burden[element] > thresh)
         {
             if (xirand::GetRandomNumber(100) < (m_Burden[element] - thresh + 5))

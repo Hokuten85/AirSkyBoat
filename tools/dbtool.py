@@ -132,6 +132,7 @@ player_data = [
     "server_variables.sql",
     "unity_system.sql",
     'zone_settings.sql',
+    'char_mods.sql'
 ]
 
 import_files = []

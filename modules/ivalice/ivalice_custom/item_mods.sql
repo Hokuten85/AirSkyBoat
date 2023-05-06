@@ -1,0 +1,1 @@
+update item_mods set value = 30 where modid = 501 and value < 30;
