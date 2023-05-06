@@ -37,3 +37,5 @@ UPDATE item_equipment SET jobs = jobs | 64 WHERE name IN ('nemesis_earring','eri
 UPDATE item_equipment SET MId = 16 WHERE MId IN (14,15) AND name like '%subligar%'; -- CHANGE SUBLIGARS TO PANTS
 
 UPDATE item_equipment SET jobs = jobs | 16 where name like 'seer%';
+
+update item_equipment set jobs = jobs | 2 where name = 'leaping_boots'; -- ADD MNK
