@@ -122,7 +122,7 @@ xi.job_utils.monk.useFootwork = function(player, target, ability)
     local kickDmg = 20 + player:getWeaponDmg()
     local kickAttPercent = 25 + player:getMod(xi.mod.FOOTWORK_ATT_BONUS)
 
-    player:addStatusEffect(xi.effect.FOOTWORK, kickDmg, 0, 60, 0, kickAttPercent)
+    player:addStatusEffect(xi.effect.FOOTWORK, kickDmg, 0, 120, 0, kickAttPercent)
 end
 
 xi.job_utils.monk.useFormlessStrikes = function(player, target, ability)

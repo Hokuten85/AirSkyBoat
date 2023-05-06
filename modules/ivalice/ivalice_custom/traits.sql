@@ -1,3 +1,6 @@
+-- Remove all content_tags
+UPDATE traits SET content_tag = null;
+
 -- MOD_CRIT_DMG_INCREASE
 INSERT INTO traits VALUES ('150','critrate bonus','6','10','1','165','2',null,0); -- THF
 INSERT INTO traits VALUES ('150','critrate bonus','6','30','2','165','4',null,0); -- THF
@@ -53,6 +56,8 @@ UPDATE traits SET level = 50 WHERE traitid = 108 and job = 11 and rank = 1;
 -- GIVE MONK COUNTER TIER 2
 UPDATE traits SET level = 75 WHERE traitid = 17 and job = 2 and rank = 2;
 UPDATE traits SET level = 75 WHERE traitid = 66 and job = 2 and rank = 3;
+UPDATE traits SET level = 75 WHERE traitid = 101 and job = 2 and rank = 1;
+UPDATE traits SET level = 75 WHERE traitid = 127 and job = 2 and rank = 2;
 
 -- GIVE WHM CONSERVE MP TIER 2
 UPDATE traits SET level = 75 WHERE traitid = 13 and job = 4 and rank = 2;
