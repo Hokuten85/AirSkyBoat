@@ -1130,82 +1130,7 @@ xi.conquest.overseerOnTrade = function(player, npc, trade, guardNation, guardTyp
         end
     end
 	
-	if player:getNation() ~= guardNation and guardNation ~= xi.nation.OTHER then
-		local npcName = npc:getName():gsub("_"," ")
-		local itemId
-		local conquestItemId = 0
-		local conquestRank = 0
-		for i = 0, trade:getSlotCount()-1 do
-			itemId = trade:getItemId(i)
-			if itemId ~= 65536 then -- only care if it's not gil
-				for nation, nationItems in pairs(overseerInvNation) do
-					if nation ~= guardNation then -- don't exchange current nation stuff
-						for _, npcOption in pairs(nationItems) do
-							if npcOption.item == itemId then
-								conquestItemId = itemId
-								conquestRank = npcOption.rank
-								break
-							end
-						end
-						if conquestItemId > 0 then break end
-					end
-				end
-			end
-			if conquestItemId > 0 then break end
-		end
-		
-		local pNation  = player:getNation()
-		local pRank    = player:getRank(pNation)
-
-		if pRank < conquestRank then
-			player:PrintToPlayer("Your Conquest rank is too low to exchange that item.", 0, npcName)
-			return
-		end
-	
-		local gil = trade:getGil()
-		if conquestItemId > 0 and conquestRank > 0 then
-			local nationItems = overseerInvNation[guardNation]
-			local items = {}
-			for _, npcOption in pairs(nationItems) do
-				if npcOption.rank == conquestRank then
-					table.insert(items, npcOption.item)
-				end
-			end
-			
-			if gil > 0 then
-				if gil > #items then
-					player:PrintToPlayer("Valid conquest item, but invalid gil amount", 0, npcName)
-					for i=1,#items do
-					local itemName = GetReadOnlyItem(items[i]):getName():gsub("_"," ")
-					
-					local function tchelper(first, rest)
-					   return first:upper()..rest:lower()
-					end
-					itemName = itemName:gsub("(%a)([%w_']*)", tchelper)
-					
-					player:PrintToPlayer(string.format("     %s gil for %s", i, itemName), 0, npcName)
-				end
-				else
-					npcUtil.giveItem(player, items[gil])
-					trade:confirmItem(itemId, 1)
-					trade:confirmSlot(0, 1)
-					player:confirmTrade()
-				end
-			else
-				player:PrintToPlayer("Valid conquest item traded, but also need to trade gil to choose item swap.", 0, npcName)
-				for i=1,#items do
-					local itemName = GetReadOnlyItem(items[i]):getName():gsub("_"," ")
-					
-					local function tchelper(first, rest)
-					   return first:upper()..rest:lower()
-					end
-					itemName = itemName:gsub("(%a)([%w_']*)", tchelper)
-					
-					player:PrintToPlayer(string.format("     %s gil for %s", i, itemName), 0, npcName)
-				end
-			end
-		end
-	end
+	handleConquestItemSwap(player, npc, trade, guardNation)
 end
 
 xi.conquest.overseerOnTrigger = function(player, npc, guardNation, guardType, guardEvent, guardRegion)
@@ -1668,3 +1593,82 @@ xi.conquest.onConquestUpdate = function(zone, updatetype)
 end
 
 xi.conq = xi.conquest
+
+local handleConquestItemSwap = function(player, npc, trade, guardNation)
+	if player:getNation() ~= guardNation and guardNation ~= xi.nation.OTHER then
+		local npcName = npc:getName():gsub("_"," ")
+		local itemId
+		local conquestItemId = 0
+		local conquestRank = 0
+		for i = 0, trade:getSlotCount()-1 do
+			itemId = trade:getItemId(i)
+			if itemId ~= 65536 then -- only care if it's not gil
+				for nation, nationItems in pairs(overseerInvNation) do
+					if nation ~= guardNation then -- don't exchange current nation stuff
+						for _, npcOption in pairs(nationItems) do
+							if npcOption.item == itemId then
+								conquestItemId = itemId
+								conquestRank = npcOption.rank
+								break
+							end
+						end
+						if conquestItemId > 0 then break end
+					end
+				end
+			end
+			if conquestItemId > 0 then break end
+		end
+		
+		local pNation  = player:getNation()
+		local pRank    = player:getRank(pNation)
+
+		if pRank < conquestRank then
+			player:PrintToPlayer("Your Conquest rank is too low to exchange that item.", 0, npcName)
+			return
+		end
+	
+		local gil = trade:getGil()
+		if conquestItemId > 0 and conquestRank > 0 then
+			local nationItems = overseerInvNation[guardNation]
+			local items = {}
+			for _, npcOption in pairs(nationItems) do
+				if npcOption.rank == conquestRank then
+					table.insert(items, npcOption.item)
+				end
+			end
+			
+			if gil > 0 then
+				if gil > #items then
+					player:PrintToPlayer("Valid conquest item, but invalid gil amount", 0, npcName)
+					for i=1,#items do
+					local itemName = GetReadOnlyItem(items[i]):getName():gsub("_"," ")
+					
+					local function tchelper(first, rest)
+					   return first:upper()..rest:lower()
+					end
+					itemName = itemName:gsub("(%a)([%w_']*)", tchelper)
+					
+					player:PrintToPlayer(string.format("     %s gil for %s", i, itemName), 0, npcName)
+				end
+				else
+					npcUtil.giveItem(player, items[gil])
+					trade:confirmItem(itemId, 1)
+					trade:confirmSlot(0, 1)
+					player:confirmTrade()
+				end
+			else
+				player:PrintToPlayer("Valid conquest item traded, but also need to trade gil to choose item swap.", 0, npcName)
+				for i=1,#items do
+					local itemName = GetReadOnlyItem(items[i]):getName():gsub("_"," ")
+					
+					local function tchelper(first, rest)
+					   return first:upper()..rest:lower()
+					end
+					itemName = itemName:gsub("(%a)([%w_']*)", tchelper)
+					
+					player:PrintToPlayer(string.format("     %s gil for %s", i, itemName), 0, npcName)
+				end
+			end
+		end
+	end
+end

@@ -82,7 +82,11 @@ UPDATE traits SET level = 75 WHERE traitid = 103 and job = 9 and rank = 2;
 UPDATE traits SET level = 25 WHERE traitid = 100 and job = 13 and rank = 1;
 
 -- GIVE DRG ACC BONUS
-UPDATE traits SET level = 75 WHERE traitid = 1 and job = 14 and rank = 3;
+UPDATE traits SET level = 10 WHERE traitid = 1 and job = 14 and rank = 1;
+UPDATE traits SET level = 30 WHERE traitid = 1 and job = 14 and rank = 2;
+UPDATE traits SET level = 50 WHERE traitid = 1 and job = 14 and rank = 3;
+insert INTO traits VALUES (1, 'accuracy bonus', 14, 75, 4, 25, 40, null, 0);
+insert INTO traits VALUES (1, 'accuracy bonus', 14, 75, 4, 26, 40, null, 0);
 -- GIVE DRG ATT BONUS
 UPDATE traits SET level = 75 WHERE traitid = 3 and job = 14 and rank = 2;
 
