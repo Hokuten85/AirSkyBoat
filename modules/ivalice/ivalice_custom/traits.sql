@@ -3,32 +3,32 @@ UPDATE traits SET content_tag = null;
 
 -- MOD_CRIT_DMG_INCREASE
 INSERT INTO traits VALUES ('150','critrate bonus','6','10','1','165','2',null,0); -- THF
-INSERT INTO traits VALUES ('150','critrate bonus','6','30','2','165','4',null,0); -- THF
-INSERT INTO traits VALUES ('150','critrate bonus','6','50','3','165','6',null,0); -- THF
-INSERT INTO traits VALUES ('150','critrate bonus','6','70','4','165','8',null,0); -- THF
+INSERT INTO traits VALUES ('150','critrate bonus','6','25','2','165','4',null,0); -- THF
+INSERT INTO traits VALUES ('150','critrate bonus','6','40','3','165','6',null,0); -- THF
+INSERT INTO traits VALUES ('150','critrate bonus','6','60','4','165','8',null,0); -- THF
 INSERT INTO traits VALUES ('150','critrate bonus','6','75','5','165','10',null,0); -- THF
 INSERT INTO traits VALUES ('150','crit dmg bonus','13','10','1','421','2',null,0); -- NIN
-INSERT INTO traits VALUES ('150','crit dmg bonus','13','30','2','421','4',null,0); -- NIN
-INSERT INTO traits VALUES ('150','crit dmg bonus','13','50','3','421','6',null,0); -- NIN
-INSERT INTO traits VALUES ('150','crit dmg bonus','13','70','4','421','8',null,0); -- NIN
+INSERT INTO traits VALUES ('150','crit dmg bonus','13','25','2','421','4',null,0); -- NIN
+INSERT INTO traits VALUES ('150','crit dmg bonus','13','40','3','421','6',null,0); -- NIN
+INSERT INTO traits VALUES ('150','crit dmg bonus','13','60','4','421','8',null,0); -- NIN
 INSERT INTO traits VALUES ('150','crit dmg bonus','13','75','5','421','10',null,0); -- NIN
 
 -- Adjust th enmit cap
 INSERT INTO traits VALUES ('151','enmity cap','7','25','1','2000','1000',null,0); -- PLD
-INSERT INTO traits VALUES ('151','enmity cap','7','50','2','2000','3000',null,0);
-INSERT INTO traits VALUES ('151','enmity cap','7','75','3','2000','6000',null,0);
-INSERT INTO traits VALUES ('151','enmity cap','7','99','4','2000','9000',null,0);
+INSERT INTO traits VALUES ('151','enmity cap','7','50','2','2000','2000',null,0);
+INSERT INTO traits VALUES ('151','enmity cap','7','75','3','2000','3000',null,0);
+INSERT INTO traits VALUES ('151','enmity cap','7','99','4','2000','4000',null,0);
 
-INSERT INTO traits VALUES ('151','enmity cap','13','25','1','2000','1000',null,0); -- NIN
-INSERT INTO traits VALUES ('151','enmity cap','13','50','2','2000','2000',null,0);
-INSERT INTO traits VALUES ('151','enmity cap','13','75','3','2000','3000',null,0);
-INSERT INTO traits VALUES ('151','enmity cap','13','99','4','2000','4000',null,0);
+INSERT INTO traits VALUES ('151','enmity cap','13','25','1','2000','500',null,0); -- NIN
+INSERT INTO traits VALUES ('151','enmity cap','13','50','2','2000','1000',null,0);
+INSERT INTO traits VALUES ('151','enmity cap','13','75','3','2000','1500',null,0);
+INSERT INTO traits VALUES ('151','enmity cap','13','99','4','2000','2000',null,0);
 
 -- -DT% II
 INSERT INTO traits VALUES ('153','damage taken II','7','10','1','2001','2',null,0);
 INSERT INTO traits VALUES ('153','damage taken II','7','25','2','2001','4',null,0);
 INSERT INTO traits VALUES ('153','damage taken II','7','40','3','2001','6',null,0);
-INSERT INTO traits VALUES ('153','damage taken II','7','55','4','2001','8',null,0);
+INSERT INTO traits VALUES ('153','damage taken II','7','60','4','2001','8',null,0);
 INSERT INTO traits VALUES ('153','damage taken II','7','75','5','2001','10',null,0);
 -- GIVE PLD CRIT ATT DEF
 UPDATE traits SET level = 50 WHERE traitid = 99 and job = 7 and rank = 1;
