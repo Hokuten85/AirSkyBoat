@@ -6,6 +6,7 @@
 -- !pos 25 -6 6 248
 -----------------------------------
 local ID = require("scripts/zones/Selbina/IDs")
+require("scripts/globals/settings")
 require("scripts/globals/keyitems")
 require("scripts/globals/npc_util")
 require("scripts/globals/quests")
@@ -39,7 +40,7 @@ entity.onEventFinish = function(player, csid, option)
     if csid == 60 and option == 10 then
         player:addQuest(xi.quest.log_id.OTHER_AREAS, xi.quest.id.otherAreas.ONLY_THE_BEST)
     elseif csid == 62 and option == 11 then
-        player:addGil(100)
+        player:addGil(xi.settings.main.GIL_RATE * 100)
         player:messageSpecial(ID.text.GIL_OBTAINED, 100)
         player:addFame(xi.quest.fame_area.BASTOK, 10)
         player:addFame(xi.quest.fame_area.SANDORIA, 10)
@@ -47,7 +48,7 @@ entity.onEventFinish = function(player, csid, option)
         player:completeQuest(xi.quest.log_id.OTHER_AREAS, xi.quest.id.otherAreas.ONLY_THE_BEST)
         player:confirmTrade()
     elseif csid == 63 and option == 12 then
-        player:addGil(120)
+        player:addGil(xi.settings.main.GIL_RATE * 120)
         player:messageSpecial(ID.text.GIL_OBTAINED, 120)
         player:addFame(xi.quest.fame_area.BASTOK, 20)
         player:addFame(xi.quest.fame_area.SANDORIA, 20)
@@ -55,7 +56,7 @@ entity.onEventFinish = function(player, csid, option)
         player:completeQuest(xi.quest.log_id.OTHER_AREAS, xi.quest.id.otherAreas.ONLY_THE_BEST)
         player:confirmTrade()
     elseif csid == 64 and option == 13 then
-        player:addGil(600)
+        player:addGil( xi.settings.main.GIL_RATE * 600)
         player:messageSpecial(ID.text.GIL_OBTAINED, 600)
         player:addFame(xi.quest.fame_area.BASTOK, 30)
         player:addFame(xi.quest.fame_area.SANDORIA, 30)
