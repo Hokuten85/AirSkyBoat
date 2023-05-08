@@ -2631,15 +2631,8 @@ namespace battleutils
                 }
                 else
                 {
-                    if (PAttacker->objtype == TYPE_PC && PAttacker->GetMLevel() <= 30 && dLvl > 0)
-                    {
-                        hitrate -= static_cast<int16>(dLvl);
-                    }
-                    else
-                    {
-                        // Everything else has no known caps, though it's likely 38 like avatars
-                        hitrate -= static_cast<int16>(dLvl * 2);
-                    }
+                    // Everything else has no known caps, though it's likely 38 like avatars
+                    hitrate -= static_cast<int16>(dLvl * 2);
                 }
             }
 

@@ -1,1 +1,1 @@
-UPDATE mob_family_system set EVA = EVA + 3;
+UPDATE mob_family_system set EVA = EVA + 2;

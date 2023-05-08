@@ -265,7 +265,7 @@ xi.spells.damage.calculateBaseDamage = function(caster, target, spell, spellId, 
         (skillType == xi.skill.ELEMENTAL_MAGIC and not caster:isPC())
     then
         local spellMultiplier = pTable[spellId][mNPC] -- M
-        local inflexionPoint  =pTable[spellId][inflectionPoint] -- I
+        local inflexionPoint  = pTable[spellId][inflectionPoint] -- I
         if statDiff <= 0 then
             statDiffBonus = statDiff
         elseif statDiff > 0 and statDiff <= inflexionPoint then
@@ -637,7 +637,7 @@ xi.spells.damage.calculateIfMagicBurst = function(caster, target, spell, spellEl
     local _, skillchainCount = xi.magic.FormMagicBurst(spellElement, target) -- External function. Not present in magic.lua.
 
     if skillchainCount > 0 and target:hasStatusEffect(xi.effect.SKILLCHAIN) then
-        magicBurst = 1.5 + (0.1 * skillchainCount) -- Here we add SDT DAMAGE bonus for magic bursts aswell, once SDT is implemented. https://www.bg-wiki.com/ffxi/Resist#SDT_and_Magic_Bursting
+        magicBurst = 1.25 + (0.1 * skillchainCount) -- Here we add SDT DAMAGE bonus for magic bursts aswell, once SDT is implemented. https://www.bg-wiki.com/ffxi/Resist#SDT_and_Magic_Bursting
     end
 
     return magicBurst
@@ -1148,18 +1148,18 @@ local spellTier =
 }
 
 local spellTierToV_I = {
--- Structure: [tier] = { [aoe] = { V_M, V_B, V_Min, V_Max } },
-    [1] = { [0] = { 0.76,      10,  10,  60 },
-            [1] = { 1.84,  -32.38,  56, 172 },
-            [2] = { 0.24,      38,  56,  74 }, },
-    [2] = { [0] = { 1.67,     -52,  78, 178 },
-            [1] = { 2.39,  -92.66, 201, 392 },
-            [2] = { 1.03,   -53.2, 201, 232 }, },
-    [3] = { [0] = { 1.71,   -51.5, 210, 345 },
-            [1] = { 5.37, -703.88, 434, 697 }, },
-    [4] = { [0] = {    4,    -563, 381, 541 }, },
-    [5] = { [0] = { 0.54,  494.75, 577, 603 }, },
-}
+-- Structure: [tier] = { [aoe] = {  V_M,     V_B, V_Min, V_Max } },
+                 [1] = {   [0] = { 0.76,      10,    10,    60 },
+                           [1] = { 1.84,  -32.38,    56,   172 },
+                           [2] = { 1.61,  -69.67,    56,   172 } },
+                 [2] = {   [0] = { 1.75,  -64.11,    78,   178 },
+                           [1] = { 2.27,  -78.68,   201,   392 },
+                           [2] = { 7.64,-1716.64,   201,   392 } },
+                 [3] = {   [0] = { 1.96,  -99.13,   210,   345 },
+                           [1] = { 5.37, -703.71,   434,   697 } },
+                 [4] = {   [0] = {    4,    -563,   381,   541 } },
+                 [5] = {   [0] = {    0,     552,   522,   522 } },
+}                                                          
 
 function calculateElementalNukeV(caster, spell)
     if spellTier[spell] ~= nil then
@@ -1167,7 +1167,7 @@ function calculateElementalNukeV(caster, spell)
         local aoe = spellTier[spell][2]
 
         if spellTierToV_I[tier] and spellTierToV_I[tier][aoe] then
-            local skillLevel = caster:getSkillLevel(xi.skill.ELEMENTAL_MAGIC) + caster:getMod(79 + xi.skill.ELEMENTAL_MAGIC)
+            local skillLevel = caster:getSkillLevel(xi.skill.ELEMENTAL_MAGIC)
             local config = spellTierToV_I[tier][aoe]
 
             return math.min(math.max(config[1] * skillLevel + config[2], config[3]), config[4])

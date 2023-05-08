@@ -490,11 +490,11 @@ xi.weaponskills.calculateRawWSDmg = function(attacker, target, wsID, tp, action,
     if attacker:getMainJob() == xi.job.THF and not isRanged then
         -- Add DEX/AGI bonus to first hit if THF main and valid Sneak/Trick Attack
         if calcParams.sneakApplicable then
-            dmg = dmg + attacker:getStat(xi.mod.DEX) * 1.25
+            dmg = dmg + attacker:getStat(xi.mod.DEX) * 1.1
         end
 
         if calcParams.trickApplicable then
-            dmg = dmg + attacker:getStat(xi.mod.AGI) * 1.25
+            dmg = dmg + attacker:getStat(xi.mod.AGI) * 1.1
         end
     end
 
