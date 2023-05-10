@@ -18,7 +18,7 @@ mission.reward =
 {
     title       = xi.title.GESSHOS_MERCY,
     nextMission = { xi.mission.log_id.TOAU, xi.mission.id.toau.GAZE_OF_THE_SABOTEUR },
-    item = xi.items.RED_DROP+math.random(0,7),
+    item = randomColoredDrop,
 }
 
 mission.sections =

@@ -22,7 +22,7 @@ local mission = Mission:new(xi.mission.log_id.WOTG, xi.mission.id.wotg.PURPLE_TH
 mission.reward =
 {
     nextMission = { xi.mission.log_id.WOTG, xi.mission.id.wotg.IN_THE_NAME_OF_THE_FATHER },
-    item = xi.items.RED_DROP+math.random(0,7),
+    item = randomColoredDrop,
 }
 
 mission.sections =

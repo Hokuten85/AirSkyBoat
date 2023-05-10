@@ -23,7 +23,7 @@ mission.reward =
 {
     title       = xi.title.NAJAS_COMRADE_IN_ARMS,
     nextMission = { xi.mission.log_id.TOAU, xi.mission.id.toau.FANGS_OF_THE_LION },
-    item = xi.items.RED_DROP+math.random(0,7),
+    item = randomColoredDrop,
 }
 
 mission.sections =

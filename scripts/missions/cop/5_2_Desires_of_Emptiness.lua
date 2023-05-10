@@ -23,7 +23,7 @@ local mission = Mission:new(xi.mission.log_id.COP, xi.mission.id.cop.DESIRES_OF_
 mission.reward =
 {
     nextMission = { xi.mission.log_id.COP, xi.mission.id.cop.THREE_PATHS },
-    item = xi.items.RED_DROP+math.random(0,7),
+    item = randomColoredDrop,
 }
 
 local vahzlPositions =

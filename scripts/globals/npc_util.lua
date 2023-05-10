@@ -251,12 +251,20 @@ function npcUtil.giveItem(player, items, params)
     params = params or {}
     local ID = zones[player:getZoneID()]
 
+	if type(items) == "function" then
+		items = items()
+	end
+
     -- create table of items, with key/val of itemId/itemQty
     local givenItems = {}
     if type(items) == "number" then
         table.insert(givenItems, { items, 1 })
     elseif type(items) == "table" then
         for _, v in pairs(items) do
+			if type(v) == "function" then
+				v = v()
+			end
+		
             if type(v) == "number" then
                 table.insert(givenItems, { v, 1 })
             elseif
@@ -334,7 +342,7 @@ function npcUtil.giveTempItem(player, items, params)
     local ID = zones[player:getZoneID()]
 
     -- create table of items, with key/val of itemId/itemQty
-    local givenItems = {}
+    local givenItems = {}	
     if type(items) == "number" then
         table.insert(givenItems, { items, 1 })
     elseif type(items) == "table" then

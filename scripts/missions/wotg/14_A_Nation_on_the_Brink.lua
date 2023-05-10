@@ -21,7 +21,7 @@ mission.reward =
 {
     title       = xi.ki.BATTLE_OF_JEUNO_VETERAN,
     nextMission = { xi.mission.log_id.WOTG, xi.mission.id.wotg.CROSSROADS_OF_TIME },
-    item = xi.items.RED_DROP+math.random(0,7),
+    item = randomColoredDrop,
 }
 
 mission.sections =

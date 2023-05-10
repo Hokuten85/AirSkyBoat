@@ -19,7 +19,7 @@ mission.reward =
 {
     nextMission = { xi.mission.log_id.ZILART, xi.mission.id.zilart.AWAKENING },
     title = xi.title.BURIER_OF_THE_ILLUSION,
-    item = xi.items.RED_DROP+math.random(0,7),
+    item = randomColoredDrop,
 }
 
 mission.sections =

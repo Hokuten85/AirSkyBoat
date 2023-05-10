@@ -29,9 +29,9 @@ local mission = Mission:new(xi.mission.log_id.BASTOK, xi.mission.id.bastok.THE_P
 
 mission.reward =
 {
-    gil = 40000,
+    gil  = 40000,
     rank = 7,
-    item = xi.items.RED_DROP+math.random(0,7),
+    item = randomColoredDrop,
 }
 
 local handleAcceptMission = function(player, csid, option, npc)

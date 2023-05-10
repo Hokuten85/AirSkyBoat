@@ -18,7 +18,7 @@ local mission = Mission:new(xi.mission.log_id.TOAU, xi.mission.id.toau.PUPPET_IN
 mission.reward =
 {
     nextMission = { xi.mission.log_id.TOAU, xi.mission.id.toau.PREVALENCE_OF_PIRATES },
-    item = xi.items.RED_DROP+math.random(0,7),
+    item = randomColoredDrop,
 }
 
 mission.sections =

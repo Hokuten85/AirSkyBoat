@@ -17,7 +17,7 @@ local mission = Mission:new(xi.mission.log_id.WOTG, xi.mission.id.wotg.STORMS_CR
 mission.reward =
 {
     nextMission = { xi.mission.log_id.WOTG, xi.mission.id.wotg.INTO_THE_BEASTS_MAW },
-    item = xi.items.RED_DROP+math.random(0,7),
+    item = randomColoredDrop,
 }
 
 -- NOTE: Instance entry at Excavated Snow is Event 28, Params 0, 31

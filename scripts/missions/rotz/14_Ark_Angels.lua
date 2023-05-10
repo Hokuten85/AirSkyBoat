@@ -35,7 +35,7 @@ local keyItemOffset =
 mission.reward =
 {
     nextMission = { xi.mission.log_id.ZILART, xi.mission.id.zilart.THE_SEALED_SHRINE },
-    item = xi.items.RED_DROP+math.random(0,7),
+    item = randomColoredDrop,
 }
 
 mission.sections =

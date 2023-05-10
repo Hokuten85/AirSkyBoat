@@ -23,7 +23,7 @@ mission.reward =
 {
     keyItem     = xi.ki.EPHRAMADIAN_GOLD_COIN,
     nextMission = { xi.mission.log_id.TOAU, xi.mission.id.toau.THE_DOLPHIN_CREST },
-    item = xi.items.RED_DROP+math.random(0,7),
+    item = randomColoredDrop,
 }
 
 mission.sections =

@@ -17,7 +17,7 @@ local mission = Mission:new(xi.mission.log_id.COP, xi.mission.id.cop.ANCIENT_VOW
 mission.reward =
 {
     nextMission = { xi.mission.log_id.COP, xi.mission.id.cop.THE_CALL_OF_THE_WYRMKING },
-    item = xi.items.RED_DROP+math.random(0,7),
+    item = randomColoredDrop,
 }
 
 mission.sections =
