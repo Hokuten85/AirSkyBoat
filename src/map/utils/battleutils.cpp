@@ -4838,6 +4838,11 @@ namespace battleutils
             shotCount += 8;
         }
 
+        if (xirand::GetRandomNumber(100) < PChar->GetMLevel()-30 / (PItem->getSkillType() == SKILLTYPE::SKILL_ARCHERY ? 0.5 : 1)) // For archery 90% chance of extra hit at 75. Marksmanship 45%
+        {
+            shotCount += 1;
+        }
+
         // make sure we have enough ammo for all these shots
         CItemWeapon* PAmmo = (CItemWeapon*)PChar->getEquip(SLOT_AMMO);
 

@@ -40,3 +40,5 @@ UPDATE abilities SET level = 75 WHERE name = 'palisade';
 UPDATE abilities SET level = 75 WHERE name = 'marcato';
 UPDATE abilities SET level = 75 WHERE name = 'decoy_shot';
 UPDATE abilities SET level = 75 WHERE name = 'crooked_cards';
+UPDATE abilities SET recastTime = 120 WHERE name = 'unlimited_shot';
+UPDATE abilities SET recastTime = 220 WHERE name = 'sharpshot';
