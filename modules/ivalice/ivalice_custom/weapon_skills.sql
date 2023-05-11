@@ -26,3 +26,14 @@ UPDATE weapon_skills SET skilllevel = 310 WHERE weaponskillid = 202; -- jishnus_
 UPDATE weapon_skills SET skilllevel = 300 WHERE weaponskillid = 203; -- apex_arrow
 UPDATE weapon_skills SET skilllevel = 310 WHERE weaponskillid = 220; -- wildfire
 UPDATE weapon_skills SET skilllevel = 300 WHERE weaponskillid = 221; -- last_stand
+
+UPDATE weapon_skills SET secondary_sc = 1 WHERE weaponskillid = 1; -- Combo
+UPDATE weapon_skills SET secondary_sc = 1 WHERE weaponskillid = 5; -- raging_fists
+UPDATE weapon_skills SET secondary_sc = 1 WHERE weaponskillid = 32; -- fast_blade
+UPDATE weapon_skills SET secondary_sc = 1 WHERE weaponskillid = 41; -- swift_blade
+UPDATE weapon_skills SET secondary_sc = 1 WHERE weaponskillid = 53; -- crescent_moon
+UPDATE weapon_skills SET secondary_sc = 1 WHERE weaponskillid = 69; -- rampage
+UPDATE weapon_skills SET tertiary_sc = 1 WHERE weaponskillid = 69; -- raging_rush
+UPDATE weapon_skills SET secondary_sc = 1 WHERE weaponskillid = 102; -- guillotine
+UPDATE weapon_skills SET secondary_sc = 1 WHERE weaponskillid = 116; -- penta_thrust
+UPDATE weapon_skills SET secondary_sc = 1 WHERE weaponskillid = 129; -- blade_retsu
