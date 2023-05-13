@@ -39,3 +39,23 @@ UPDATE item_equipment SET MId = 16 WHERE MId IN (14,15) AND name like '%subligar
 UPDATE item_equipment SET jobs = jobs | 16 where name like 'seer%';
 
 update item_equipment set jobs = jobs | 2 where name = 'leaping_boots'; -- ADD MNK
+
+-- Add BRD
+UPDATE item_equipment SET jobs = jobs | 512 WHERE name IN ('war_aketon_+1','war_gloves_+1','war_brais_+1','war_boots_+1','war_beret_+1');
+UPDATE item_equipment SET jobs = jobs | 512 WHERE name IN ('war_aketon','war_gloves','war_brais','war_boots','war_beret');
+UPDATE item_equipment SET jobs = jobs | 512 WHERE name IN ('enkidus_harness','enkidus_leggings','enkidus_mittens','enkidus_cap','enkidus_subligar');
+UPDATE item_equipment SET jobs = jobs | 512 WHERE name IN ('panther_mask','panther_mask_+1');
+UPDATE item_equipment SET jobs = jobs | 512 WHERE name IN ('anwig_salade', 'mirke_wardecors');
+UPDATE item_equipment SET jobs = jobs | 512 WHERE name IN ('denali_jacket','denali_wristbands','denali_kecks','denali_gamashes','denali_bonnet');
+UPDATE item_equipment SET jobs = jobs | 512 WHERE name IN ('morrigans_robe','morrigans_cuffs','morrigans_slops','morrigans_pgch.','morrigans_coron.');
+
+
+
+
+
+
+
+
+
+
+
