@@ -441,26 +441,27 @@ namespace itemutils
                         {
                             case SKILLTYPE::SKILL_CLUB:
                             case SKILLTYPE::SKILL_DAGGER:
-                                ((CItemEquipment*)PItem)->addModifier(CModifier(Mod::CRITHITRATE, 6));
+                                ((CItemEquipment*)PItem)->addModifier(CModifier(Mod::CRITHITRATE, 8));
                                 break;
                             case SKILLTYPE::SKILL_HAND_TO_HAND:
-                                ((CItemEquipment*)PItem)->addModifier(CModifier(Mod::CRITHITRATE, 4));
+                                ((CItemEquipment*)PItem)->addModifier(CModifier(Mod::CRITHITRATE, 6));
                                 break;
                             case SKILLTYPE::SKILL_SWORD:
-                                ((CItemEquipment*)PItem)->addModifier(CModifier(Mod::CRITHITRATE, 2));
+                            case SKILLTYPE::SKILL_KATANA:
+                                ((CItemEquipment*)PItem)->addModifier(CModifier(Mod::CRITHITRATE, 4));
                                 break;
                             case SKILLTYPE::SKILL_AXE: // THESE GUYS GET NOTHING FOR NOW
-                            case SKILLTYPE::SKILL_KATANA:
+                                ((CItemEquipment*)PItem)->addModifier(CModifier(Mod::CRITHITRATE, 2));
                                 break;
                             case SKILLTYPE::SKILL_SCYTHE:
                             case SKILLTYPE::SKILL_STAFF:
-                                ((CItemEquipment*)PItem)->addModifier(CModifier(Mod::CRIT_DMG_INCREASE, 6));
+                                ((CItemEquipment*)PItem)->addModifier(CModifier(Mod::CRIT_DMG_INCREASE, 8));
                                 break;
                             case SKILLTYPE::SKILL_POLEARM:
-                                ((CItemEquipment*)PItem)->addModifier(CModifier(Mod::CRIT_DMG_INCREASE, 5));
+                                ((CItemEquipment*)PItem)->addModifier(CModifier(Mod::CRIT_DMG_INCREASE, 6));
                                 break;
                             case SKILLTYPE::SKILL_GREAT_SWORD:
-                                ((CItemEquipment*)PItem)->addModifier(CModifier(Mod::CRIT_DMG_INCREASE, 4));
+                                ((CItemEquipment*)PItem)->addModifier(CModifier(Mod::CRIT_DMG_INCREASE, 5));
                                 break;
                             case SKILLTYPE::SKILL_GREAT_KATANA:
                                 ((CItemEquipment*)PItem)->addModifier(CModifier(Mod::CRIT_DMG_INCREASE, 3));

@@ -2277,7 +2277,7 @@ namespace battleutils
                 }
 
                 PAttacker->addTP(
-                    (int16)(tpMultiplier * ((isCritical ? 25 : 0) + baseTp * (1.0f + 0.01f * (float)((PAttacker->getMod(Mod::STORETP) + getStoreTPbonusFromMerit(PAttacker)))))));
+                    (int16)(tpMultiplier * ( ((isCritical ? 25 : 0) + baseTp) * (1.0f + 0.01f * (float)((PAttacker->getMod(Mod::STORETP) + getStoreTPbonusFromMerit(PAttacker)))))));
             }
 
             if (giveTPtoVictim)
