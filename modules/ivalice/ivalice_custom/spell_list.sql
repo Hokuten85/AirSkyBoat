@@ -24,6 +24,7 @@ UPDATE spell_list SET mpCost = 10, recastTime = 50000, VE = 320 WHERE spellid = 
 UPDATE spell_list SET mpCost = 10, recastTime = 50000, VE = 320 WHERE spellid = 272; -- absorb-chr
 
 UPDATE spell_list SET jobs = 0x0000000000004B000000000000000000000000000000 WHERE spellid = 310; -- enlight PLD 75
+UPDATE spell_list SET jobs = 0x000000000000004B0000000000000000000000000000 WHERE spellid = 311; -- endark DRK 75
 
 UPDATE spell_list SET validTargets = 3, spell_range = 204 WHERE name IN ('enfire_ii','enblizzard_ii','enaero_ii','enstone_ii','enthunder_ii','enwater_ii');
 
@@ -35,4 +36,8 @@ UPDATE spell_list SET jobs = 0x00003200000000000000000000000000000000000000, spe
 UPDATE spell_list SET jobs = 0x00003200000000000000000000000000000000000000, spell_range = 0 WHERE spellid = 484; -- boost-mnd
 UPDATE spell_list SET jobs = 0x00003200000000000000000000000000000000000000, spell_range = 0 WHERE spellid = 485; -- boost-chr
 
+UPDATE spell_list SET jobs = 0x000000004B0000000000000000000000000000000000 WHERE spellid IN (486,487,488,489,490,491,492); -- gain-str,gain-dex,gain-vit,gain-agi,gain-int,gain-mnd,gain-chr
+
 UPDATE spell_list SET validTargets = 3, spell_range = 204  WHERE spellid IN (249,250,251); -- blaze, ice, shock spikes
+
+UPDATE spell_list SET jobs = 0x00000000000000000000000000000000000000004B00 WHERE spellid IN (829,831,833,835,837,839) -- fira_ii,blizzara_ii,aera_ii,stonera_ii,thundara_ii,watera_ii
