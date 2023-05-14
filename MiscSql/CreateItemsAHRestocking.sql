@@ -37,5 +37,11 @@ inner join pydarkstar_items pi2
 where ah = 51
 AND NoSale = 0
 AND NOT flags & (0x4000 | 0x8000)
+UNION
+SELECT p.itemid, ib.name, p.sell01, 0 as buy01, price, 30 as stock01, sell12, 0 as buy12, price12, 30 as stock12
+FROM pydarkstar_items p
+INNER JOIN item_basic ib
+	ON ib.itemid = p.itemid 
+WHERE ib.itemid in (1210,14117,14242)
 ) a
 order by itemid
