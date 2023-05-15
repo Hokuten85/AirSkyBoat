@@ -1655,6 +1655,16 @@ namespace battleutils
             pdif *= 1.25;
             int16 criticaldamage =
                 PAttacker->getMod(Mod::CRIT_DMG_INCREASE) + PAttacker->getMod(Mod::RANGED_CRIT_DMG_INCREASE) - PDefender->getMod(Mod::CRIT_DEF_BONUS);
+
+            if (PAttacker->objtype & TYPE_PC)
+            {
+                auto* weapon = dynamic_cast<CItemWeapon*>(static_cast<CCharEntity*>(PAttacker)->getEquip(SLOT_RANGED));
+                if (weapon && weapon->getModifier(Mod::CRITHITDMG_SLOT) > 0)
+                {
+                    criticaldamage += weapon->getModifier(Mod::CRITHITDMG_SLOT);
+                }
+            }
+
             criticaldamage = std::clamp<int16>(criticaldamage, 0, 100);
             pdif *= ((100 + criticaldamage) / 100.0f);
         }
@@ -3132,6 +3142,14 @@ namespace battleutils
             // Crit Attack Bonus caps at +100% and is a flat increase to final crit damage
             // so this is change to increase pDIF and not the qRatio
             int16 criticaldamage = PAttacker->getMod(Mod::CRIT_DMG_INCREASE) - PDefender->getMod(Mod::CRIT_DEF_BONUS);
+
+            if (PAttacker->objtype & TYPE_PC)
+            {
+                if (targ_weapon && targ_weapon->getModifier(Mod::CRITHITDMG_SLOT) > 0)
+                {
+                    criticaldamage += targ_weapon->getModifier(Mod::CRITHITDMG_SLOT);
+                }
+            }
 
             criticaldamage = std::clamp<int16>(criticaldamage, 0, 100);
             pDIF *= ((100 + criticaldamage) / 100.0f);
