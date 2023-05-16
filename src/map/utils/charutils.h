@@ -275,6 +275,7 @@ namespace charutils
     uint32 getCharIdFromName(std::string const& name);
     void   releaseEvent(CCharEntity* PChar, bool skipMessage = false);
 
+    uint8  GetHighestLevel(CCharEntity* PChar);
     void AddCharMod(CCharEntity* PChar, Mod type, int value);
 }; // namespace charutils
 
