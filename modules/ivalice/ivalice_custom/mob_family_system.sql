@@ -1,1 +1,1 @@
-UPDATE mob_family_system set EVA = IF(EVA + 4 > 13, 13, EVA + 4);
+-- UPDATE mob_family_system set EVA = IF(EVA + 4 > 13, 13, EVA + 4);

@@ -37,3 +37,6 @@ UPDATE weapon_skills SET tertiary_sc = 1 WHERE weaponskillid = 69; -- raging_rus
 UPDATE weapon_skills SET secondary_sc = 1 WHERE weaponskillid = 102; -- guillotine
 UPDATE weapon_skills SET secondary_sc = 1 WHERE weaponskillid = 116; -- penta_thrust
 UPDATE weapon_skills SET secondary_sc = 1 WHERE weaponskillid = 129; -- blade_retsu
+
+UPDATE weapon_skills SET jobs = 0x00000000000100000002000000000000000001000000 WHERE weaponskillid = 23; -- dancing_edge
+UPDATE weapon_skills SET jobs = 0x02000000000002020002000000000002000000000002 WHERE weaponskillid = 40; -- vorpal_blade	
