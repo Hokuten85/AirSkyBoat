@@ -1,5 +1,5 @@
 -----------------------------------
--- func: dynaspawn
+-- func: dynaspawnnm
 -- desc: Spawns an NM by index
 -----------------------------------
 
@@ -23,12 +23,25 @@ local zoneMap =
     ["TAVNAZIA"] = xi.zone.DYNAMIS_TAVNAZIA
 }
 
+local bosses = {
+  ["BASTOK"] = 110,
+  ["WINDURST"] = 121,
+  ["SAN_DORIA"] = 109,
+  ["JEUNO"] = 113,
+  ["BEAUCEDINE"] = 163,
+  ["XARCABARD"] = 179,
+  ["VALKURM"] = 24,
+  ["QUFIM"] = 64,
+  ["BUBURIMU"] = 61,
+  ["TAVNAZIA"] = 0
+}
+
 function error(player, msg)
     player:PrintToPlayer(msg)
-    player:PrintToPlayer("!dynaspawn <zoneName> <monsterIndex>")
+    player:PrintToPlayer("!dynaspawnmegaboss <zoneName>")
 end
 
-function onTrigger(player, zoneName, mobIndex)
+function onTrigger(player, zoneName)
     if not zoneName or zoneName == "" then
         error(player, "Invalid zone name provided.")
     end
@@ -47,12 +60,12 @@ function onTrigger(player, zoneName, mobIndex)
         return
     end
 
-    mobIndex = tonumber(mobIndex)
+    mobIndex = bosses[zoneName]
     if not mobIndex then
-        error(player, string.format("[DynaSetWave] Invalid monster index provided."))
+        error(player, string.format("[DynaSpawnMegaBoss] Invalid monster index provided."))
         return
     end
 
-    xi.dynamis.nonStandardDynamicSpawn(mobIndex, nil, true, zone:getID())
-    player:PrintToPlayer(string.format("[DynaSetWave] Spawned Monster %n", mobIndex))
+    xi.dynamis.nmDynamicSpawn(mobIndex, nil, true, zone:getID())
+    player:PrintToPlayer(string.format("[DynaSpawnMegaBoss] Spawned Notorious Monster %n", mobIndex))
 end

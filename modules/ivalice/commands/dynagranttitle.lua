@@ -1,12 +1,12 @@
 -----------------------------------
--- func: dynaspawn
--- desc: Spawns an NM by index
+-- func: dynagranttitle
+-- desc: Grants title for current zone
 -----------------------------------
 
 cmdprops =
 {
     permission = 1,
-    parameters = "si"
+    parameters = "s"
 }
 
 local zoneMap =
@@ -25,10 +25,10 @@ local zoneMap =
 
 function error(player, msg)
     player:PrintToPlayer(msg)
-    player:PrintToPlayer("!dynaspawn <zoneName> <monsterIndex>")
+    player:PrintToPlayer("!dynagranttitle <zoneName>")
 end
 
-function onTrigger(player, zoneName, mobIndex)
+function onTrigger(player, zoneName)
     if not zoneName or zoneName == "" then
         error(player, "Invalid zone name provided.")
     end
@@ -47,12 +47,10 @@ function onTrigger(player, zoneName, mobIndex)
         return
     end
 
-    mobIndex = tonumber(mobIndex)
-    if not mobIndex then
-        error(player, string.format("[DynaSetWave] Invalid monster index provided."))
-        return
+    local players = zone:getPlayers()
+    for _, p in pairs(players) do
+        p:addTitle(xi.dynamis.dynaInfoEra[zone:getID()].winTitle) -- Give player the title
     end
 
-    xi.dynamis.nonStandardDynamicSpawn(mobIndex, nil, true, zone:getID())
-    player:PrintToPlayer(string.format("[DynaSetWave] Spawned Monster %n", mobIndex))
+    player:PrintToPlayer("[DynaGrantTitle] Granted title to %n players", #players)
 end
