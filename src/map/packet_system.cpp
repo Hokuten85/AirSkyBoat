@@ -1880,8 +1880,6 @@ void SmallPacket0x034(map_session_data_t* const PSession, CCharEntity* const PCh
                 {
                     targName.resize(15);
                 }
-                /*sql->Query("INSERT INTO trade_log(itemid, quantity, sender, sender_name, receiver, receiver_name, date) VALUES(%u,%u,%u,'%s',%u,'%s',%u);",
-                           PItem->getID(), quantity, PChar->id, PChar->GetName(), PTarget->id, targName, (uint32)time(nullptr));*/
             }
             else
             {
@@ -1959,8 +1957,6 @@ void SmallPacket0x036(map_session_data_t* const PSession, CCharEntity* const PCh
             {
                 targName.resize(15);
             }
-            /*sql->Query("INSERT INTO trade_log(itemid, quantity, sender, sender_name, receiver, receiver_name, date) VALUES(%u,%u,%u,'%s',%u,'%s',%u);",
-                       PItem->getID(), Quantity, PChar->id, PChar->GetName(), PNpc->id, targName, (uint32)time(nullptr));*/
 
             PItem->setReserve(Quantity);
             PChar->TradeContainer->setItem(slotID, PItem->getID(), invSlotID, Quantity, PItem);
@@ -2966,9 +2962,6 @@ void SmallPacket0x04D(map_session_data_t* const PSession, CCharEntity* const PCh
                                 sql->Query("UPDATE delivery_box SET received = 1 WHERE senderid = %u AND charid = %u AND box = 2 AND received = 0 AND quantity "
                                            "= %u AND sent = 1 AND itemid = %u LIMIT 1;",
                                            PChar->id, senderID, PItem->getQuantity(), PItem->getID());
-
-                                sql->Query("INSERT INTO delivery_box_log(itemid, quantity, sender, sender_name, receiver, receiver_name, date) VALUES (%u,%u,%u,'%s',%u,'%s',%u);",
-                                           PItem->getID(), PItem->getQuantity(), senderID, PItem->getSender(), PChar->id, PChar->GetName(), (uint32)time(nullptr));
 
                                 sql->Query("SELECT slot FROM delivery_box WHERE charid = %u AND box = 1 AND slot > 7 ORDER BY slot ASC;", PChar->id);
                                 if (ret != SQL_ERROR && sql->NumRows() > 0 && sql->NextRow() == SQL_SUCCESS)
@@ -5265,9 +5258,6 @@ void SmallPacket0x085(map_session_data_t* const PSession, CCharEntity* const PCh
             mult = 1.0f; // dont round down to 0
         // fame end
 
-        sql->Query("INSERT INTO vendor_sell_log(itemid, quantity, seller, seller_name, baseprice, totalprice, date) VALUES(%u,%u,%u,'%s',%u,%u,%u);",
-                   PItem->getID(), quantity, PChar->id, PChar->GetName(), basePrice, quantity * (uint32)((float)basePrice * mult), (uint32)time(nullptr));
-
         charutils::UpdateItem(PChar, LOC_INVENTORY, 0, quantity * (uint32)((float)basePrice * mult));
         charutils::UpdateItem(PChar, LOC_INVENTORY, slotID, -(int32)quantity);
         ShowInfo("SmallPacket0x085: Player '%s' sold %u of itemID %u [to VENDOR] ", PChar->GetName(), quantity, itemID);
@@ -5496,8 +5486,6 @@ void SmallPacket0x0AC(map_session_data_t* const PSession, CCharEntity* const PCh
             {
                 if (charutils::UpdateItem(PChar, LOC_INVENTORY, slot, -quantity) == itemID)
                 {
-                    sql->Query("INSERT INTO vendor_sell_log(itemid, quantity, seller, seller_name, baseprice, totalprice, date) VALUES(%u,%u,%u,'%s',%u,%u,%u);",
-                               charItem->getID(), quantity, PChar->id, PChar->GetName(), basePrice, basePrice * quantity, (uint32)time(nullptr));
                     charutils::UpdateItem(PChar, LOC_INVENTORY, 0, basePrice * quantity);
                     ShowInfo("SmallPacket0x0AC: Player '%s' sold %u of itemID %u [to GUILD] ", PChar->GetName(), quantity, itemID);
                     PChar->PGuildShop->GetItem(shopSlotID)->setQuantity(PChar->PGuildShop->GetItem(shopSlotID)->getQuantity() + quantity);
@@ -7836,9 +7824,6 @@ void SmallPacket0x106(map_session_data_t* const PSession, CCharEntity* const PCh
         {
             return;
         }
-
-        sql->Query("INSERT INTO bazaar_log(itemid, quantity, seller, seller_name, purchaser, purchaser_name, price, date) VALUES(%u,%u,%u,'%s',%u,'%s',%u,%u);",
-                   PItem->getID(), Quantity, PTarget->id, PTarget->GetName(), PChar->id, PChar->GetName(), PriceWithTax, (uint32)time(nullptr));
 
         charutils::UpdateItem(PChar, LOC_INVENTORY, 0, -(int32)PriceWithTax);
         charutils::UpdateItem(PTarget, LOC_INVENTORY, 0, Price);
