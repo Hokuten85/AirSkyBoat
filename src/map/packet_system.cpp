@@ -1880,8 +1880,8 @@ void SmallPacket0x034(map_session_data_t* const PSession, CCharEntity* const PCh
                 {
                     targName.resize(15);
                 }
-                sql->Query("INSERT INTO trade_log(itemid, quantity, sender, sender_name, receiver, receiver_name, date) VALUES(%u,%u,%u,'%s',%u,'%s',%u);",
-                           PItem->getID(), quantity, PChar->id, PChar->GetName(), PTarget->id, targName, (uint32)time(nullptr));
+                /*sql->Query("INSERT INTO trade_log(itemid, quantity, sender, sender_name, receiver, receiver_name, date) VALUES(%u,%u,%u,'%s',%u,'%s',%u);",
+                           PItem->getID(), quantity, PChar->id, PChar->GetName(), PTarget->id, targName, (uint32)time(nullptr));*/
             }
             else
             {
@@ -1959,8 +1959,8 @@ void SmallPacket0x036(map_session_data_t* const PSession, CCharEntity* const PCh
             {
                 targName.resize(15);
             }
-            sql->Query("INSERT INTO trade_log(itemid, quantity, sender, sender_name, receiver, receiver_name, date) VALUES(%u,%u,%u,'%s',%u,'%s',%u);",
-                       PItem->getID(), Quantity, PChar->id, PChar->GetName(), PNpc->id, targName, (uint32)time(nullptr));
+            /*sql->Query("INSERT INTO trade_log(itemid, quantity, sender, sender_name, receiver, receiver_name, date) VALUES(%u,%u,%u,'%s',%u,'%s',%u);",
+                       PItem->getID(), Quantity, PChar->id, PChar->GetName(), PNpc->id, targName, (uint32)time(nullptr));*/
 
             PItem->setReserve(Quantity);
             PChar->TradeContainer->setItem(slotID, PItem->getID(), invSlotID, Quantity, PItem);
