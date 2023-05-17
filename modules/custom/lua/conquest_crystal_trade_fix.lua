@@ -98,7 +98,7 @@ m:addOverride("xi.conquest.overseerOnTrade", function(player, npc, trade, guardN
 
         -- RECHARGE EXP RING
         if not tradeConfirmed and expRings[item] and npcUtil.tradeHas(trade, item) then
-            if xi.settings.BYPASS_EXP_RING_ONE_PER_WEEK == 1 or player:getCharVar("CONQUEST_RING_RECHARGE") < os.time() then
+            if xi.settings.main.BYPASS_EXP_RING_ONE_PER_WEEK == 1 or player:getCharVar("CONQUEST_RING_RECHARGE") < os.time() then
                 local ring = expRings[item]
 
                 if player:getCP() >= ring.cp then
