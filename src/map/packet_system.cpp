@@ -7467,6 +7467,7 @@ void SmallPacket0x100(map_session_data_t* const PSession, CCharEntity* const PCh
             PChar->SetSJob(sjob);
             PChar->SetSLevel(PChar->jobs.job[PChar->GetSJob()]);
 
+            charutils::SaveJobChangeGear(PChar);
             charutils::CheckEquipLogic(PChar, SCRIPT_CHANGESJOB, prevsjob);
             puppetutils::LoadAutomaton(PChar);
             if (sjob == JOB_BLU)
