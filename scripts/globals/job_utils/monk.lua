@@ -54,7 +54,7 @@ xi.job_utils.monk.useChakra = function(player, target, ability)
         end
         
         target:addStatusEffect(xi.effect.SUBTLE_BLOW_PLUS,power,0,120);
-        ability:setMsg(0);
+        ability:setMsg(xi.msg.basic.NONE);
         return;
     end
 
