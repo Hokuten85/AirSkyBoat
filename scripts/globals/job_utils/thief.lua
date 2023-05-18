@@ -363,7 +363,7 @@ xi.job_utils.thief.useMug = function(player, target, ability, action)
         else
             gil = gil * (1 + player:getMod(xi.mod.MUG_EFFECT))
 
-            player:addGil(gil)
+            player:addGil(gil*5)
             target:setMobMod(xi.mobMod.MUG_GIL, target:getMobMod(xi.mobMod.MUG_GIL) - gil)
             ability:setMsg(xi.msg.basic.MUG_SUCCESS)
         end
