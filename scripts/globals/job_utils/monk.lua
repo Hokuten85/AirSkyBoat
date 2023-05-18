@@ -48,12 +48,12 @@ end
 
 xi.job_utils.monk.useChakra = function(player, target, ability)
     if (player:getID() ~= target:getID()) then
-        local power = 20
-        if player:getSubJob() == tpz.job.MNK then
+        local power = 25
+        if player:getSubJob() == xi.job.MNK then
             power = math.floor(power / 2);
         end
         
-        target:addStatusEffect(tpz.effect.SUBTLE_BLOW_PLUS,power,0,120);
+        target:addStatusEffect(xi.effect.SUBTLE_BLOW_PLUS,power,0,120);
         ability:setMsg(0);
         return;
     end

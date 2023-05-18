@@ -48,6 +48,8 @@ UPDATE traits SET level = 75 WHERE traitid = 17 and job = 2 and rank = 2;
 UPDATE traits SET level = 75 WHERE traitid = 66 and job = 2 and rank = 3;
 UPDATE traits SET level = 75 WHERE traitid = 101 and job = 2 and rank = 1;
 UPDATE traits SET level = 75 WHERE traitid = 127 and job = 2 and rank = 2;
+-- Subtle Blow tier 5
+UPDATE traits SET level = 75 WHERE traitid = 67 and job = 2 and rank = 5;
 
 -- GIVE WHM CONSERVE MP TIER 2
 UPDATE traits SET level = 75 WHERE traitid = 13 and job = 4 and rank = 2;
