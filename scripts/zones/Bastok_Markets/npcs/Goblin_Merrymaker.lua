@@ -263,7 +263,7 @@ local pathNodes =
 local goblinText =
 {
     [1] = ID.text.MERRYMAKER_TOY,
-    [2] = ID.text.MERRYMAKER_TOY2,
+    [2] = ID.text.MERRYMAKER_TOY,
 }
 
 entity.onSpawn = function(npc)
