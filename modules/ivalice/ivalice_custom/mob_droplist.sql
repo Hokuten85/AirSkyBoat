@@ -69,7 +69,7 @@ FROM (
 			WHEN 9 THEN 4073
 			ELSE 4064
 		END AS itemId,	
-		10 AS itemRate
+		150 AS itemRate
 	FROM mob_spawn_points msp
 	INNER JOIN mob_groups mg
 		ON msp.groupid = mg.groupid

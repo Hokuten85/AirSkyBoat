@@ -354,7 +354,7 @@ xi.spells.enhancing.calculateEnhancingDuration = function(caster, target, spell,
         spellEffect == xi.effect.INVISIBLE or
         spellEffect == xi.effect.SNEAK
     then
-        duration = xi.magic.calculateDuration(math.random(130, 310), spell:getSkillType(), spell:getSpellGroup(), caster, target)
+        duration = xi.magic.calculateDuration(math.random(300, 310), spell:getSkillType(), spell:getSpellGroup(), caster, target)
         duration = duration + target:getMod(xi.mod.INVISIBLE_DURATION)
     end
 

@@ -40,7 +40,7 @@ spellObject.onSpellCast = function(caster, target, spell)
     local final = xi.magic.finalMagicAdjustments(caster, target, spell, dmg)
 
     -- Calculate duration and bonus
-    local duration = xi.magic.calculateDuration(60, spell:getSkillType(), spell:getSpellGroup(), caster, target)
+    local duration = xi.magic.calculateDuration(180, spell:getSkillType(), spell:getSpellGroup(), caster, target)
     local dotBonus = caster:getMod(xi.mod.DIA_DOT) -- Dia Wand
 
     spell:setMsg(xi.msg.basic.MAGIC_DMG) -- hit for initial damage

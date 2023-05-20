@@ -403,6 +403,14 @@ xi.eraShops.Creepstix =
     5023,   8160, -- Scroll of Goblin Gavotte
     4734,   7074, -- Scroll of Protectra II
     4738,   1700, -- Scroll of Shellra
+	5089,  73740, -- Scroll of Gain-VIT
+    5092,  77500, -- Scroll of Gain-MND
+    5090,  85680, -- Scroll of Gain-AGI
+    5093,  81900, -- Scroll of Gain-CHR
+    5096,  73740, -- Scroll of Boost-VIT
+    5099,  77500, -- Scroll of Boost-MND
+    5097,  85680, -- Scroll of Boost-AGI
+    5100,  81900, -- Scroll of Boost-CHR
 }
 
 xi.eraShops.Hasim =
@@ -424,6 +432,26 @@ xi.eraShops.Hasim =
     4616,  11200, -- Scroll of Curaga II
     4617,  19932, -- Scroll of Curaga III
     4653,  32000, -- Scroll of Protect III
+	5089,  73740, -- Scroll of Gain-VIT
+    5092,  77500, -- Scroll of Gain-MND
+    5090,  85680, -- Scroll of Gain-AGI
+    5093,  81900, -- Scroll of Gain-CHR
+    5087,  89804, -- Scroll of Gain-STR
+    5091,  94461, -- Scroll of Gain-INT
+    5088,  99613, -- Scroll of Gain-DEX
+    5096,  73740, -- Scroll of Boost-VIT
+    5099,  77500, -- Scroll of Boost-MND
+    5097,  85680, -- Scroll of Boost-AGI
+    5100,  81900, -- Scroll of Boost-CHR
+    5094,  89804, -- Scroll of Boost-STR
+    5098,  94461, -- Scroll of Boost-INT
+    5095,  99613, -- Scroll of Boost-DEX
+	4737, 119240, -- Scroll of Protecra V
+    4742, 124540, -- Scroll of Shellra V
+    4633, 139135, -- Scroll of Dia III
+    6569, 139135, -- Scroll of Slow II
+    6570, 139135, -- Scroll of Paralyze II
+    6571, 139135, -- Scroll of Phalanx II
 }
 
 xi.eraShops.Stinknix =
@@ -454,6 +482,14 @@ xi.eraShops.Susu =
     4625,  2330, -- Scroll of Silena
     4626, 19200, -- Scroll of Stona
     4627, 13300, -- Scroll of Viruna
+	4813, 119180, -- Scroll of Flare II
+    4815, 119180, -- Scroll of Freeze II
+    4817, 119180, -- Scroll of Tornado II
+    4819, 119180, -- Scroll of Quake II
+    4821, 119180, -- Scroll of Burst II
+    4823, 119180, -- Scroll of Flood II
+    4840, 139125, -- Scroll of Bio III
+    4884, 139125, -- Scroll of Blind II
 }
 
 xi.eraShops.Taza =
