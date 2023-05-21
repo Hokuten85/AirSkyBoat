@@ -40,4 +40,6 @@ UPDATE spell_list SET jobs = 0x000000004B0000000000000000000000000000000000 WHER
 
 UPDATE spell_list SET validTargets = 3, spell_range = 204  WHERE spellid IN (249,250,251); -- blaze, ice, shock spikes
 
-UPDATE spell_list SET jobs = 0x00000000000000000000000000000000000000004B00 WHERE spellid IN (829,831,833,835,837,839) -- fira_ii,blizzara_ii,aera_ii,stonera_ii,thundara_ii,watera_ii
+UPDATE spell_list SET jobs = 0x00000000000000000000000000000000000000004B00 WHERE spellid IN (829,831,833,835,837,839); -- fira_ii,blizzara_ii,aera_ii,stonera_ii,thundara_ii,watera_ii
+
+UPDATE spell_list SET content_tag = NULL;
