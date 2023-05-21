@@ -37,7 +37,7 @@ class CBattleEntity;
 #define MAX_AOE_TARGETS 12
 
 // allow pets to recieve buffs from protectra, curaga etc
-#define PETS_CAN_AOE_BUFF false
+#define PETS_CAN_AOE_BUFF true
 
 enum class AOE_RADIUS : uint8
 {

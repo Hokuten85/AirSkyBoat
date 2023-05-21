@@ -127,7 +127,6 @@ void CTargetFind::findWithinArea(CBattleEntity* PTarget, AOE_RADIUS radiusType, 
         // handle this as a player
         if (m_PMasterTarget->objtype == TYPE_PC)
         {
-            bool withPet = true; // Hit pets with AoE spells
             // players will never need to add whole alliance
             m_findType = FIND_TYPE::PLAYER_PLAYER;
 
