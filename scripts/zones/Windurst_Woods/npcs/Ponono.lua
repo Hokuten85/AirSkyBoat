@@ -16,6 +16,8 @@ require("scripts/globals/status")
 local entity = {}
 
 entity.onTrade = function(player, npc, trade)
+	xi.crafting.unionGuildMasterUpgradeTrade(player, npc, trade, xi.skill.CLOTHCRAFT)
+
     local signed        = trade:getItem():getSignature() == player:getName() and 1 or 0
     local newRank       = xi.crafting.tradeTestItem(player, npc, trade, xi.skill.CLOTHCRAFT)
     local moralManifest = player:getQuestStatus(xi.quest.log_id.OTHER_AREAS, xi.quest.id.otherAreas.A_MORAL_MANIFEST)

@@ -561,3 +561,126 @@ xi.crafting.unionRepresentativeTrade = function(player, npc, trade, csid, guildI
         end
     end
 end
+
+xi.crafting.unionGuildMasterUpgradeTrade = function(player, npc, trade, skillType)
+	local chapters = {
+		[4064] = "Rem's Tale Ch.1",
+		[4065] = "Rem's Tale Ch.2",
+		[4066] = "Rem's Tale Ch.3",
+		[4067] = "Rem's Tale Ch.4",
+		[4068] = "Rem's Tale Ch.5",
+		[4069] = "Rem's Tale Ch.6",
+		[4070] = "Rem's Tale Ch.7",
+		[4071] = "Rem's Tale Ch.8",
+		[4072] = "Rem's Tale Ch.9",
+		[4073] = "Rem's Tale Ch.10"
+	}
+
+	local upgradeChapter = {
+		[0] = 4064,
+		[1] = 4065,
+		[2] = 4066,
+		[3] = 4067,
+		[4] = 4068,
+		[5] = 4069,
+		[6] = 4070,
+		[7] = 4071,
+		[8] = 4072,
+		[9] = 4073,
+	}
+
+	local upgradeCost = {
+	  [0] = 10000,
+	  [1] = 15000,
+	  [2] = 25000,
+	  [3] = 40000,
+	  [4] = 60000,
+	  [5] = 90000,
+	  [6] = 140000,
+	  [7] = 210000,
+	  [8] = 315000,
+	  [9] = 500000,
+	}
+
+	local npcName = npc:getName():gsub("_"," ")
+	local tradeGil = trade:getGil();
+	if trade:getSlotCount() == 1 then
+		local item = trade:getItem()
+		local chapter = chapters[item:getID()]
+		if chapter then
+			player:PrintToPlayer(string.format("You've traded a %s, but no gil.", chapter), 0, npcName)
+		
+			local skillUpgrade = player:getCharVar(string.format('[GUILD]%s_skillupgrade', skillType))
+			if skillUpgrade > 0 and skillUpgrade < 10 then
+				player:PrintToPlayer(string.format("You're current upgrade tier is: %s.", skillUpgrade), 0, npcName)
+				player:PrintToPlayer(string.format("Trade a %s or higher, and %s gil.", chapters[upgradeChapter[skillUpgrade]], upgradeCost[skillUpgrade]), 0, npcName)
+			elseif skillUpgrade == 10 then
+				player:PrintToPlayer(string.format("You have max upgrades already.", upgradeCost[0]), 0, npcName)
+			elseif skillUpgrade == 0 then
+				player:PrintToPlayer(string.format("You have no upgrades. Trade any Chapter and %s gil.", upgradeCost[0]), 0, npcName)
+			end
+			
+		end
+	elseif trade:getSlotCount() == 2 and tradeGil > 0 then
+		local chapter
+		local chapterId
+		for i = 1, 8 do
+            local itemId = trade:getItemId(i);
+			if chapters[itemId] then
+				chapter = chapters[itemId]
+				chapterId = itemId
+			end
+        end
+		
+		if chapter then
+			player:PrintToPlayer(string.format("You've traded a %s, and %s gil.", chapter, tradeGil), 0, npcName)
+			local skillUpgrade = player:getCharVar(string.format('[GUILD]%s_skillupgrade', skillType))
+			if skillUpgrade > 0 then
+				if skillUpgrade >= 10 then
+					player:PrintToPlayer("You have already reached the max upgrade.", 0, npcName)
+					return
+				end
+			
+				local goodChapter = upgradeChapter[skillUpgrade] <= chapterId
+				local goodGil = upgradeCost[skillUpgrade] <= tradeGil
+				
+				if not goodChapter then
+					player:PrintToPlayer(string.format("Incorrect Chapter. Must trade %s or higher.", chapters[upgradeChapter[skillUpgrade]]), 0, npcName)
+				end
+				
+				if not goodGil then
+					player:PrintToPlayer(string.format("Not enough gil. Must trade %s or higher.", upgradeCost[skillUpgrade]), 0, npcName)
+				end
+				
+				if goodChapter and goodGil then
+					trade:confirmItem(chapterId, 1)
+					trade:confirmSlot(0, upgradeCost[skillUpgrade])
+					player:confirmTrade()
+					
+					player:setCharVar(string.format('[GUILD]%s_skillupgrade', skillType), skillUpgrade+1)
+					
+					local newSkill = player:getCharSkillLevel(skillType) + 60
+					player:setSkillLevel(skillType, newSkill)
+					player:messageBasic(xi.msg.basic.SKILL_REACHES_LEVEL, skillType, newSkill / 10)
+					
+					return
+				end
+			else
+				if upgradeCost[0] <= tradeGil then
+					trade:confirmItem(chapterId, 1)
+					trade:confirmSlot(0, upgradeCost[0])
+					player:confirmTrade()
+					
+					player:setCharVar(string.format('[GUILD]%s_skillupgrade', skillType), 1)
+					
+					local newSkill = player:getCharSkillLevel(skillType) + 60
+					player:setSkillLevel(skillType, newSkill)
+					player:messageBasic(xi.msg.basic.SKILL_REACHES_LEVEL, skillType, newSkill / 10)
+					return
+				else
+					player:PrintToPlayer(string.format("Not enough gil. Must trade %s or higher.", upgradeCost[0]), 0, npcName)
+				end
+			end
+		end
+	end
+end
