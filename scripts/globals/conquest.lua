@@ -1055,7 +1055,7 @@ end
 -- (PUBLIC) overseer
 -----------------------------------
 
-local handleConquestItemSwap = function(player, npc, trade, guardNation)
+xi.conquest.handleConquestItemSwap = function(player, npc, trade, guardNation)
 	if player:getNation() ~= guardNation and guardNation ~= xi.nation.OTHER then
 		local npcName = npc:getName():gsub("_"," ")
 		local itemId
@@ -1222,7 +1222,7 @@ xi.conquest.overseerOnTrade = function(player, npc, trade, guardNation, guardTyp
         end
     end
 	
-	handleConquestItemSwap(player, npc, trade, guardNation)
+	--handleConquestItemSwap(player, npc, trade, guardNation)
 end
 
 xi.conquest.overseerOnTrigger = function(player, npc, guardNation, guardType, guardEvent, guardRegion)
