@@ -1222,7 +1222,7 @@ xi.conquest.overseerOnTrade = function(player, npc, trade, guardNation, guardTyp
         end
     end
 	
-	--handleConquestItemSwap(player, npc, trade, guardNation)
+	xi.conquest.handleConquestItemSwap(player, npc, trade, guardNation)
 end
 
 xi.conquest.overseerOnTrigger = function(player, npc, guardNation, guardType, guardEvent, guardRegion)
