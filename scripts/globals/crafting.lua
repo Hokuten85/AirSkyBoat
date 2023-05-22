@@ -663,7 +663,7 @@ xi.crafting.unionGuildMasterUpgradeTrade = function(player, npc, trade, skillTyp
 					player:setSkillLevel(skillType, newSkill)
 					player:messageBasic(xi.msg.basic.SKILL_REACHES_LEVEL, skillType, newSkill / 10)
 					
-					return
+					return true
 				end
 			else
 				if upgradeCost[0] <= tradeGil then
@@ -676,7 +676,7 @@ xi.crafting.unionGuildMasterUpgradeTrade = function(player, npc, trade, skillTyp
 					local newSkill = player:getCharSkillLevel(skillType) + 60
 					player:setSkillLevel(skillType, newSkill)
 					player:messageBasic(xi.msg.basic.SKILL_REACHES_LEVEL, skillType, newSkill / 10)
-					return
+					return true
 				else
 					player:PrintToPlayer(string.format("Not enough gil. Must trade %s or higher.", upgradeCost[0]), 0, npcName)
 				end

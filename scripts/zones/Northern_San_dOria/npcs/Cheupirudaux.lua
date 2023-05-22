@@ -13,7 +13,9 @@ require("scripts/globals/status")
 local entity = {}
 
 entity.onTrade = function(player, npc, trade)
-	xi.crafting.unionGuildMasterUpgradeTrade(player, npc, trade, xi.skill.WOODWORKING)
+    if xi.crafting.unionGuildMasterUpgradeTrade(player, npc, trade, xi.skill.WOODWORKING) then
+        return
+    end
 	
     local signed  = trade:getItem():getSignature() == player:getName() and 1 or 0
     local newRank = xi.crafting.tradeTestItem(player, npc, trade, xi.skill.WOODWORKING)

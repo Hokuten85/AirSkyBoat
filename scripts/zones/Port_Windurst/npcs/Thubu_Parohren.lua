@@ -11,7 +11,9 @@ require("scripts/globals/status")
 local entity = {}
 
 entity.onTrade = function(player, npc, trade)
-	xi.crafting.unionGuildMasterUpgradeTrade(player, npc, trade, xi.skill.FISHING)
+	if xi.crafting.unionGuildMasterUpgradeTrade(player, npc, trade, xi.skill.FISHING) then
+        return
+    end
 
     local newRank = xi.crafting.tradeTestItem(player, npc, trade, xi.skill.FISHING)
 
