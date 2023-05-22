@@ -1,0 +1,1 @@
+UPDATE npc_list SET content_tag = NULL WHERE content_tag IN ('ABYSSEA', 'SURVIVAL_GUIDE', 'FIELD_MANUALS', 'GROUNDS_TOMES');
