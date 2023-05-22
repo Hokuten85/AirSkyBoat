@@ -82,7 +82,7 @@ xi.damage.returnDamageTakenMod = function(target, attackType, damageType)
     then
         dmgTakenMod = dmgTakenMod + ((target:getMod(dmgMods[damageType]) - 1000) / 10000)
     elseif damageType and dmgMods[damageType] then -- This is for elemental SDTs only
-        dmgTakenMod = dmgTakenMod + (target:getMod(dmgMods[damageType]) / 10000)
+        dmgTakenMod = dmgTakenMod - (target:getMod(dmgMods[damageType]) / 10000)
     end
 
     return dmgTakenMod
