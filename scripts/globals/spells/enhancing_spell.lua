@@ -113,9 +113,9 @@ local pTable =
     [xi.magic.spell.GAIN_CHR     ] = { 1, xi.effect.CHR_BOOST,      1,    5,  300, true,  false, 0 },
 
     -- Haste
-    [xi.magic.spell.HASTE        ] = { 1, xi.effect.HASTE,         48, 1500,  180, true,  false, 0 },
+    [xi.magic.spell.HASTE        ] = { 1, xi.effect.HASTE,         40, 1500,  180, true,  false, 0 },
     [xi.magic.spell.HASTE_II     ] = { 2, xi.effect.HASTE,         96, 3000,  180, true,  false, 0 },
-    [xi.magic.spell.HASTEGA      ] = { 1, xi.effect.HASTE,         48, 1530,  180, false, false, 0 },
+    [xi.magic.spell.HASTEGA      ] = { 1, xi.effect.HASTE,         40, 1530,  180, false, false, 0 },
     -- [xi.magic.spell.HASTEGA_II   ] = { 2, xi.effect.HASTE,         99, 2998,  180, false, false, 0 },
 
     -- Phalanx
