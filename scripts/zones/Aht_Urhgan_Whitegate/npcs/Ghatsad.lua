@@ -45,7 +45,7 @@ local headAndFrameItems =
         xi.items.BRASS_SHEET,
         xi.items.WAMOURA_COCOON,
         xi.items.CHUNK_OF_IMPERIAL_CERMET,
-        xi.items.TIGERFANGS
+        xi.items.PATAS
     },
 
     [3] =
@@ -53,7 +53,7 @@ local headAndFrameItems =
         xi.items.ROSEWOOD_LUMBER,
         xi.items.SQUARE_OF_KARAKUL_CLOTH,
         xi.items.SQUARE_OF_KARAKUL_LEATHER,
-        xi.items.REPEATING_CROSSBOW
+        xi.items.HEAVY_CROSSBOW
     },
 
     [4] =
@@ -298,7 +298,8 @@ entity.onTrigger = function(player, npc)
 
         -- Accepted a Head/Frame Combination, but has not provided any payment
         elseif attachmentStatus >= 2 and attachmentStatus <= 4 then
-            player:startEvent(622, 0, 1, 0, 0, 0, unlockCost[numUnlockedHeads][1], unlockCost[numUnlockedHeads][2])
+            --player:startEvent(622, 0, 1, 0, 0, 0, unlockCost[numUnlockedHeads][1], unlockCost[numUnlockedHeads][2])
+			player:startEvent(622, 0, attachmentStatus-1, 0, 0, 0, unlockCost[numUnlockedHeads][1], unlockCost[numUnlockedHeads][2])
 
         -- Paid Mats for Head/Frame Combination, but needs to provide Currency
         elseif attachmentStatus >= 5 and attachmentStatus <= 7 then
