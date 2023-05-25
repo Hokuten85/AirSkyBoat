@@ -755,10 +755,7 @@ bool CAutomatonController::TryEnfeeble(const CurrentManeuvers& maneuvers)
             {
                 castPriority.push_back(SpellID::Dispel);
             }
-            break;
-        }
-        default:
-        {
+
             if (!PTarget->StatusEffectContainer->HasStatusEffect(EFFECT_DIA))
             {
                 if (maneuvers.dark) // Dark -> Bio

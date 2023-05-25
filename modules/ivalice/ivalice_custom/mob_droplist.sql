@@ -120,3 +120,4 @@ AND mg.minlevel DIV 10 < 10
 ORDER BY mg.minlevel DIV 10;
 
 update mob_droplist set itemRate = 50 where itemId = 1025 and itemRate < 50; -- palborough_chest_key
+update mob_droplist set itemRate = 50 where itemId = 13514 and itemRate < 50; -- archers_ring
