@@ -16,7 +16,7 @@ attachmentObject.onEquip = function(pet)
             target:hasStatusEffectByFlag(xi.effectFlag.DISPELABLE) and
             (automaton:checkDistance(target) - target:getModelSize()) < 7
         then
-            automaton:useMobAbility(xi.automaton.abilities.DISRUPTOR)
+            automaton:useMobAbility(xi.automaton.abilities.DISRUPTOR, target)
         end
     end)
 end
