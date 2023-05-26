@@ -256,8 +256,8 @@ xi.job_utils.dragoon.useAncientCircle = function(player, target, ability)
     if (player:getID() ~= target:getID()) then
         subPower = 10
 
-        if (player:getMainLvl() >= 50) then
-            subPower = subPower + math.floor((player:getMainLvl() - 50) / 5)
+        if (player:getMainLvl() >= 25) then
+            subPower = subPower + math.floor((player:getMainLvl() - 25) / 5)
         end
     end
 

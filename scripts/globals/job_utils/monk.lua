@@ -95,6 +95,12 @@ xi.job_utils.monk.useChiBlast = function(player, target, ability)
     target:updateEnmityFromDamage(player, dmg)
     target:updateClaim(player)
     player:delStatusEffect(xi.effect.BOOST)
+	
+	local merits = player:getMerit(xi.merit.PENANCE)
+	if merits > 0 then
+		target:addStatusEffect(xi.effect.INHIBIT_TP, 25, 0, merits)
+	end
+	
 
     return dmg
 end

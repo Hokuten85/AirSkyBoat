@@ -1,7 +1,7 @@
 UPDATE abilities SET CE = 2800 WHERE name = 'invincible';
 UPDATE abilities SET recastTime = 120 WHERE name = 'warcry';
 UPDATE abilities SET CE = 200 WHERE name = 'provoke';
-UPDATE abilities SET recastTime = 180, isAOE = 1 WHERE name = 'chakra';
+UPDATE abilities SET recastTime = 180, isAOE = 1, VE = 50 WHERE name = 'chakra';
 UPDATE abilities SET recastTime = 60 WHERE name = 'steal';
 UPDATE abilities SET recastTime = 60 WHERE name = 'hide';
 UPDATE abilities SET recastTime = 60 WHERE name = 'mug';

@@ -14,6 +14,7 @@ UPDATE skill_ranks SET rdm = 2 WHERE name = 'enhancing';
 UPDATE skill_ranks SET rdm = 5 WHERE name = 'elemental';
 UPDATE skill_ranks SET drk = 1 WHERE name = 'dark';
 UPDATE skill_ranks SET smn = 1 WHERE name = 'summoning';
+UPDATE skill_ranks SET nin = 1 WHERE name = 'ninjutsu';
 UPDATE skill_ranks SET brd = 1 WHERE name = 'singing';
 UPDATE skill_ranks SET brd = 1 WHERE name = 'string';
 UPDATE skill_ranks SET brd = 1 WHERE name = 'wind';
