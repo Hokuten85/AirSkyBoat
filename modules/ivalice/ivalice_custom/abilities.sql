@@ -26,10 +26,10 @@ UPDATE abilities SET recastTime = 180 WHERE name = 'accomplice';
 UPDATE abilities SET recastTime = 50 WHERE name = 'blood_pact_rage';
 UPDATE abilities SET CE = 100 WHERE name = 'rampart';
 UPDATE abilities SET recastTime = 45 WHERE abilityId between 97 and 122; -- Corsair Rolls
+UPDATE abilities SET recastTime = 600 WHERE name = 'random_deal';
 UPDATE abilities SET recastTime = 2400 WHERE name = 'overdrive';
 UPDATE abilities SET recastTime = 120 WHERE name = 'shikikoyo';
 UPDATE abilities SET recastTime = 50 WHERE name = 'blood_pact_ward';
-UPDATE abilities SET recastTime = 600 WHERE name = 'fold';
 UPDATE abilities SET recastTime = 2400 WHERE name = 'trance';
 UPDATE abilities SET recastTime = 2400 WHERE name = 'tabula_rasa';
 UPDATE abilities SET recastTime = 180 WHERE name = 'sekkanoki';

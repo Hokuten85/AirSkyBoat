@@ -1851,6 +1851,8 @@ xi.mod =
 
     ENMITY_CAP                  = 2000,
     DMG_II                      = 2001,
+	CRITHITDMG_SLOT				= 2002,
+	DOUBLEUP_ENHANCEMENT		= 2003,
 }
 
 xi.immunity =

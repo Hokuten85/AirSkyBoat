@@ -1,4 +1,4 @@
-/*
+﻿/*
 ===========================================================================
   Copyright (c) 2010-2015 Darkstar Dev Teams
   This program is free software: you can redistribute it and/or modify
@@ -988,6 +988,7 @@ enum class Mod
     ENMITY_CAP              = 2000,
     DMG_II                  = 2001,
     CRITHITDMG_SLOT         = 2002,
+    DOUBLEUP_ENHANCEMENT    = 2003,
 };
 
 // temporary workaround for using enum class as unordered_map key until compilers support it
