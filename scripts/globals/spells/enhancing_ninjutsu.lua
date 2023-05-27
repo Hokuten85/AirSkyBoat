@@ -52,7 +52,7 @@ xi.spells.enhancing.calculateNinjutsuPower = function(caster, target, spell, spe
         if power > 3 then
             subPower = subPower + 1
         end
-	elseif spellId == xi.magic.spell.GEKKA_ICHI or spellId == xi.magic.spell.YAIN_ICHI them
+	elseif spellId == xi.magic.spell.GEKKA_ICHI or spellId == xi.magic.spell.YAIN_ICHI then
 		power = math.max(5, math.min(math.floor(power/424 * caster:getSkillLevel(xi.skill.NINJUTSU)), power))
     end
 
