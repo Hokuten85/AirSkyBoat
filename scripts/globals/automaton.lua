@@ -181,14 +181,14 @@ local regenRefreshFormulas =
 
 local function getRegenModValue(pet, attachmentName, numManeuvers)
     local petMaxHP = pet:getMaxHP()
-
-    return regenRefreshFormulas[attachmentName][1][numManeuvers + 1] + petMaxHP * (regenRefreshFormulas[attachmentName][2][numManeuvers + 1] / 100)
+	
+    return regenRefreshFormulas[attachmentName][1][math.min(numManeuvers + 1, 3)] + petMaxHP * (regenRefreshFormulas[attachmentName][2][math.min(numManeuvers + 1, 3)] / 100)
 end
 
 local function getRefreshModValue(pet, attachmentName, numManeuvers)
     local petMaxMP = pet:getMaxMP()
 
-    return regenRefreshFormulas[attachmentName][1][numManeuvers + 1] + petMaxMP * (regenRefreshFormulas[attachmentName][2][numManeuvers + 1] / 100)
+    return regenRefreshFormulas[attachmentName][1][math.min(numManeuvers + 1, 3)] + petMaxMP * (regenRefreshFormulas[attachmentName][2][math.min(numManeuvers + 1, 3)] / 100)
 end
 
 local function isOpticFiber(attachmentName)
