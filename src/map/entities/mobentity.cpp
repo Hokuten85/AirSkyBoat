@@ -33,6 +33,7 @@
 #include "../conquest_system.h"
 #include "../enmity_container.h"
 #include "../entities/charentity.h"
+#include "../lua/lua_loot.h"
 #include "../mob_modifier.h"
 #include "../mob_spell_container.h"
 #include "../mob_spell_list.h"
@@ -1270,66 +1271,22 @@ void CMobEntity::DropItems(CCharEntity* PChar)
         return false; // dropCount >= TREASUREPOOL_SIZE;
     };
 
-    auto UpdateDroprateOrAddToList = [&](std::vector<DropItem_t>& list, uint8 dropType, uint16 itemID, uint16 dropRate)
-    {
-        // Try and update droprate for an item in place
-        bool updated = false;
-        for (auto& entry : list)
-        {
-            if (!updated && entry.ItemID == itemID)
-            {
-                entry.DropRate = dropRate;
-                updated        = true;
-            }
-        }
-
-        // If that item wasn't found and updated, add the item and droprate to the list
-        if (!updated)
-        {
-            list.emplace_back(DropItem_t(dropType, itemID, dropRate));
-        }
-    };
-
     // Limit number of items that can drop to the treasure pool size
     uint8 dropCount = 0;
 
-    // Make a temporary copy of the global droplist entry for this drop id
-    // so we can modify it without modifying the global lists
-    DropList_t DropList;
-    if (auto droplistPtr = itemutils::GetDropList(m_DropID))
-    {
-        DropList = *droplistPtr;
-    }
+    DropList_t* dropList = itemutils::GetDropList(m_DropID);
 
-    // Apply m_DropListModifications changes to DropList
-    for (auto& entry : m_DropListModifications)
-    {
-        uint16    itemID   = entry.first;
-        uint16    dropRate = entry.second.first;
-        DROP_TYPE dropType = static_cast<DROP_TYPE>(entry.second.second);
-
-        if (dropType == DROP_NORMAL)
-        {
-            UpdateDroprateOrAddToList(DropList.Items, DROP_NORMAL, itemID, dropRate);
-        }
-        else if (dropType == DROP_GROUPED)
-        {
-            for (auto& group : DropList.Groups)
-            {
-                UpdateDroprateOrAddToList(group.Items, DROP_NORMAL, itemID, dropRate);
-            }
-        }
-    }
-
-    // Make sure m_DropListModifications doesn't persist by clearing it out now
-    m_DropListModifications.clear();
-
-    if (!getMobMod(MOBMOD_NO_DROPS) && (!DropList.Items.empty() || !DropList.Groups.empty()))
+    if (!getMobMod(MOBMOD_NO_DROPS) && dropList != nullptr && (!dropList->Items.empty() || !dropList->Groups.empty() || PAI->EventHandler.hasListener("ITEM_DROPS")))
     {
         // THLvl is the number of 'extra chances' at an item. If the item is obtained, then break out.
         int16 maxRolls = 1;
 
-        for (const DropGroup_t& group : DropList.Groups)
+        LootContainer loot(dropList);
+
+        PAI->EventHandler.triggerListener("ITEM_DROPS", CLuaBaseEntity(this), CLuaLootContainer(&loot));
+
+        // clang-format off
+        loot.ForEachGroup([&](const DropGroup_t& group)
         {
             uint16 total = 0;
             for (const DropItem_t& item : group.Items)
@@ -1362,7 +1319,7 @@ void CMobEntity::DropItems(CCharEntity* PChar)
                     break;
                 }
             }
-        }
+        });
 
         if (this->GetMLevel() >= 85 && this->m_Type & MOBTYPE::MOBTYPE_NOTORIOUS) 
         {
@@ -1370,7 +1327,7 @@ void CMobEntity::DropItems(CCharEntity* PChar)
             UpdateDroprateOrAddToList(DropList.Items, DROP_NORMAL, itemId, 150);
         }
 
-        for (const DropItem_t& item : DropList.Items)
+        loot.ForEachItem([&](const DropItem_t& item)
         {
             for (int16 roll = 0; roll < maxRolls; ++roll)
             {
@@ -1384,7 +1341,8 @@ void CMobEntity::DropItems(CCharEntity* PChar)
                     break;
                 }
             }
-        }
+        });
+        // clang-format on
     }
 
     ZONE_TYPE zoneType  = zoneutils::GetZone(PChar->getZone())->GetType();
