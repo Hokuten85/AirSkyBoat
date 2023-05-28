@@ -238,7 +238,7 @@ xi.automaton.updateAttachmentModifier = function(pet, attachment, maneuvers)
         elseif modList[1] == xi.mod.REFRESH then
             modValue = getRefreshModValue(pet, attachmentName, maneuvers)
         else
-            modValue = modList[2][maneuvers + 1]
+            modValue = modList[2][math.min(maneuvers + 1, 3)]
         end
 
         -- Apply Automaton Performance Boost if applicable
