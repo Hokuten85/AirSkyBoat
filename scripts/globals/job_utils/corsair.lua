@@ -331,9 +331,9 @@ xi.job_utils.corsair.useDoubleUp = function(caster, target, ability, action)
 					local unlucky = luckyNumbers[abilityId][2]
 					for i=1, buff do
 						if roll < lucky then
-							weights  = {lucky-roll,unpack(weights)}	
+							table.insert(weights, lucky-roll)
 						elseif roll > 5 then
-							weights  = {11-roll,unpack(weights)}
+							table.insert(weights, 11-roll)
 						end
 					end
 					
