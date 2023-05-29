@@ -1,29 +1,92 @@
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 13104; -- rylsqr-collar
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 12431; -- ryl-squires-helm
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 13891; -- san-dorian-helm
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 13892; -- kingdom-helm
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 12687; -- rylsqr-mufflers
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 14033; -- san-mufflers
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 14034; -- kingdom-mufflers
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 12943; -- rylsqr-sollerets
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 14141; -- san-sollerets
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 14142; -- kingdom-sollerets
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 12559; -- rylsqr-chainmail
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 14340; -- rylsqr-chnml-1
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 14341; -- rylsqr-chnml-2
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 12815; -- rylsqr-breeches
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 14261; -- rylsqr-brch-1
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 14262; -- rylsqr-brch-2
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 13107; -- rk-army-collar
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 13105; -- tk-army-collar
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 13580; -- ryl-army-mantle
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 13106; -- rylgrd-collar
+
 UPDATE item_equipment SET jobs = 14785 WHERE name = 'ryl.kgt._bascinet'; -- WAR, PLD, DRK, BST, SAM, NIN, DRG
-UPDATE item_equipment SET jobs = 14785 WHERE name = 'haubergeon';
-UPDATE item_equipment SET jobs = 14785 WHERE name = 'hauberk';
-UPDATE item_equipment SET jobs = 14785 WHERE name = 'adaman_hauberk';
 UPDATE item_equipment SET jobs = 14785 WHERE name = 'ryl.kgt._chainmail';
 UPDATE item_equipment SET jobs = 14785 WHERE name = 'ryl.kgt._mufflers';
 UPDATE item_equipment SET jobs = 14785 WHERE name = 'ryl.kgt._breeches';
 UPDATE item_equipment SET jobs = 14785 WHERE name = 'ryl.kgt._sollerets';
-UPDATE item_equipment SET jobs = 14785 WHERE name = 'haubergeon_+1';
-UPDATE item_equipment SET jobs = 14785 WHERE name = 'hauberk_+1';
 UPDATE item_equipment SET jobs = 14785 WHERE name = 'r.k._mufflers_+1';
 UPDATE item_equipment SET jobs = 14785 WHERE name = 'r.k._mufflers_+2';
 UPDATE item_equipment SET jobs = 14785 WHERE name = 'r.k._sollerets_+1';
 UPDATE item_equipment SET jobs = 14785 WHERE name = 'r.k._sollerets_+2';
+
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 12427; -- bascinet
+UPDATE item_equipment SET jobs = 14785 WHERE name = 'haubergeon';
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 12683; -- darksteel_mufflers
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 12811; -- dst._breeches
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 12939; -- dst._sollerets
+
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 12439; -- bascinet_+1
+UPDATE item_equipment SET jobs = 14785 WHERE name = 'haubergeon_+1';
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 13976; -- dst._mufflers_+1
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 14209; -- dst._breeches_+1
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 14084; -- dst._sollerets_+1
+
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 12428; -- celata
+UPDATE item_equipment SET jobs = 14785 WHERE name = 'hauberk';
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 12684; -- thick_mufflers
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 12812; -- thick_breeches
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 12940; -- thick_sollerets
+
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 13845; -- celata-1
+UPDATE item_equipment SET jobs = 14785 WHERE name = 'hauberk_+1';
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 14012; -- thick-mufflers-1
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 14252; -- thick-breeches-1
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 14127; -- thick-sollerets-1
+
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 12429; -- adaman-celata
+UPDATE item_equipment SET jobs = 14785 WHERE name = 'adaman_hauberk';
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 12685; -- adaman-mufflers
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 12813; -- adaman-breeches
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 12941; -- adaman-sollerets
+
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 13924; -- armada-celata
 UPDATE item_equipment SET jobs = 14785 WHERE name = 'armada_hauberk';
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 14816; -- armada-mufflers
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 14296; -- armada-breeches
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 14175; -- armada-sollerets
+
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 15205; -- alumine-salade
 UPDATE item_equipment SET jobs = 14785 WHERE name = 'alumine_haubert';
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 14051; -- alumine-moufles
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 15402; -- alumine-brayettes
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 15341; -- alumine-sollerets
+
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 15206; -- luisant-salade
 UPDATE item_equipment SET jobs = 14785 WHERE name = 'luisant_haubert';
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 14052; -- luisant-moufles
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 15403; -- luisant-brayettes
+UPDATE item_equipment SET jobs = jobs | 8192 WHERE itemid = 15342; -- luisant-sollerets
+
 UPDATE item_equipment SET jobs = 14785 WHERE name = 'sipahi_jawshan';
-UPDATE item_equipment SET jobs = 14785 WHERE name = 'abtal_jawshan';
 UPDATE item_equipment SET jobs = 14785 WHERE name = 'sipahi_dastanas';
-UPDATE item_equipment SET jobs = 14785 WHERE name = 'abtal_dastanas';
 UPDATE item_equipment SET jobs = 14785 WHERE name = 'sipahi_zerehs';
-UPDATE item_equipment SET jobs = 14785 WHERE name = 'abtal_zerehs';
 UPDATE item_equipment SET jobs = 14785 WHERE name = 'sipahi_boots';
-UPDATE item_equipment SET jobs = 14785 WHERE name = 'abtal_boots';
 UPDATE item_equipment SET jobs = 14785 WHERE name = 'sipahi_turban';
+
+UPDATE item_equipment SET jobs = 14785 WHERE name = 'abtal_jawshan';
+UPDATE item_equipment SET jobs = 14785 WHERE name = 'abtal_dastanas';
+UPDATE item_equipment SET jobs = 14785 WHERE name = 'abtal_zerehs';
+UPDATE item_equipment SET jobs = 14785 WHERE name = 'abtal_boots';
 UPDATE item_equipment SET jobs = 14785 WHERE name = 'abtal_turban';
 
 UPDATE item_equipment SET jobs = 36321 WHERE name = 'ridill'; -- WAR, THF, PLD, DRK, BST, RNG, SAM, BLU
