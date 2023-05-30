@@ -118,25 +118,26 @@ void CTreasurePool::DelMember(CCharEntity* PChar)
     {
         if (!m_PoolItems[i].Lotters.empty())
         {
-            auto lotterIterator = m_PoolItems[i].Lotters.begin();
-            while (lotterIterator != m_PoolItems[i].Lotters.end())
+            for (size_t j = 0; j < m_PoolItems[i].Lotters.size(); j++)
             {
                 // remove their lot info
-                LotInfo* info = &(*lotterIterator);
-                if (PChar->id == info->member->id)
+                if (PChar->id == m_PoolItems[i].Lotters[j].member->id)
                 {
-                    lotterIterator = m_PoolItems[i].Lotters.erase(lotterIterator);
+                    m_PoolItems[i].Lotters.erase(m_PoolItems[i].Lotters.begin() + j);
                 }
             }
         }
     }
     //}
 
-    auto memberToDelete = std::find(members.begin(), members.end(), PChar);
-    if (memberToDelete != members.end())
+    for (uint32 i = 0; i < members.size(); ++i)
     {
-        PChar->PTreasurePool = nullptr;
-        members.erase(memberToDelete);
+        if (PChar == members.at(i))
+        {
+            PChar->PTreasurePool = nullptr;
+            members.erase(members.begin() + i);
+            break;
+        }
     }
 
     if ((m_TreasurePoolType == TREASUREPOOL_PARTY || m_TreasurePoolType == TREASUREPOOL_ALLIANCE) && members.size() == 1)
