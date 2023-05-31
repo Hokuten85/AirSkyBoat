@@ -487,7 +487,7 @@ namespace mobutils
             statMultiplier = isNM ? settings::get<float>("map.NM_STAT_MULTIPLIER") : settings::get<float>("map.MOB_STAT_MULTIPLIER");
         }
         PMob->stats.STR     = (uint16)(PMob->stats.STR * statMultiplier);
-        PMob->stats.DEX     = (uint16)(PMob->stats.DEX * statMultiplier);
+        //PMob->stats.DEX     = (uint16)(PMob->stats.DEX * statMultiplier);
         PMob->stats.VIT     = (uint16)(PMob->stats.VIT * statMultiplier);
         //PMob->stats.AGI     = (uint16)(PMob->stats.AGI * statMultiplier); //Don't make them more evasive
         PMob->stats.INT     = (uint16)(PMob->stats.INT * statMultiplier);
