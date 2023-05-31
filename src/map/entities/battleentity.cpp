@@ -954,19 +954,8 @@ uint16 CBattleEntity::DEF()
 
 uint16 CBattleEntity::EVA()
 {
-    int16 evasion = GetSkill(SKILL_EVASION);
-
-    // Mobs do not have SKILL_EVASION. Their stats are set in the mobutils.cpp. This will correctly set their evasion
-    if (this->objtype == TYPE_MOB || this->objtype == TYPE_PET)
-    {
-        int16 evasionMob = m_modStat[Mod::EVA];
-        if (evasionMob > 200)
-        {
-            evasionMob = (200 + (evasionMob - 200) * 0.9);
-        }
-        
-        return std::max(0, (evasionMob + AGI() / 2));
-    }
+    // Mobs do not have SKILL_EVASION. Their stats are set in the mobutils.cpp. m_modStat[Mod::EVA] includes all mob evasion
+    int16 evasion = (this->objtype == TYPE_MOB || this->objtype == TYPE_PET) ? 0 : GetSkill(SKILL_EVASION);
 
     return std::max(0, (m_modStat[Mod::EVA] + evasion + AGI() / 2));
 }
