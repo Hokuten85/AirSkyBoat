@@ -1179,10 +1179,10 @@ UPDATE mob_groups SET minLevel = 31, maxLevel = 34 WHERE name = "Goblin_Shaman" 
 -- Garlaige_Citadel (Zone 200)
 -- ------------------------------------------------------------
 
-UPDATE mob_groups SET content_tag='ABYSSEA' WHERE name='Fortalice_Bats' AND groupid='15' AND zoneid='200';
-UPDATE mob_groups SET content_tag='ABYSSEA' WHERE name='Kaboom' AND groupid='29' AND zoneid='200';
-UPDATE mob_groups SET content_tag='ABYSSEA' WHERE name='Warden_Beetle' AND groupid='35' AND zoneid='200';
-UPDATE mob_groups SET content_tag='ABYSSEA' WHERE name='Donjon_Bat' AND groupid='40' AND zoneid='200';
+UPDATE mob_groups SET minLevel = 56, maxLevel = 60, content_tag='ABYSSEA' WHERE name='Fortalice_Bats' AND groupid='15' AND zoneid='200';
+UPDATE mob_groups SET minLevel = 56, maxLevel = 60, content_tag='ABYSSEA' WHERE name='Kaboom' AND groupid='29' AND zoneid='200';
+UPDATE mob_groups SET minLevel = 56, maxLevel = 60, content_tag='ABYSSEA' WHERE name='Warden_Beetle' AND groupid='35' AND zoneid='200';
+UPDATE mob_groups SET minLevel = 56, maxLevel = 60, content_tag='ABYSSEA' WHERE name='Donjon_Bat' AND groupid='40' AND zoneid='200';
 UPDATE mob_groups SET content_tag='WOTG' WHERE name='Hazmat' AND groupid='17' AND zoneid='200';
 UPDATE mob_groups SET content_tag='WOTG' WHERE name='Hovering_Hotpot' AND groupid='34' AND zoneid='200';
 UPDATE mob_groups SET content_tag='WOTG' WHERE name='Frogamander' AND groupid='39' AND zoneid='200';
