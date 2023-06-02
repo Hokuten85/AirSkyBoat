@@ -10,9 +10,9 @@ INSERT INTO traits VALUES ('150','critrate bonus','6','75','5','165','10',null,0
 
 -- PLD Adjust th enmit cap
 INSERT INTO traits VALUES ('151','enmity cap','7','25','1','2000','1000',null,0); -- PLD
-INSERT INTO traits VALUES ('151','enmity cap','7','50','2','2000','2000',null,0);
-INSERT INTO traits VALUES ('151','enmity cap','7','75','3','2000','3000',null,0);
-INSERT INTO traits VALUES ('151','enmity cap','7','99','4','2000','4000',null,0);
+INSERT INTO traits VALUES ('151','enmity cap','7','50','2','2000','3000',null,0);
+INSERT INTO traits VALUES ('151','enmity cap','7','75','3','2000','5000',null,0);
+INSERT INTO traits VALUES ('151','enmity cap','7','99','4','2000','7000',null,0);
 
 -- -DT% II
 INSERT INTO traits VALUES ('153','damage taken II','7','10','1','2001','2',null,0);
@@ -77,10 +77,10 @@ INSERT INTO traits VALUES ('150','crit dmg bonus','13','40','3','421','6',null,0
 INSERT INTO traits VALUES ('150','crit dmg bonus','13','60','4','421','8',null,0); -- NIN
 INSERT INTO traits VALUES ('150','crit dmg bonus','13','75','5','421','10',null,0); -- NIN
 
-INSERT INTO traits VALUES ('151','enmity cap','13','25','1','2000','500',null,0); -- NIN
-INSERT INTO traits VALUES ('151','enmity cap','13','50','2','2000','1000',null,0);
-INSERT INTO traits VALUES ('151','enmity cap','13','75','3','2000','1500',null,0);
-INSERT INTO traits VALUES ('151','enmity cap','13','99','4','2000','2000',null,0);
+INSERT INTO traits VALUES ('151','enmity cap','13','25','1','2000','1000',null,0); -- NIN
+INSERT INTO traits VALUES ('151','enmity cap','13','50','2','2000','2000',null,0);
+INSERT INTO traits VALUES ('151','enmity cap','13','75','3','2000','3000',null,0);
+INSERT INTO traits VALUES ('151','enmity cap','13','99','4','2000','4000',null,0);
 
 -- GIVE NIN TACTICAL PARRY
 UPDATE traits SET level = 25 WHERE traitid = 100 and job = 13 and rank = 1;
