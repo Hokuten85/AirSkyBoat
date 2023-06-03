@@ -168,7 +168,7 @@ quest.sections =
             {
                 onTrade = function(player, npc, trade)
                     if
-                        quest:getVar(player, 'Prog') == 4 and
+                        (quest:getVar(player, 'Prog') == 4 or quest:getVar(player, 'Prog') == 5) and
                         npcUtil.tradeHasExactly(trade, xi.items.ODONTOTYRANNUS)
                     then
                         return quest:progressEvent(85)
