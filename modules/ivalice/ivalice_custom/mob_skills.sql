@@ -1,0 +1,1 @@
+UPDATE mob_skills SET mob_anim_id = 45 WHERE mob_skill_name = 'petal_pirouette' -- Not the right animation, but stops crashing
