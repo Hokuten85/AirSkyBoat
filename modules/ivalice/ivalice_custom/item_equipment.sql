@@ -95,6 +95,8 @@ UPDATE item_equipment SET jobs = 2111715 WHERE name = 'bomb_core'; -- WAR, MNK, 
 
 UPDATE item_equipment SET jobs = 2 | 2048 | 4096 WHERE name IN ('white_belt','black_belt','purple_belt','brown_belt'); -- MNK, SAM, NIN
 
+update item_equipment set jobs = jobs | 4096 where name in ('martial_slacks', 'battle_gloves'); -- NIN
+
 UPDATE item_equipment SET jobs = jobs | 64 WHERE name IN ('nemesis_earring','eris_earring','eris_earring_+1'); -- ADD PLD
 
 UPDATE item_equipment SET MId = 16 WHERE MId IN (14,15) AND name like '%subligar%'; -- CHANGE SUBLIGARS TO PANTS
