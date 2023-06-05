@@ -497,9 +497,8 @@ namespace itemutils
                             case SKILLTYPE::SKILL_KATANA:
                                 ((CItemEquipment*)PItem)->addModifier(CModifier(Mod::CRITHITRATE_SLOT, 5));
                                 break;
-                            case SKILLTYPE::SKILL_AXE: // THESE GUYS GET NOTHING FOR NOW
-                                ((CItemEquipment*)PItem)->addModifier(CModifier(Mod::CRITHITRATE_SLOT, 2));
-                                ((CItemEquipment*)PItem)->addModifier(CModifier(Mod::CRITHITDMG_SLOT, 2));
+                            case SKILLTYPE::SKILL_AXE:
+                                ((CItemEquipment*)PItem)->addModifier(CModifier(Mod::CRITHITRATE_SLOT, 3));
                                 break;
                             case SKILLTYPE::SKILL_SCYTHE:
                             case SKILLTYPE::SKILL_STAFF:

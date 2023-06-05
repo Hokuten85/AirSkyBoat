@@ -144,9 +144,12 @@ enum TRAITTYPE
     TRAIT_MAGIC_EVA_BONUS     = 126,
     TRAIT_SMITE               = 127,
     TRAIT_WS_DAMAGE_BOOST     = 134,
+    TRAIT_CRITRATE_BONUS      = 150,
+    TRAIT_ENMITY_CAP          = 151,
+    TRAIT_DMG_TAKEN_II        = 153,
 };
 
-#define MAX_TRAIT_ID 139
+#define MAX_TRAIT_ID 153
 
 /************************************************************************
  *                                                                       *

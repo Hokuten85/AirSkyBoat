@@ -989,10 +989,10 @@ enum class Mod
     //
     // SPARE = 1181, and onward
 
-    ENMITY_CAP              = 2000,
-    DMG_II                  = 2001,
-    CRITHITDMG_SLOT         = 2002,
-    DOUBLEUP_ENHANCEMENT    = 2003,
+    ENMITY_CAP              = 3000,
+    DMG_II                  = 3001,
+    CRITHITDMG_SLOT         = 3002,
+    DOUBLEUP_ENHANCEMENT    = 3003,
 };
 
 // temporary workaround for using enum class as unordered_map key until compilers support it
