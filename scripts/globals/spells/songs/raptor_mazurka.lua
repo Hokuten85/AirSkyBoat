@@ -7,11 +7,7 @@ require("scripts/globals/spells/enhancing_song")
 local spellObject = {}
 
 spellObject.onMagicCastingCheck = function(caster, target, spell)
-    if caster:getZone():getType() == xi.zoneType.DUNGEON then
-        return 1
-    else
-        return 0
-    end
+	return 0
 end
 
 spellObject.onSpellCast = function(caster, target, spell)
