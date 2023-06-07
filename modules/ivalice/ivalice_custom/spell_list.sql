@@ -1,4 +1,7 @@
 UPDATE spell_list SET recastTime = 10000 WHERE name = 'haste';
+UPDATE spell_list SET jobs = 0x00000000300000000000000000000000000000300000 WHERE spellid = 845; -- Flurry
+UPDATE spell_list SET requirements = 0 WHERE spellid = 260; -- dispel
+
 UPDATE spell_list SET validTargets = 3, spell_range = 204 WHERE name IN ('enfire','enblizzard','enaero','enstone','enthunder','enwater');
 UPDATE spell_list SET recastTime = 10000 WHERE name = 'refresh';
 UPDATE spell_list SET castTime = 1500 WHERE name = 'erase';
