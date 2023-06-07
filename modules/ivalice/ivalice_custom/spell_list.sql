@@ -1,4 +1,4 @@
-UPDATE spell_list SET recastTime = 10000 WHERE name = 'haste';
+UPDATE spell_list SET jobs = 0x00002800300000000000000000000000000000300000, recastTime = 10000 WHERE name = 'haste';
 UPDATE spell_list SET jobs = 0x00000000300000000000000000000000000000300000 WHERE spellid = 845; -- Flurry
 UPDATE spell_list SET requirements = 0 WHERE spellid = 260; -- dispel
 
