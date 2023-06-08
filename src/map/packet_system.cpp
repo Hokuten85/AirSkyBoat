@@ -4963,7 +4963,9 @@ void SmallPacket0x077(map_session_data_t* const PSession, CCharEntity* const PCh
                 char memberName[PacketNameLength] = {};
                 memcpy(&memberName, data[0x04], PacketNameLength - 1);
 
-                ShowDebug("(Party)Altering permissions of %s to %u", data[0x04], data[0x15]);
+                uint8 role = data.ref<uint8>(0x15);
+
+                ShowDebug("(Party)Altering permissions of %s to %u", memberName, role);
                 PChar->PParty->AssignPartyRole(memberName, data.ref<uint8>(0x15));
             }
         }
