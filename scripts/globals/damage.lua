@@ -67,9 +67,9 @@ xi.damage.returnDamageTakenMod = function(target, attackType, damageType)
 
     for _, mod in pairs(attMods[attackType]) do
         if mod.min ~= nil then
-            dmgTakenMod = dmgTakenMod + utils.clamp(target:getMod(mod.mod) / 10000, mod.min, mod.max)
+            dmgTakenMod = dmgTakenMod * (1 + utils.clamp(target:getMod(mod.mod) / 10000, mod.min, mod.max))
         else
-            dmgTakenMod = dmgTakenMod + (target:getMod(mod.mod) / 10000)
+            dmgTakenMod = dmgTakenMod * (1 + (target:getMod(mod.mod) / 10000))
         end
     end
 

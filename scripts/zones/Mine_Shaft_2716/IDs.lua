@@ -72,6 +72,7 @@ zones[xi.zone.MINE_SHAFT_2716] =
             twoHour = 688, -- Mighty Strikes
             spellListID = 0,
             petID = 0,
+            mods = {},
         },
         [xi.job.MNK] =
         {
@@ -81,6 +82,7 @@ zones[xi.zone.MINE_SHAFT_2716] =
             twoHour = 690, -- Hundred Fists
             spellListID = 0,
             petID = 0,
+            mods = {},
         },
         [xi.job.WHM] =
         {
@@ -90,6 +92,10 @@ zones[xi.zone.MINE_SHAFT_2716] =
             twoHour = 689, -- Benediction
             spellListID = 1,
             petID = 0,
+            mods =
+            {
+                { xi.mod.ATTP, -100, },
+            },
         },
         [xi.job.BLM] =
         {
@@ -99,6 +105,10 @@ zones[xi.zone.MINE_SHAFT_2716] =
             twoHour = 691, -- Manafont
             spellListID = 2,
             petID = 0,
+            mods =
+            {
+                { xi.mod.ATTP, -100 },
+            },
         },
         [xi.job.RDM] =
         {
@@ -108,6 +118,10 @@ zones[xi.zone.MINE_SHAFT_2716] =
             twoHour = 692, -- Chainspell
             spellListID = 3,
             petID = 0,
+            mods =
+            {
+                { xi.mod.ATTP, -50, },
+            },
         },
         [xi.job.THF] =
         {
@@ -117,6 +131,10 @@ zones[xi.zone.MINE_SHAFT_2716] =
             twoHour = 693, -- Perfect Dodge
             spellListID = 0,
             petID = 0,
+            mods =
+            {
+                { xi.mod.ATTP, -50, },
+            },
         },
         [xi.job.PLD] =
         {
@@ -126,6 +144,7 @@ zones[xi.zone.MINE_SHAFT_2716] =
             twoHour = 694, -- Incincible
             spellListID = 4,
             petID = 0,
+            mods = {},
         },
         [xi.job.DRK] =
         {
@@ -135,6 +154,7 @@ zones[xi.zone.MINE_SHAFT_2716] =
             twoHour = 695, -- Blood Weapon
             spellListID = 5,
             petID = 0,
+            mods = {},
         },
         [xi.job.BST] =
         {
@@ -158,6 +178,7 @@ zones[xi.zone.MINE_SHAFT_2716] =
             twoHour = 740, -- Familiar
             spellListID = 0,
             petID = 1,
+            mods = {},
         },
         [xi.job.BRD] =
         {
@@ -167,6 +188,10 @@ zones[xi.zone.MINE_SHAFT_2716] =
             twoHour = 696, -- Soul Voice
             spellListID = 6,
             petID = 0,
+            mods =
+            {
+                { xi.mod.ATTP, -25, },
+            },
         },
         [xi.job.RNG] =
         {
@@ -176,6 +201,7 @@ zones[xi.zone.MINE_SHAFT_2716] =
             twoHr = 413, -- Eagle Eye Shot
             spellListID = 0,
             petID = 0,
+            mods = {},
         },
         [xi.job.SAM] =
         {
@@ -185,6 +211,7 @@ zones[xi.zone.MINE_SHAFT_2716] =
             twoHour = 730, -- Meikyo Shisui
             spellListID = 0,
             petID = 0,
+            mods = {},
         },
         [xi.job.NIN] =
         {
@@ -194,6 +221,7 @@ zones[xi.zone.MINE_SHAFT_2716] =
             twoHour = 731, -- Mjin Gakure
             spellListID = 7,
             petID = 0,
+            mods = {},
         },
         [xi.job.DRG] =
         {
@@ -203,6 +231,7 @@ zones[xi.zone.MINE_SHAFT_2716] =
             twoHour = 732, -- Call Wyvern
             spellListID = 0,
             petID = 2,
+            mods = {},
         },
         [xi.job.SMN] =
         {
@@ -233,6 +262,10 @@ zones[xi.zone.MINE_SHAFT_2716] =
             twoHour = 734, -- Astral Flow
             spellListID = 0,
             petID = 3,
+            mods =
+            {
+                { xi.mod.ATTP, -100, },
+            },
         },
         [xi.job.BLU] =
         {
@@ -241,6 +274,7 @@ zones[xi.zone.MINE_SHAFT_2716] =
             ability = 0, -- None
             spellListID = 8, -- TODO: Mimic player's set spells
             petID = 0,
+            mods = {},
         },
         [xi.job.COR] =
         {
@@ -249,6 +283,7 @@ zones[xi.zone.MINE_SHAFT_2716] =
             ability = 0, -- TODO: Add rolls here
             spellListID = 0, -- ???
             petID = 0,
+            mods = {},
         },
         [xi.job.PUP] =
         {
@@ -275,6 +310,7 @@ zones[xi.zone.MINE_SHAFT_2716] =
             ability = 1995, -- Maneuvers
             spellListID = 0,
             petID = 4,
+            mods = {},
         },
     }
 }

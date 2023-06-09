@@ -43,7 +43,7 @@ INSERT INTO `mob_pool_mods` VALUES (44,59,150,1); -- WEAPON_BONUS: 150
 INSERT INTO `mob_pool_mods` VALUES (60,370,20,0); -- REGEN: 20
 
 -- Airi
-INSERT INTO `mob_pool_mods` VALUES (70,48,434,1); -- SHARE_TARGET: 434
+INSERT INTO `mob_pool_mods` VALUES (70,48,307,1); -- SHARE_TARGET: 307
 INSERT INTO `mob_pool_mods` VALUES (70,1152,100,0); -- LULLABYRESBUILD: 100
 
 -- Animated Shield
@@ -212,9 +212,6 @@ INSERT INTO `mob_pool_mods` VALUES (1663,29,3,1); -- ASSIST: 3
 -- Goblin Swordsman
 INSERT INTO `mob_pool_mods` VALUES (1719,29,2,1); -- ASSIST: 2
 
--- Golden-Tongued Culberry
-INSERT INTO `mob_pool_mods` VALUES (1750,56,1,1); -- HP_STANDBACK: 1
-
 -- Goliath
 INSERT INTO `mob_pool_mods` VALUES (1754,4,4,1); -- SIGHT_RANGE: 4
 
@@ -241,7 +238,7 @@ INSERT INTO `mob_pool_mods` VALUES (2047,163,-100,0); -- DMGMAGIC: -100
 INSERT INTO `mob_pool_mods` VALUES (2083,29,25,0); -- MDEF: 25
 
 -- Iruci
-INSERT INTO `mob_pool_mods` VALUES (2105,48,434,1); -- SHARE_TARGET: 434
+INSERT INTO `mob_pool_mods` VALUES (2105,48,307,1); -- SHARE_TARGET: 307
 INSERT INTO `mob_pool_mods` VALUES (2105,1152,100,0); -- LULLABYRESBUILD: 100
 
 -- Ixzdei Blm
@@ -392,7 +389,7 @@ INSERT INTO `mob_pool_mods` VALUES (3051,4,4,1); -- SIGHT_RANGE: 4
 INSERT INTO `mob_pool_mods` VALUES (3099,23,23,1); -- IMMUNITY: 23
 
 -- Pey
-INSERT INTO `mob_pool_mods` VALUES (3124,48,434,1); -- SHARE_TARGET: 434
+INSERT INTO `mob_pool_mods` VALUES (3124,48,307,1); -- SHARE_TARGET: 307
 INSERT INTO `mob_pool_mods` VALUES (3124,1152,100,0); -- LULLABYRESBUILD: 100
 
 -- Phantom Worm
