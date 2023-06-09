@@ -1949,7 +1949,7 @@ INSERT INTO `pydarkstar_items` VALUES
 (4302,'flask_of_pamama_au_lait',1,0,2000,30,0,0,1,30),
 (4303,'flask_of_persikos_au_lait',1,0,5000,30,0,0,1,30),
 (4304,'grimmonite',1,0,1800,30,0,0,1,30),
-(4305,'ryugu_titan',1,0,3000,30,0,0,1,30),
+(4305,'ryugu_titan',1,0,3000,30,1,0,89000,30),
 (4306,'giant_donko',1,0,5000,30,0,0,1,30),
 (4307,'jungle_catfish',1,0,15000,30,0,0,1,30),
 (4308,'giant_chirai',1,0,5000,30,0,0,1,30),
@@ -1960,7 +1960,7 @@ INSERT INTO `pydarkstar_items` VALUES
 (4313,'blindfish',1,0,7350,30,1,0,7350,30),
 (4314,'bibikibo',1,0,300,30,1,0,3240,30),
 (4315,'lungfish',1,0,50000,30,1,0,540000,30),
-(4316,'armored_pisces',1,0,2000,30,0,0,1,30),
+(4316,'armored_pisces',1,0,2000,30,1,0,89000,30),
 (4317,'trilobite',1,0,120,30,1,0,1296,30),
 (4318,'bibiki_urchin',1,0,2000,30,1,0,21600,30),
 (4319,'tricorn',1,0,26000,30,0,0,1,30),
@@ -2119,7 +2119,7 @@ INSERT INTO `pydarkstar_items` VALUES
 (4476,'titanictus',1,0,3000,30,0,0,1,30),
 (4477,'gavial_fish',1,0,3000,30,0,0,1,30),
 (4478,'three-eyed_fish',1,0,1000,30,0,0,1,30),
-(4479,'bhefhel_marlin',1,0,1350,30,0,0,1,30),
+(4479,'bhefhel_marlin',1,0,1350,30,1,0,89000,30),
 (4480,'gugru_tuna',1,0,282,30,0,0,1,30),
 (4481,'ogre_eel',1,0,1000,30,1,0,9200,30),
 (4482,'nosteau_herring',1,0,1000,30,1,0,10000,30),
@@ -2635,8 +2635,8 @@ INSERT INTO `pydarkstar_items` VALUES
 (5131,'vongola_clam',1,0,3000,30,1,0,32400,30),
 (5132,'gurnard',1,0,1,30,1,0,11,30),
 (5133,'pterygotus',1,0,1,30,0,0,1,30),
-(5134,'mola_mola',1,0,1000,30,0,0,1,30),
-(5135,'rhinochimera',1,0,10000,30,0,0,1,30),
+(5134,'mola_mola',1,0,1000,30,1,0,89000,30),
+(5135,'rhinochimera',1,0,10000,30,1,0,89000,30),
 (5136,'istavrit',1,0,9550,30,0,0,1,30),
 (5137,'turnabaligi',1,0,2,30,0,0,1,30),
 (5138,'black_ghost',1,0,1000,30,1,0,10800,30),
@@ -8077,7 +8077,8 @@ INSERT INTO `pydarkstar_items` VALUES
 (19793,'patientia_lance',1,0,5000,30,0,0,1,30),
 (19800,'gargouille_arrow',0,0,1,30,1,0,89,30),
 (19802,'orichalcum_bullet',1,0,10,30,1,0,891,30),
-(19803,'adaman_bullet',1,0,10,30,1,0,891,30);
+(19803,'adaman_bullet',1,0,10,30,1,0,891,30),
+(5534, 'apkallufa',1,0,1000,30,1,0,89000,30);
 /*!40000 ALTER TABLE `pydarkstar_items` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

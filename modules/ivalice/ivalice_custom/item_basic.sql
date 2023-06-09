@@ -22,3 +22,5 @@ AND ib.aH IN (58);
 UPDATE item_basic
 SET flags = flags | 0x8000
 WHERE itemid IN (13202,13054,13952,17108);
+
+UPDATE item_basic SET stackSize = 99 WHERE name IN ('apkallufa', 'armored_pisces', 'bhefhel_marlin', 'mola_mola', 'rhinochimera', 'ryugu_titan');
