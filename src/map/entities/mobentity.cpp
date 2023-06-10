@@ -1278,8 +1278,8 @@ void CMobEntity::DropItems(CCharEntity* PChar)
 
     if (!getMobMod(MOBMOD_NO_DROPS) && dropList != nullptr && (!dropList->Items.empty() || !dropList->Groups.empty() || PAI->EventHandler.hasListener("ITEM_DROPS")))
     {
-        // THLvl is the number of 'extra chances' at an item. If the item is obtained, then break out.
-        int16 maxRolls = 1;
+        int16 maxRolls = 1 + (m_THLvl > 2 ? 2 : m_THLvl);
+        int16 oldBonus = m_THLvl > 2 ? (m_THLvl - 2) * 10 : 0;
 
         LootContainer loot(dropList);
 
@@ -1296,12 +1296,12 @@ void CMobEntity::DropItems(CCharEntity* PChar)
 
             // NOTE: When switching over to the correct TH table method fixed rate means to not use the TH table
             int16 rolls = group.hasFixedRate ? 1 : maxRolls;
-
             for (int16 roll = 0; roll < rolls; ++roll)
             {
                 // Determine if this group should drop an item and determine bonus
                 float bonus = ApplyTH(m_THLvl, group.GroupRate);
-                if (group.GroupRate > 0 && xirand::GetRandomNumber(1000) < std::round(group.GroupRate * settings::get<float>("map.DROP_RATE_MULTIPLIER") * bonus))
+                float baseRate = group.GroupRate * settings::get<float>("map.DROP_RATE_MULTIPLIER");
+                if (group.GroupRate > 0 && xirand::GetRandomNumber(1000) < std::round(std::max(baseRate * bonus, baseRate + oldBonus)))
                 {
                     // Each item in the group is given its own weight range which is the previous value to the previous value + item.DropRate
                     // Such as 2 items with drop rates of 200 and 800 would be 0-199 and 200-999 respectively
@@ -1334,11 +1334,11 @@ void CMobEntity::DropItems(CCharEntity* PChar)
         {
             // NOTE: When switching over to the correct TH table method fixed rate means to not use the TH table
             int16 rolls = item.hasFixedRate ? 1 : maxRolls;
-
             for (int16 roll = 0; roll < rolls; ++roll)
             {
                 float bonus = ApplyTH(m_THLvl, item.DropRate);
-                if (item.DropRate > 0 && xirand::GetRandomNumber(1000) < std::round(item.DropRate * settings::get<float>("map.DROP_RATE_MULTIPLIER") * bonus))
+                float baseRate = item.DropRate * settings::get<float>("map.DROP_RATE_MULTIPLIER");
+                if (item.DropRate > 0 && xirand::GetRandomNumber(1000) < std::round(std::max(baseRate * bonus, baseRate + oldBonus)))
                 {
                     if (AddItemToPool(item.ItemID, ++dropCount))
                     {

@@ -23,4 +23,4 @@ UPDATE item_basic
 SET flags = flags | 0x8000
 WHERE itemid IN (13202,13054,13952,17108);
 
-UPDATE item_basic SET stackSize = 99 WHERE name IN ('apkallufa', 'armored_pisces', 'bhefhel_marlin', 'mola_mola', 'rhinochimera', 'ryugu_titan');
+UPDATE item_basic SET stackSize = 99, aH = 51 WHERE itemid IN (4305,4316,4479,5134,5135,5534); -- 'apkallufa', 'armored_pisces', 'bhefhel_marlin', 'mola_mola', 'rhinochimera', 'ryugu_titan'

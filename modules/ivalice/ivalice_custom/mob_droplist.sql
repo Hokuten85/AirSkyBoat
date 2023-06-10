@@ -119,5 +119,13 @@ AND mg.dropid > 0
 AND mg.minlevel DIV 10 < 10
 ORDER BY mg.minlevel DIV 10;
 
-update mob_droplist set itemRate = 50 where itemId = 1025 and itemRate < 50; -- palborough_chest_key
-update mob_droplist set itemRate = 50 where itemId = 13514 and itemRate < 50; -- archers_ring
+UPDATE mob_droplist SET itemRate = 50 WHERE itemId = 1025 AND itemRate < 50; -- palborough_chest_key
+UPDATE mob_droplist SET itemRate = 50 WHERE itemId = 13514 AND itemRate < 50; -- archers_ring
+
+-- Coffer Keys 10% minimum
+UPDATE mob_droplist md
+INNER JOIN item_basic ib 
+	ON md.itemId = ib.itemid 
+SET md.itemRate = 100
+WHERE ib.name LIKE '%coffer_key%'
+AND md.itemRate < 100;

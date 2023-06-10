@@ -51,10 +51,12 @@ entity.fishRewards =
     [   xi.items.GERROTHORAX] = { gil = 423, items = { { chance =  1.2, itemId =                xi.items.RISKY_PATCH } } },
     [    xi.items.MONKE_ONKE] = { gil = 150, items = { { chance =    2, itemId =       xi.items.PINCH_OF_POISON_DUST } } },
     [   xi.items.KILICBALIGI] = { gil = 150, items = { { chance =    2, itemId =           xi.items.RUSTY_GREATSWORD } } },
-    [xi.items.ARMORED_PISCES] = { gil = 475, items = { { chance =  0.4, itemId =         xi.items.STOLID_BREASTPLATE } } },
+    [xi.items.ARMORED_PISCES] = { gil = 475, items = { { chance =  1.0, itemId =         xi.items.STOLID_BREASTPLATE } } },
     [     xi.items.MOLA_MOLA] = { gil = 478, items = { { chance =  1.8, itemId =            xi.items.MERCURIAL_SPEAR } } },
     [       xi.items.AHTAPOT] = { gil = 350, items = { { chance = 18.8, itemId =              xi.items.DECAYED_INGOT }, { chance = 10.6, itemId = xi.items.MILDEWY_INGOT } } },
     [       xi.items.LAKERDA] = { gil =  51, items = { { chance =    2, itemId =                      xi.items.PEARL }, { chance = 10.6, itemId =   xi.items.BLACK_PEARL } } },
+	[     xi.items.APKALLUFA] = { gil =  95, items = { { chance =    2, itemId =       xi.items.SCROLL_OF_ICE_SPIKES } } },
+	[  xi.items.RHINOCHIMERA] = { gil = 300, items = { { chance =  3.2, itemId =               xi.items.SOLON_TORQUE } } },
 }
 
 entity.onTrade = function(player, npc, trade)
