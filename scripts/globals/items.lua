@@ -2826,6 +2826,7 @@ xi.items =
     CALMA_HOSE                      = 11980,
     MUSTELA_BRAIS                   = 11981,
     MAGAVAN_SLOPS                   = 11982,
+	ROGUES_TORQUE                   = 11993,
 	CORSAIRS_TORQUE                 = 12004,
     RAVAGERS_MASK                   = 12008,
     TANTRA_CROWN                    = 12009,

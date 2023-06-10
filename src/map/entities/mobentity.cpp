@@ -99,6 +99,7 @@ CMobEntity::CMobEntity()
     m_HiPCLvl      = 0;
     m_HiPartySize  = 0;
     m_THLvl        = 0;
+    m_THMaxRoll    = 0;
     m_ItemStolen   = false;
 
     HPmodifier = 0;
@@ -1278,8 +1279,8 @@ void CMobEntity::DropItems(CCharEntity* PChar)
 
     if (!getMobMod(MOBMOD_NO_DROPS) && dropList != nullptr && (!dropList->Items.empty() || !dropList->Groups.empty() || PAI->EventHandler.hasListener("ITEM_DROPS")))
     {
-        int16 maxRolls = 1 + (m_THLvl > 2 ? 2 : m_THLvl);
-        int16 oldBonus = m_THLvl > 2 ? (m_THLvl - 2) * 10 : 0;
+        int16 maxRolls = 1 + m_THMaxRoll;
+        int16 oldBonus = m_THLvl * 10;
 
         LootContainer loot(dropList);
 

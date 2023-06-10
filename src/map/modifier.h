@@ -993,6 +993,7 @@ enum class Mod
     DMG_II                  = 3001,
     CRITHITDMG_SLOT         = 3002,
     DOUBLEUP_ENHANCEMENT    = 3003,
+    TH_EXTRA_ROLL           = 3004,
 };
 
 // temporary workaround for using enum class as unordered_map key until compilers support it

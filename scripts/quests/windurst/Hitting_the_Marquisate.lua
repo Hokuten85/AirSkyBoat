@@ -30,7 +30,7 @@ local quest = Quest:new(xi.quest.log_id.WINDURST, xi.quest.id.windurst.HITTING_T
 
 quest.reward =
 {
-    item  = xi.items.ROGUES_POULAINES,
+    item  = {xi.items.ROGUES_POULAINES, ROGUES_TORQUE},
     title = xi.title.PARAGON_OF_THIEF_EXCELLENCE,
 }
 
