@@ -1103,17 +1103,17 @@ float CMobEntity::ApplyTH(int16 m_THLvl, int16 rate)
         }
         else if (m_THLvl < 8)
         {
-            multi = 1.40f + (0.10f * (m_THLvl - 2));
+            multi = 2.0f + (0.50f * (m_THLvl - 3));
+            return multi;
+        }
+        else if (m_THLvl < 10)
+        {
+            multi = 4.0f + (0.75f * (m_THLvl - 7));
             return multi;
         }
         else if (m_THLvl < 12)
         {
-            multi = 1.90f + (0.20f * (m_THLvl - 7));
-            return multi;
-        }
-        else if (m_THLvl < 14)
-        {
-            multi = 2.70f + (0.40f * (m_THLvl - 11));
+            multi = 5.50f + (1.00f * (m_THLvl - 9));
             return multi;
         }
         else
@@ -1169,7 +1169,7 @@ float CMobEntity::ApplyTH(int16 m_THLvl, int16 rate)
         }
         else if (m_THLvl < 8)
         {
-            multi = 1.80f + (0.10f * (m_THLvl - 3));
+            multi = 1.80f + (0.10f * (m_THLvl - 4));
             return multi;
         }
         else if (m_THLvl < 10)
@@ -1202,7 +1202,7 @@ float CMobEntity::ApplyTH(int16 m_THLvl, int16 rate)
         }
         else
         {
-            multi = 2.66f + (0.17f * (m_THLvl - 2));
+            multi = 8.0f/3.0f + (2.0f/12.0f * m_THLvl);
             return multi;
         }
     }
@@ -1280,7 +1280,7 @@ void CMobEntity::DropItems(CCharEntity* PChar)
     if (!getMobMod(MOBMOD_NO_DROPS) && dropList != nullptr && (!dropList->Items.empty() || !dropList->Groups.empty() || PAI->EventHandler.hasListener("ITEM_DROPS")))
     {
         int16 maxRolls = 1 + m_THMaxRoll;
-        int16 oldBonus = m_THLvl > 2 ? (m_THLvl - 2) * 10 : 0;
+        int16 oldBonus = m_THLvl > 1 ? (m_THLvl - 1) * 10 : 0;
 
         LootContainer loot(dropList);
 
