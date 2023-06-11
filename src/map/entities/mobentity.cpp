@@ -1280,7 +1280,7 @@ void CMobEntity::DropItems(CCharEntity* PChar)
     if (!getMobMod(MOBMOD_NO_DROPS) && dropList != nullptr && (!dropList->Items.empty() || !dropList->Groups.empty() || PAI->EventHandler.hasListener("ITEM_DROPS")))
     {
         int16 maxRolls = 1 + m_THMaxRoll;
-        int16 oldBonus = m_THLvl * 10;
+        int16 oldBonus = m_THLvl > 2 ? (m_THLvl - 2) * 10 : 0;
 
         LootContainer loot(dropList);
 

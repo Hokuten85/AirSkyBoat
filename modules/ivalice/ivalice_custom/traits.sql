@@ -35,7 +35,7 @@ UPDATE traits SET level = 60 WHERE traitid = 18 and job = 6 and rank = 1;
 -- GIVE THF CRIT ATT BONUS
 UPDATE traits SET level = 50 WHERE traitid = 98 and job = 6 and rank = 1;
 UPDATE traits SET level = 75 WHERE traitid = 98 and job = 6 and rank = 2;
--- GIVE TH1/2 Extra Rolls
+-- GIVE TH 1/2 Extra Rolls
 INSERT INTO `traits` VALUES (19,'treasure hunter',6,15,1,3004,1,NULL,0);
 INSERT INTO `traits` VALUES (64,'treasure hunter ii',6,45,2,3004,1,NULL,0);
 
