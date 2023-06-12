@@ -37,6 +37,7 @@ UPDATE traits SET level = 50 WHERE traitid = 98 and job = 6 and rank = 1;
 UPDATE traits SET level = 75 WHERE traitid = 98 and job = 6 and rank = 2;
 -- GIVE TH 1/2 Extra Rolls
 INSERT INTO `traits` VALUES (19,'treasure hunter',6,15,1,3004,1,NULL,0);
+INSERT INTO `traits` VALUES (64,'treasure hunter ii',6,45,2,3004,1,NULL,0);
 
 -- GIVE SAM SKILLCHAIN BONUS EARLY
 UPDATE traits SET level = 25 WHERE traitid = 106 AND job = 12 AND level = 78 AND rank = 1 AND modifier = 174;
