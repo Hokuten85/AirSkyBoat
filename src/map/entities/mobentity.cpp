@@ -99,7 +99,7 @@ CMobEntity::CMobEntity()
     m_HiPCLvl      = 0;
     m_HiPartySize  = 0;
     m_THLvl        = 0;
-    m_THMaxRoll    = 0;
+    m_THExtraRoll    = 0;
     m_ItemStolen   = false;
 
     HPmodifier = 0;
@@ -1279,7 +1279,7 @@ void CMobEntity::DropItems(CCharEntity* PChar)
 
     if (!getMobMod(MOBMOD_NO_DROPS) && dropList != nullptr && (!dropList->Items.empty() || !dropList->Groups.empty() || PAI->EventHandler.hasListener("ITEM_DROPS")))
     {
-        int16 maxRolls = 1 + m_THMaxRoll;
+        int16 maxRolls = 1 + std::min((int16)2, m_THLvl);
         int16 oldBonus = m_THLvl > 2 ? (m_THLvl - 2) * 10 : 0;
 
         LootContainer loot(dropList);
@@ -1334,7 +1334,7 @@ void CMobEntity::DropItems(CCharEntity* PChar)
         loot.ForEachItem([&](const DropItem_t& item)
         {
             // NOTE: When switching over to the correct TH table method fixed rate means to not use the TH table
-            int16 rolls = item.hasFixedRate ? 1 : maxRolls;
+            int16 rolls = item.hasFixedRate ? 1 : maxRolls + (item.DropRate <= 5 ? m_THExtraRoll : 0);
             for (int16 roll = 0; roll < rolls; ++roll)
             {
                 float bonus = ApplyTH(m_THLvl, item.DropRate);
