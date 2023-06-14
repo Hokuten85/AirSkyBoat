@@ -87,7 +87,6 @@ zoneObject.onTriggerAreaEnter = function(player, triggerArea)
     local areaId = triggerArea:GetTriggerAreaID()
 
     if
-        GetNPCByID(teleportPortalByArea[areaId]):getLocalVar("isOpen") == 1 and
         teleportEventsByArea[areaId]
     then
         player:startCutscene(teleportEventsByArea[areaId])

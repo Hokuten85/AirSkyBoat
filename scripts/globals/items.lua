@@ -1512,6 +1512,7 @@ xi.items =
     HI_ETHER_III                    = 4134,
     ELIXIR                          = 4145,
     REVITALIZER                     = 4146,
+	FLASK_OF_HOLY_WATER             = 4154,
     REMEDY                          = 4155,
     FLASK_OF_POISON_POTION          = 4157,
     FLASK_OF_SLEEPING_POTION        = 4161,
