@@ -28,12 +28,18 @@ spellObject.onMobSpawn = function(mob)
 
     mob:addSimpleGambit(ai.t.SELF, ai.c.NOT_STATUS, xi.effect.SENTINEL,
                         ai.r.JA, ai.s.SPECIFIC, xi.ja.SENTINEL)
+						
+	mob:addSimpleGambit(ai.t.SELF, ai.c.NOT_STATUS, xi.effect.HOLY_CIRCLE,
+                        ai.r.JA, ai.s.SPECIFIC, xi.ja.HOLY_CIRCLE)
 
     mob:addSimpleGambit(ai.t.TARGET, ai.c.NOT_STATUS, xi.effect.FLASH,
                         ai.r.MA, ai.s.SPECIFIC, xi.magic.spell.FLASH)
 
     mob:addSimpleGambit(ai.t.PARTY, ai.c.HPP_LT, 75,
                         ai.r.MA, ai.s.HIGHEST, xi.magic.spellFamily.CURE)
+						
+	mob:addSimpleGambit(ai.t.SELF, ai.c.NOT_HAS_TOP_ENMITY, 0,
+                        ai.r.JA, ai.s.SPECIFIC, xi.ja.PROVOKE)
 end
 
 spellObject.onMobDespawn = function(mob)

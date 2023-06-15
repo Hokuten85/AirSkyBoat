@@ -91,6 +91,9 @@ entity.onEventFinish = function(player, csid, option)
     -- LURE OF THE WILDCAT (WINDURST)
     if csid == 732 then
         player:setCharVar("WildcatWindurst", utils.mask.setBit(player:getCharVar("WildcatWindurst"), 4, true))
+	elseif csid == 865 then
+		player:addSpell(xi.magic.spell.NANAA_MIHGO, true, true)
+        player:messageSpecial(ID.text.YOU_LEARNED_TRUST, 0, xi.magic.spell.NANAA_MIHGO)
     end
 end
 
