@@ -8,23 +8,24 @@ require("scripts/globals/status")
 cmdprops =
 {
     permission = 1,
-    parameters = "s"
+    parameters = "ss",
+
 }
 
 function error(player, msg)
     player:PrintToPlayer(msg)
-    player:PrintToPlayer("!capskill <skillID>")
+    player:PrintToPlayer("!capskill <target> <skillID>")
 end
 
 function onTrigger(player, target, skillId)
-	if target == nil or itemId == nil then
-        player:PrintToPlayer("You must enter a valid player name and item ID.")
+	if target == nil or skillId == nil then
+        player:PrintToPlayer("You must enter a valid player name and skillId.")
         return
     end
 
-    -- validate skillId
-    if skillId == nil then
-        error(player, "You must provide a skillID.")
+    local targ = GetPlayerByName(target)
+    if targ == nil then
+        player:PrintToPlayer(string.format("Player named '%s' not found!", target))
         return
     end
 
@@ -35,6 +36,6 @@ function onTrigger(player, target, skillId)
     end
 
     -- cap skill
-    player:capSkill(skillId)
+    targ:capSkill(skillId)
     player:PrintToPlayer(string.format("Capped skillID %i.", skillId))
 end

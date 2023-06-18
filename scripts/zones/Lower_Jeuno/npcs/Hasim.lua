@@ -77,7 +77,7 @@ entity.onTrigger = function(player, npc)
         4633, 139135, -- Scroll of Dia III
         6569, 139135, -- Scroll of Slow II
         6570, 139135, -- Scroll of Paralyze II
-        6571, 139135, -- Scroll of Phalanx II
+        6571, 139135, -- Scroll of Phalanx II	
     }
 
     player:showText(npc, ID.text.WAAG_DEEG_SHOP_DIALOG)

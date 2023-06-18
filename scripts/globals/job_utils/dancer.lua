@@ -386,7 +386,7 @@ xi.job_utils.dancer.useWaltzAbility = function(player, target, ability, action)
     local statMultiplier = waltzInfo[2]
     local amtCured       = 0
 
-    if not player:hasStatusEffect(xi.effect.TRANCE) then
+    if not player:hasStatusEffect(xi.effect.TRANCE) and player:getID() == target:getID() then
         player:delTP(waltzInfo[1])
     end
 
