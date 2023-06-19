@@ -73,3 +73,7 @@ INSERT INTO synth_recipes (Desynth,KeyItem,Wood,Smith,Gold,Cloth,Leather,Bone,Al
 	 (0,0,0,0,0,0,0,0,0,50,4103,4245,4431,4431,4431,4431,4431,4431,4431,4431,4441,4441,4441,4441,2,3,4,4,'Grape Juice');
 INSERT INTO synth_recipes (Desynth,KeyItem,Wood,Smith,Gold,Cloth,Leather,Bone,Alchemy,Cook,Crystal,HQCrystal,Ingredient1,Ingredient2,Ingredient3,Ingredient4,Ingredient5,Ingredient6,Ingredient7,Ingredient8,`Result`,ResultHQ1,ResultHQ2,ResultHQ3,ResultQty,ResultHQ1Qty,ResultHQ2Qty,ResultHQ3Qty,ResultName) VALUES
 	 (0,0,0,0,0,0,0,0,0,40,4101,4243,4412,4412,4412,4412,4491,4491,4491,4491,4424,4424,4424,4424,4,5,6,1,'Melon Juice');
+	 
+	 
+INSERT INTO `synth_recipes` (Desynth,KeyItem,Wood,Smith,Gold,Cloth,Leather,Bone,Alchemy,Cook,Crystal,HQCrystal,Ingredient1,Ingredient2,Ingredient3,Ingredient4,Ingredient5,Ingredient6,Ingredient7,Ingredient8,`Result`,ResultHQ1,ResultHQ2,ResultHQ3,ResultQty,ResultHQ1Qty,ResultHQ2Qty,ResultHQ3Qty,ResultName)
+VALUES (0,0,0,35,0,62,34,0,0,0,4099,4241,666,879,2166,2288,2288,0,0,0,15605,15608,15608,15608,1,1,1,1,'Jaridah Salvars');

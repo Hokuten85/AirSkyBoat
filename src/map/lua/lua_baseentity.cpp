@@ -12559,7 +12559,7 @@ uint16 CLuaBaseEntity::getWeaponDmg()
 
 uint16 CLuaBaseEntity::getMobWeaponDmg(uint8 slot)
 {
-    XI_DEBUG_BREAK_IF(!(m_PBaseEntity->objtype == TYPE_MOB || m_PBaseEntity->objtype == TYPE_FELLOW || m_PBaseEntity->objtype == TYPE_PET));
+    XI_DEBUG_BREAK_IF(!(m_PBaseEntity->objtype == TYPE_MOB || m_PBaseEntity->objtype == TYPE_FELLOW || m_PBaseEntity->objtype == TYPE_PET || m_PBaseEntity->objtype == TYPE_TRUST));
 
     auto* PMob = static_cast<CMobEntity*>(m_PBaseEntity);
 
