@@ -130,5 +130,6 @@ SET md.itemRate = 100
 WHERE ib.name LIKE '%coffer_key%'
 AND md.itemRate < 100;
 
+SET @UNCOMMON = 100; -- Uncommon, 10%
 INSERT INTO `mob_droplist` VALUES (1336,0,0,1000,9082,@UNCOMMON); -- Clump Of Bee Pollen (Uncommon, 10%)
 INSERT INTO `mob_droplist` VALUES (2046,0,0,1000,9083,@UNCOMMON); -- Mandragora Dewdrop (Uncommon, 10%)
