@@ -72,7 +72,7 @@ INSERT INTO synth_recipes (Desynth,KeyItem,Wood,Smith,Gold,Cloth,Leather,Bone,Al
 	 (0,0,0,0,0,0,0,0,0,30,4101,4243,4432,4432,4432,4432,4432,4432,4432,4432,4442,4442,4442,4442,4,5,6,6,'Pineapple Juice'),
 	 (0,0,0,0,0,0,0,0,0,50,4103,4245,4431,4431,4431,4431,4431,4431,4431,4431,4441,4441,4441,4441,2,3,4,4,'Grape Juice');
 INSERT INTO synth_recipes (Desynth,KeyItem,Wood,Smith,Gold,Cloth,Leather,Bone,Alchemy,Cook,Crystal,HQCrystal,Ingredient1,Ingredient2,Ingredient3,Ingredient4,Ingredient5,Ingredient6,Ingredient7,Ingredient8,`Result`,ResultHQ1,ResultHQ2,ResultHQ3,ResultQty,ResultHQ1Qty,ResultHQ2Qty,ResultHQ3Qty,ResultName) VALUES
-	 (0,0,0,0,0,0,0,0,0,40,4101,4243,4412,4412,4412,4412,4491,4491,4491,4491,4424,4424,4424,4424,4,5,6,1,'Melon Juice');
+	 (0,0,0,0,0,0,0,0,0,40,4101,4243,4412,4412,4412,4412,4491,4491,4491,4491,4424,4424,4424,4424,4,5,6,7,'Melon Juice');
 	 
 	 
 INSERT INTO `synth_recipes` (Desynth,KeyItem,Wood,Smith,Gold,Cloth,Leather,Bone,Alchemy,Cook,Crystal,HQCrystal,Ingredient1,Ingredient2,Ingredient3,Ingredient4,Ingredient5,Ingredient6,Ingredient7,Ingredient8,`Result`,ResultHQ1,ResultHQ2,ResultHQ3,ResultQty,ResultHQ1Qty,ResultHQ2Qty,ResultHQ3Qty,ResultName)

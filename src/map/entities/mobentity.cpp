@@ -1328,7 +1328,7 @@ void CMobEntity::DropItems(CCharEntity* PChar)
         if (this->GetMLevel() >= 85 && this->m_Type & MOBTYPE::MOBTYPE_NOTORIOUS) 
         {
             uint16 itemId = coloredDrops[xirand::GetRandomNumber(coloredDrops.size())];
-            loot.drops.Items.emplace_back(DROP_TYPE::DROP_NORMAL, itemId, 150);
+            loot.drops.Items.emplace_back(DROP_TYPE::DROP_NORMAL, itemId, 50);
         }
 
         loot.ForEachItem([&](const DropItem_t& item)
