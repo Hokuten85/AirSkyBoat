@@ -367,7 +367,11 @@ xi.summon.avatarFinalAdjustments = function(dmg, mob, skill, target, skilltype, 
     -- Calculate Blood Pact Damage before stoneskin
     dmg = dmg + dmg * mob:getMod(xi.mod.BP_DAMAGE) / 100
 
-    dmg = xi.damage.applyDamageTaken(target, dmg, skilltype, damagetype)
+    -- if magic then apply magic mods here
+    -- (physical mods are applied in physicalSDT)
+    if skilltype == xi.attackType.MAGICAL then
+        dmg = xi.damage.applyDamageTaken(target, dmg, skilltype, damagetype)
+    end
 
     -- handle One For All, Liement
 
@@ -386,7 +390,6 @@ xi.summon.avatarFinalAdjustments = function(dmg, mob, skill, target, skilltype, 
 
     if dmg > 0 then
         target:updateEnmityFromDamage(mob, dmg)
-        target:addEnmity(mob:getMaster(), 1, 0)
         target:handleAfflatusMiseryDamage(dmg)
     end
 

@@ -208,6 +208,8 @@ namespace battleutils
 
         if (ret != SQL_ERROR && sql->NumRows() != 0)
         {
+            // get SMN abilities so can setAbilityID for bloodpacts
+            std::vector<CAbility*> AbilitiesList = ability::GetAbilities(JOB_SMN);
             while (sql->NextRow() == SQL_SUCCESS)
             {
                 CMobSkill* PMobSkill = new CMobSkill(sql->GetIntData(0));
@@ -225,6 +227,18 @@ namespace battleutils
                 PMobSkill->setSecondarySkillchain(sql->GetUIntData(12));
                 PMobSkill->setTertiarySkillchain(sql->GetUIntData(13));
                 PMobSkill->setMsg(185); // standard damage message. Scripters will change this.
+
+                // Need to set the ability ID (for bloodpacts) so that info (such as MP) can be accessed
+                // in mobentity when the actual bloodpact completes (and MP is deducted)
+                for (auto PAbility : AbilitiesList)
+                {
+                    if (PAbility->getMobSkillID() == PMobSkill->getID())
+                    {
+                        PMobSkill->setBloodPactAbilityID(PAbility->getID());
+                        break;
+                    }
+                }
+
                 g_PMobSkillList[PMobSkill->getID()] = PMobSkill;
 
                 auto filename = fmt::format("./scripts/globals/mobskills/{}.lua", PMobSkill->getName());
@@ -5505,20 +5519,23 @@ namespace battleutils
         PChar->PClaimedMob = nullptr;
     }
 
-    int32 BreathDmgTaken(CBattleEntity* PDefender, int32 damage)
+    int32 BreathDmgTaken(CBattleEntity* PDefender, int32 damage, bool ignoreDmgMods)
     {
-        float resist = 1.0f + PDefender->getMod(Mod::DMGBREATH) / 10000.f + PDefender->getMod(Mod::DMG) / 10000.f;
+        if (!ignoreDmgMods)
+        {
+            float resist = 1.0f + PDefender->getMod(Mod::DMGBREATH) / 10000.f + PDefender->getMod(Mod::DMG) / 10000.f;
 
-        resist = std::max(resist, 0.5f); // assuming if its floored at .5f its capped at 1.5f but who's stacking +dmgtaken equip anyway???
+            resist = std::max(resist, 0.5f); // assuming if its floored at .5f its capped at 1.5f but who's stacking +dmgtaken equip anyway???
 
-        resist += PDefender->getMod(Mod::DMG_II) / 100.0f;
-        resist = std::max(resist, 0.1f); // allows for DT II to take reduction to 90%
+            resist += PDefender->getMod(Mod::DMG_II) / 100.0f;
+            resist = std::max(resist, 0.1f); // allows for DT II to take reduction to 90%
 
 
-        resist += PDefender->getMod(Mod::UDMG) + PDefender->getMod(Mod::UDMGBREATH) / 10000.f;
-        resist = std::max(resist, 0.f);
+            resist += PDefender->getMod(Mod::UDMG) + PDefender->getMod(Mod::UDMGBREATH) / 10000.f;
+            resist = std::max(resist, 0.f);
 
-        damage = (int32)(damage * resist);
+            damage = (int32)(damage * resist);
+        }
 
         if (xirand::GetRandomNumber(100) < PDefender->getMod(Mod::ABSORB_DMG_CHANCE))
         {
@@ -5538,7 +5555,7 @@ namespace battleutils
         return damage;
     }
 
-    int32 MagicDmgTaken(CBattleEntity* PDefender, int32 damage, ELEMENT element)
+    int32 MagicDmgTaken(CBattleEntity* PDefender, int32 damage, ELEMENT element, bool ignoreDmgMods)
     {
         Mod absorb[8]    = { Mod::FIRE_ABSORB, Mod::ICE_ABSORB, Mod::WIND_ABSORB, Mod::EARTH_ABSORB,
                              Mod::LTNG_ABSORB, Mod::WATER_ABSORB, Mod::LIGHT_ABSORB, Mod::DARK_ABSORB };
@@ -5553,19 +5570,22 @@ namespace battleutils
             return (int32)(damage * liement);
         }
 
-        float resist = 1.0f + PDefender->getMod(Mod::DMGMAGIC) / 10000.f + PDefender->getMod(Mod::DMG) / 10000.f;
+        if (!ignoreDmgMods)
+        {
+            float resist = 1.0f + PDefender->getMod(Mod::DMGMAGIC) / 10000.f + PDefender->getMod(Mod::DMG) / 10000.f;
 
-        resist = std::max(resist, 0.5f);
+            resist = std::max(resist, 0.5f);
 
-        resist += PDefender->getMod(Mod::DMGMAGIC_II) / 10000.f;
-        resist = std::max(resist, 0.125f); // Total cap with MDT-% II included is 87.5%
+            resist += PDefender->getMod(Mod::DMGMAGIC_II) / 10000.f;
+            resist = std::max(resist, 0.125f); // Total cap with MDT-% II included is 87.5%
 
-        resist += PDefender->getMod(Mod::DMG_II) / 100.0f;
-        resist = std::max(resist, 0.1f); // allows for DT II to take reduction to 90%
+            resist += PDefender->getMod(Mod::DMG_II) / 100.0f;
+            resist = std::max(resist, 0.1f); // allows for DT II to take reduction to 90%
 
-        resist += PDefender->getMod(Mod::UDMG) + PDefender->getMod(Mod::UDMGMAGIC) / 10000.f;
-        resist = std::max(resist, 0.f);
-        damage = (int32)(damage * resist);
+            resist += PDefender->getMod(Mod::UDMG) + PDefender->getMod(Mod::UDMGMAGIC) / 10000.f;
+            resist = std::max(resist, 0.f);
+            damage = (int32)(damage * resist);
+        }
 
         if (damage > 0 && PDefender->objtype == TYPE_PET && PDefender->getMod(Mod::AUTO_STEAM_JACKET) > 1)
         {
@@ -5598,20 +5618,23 @@ namespace battleutils
         return damage;
     }
 
-    int32 PhysicalDmgTaken(CBattleEntity* PDefender, int32 damage, DAMAGE_TYPE damageType, bool IsCovered)
+    int32 PhysicalDmgTaken(CBattleEntity* PDefender, int32 damage, DAMAGE_TYPE damageType, bool IsCovered, bool ignoreDmgMods)
     {
-        float resist = 1.0f + PDefender->getMod(Mod::DMGPHYS) / 10000.f + PDefender->getMod(Mod::DMG) / 10000.f;
+        if (!ignoreDmgMods)
+        {
+            float resist = 1.0f + PDefender->getMod(Mod::DMGPHYS) / 10000.f + PDefender->getMod(Mod::DMG) / 10000.f;
 
-        resist = std::max(resist, 0.5f);                        // PDT caps at -50%
-        resist += PDefender->getMod(Mod::DMGPHYS_II) / 10000.f; // Add Burtgang reduction after 50% cap. Extends cap to -68%
-        resist = std::max(resist, 0.32f);                       // Total cap with MDT-% II included is 87.5%
+            resist = std::max(resist, 0.5f);                        // PDT caps at -50%
+            resist += PDefender->getMod(Mod::DMGPHYS_II) / 10000.f; // Add Burtgang reduction after 50% cap. Extends cap to -68%
+            resist = std::max(resist, 0.32f);                       // Total cap with MDT-% II included is 87.5%
 
-        resist += PDefender->getMod(Mod::DMG_II) / 100.0f;
-        resist = std::max(resist, 0.1f); // allows for DT II to take reduction to 90%
+            resist += PDefender->getMod(Mod::DMG_II) / 100.0f;
+            resist = std::max(resist, 0.1f); // allows for DT II to take reduction to 90%
 
-        resist += PDefender->getMod(Mod::UDMG) + PDefender->getMod(Mod::UDMGPHYS) / 10000.f;
-        resist = std::max(resist, 0.f);
-        damage = (int32)(damage * resist);
+            resist += PDefender->getMod(Mod::UDMG) + PDefender->getMod(Mod::UDMGPHYS) / 10000.f;
+            resist = std::max(resist, 0.f);
+            damage = (int32)(damage * resist);
+        }
 
         if (damage > 0 && PDefender->objtype == TYPE_PET && PDefender->getMod(Mod::AUTO_STEAM_JACKET) > 0)
         {
@@ -5649,17 +5672,21 @@ namespace battleutils
         return damage;
     }
 
-    int32 RangedDmgTaken(CBattleEntity* PDefender, int32 damage, DAMAGE_TYPE damageType, bool IsCovered)
+    int32 RangedDmgTaken(CBattleEntity* PDefender, int32 damage, DAMAGE_TYPE damageType, bool IsCovered, bool ignoreDmgMods)
     {
-        float resist = 1.0f + PDefender->getMod(Mod::DMGRANGE) / 10000.f + PDefender->getMod(Mod::DMG) / 10000.f;
-        resist = std::max(resist, 0.5f);
+        if (!ignoreDmgMods)
+        {
+            float resist = 1.0f + PDefender->getMod(Mod::DMGRANGE) / 10000.f + PDefender->getMod(Mod::DMG) / 10000.f;
 
-        resist += PDefender->getMod(Mod::DMG_II) / 100.0f;
-        resist = std::max(resist, 0.1f); // allows for DT II to take reduction to 90%
+            resist = std::max(resist, 0.5f);
 
-        resist += PDefender->getMod(Mod::UDMG) + PDefender->getMod(Mod::UDMGRANGE) / 10000.f;
-        resist = std::max(resist, 0.f);
-        damage = (int32)(damage * resist);
+            resist += PDefender->getMod(Mod::DMG_II) / 100.0f;
+            resist = std::max(resist, 0.1f); // allows for DT II to take reduction to 90%
+
+            resist += PDefender->getMod(Mod::UDMG) + PDefender->getMod(Mod::UDMGRANGE) / 10000.f;
+            resist = std::max(resist, 0.f);
+            damage = (int32)(damage * resist);
+        }
 
         if (damage > 0 && PDefender->objtype == TYPE_PET && PDefender->getMod(Mod::AUTO_STEAM_JACKET) > 0)
         {
@@ -6469,7 +6496,7 @@ namespace battleutils
         return bonus;
     }
 
-    void AddTraits(CBattleEntity* PEntity, TraitList_t* traitList, uint8 level)
+    void AddTraits(CBattleEntity* PEntity, TraitList_t* traitList, uint8 level, bool mobSubJobCheck)
     {
         CCharEntity* PChar = PEntity->objtype == TYPE_PC ? static_cast<CCharEntity*>(PEntity) : nullptr;
 
@@ -6528,6 +6555,16 @@ namespace battleutils
                     {
                         add = false;
                     }
+                }
+
+                // Mobs SJ level is equal to their MJ level, however certain SJ traits (like double attack)
+                // are gained as if mobs SJ level was half their MJ level (like players),
+                // thus we need check for these special traits
+                if (mobSubJobCheck && PEntity->objtype == TYPE_MOB &&
+                    (PTrait->getID() == TRAIT_DOUBLE_ATTACK || PTrait->getID() == TRAIT_TRIPLE_ATTACK) &&
+                    std::max(static_cast<int>(std::floor(level / 2)), 1) < PTrait->getLevel())
+                {
+                    add = false;
                 }
 
                 if (add)
