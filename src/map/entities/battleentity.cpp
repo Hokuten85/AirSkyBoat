@@ -2128,7 +2128,7 @@ bool CBattleEntity::OnAttack(CAttackState& state, action_t& action)
                             csJpAtkBonus = 1 + ((static_cast<float>(targetDex) / 100) * csJpModifier);
                         }
 
-                        float DamageRatio = battleutils::GetDamageRatio(PTarget, this, attack.IsCritical(), csJpAtkBonus, SLOT_MAIN, 0, attack.IsGuarded());
+                        float DamageRatio = battleutils::GetDamageRatio(PTarget, this, attack.IsCritical(), csJpAtkBonus, SLOT_MAIN, 0, false);
                         auto  damage      = 0;
 
                         if (PTarget->objtype == TYPE_MOB)
@@ -2236,7 +2236,7 @@ bool CBattleEntity::OnAttack(CAttackState& state, action_t& action)
 
             if (PTarget->objtype == TYPE_PC)
             {
-                if (attack.IsGuarded() || !settings::get<bool>("map.GUARD_OLD_SKILLUP_STYLE"))
+                if (attack.IsGuarded(false) || !settings::get<bool>("map.GUARD_OLD_SKILLUP_STYLE"))
                 {
                     if (battleutils::GetGuardRate(this, PTarget) > 0)
                     {
@@ -2252,7 +2252,7 @@ bool CBattleEntity::OnAttack(CAttackState& state, action_t& action)
                     }
                 }
 
-                if (attack.IsParried() || !settings::get<bool>("map.PARRY_OLD_SKILLUP_STYLE"))
+                if (attack.IsParried(false) || !settings::get<bool>("map.PARRY_OLD_SKILLUP_STYLE"))
                 {
                     if (battleutils::GetParryRate(this, PTarget) > 0)
                     {
@@ -2260,7 +2260,7 @@ bool CBattleEntity::OnAttack(CAttackState& state, action_t& action)
                     }
                 }
 
-                if (!attack.IsCountered() && !attack.IsParried())
+                if (!attack.IsCountered() && !attack.IsParried(false))
                 {
                     charutils::TrySkillUP((CCharEntity*)PTarget, SKILL_EVASION, GetMLevel());
                 }

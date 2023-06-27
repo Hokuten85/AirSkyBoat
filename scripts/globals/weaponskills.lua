@@ -323,7 +323,7 @@ local function getSingleHitDamage(attacker, target, dmg, wsParams, calcParams, f
     if
         (missChance <= calcParams.hitRate or
         calcParams.guaranteedHit or
-        (calcParams.melee and (math.random() < attacker:getMod(xi.mod.ZANSHIN) / 100))) and
+        calcParams.melee) and
         not calcParams.mustMiss
     then
         if not shadowAbsorb(target) then
@@ -596,9 +596,13 @@ xi.weaponskills.calculateRawWSDmg = function(attacker, target, wsID, tp, action,
     -- store bonus damage for first hit, for use after other calculations are done
     local firstHitBonus = (finaldmg * attacker:getMod(xi.mod.ALL_WSDMG_FIRST_HIT)) / 100
 
-    local hitsDone = 1
+    -- Reset fTP if it's not supposed to carry over across all hits for this WS
+    -- We'll recalculate our mainhand damage after doing offhand
+    if not wsParams.multiHitfTP then
+        ftp = 1
+    end
 
-    ftp = 1 + calcParams.bonusfTP
+    local hitsDone = 1
 
     base = (calcParams.weaponDamage[1] + wsMods) * ftp
 
@@ -641,7 +645,6 @@ xi.weaponskills.calculateRawWSDmg = function(attacker, target, wsID, tp, action,
         calcParams.critRate = calcParams.critRate + mainSlotCritBonus - subSlotCritBonus
     end
 
-    -- Reset fTP if it's not supposed to carry over across all hits for this WS
     calcParams.tpHitsLanded = calcParams.hitsLanded -- Store number of TP hits that have landed thus far
     calcParams.hitsLanded = 0 -- Reset counter to start tracking additional hits (from WS or Multi-Attacks)
 
@@ -1185,7 +1188,13 @@ xi.weaponskills.cMeleeRatio = function(attacker, defender, params, ignoredDef, t
         slot = xi.slot.MAIN
     end
 
-    if defender:getMainJob() == xi.job.MNK then
+    -- Mobs guarding a weponskill is a reduction in dmg.
+    -- Players guarding a mobskill handled in handleGuard
+    if
+        defender:getMainJob() == xi.job.MNK or
+        defender:getMainJob() == xi.job.PUP and
+        not defender:isPC()
+    then
         if
             defender:getGuardRate(attacker) > math.random(100) and
             defender:isFacing(attacker)
@@ -1222,6 +1231,7 @@ xi.weaponskills.handleBlock = function(attacker, target, finaldmg)
         absorb = utils.clamp(absorb - target:getShieldAbsorptionRate(), 0, 100)
         absorb = absorb + target:getMod(xi.mod.SHIELD_DEF_BONUS)
         finaldmg = math.floor(finaldmg * (absorb / 100))
+        target:trySkillUp(xi.skill.SHIELD, attacker:getMainLvl())
     end
 
     return finaldmg
@@ -1236,6 +1246,32 @@ xi.weaponskills.handleParry = function(attacker, target, missChance, guaranteedH
     then -- Try parry, if so miss.
         if target:getSystem() == xi.eco.BEASTMEN or target:isPC() then
             missChance = 1
+        end
+
+        if target:isPC() then
+            target:trySkillUp(xi.skill.PARRY, attacker:getMainLvl())
+        end
+    end
+
+    return missChance
+end
+
+xi.weaponskills.handleGuard = function(attacker, target, missChance, guaranteedHit)
+    local gHit = guaranteedHit or false
+    if
+        target:getMainJob() == xi.job.MNK or
+        target:getMainJob() == xi.job.PUP
+    then
+        if
+            target:getGuardRate(attacker) > math.random(100) and
+            target:isFacing(attacker) and
+            target:isPC() and
+            not gHit
+        then
+            -- Per testing shown by genome mob skills register as a miss when guarded
+            -- https://genomeffxi.livejournal.com/18269.html
+            missChance = 1
+            target:trySkillUp(xi.skill.GUARD, attacker:getMainLvl())
         end
     end
 

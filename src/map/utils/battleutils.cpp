@@ -1971,7 +1971,7 @@ namespace battleutils
             CItemWeapon* weapon               = GetEntityWeapon(PAttacker, SLOT_MAIN);
             uint16       attackSkill          = PAttacker->GetSkill((SKILLTYPE)(weapon ? weapon->getSkillType() : 0));
 
-            uint8 parryRate = std::clamp<uint8>((uint8)(20.0f + (defender_parry_skill - attackSkill) / 8.0f), 5, 30);
+            int parryRate = std::clamp<int>((int)(20.0f + (defender_parry_skill - attackSkill) / 8.0f), 5, 30);
 
             // Issekigan grants parry rate bonus. From best available data, if you already capped out at 25% parry it grants another 25% bonus for ~50%
             // parry rate
@@ -2660,7 +2660,7 @@ namespace battleutils
 
             if (shouldApplyLevelCorrection)
             {
-                int16 dLvl = PDefender->GetMLevel() - PAttacker->GetMLevel();
+                int16 dLvl = 0;
                 // Skip penalties for avatars, this should likely be all pets and mobs but I have no proof
                 // of this for ACC, ATT level correction for Pets/Avatars is the same as mobs though.
                 bool isPet    = PAttacker->objtype == TYPE_PET;
@@ -2674,17 +2674,17 @@ namespace battleutils
 
                 if (isAvatar)
                 {
-                    if (dLvl > 0)
-                    {
-                        // Avatars have a known level difference cap of 38
-                        hitrate -= static_cast<int16>(std::min(dLvl, (int16)38) * 2);
-                    }
+                    dLvl = PAttacker->GetMLevel() - PDefender->GetMLevel();
+                    // Avatars have a known level difference cap of 38
+                    dLvl = std::clamp(dLvl, static_cast<int16>(0), static_cast<int16>(38));
                 }
-                else
+                // Only players are penalized for dLvl
+                else if (PAttacker->objtype == TYPE_PC && PAttacker->GetMLevel() < PDefender->GetMLevel())
                 {
-                    // Everything else has no known caps, though it's likely 38 like avatars
-                    hitrate -= static_cast<int16>(dLvl * 2);
+                    dLvl = PAttacker->GetMLevel() - PDefender->GetMLevel();
                 }
+
+                hitrate += static_cast<int16>(dLvl * 2);
             }
 
             // https://www.bg-wiki.com/bg/Hit_Rate
