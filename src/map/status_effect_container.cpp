@@ -122,6 +122,31 @@ namespace effects
 
     std::array<EffectParams_t, MAX_EFFECTID> EffectsParams;
 
+    std::map<EFFECT, uint8> LuckyRolls = {
+        { EFFECT::EFFECT_CORSAIRS_ROLL, 5 },
+        { EFFECT::EFFECT_NINJA_ROLL, 4 },
+        { EFFECT::EFFECT_HUNTERS_ROLL, 4 },
+        { EFFECT::EFFECT_CHAOS_ROLL, 4 },
+        { EFFECT::EFFECT_MAGUSS_ROLL, 2 },
+        { EFFECT::EFFECT_HEALERS_ROLL, 3 },
+        { EFFECT::EFFECT_DRACHEN_ROLL, 4 },
+        { EFFECT::EFFECT_CHORAL_ROLL, 2 },
+        { EFFECT::EFFECT_MONKS_ROLL, 3 },
+        { EFFECT::EFFECT_BEAST_ROLL, 4 },
+        { EFFECT::EFFECT_SAMURAI_ROLL, 2 },
+        { EFFECT::EFFECT_EVOKERS_ROLL, 5 },
+        { EFFECT::EFFECT_ROGUES_ROLL, 5 },
+        { EFFECT::EFFECT_WARLOCKS_ROLL, 4 },
+        { EFFECT::EFFECT_FIGHTERS_ROLL, 5 },
+        { EFFECT::EFFECT_PUPPET_ROLL, 3 },
+        { EFFECT::EFFECT_GALLANTS_ROLL, 3 },
+        { EFFECT::EFFECT_WIZARDS_ROLL, 5 },
+        { EFFECT::EFFECT_DANCERS_ROLL, 3 },
+        { EFFECT::EFFECT_SCHOLARS_ROLL, 2 },
+        { EFFECT::EFFECT_NATURALISTS_ROLL, 3 },
+        { EFFECT::EFFECT_RUNEISTS_ROLL, 4 },
+    };
+
     void LoadEffectsParameters()
     {
         for (uint16 i = 0; i < MAX_EFFECTID; ++i)
@@ -1107,7 +1132,7 @@ bool CStatusEffectContainer::ApplyCorsairEffect(CStatusEffect* PStatusEffect, ui
                     {
                         if (!CheckForElevenRoll())
                         {
-                            uint16 duration = 300;
+                            uint16 duration = 180;
                             duration -= bustDuration;
                             CStatusEffect* bustEffect = new CStatusEffect(EFFECT_BUST, EFFECT_BUST, PStatusEffect->GetPower(), 0, duration,
                                                                           PStatusEffect->GetTier(), PStatusEffect->GetStatusID());
@@ -2139,11 +2164,12 @@ bool CStatusEffectContainer::CheckForElevenRoll()
 {
     for (CStatusEffect* PStatusEffect : m_StatusEffectSet)
     {
-        if ((PStatusEffect->GetStatusID() >= EFFECT_FIGHTERS_ROLL && PStatusEffect->GetStatusID() <= EFFECT_NATURALISTS_ROLL &&
-             PStatusEffect->GetSubPower() == 11) ||
-            (PStatusEffect->GetStatusID() == EFFECT_RUNEISTS_ROLL && PStatusEffect->GetSubPower() == 11))
+        if ((PStatusEffect->GetStatusID() >= EFFECT_FIGHTERS_ROLL && PStatusEffect->GetStatusID() <= EFFECT_NATURALISTS_ROLL) || PStatusEffect->GetStatusID() == EFFECT_RUNEISTS_ROLL)
         {
-            return true;
+            if (PStatusEffect->GetSubPower() == 11 || PStatusEffect->GetSubPower() == effects::LuckyRolls.at(PStatusEffect->GetStatusID()))
+            {
+                return true;
+            }
         }
     }
     return false;
