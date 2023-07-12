@@ -1,0 +1,1 @@
+UPDATE mob_skill_lists SET mob_skill_id = 1714 WHERE skill_list_id = 72 AND mob_skill_id = 1700;
