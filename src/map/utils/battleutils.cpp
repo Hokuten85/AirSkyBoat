@@ -4443,7 +4443,7 @@ namespace battleutils
 
             if (ERROR_SLOTID == (SlotID = PChar->getStorage(LOC_INVENTORY)->SearchItem(toolID)))
             {
-                if (PChar->GetMJob() == JOB_NIN)
+                if (PChar->GetMJob() == JOB_NIN || PChar->GetSJob() == JOB_NIN)
                 {
                     switch (toolID)
                     {
