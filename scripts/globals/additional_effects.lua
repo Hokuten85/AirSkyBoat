@@ -73,7 +73,7 @@ end
 xi.additionalEffect.levelCorrection = function(dLV, aLV, chance)
     -- Level correction of proc chance (copied from existing bolt/arrow scripts, looks wrong..)
     if dLV > aLV then
-        chance = utils.clamp(chance - (dLV - aLV), 5, 95)
+        chance = utils.clamp(chance, 5, 95)
     end
 
     return chance
@@ -170,14 +170,6 @@ xi.additionalEffect.attack = function(attacker, defender, baseAttackDamage, item
         local dLvl = defender:getMainLvl() - attacker:getMainLvl()
         if dLvl <= 0 then
             chance = 99
-        elseif dLvl <= 5 then
-            chance = 99 - (1.5 * dLvl)
-        else
-            chance = 75 - (3 * (dLvl - 5))
-        end
-
-        if defender:isNM() then
-            chance = chance / 1.5
         end
     end
 

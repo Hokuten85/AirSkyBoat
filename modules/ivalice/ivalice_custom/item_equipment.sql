@@ -114,7 +114,7 @@ UPDATE item_equipment SET jobs = jobs | 512 WHERE name IN ('anwig_salade', 'mirk
 UPDATE item_equipment SET jobs = jobs | 512 WHERE name IN ('denali_jacket','denali_wristbands','denali_kecks','denali_gamashes','denali_bonnet');
 UPDATE item_equipment SET jobs = jobs | 512 WHERE name IN ('morrigans_robe','morrigans_cuffs','morrigans_slops','morrigans_pgch.','morrigans_coron.');
 
-
+UPDATE item_equipment SET jobs = jobs | 65536 WHERE name = 'silver_bullet'; -- ADD COR
 
 
 

@@ -215,7 +215,7 @@ xi.spells.enhancing.calculateEnhancingBasePower = function(caster, target, spell
         spellEffect >= xi.effect.STR_BOOST and
         spellEffect <= xi.effect.CHR_BOOST
     then
-        basePower = basePower + utils.clamp(math.floor((skillLevel - 300) / 10), 0, 20)
+        basePower = basePower + utils.clamp(math.floor((skillLevel - 225) / 10), 0, 20)
 
     -- Embrava
     elseif spellEffect == xi.effect.EMBRAVA then
