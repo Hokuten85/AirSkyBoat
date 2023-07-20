@@ -33,5 +33,5 @@ WHERE mp.mobType & 0x02
 AND mg.spawntype = 0
 AND mg.respawntime > 600;
 
-REPLACE INTO `mob_groups` VALUES (52,1802,52,'Greater_Colibri',330,0,1225,0,0,81,82,0,'TOAU');
+REPLACE INTO `mob_groups` VALUES (52,1802,52,'Greater_Colibri',330,0,1225,0,0,81,83,0,'TOAU');
 REPLACE INTO `mob_groups` VALUES (53,4355,52,'Wivre',330,0,2952,0,0,78,83,0,'TOAU');
