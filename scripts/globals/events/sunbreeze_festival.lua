@@ -2,6 +2,8 @@
 -- Starlight Celebration
 ------------------------------------
 require("scripts/globals/settings")
+require("scripts/globals/utils")
+require("scripts/globals/npc_util")
 ------------------------------------
 xi = xi or {}
 xi.events = xi.events or {}

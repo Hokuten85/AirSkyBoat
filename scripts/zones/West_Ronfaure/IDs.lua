@@ -48,6 +48,7 @@ zones[xi.zone.WEST_RONFAURE] =
         CONQUEST                      = 7541,  -- You've earned conquest points!
         SOMETHING_IS_AMISS            = 7892,  -- Something is amiss.
         GARRISON_BASE                 = 7922,  -- Hm? What is this? %? How do I know this is not some [San d'Orian/Bastokan/Windurstian] trick?
+		GOLDFISH_NPC_DIALOGUE         = 7965,  -- Come my childeren... Enter the world of golfdish...
         PLAYER_OBTAINS_ITEM           = 8058,  -- <name> obtains <item>!
         UNABLE_TO_OBTAIN_ITEM         = 8059,  -- You were unable to obtain the item.
         PLAYER_OBTAINS_TEMP_ITEM      = 8060,  -- <name> obtains the temporary item: <item>!
