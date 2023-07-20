@@ -401,8 +401,8 @@ bool CMobController::MobSkill(int wsList)
         }
 
         PActionTarget = luautils::OnMobSkillTarget(PActionTarget, PMob, PMobSkill);
-
-        if (PActionTarget && !PMobSkill->isAstralFlow() && luautils::OnMobSkillCheck(PActionTarget, PMob, PMobSkill) == 0) // A script says that the move in question is valid
+        // A script says that the move in question is valid
+        if (PActionTarget && !PMobSkill->isAstralFlow() && luautils::OnMobSkillCheck(PActionTarget, PMob, PMobSkill) == 0)
         {
             float currentDistance = distance(PMob->loc.p, PActionTarget->loc.p);
 
@@ -485,6 +485,12 @@ bool CMobController::TryCastSpell()
     }
 
     if (!CanCastSpells())
+    {
+        return false;
+    }
+
+    // Having a distance check here (before the check in magic_state) prevents the mob from standing still during chainspell
+    if (distance(PMob->loc.p, PMob->GetBattleTarget()->loc.p) > 28.5f)
     {
         return false;
     }
@@ -694,7 +700,7 @@ void CMobController::DoCombatTick(time_point tick)
     {
         return;
     }
-    else if (m_Tick >= m_LastMobSkillTime && xirand::GetRandomNumber(1, 10000) <= PMob->TPUseChance() && MobSkill())
+    else if (PMob->PAI->CanChangeState() && xirand::GetRandomNumber(1, 10000) <= PMob->TPUseChance() && MobSkill())
     {
         return;
     }

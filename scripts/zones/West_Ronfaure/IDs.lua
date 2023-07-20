@@ -24,7 +24,6 @@ zones[xi.zone.WEST_RONFAURE] =
         FISHING_MESSAGE_OFFSET        = 7241,  -- You can't fish here.
         DIG_THROW_AWAY                = 7254,  -- You dig up <item>, but your inventory is full. You regretfully throw the <item> away.
         FIND_NOTHING                  = 7256,  -- You dig and you dig, but find nothing.
-        RAMAUFONT_DEFAULT             = 7341,  -- Nothing to report.
         GACHEMAGE_DIALOG              = 7342,  -- Orcish scouts lurk in the shadows. Consider yourself warned!
         ADALEFONT_DIALOG              = 7343,  -- If you sense danger, just flee into the city. I'll not endanger myself on your account!
         LAILLERA_DIALOG               = 7344,  -- I mustn't chat while on duty. Sorry.
@@ -38,23 +37,29 @@ zones[xi.zone.WEST_RONFAURE] =
         PALCOMONDAU_ENROUTE           = 7389,  -- Let me be! I must patrol the road to Ghelsba.
         PALCOMONDAU_RETURN            = 7390,  -- I bring word of Ghelsba to the Westgate. Out of my way!
         ZOVRIACE_REPORT               = 7391,  -- Scout reporting! All is quiet on the roads to La Theine!
+        ZOVRIACE_ENROUTE              = 7392,  -- I must scout the roads to La Theine for signs of the enemy. Let me pass!
         ZOVRIACE_RETURN               = 7393,  -- Let me be! I return to Southgate with word on La Theine.
         PICKPOCKET_PALCOMONDAU        = 7394,  -- A pickpocket? No, I haven't seen anyone matching that description. I've only seen Aaveleon, and a rather brusque woman.
         PICKPOCKET_ZOVRIACE           = 7395,  -- A pickpocket, out here? Can't say I've seen anyone like that. I'll keep my eyes peeled.
-        DIADONOUR_DEFAULT             = 7396,  -- Our people often fall prey to roving Orcs nearby. Take care out there!
-        LAETTE_DEFAULT                = 7401,  -- This watchtower was built to strengthen Ranperre Gate. You can look around, but stay out of our way.
-        CHATARRE_DEFAULT              = 7402,  -- Ghelsba and its Orcish camps lie at the foot of mountains yonder. We must be vigilant! They could attack at any time.
         DISMAYED_CUSTOMER             = 7419,  -- You find some worthless scraps of paper.
         CONQUEST                      = 7541,  -- You've earned conquest points!
-        SOMETHING_IS_AMISS            = 7892,  -- Something is amiss.
-        GARRISON_BASE                 = 7922,  -- Hm? What is this? %? How do I know this is not some [San d'Orian/Bastokan/Windurstian] trick?
-        PLAYER_OBTAINS_ITEM           = 8058,  -- <name> obtains <item>!
-        UNABLE_TO_OBTAIN_ITEM         = 8059,  -- You were unable to obtain the item.
-        PLAYER_OBTAINS_TEMP_ITEM      = 8060,  -- <name> obtains the temporary item: <item>!
-        ALREADY_POSSESS_TEMP          = 8061,  -- You already possess that temporary item.
-        NO_COMBINATION                = 8066,  -- You were unable to enter a combination.
-        REGIME_REGISTERED             = 10432, -- New training regime registered!
-        COMMON_SENSE_SURVIVAL         = 12433, -- It appears that you have arrived at a new survival guide provided by the Adventurers' Mutual Aid Network. Common sense dictates that you should now be able to teleport here from similar tomes throughout the world.
+        SOMETHING_IS_AMISS            = 7904,  -- Something is amiss.
+        GARRISON_BASE                 = 7934,  -- Hm? What is this? %? How do I know this is not some [San d'Orian/Bastokan/Windurstian] trick?
+        GOLDFISH_POINT_UPDATE         = 8010,  -- <player> now has <int> years (?) of fortune.
+        PLAYER_OBTAINS_ITEM           = 8070,  -- <name> obtains <item>!
+        UNABLE_TO_OBTAIN_ITEM         = 8071,  -- You were unable to obtain the item.
+        PLAYER_OBTAINS_TEMP_ITEM      = 8072,  -- <name> obtains the temporary item: <item>!
+        ALREADY_POSSESS_TEMP          = 8073,  -- You already possess that temporary item.
+        NO_COMBINATION                = 8078,  -- You were unable to enter a combination.
+        REGIME_REGISTERED             = 10444, -- New training regime registered!
+        COMMON_SENSE_SURVIVAL         = 12445, -- It appears that you have arrived at a new survival guide provided by the Adventurers' Mutual Aid Network. Common sense dictates that you should now be able to teleport here from similar tomes throughout the world.
+        AAVELEON_DEFAULT              = 7351,  -- Many orcs are nearby. They prey upon the weak, so do not venture far...unless you can handle them.
+        COLMAIE_DEFAULT               = 7342,  -- Orcish scouts lurk in the shadows. Consider yourself warned!
+        DIADONOUR_DEFAULT             = 7396,  -- Our people often fall prey to roving Orcs nearby. Take care out there!
+        RAMAUFONT_DEFAULT             = 7399,  -- Nothing to report.
+        LAETTE_DEFAULT                = 7401,  -- This watchtower was built to strengthen Ranperre Gate. You can look around, but stay out of our way.
+        CHATARRE_DEFAULT              = 7402,  -- Ghelsba and its Orcish camps lie at the foot of mountains yonder. We must be vigilant! They could attack at any time.
+        GOLDFISH_NPC_DIALOGUE         = 7965,  -- Come my childeren... Enter the world of golfdish...
     },
     mob =
     {
@@ -73,6 +78,7 @@ zones[xi.zone.WEST_RONFAURE] =
     {
         SIGNPOST_OFFSET = 17187505,
         OVERSEER_BASE   = 17187525, -- Doladepaiton_RK in npc_list
+        GOLDFISH_NPC    = 17187570, -- Sunbreeze Festival Goldfish NPC
     },
 }
 
