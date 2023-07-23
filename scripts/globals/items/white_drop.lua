@@ -22,6 +22,10 @@ itemObject.onItemUse = function(target)
 
     if target:getCharMod(xi.mod.CHR) < 20 then
         target:addCharMod(xi.mod.CHR,1)
+        if target:getCharMod(xi.mod.CHR) == 20 then
+            target:PrintToPlayer("You have reached the max enhancement for this stat. Additional usage of White Drops is allowed")
+            target:PrintToPlayer("but only the medicine effect will be applied.")
+        end
     end
 end
 

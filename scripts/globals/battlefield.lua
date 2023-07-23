@@ -1085,8 +1085,17 @@ function Battlefield:handleOpenArmouryCrate(player, npc)
     end)
 end
 
+function givePlayersTomes(players)
+    for k = 1, #players, 1 do
+        npcUtil.giveItem(players[k], xi.items.COPY_OF_MIKHES_MEMO+math.random(0,32))
+    end
+end
+
 function Battlefield:handleLootRolls(battlefield, lootTable, npc)
     local players = battlefield:getPlayers()
+
+    givePlayersTomes(players)
+
     for i = 1, #lootTable, 1 do
         local lootGroup = lootTable[i]
 
@@ -1460,6 +1469,9 @@ end
 
 function xi.battlefield.HandleLootRolls(battlefield, lootTable, players, npc)
     players = players or battlefield:getPlayers()
+
+    givePlayersTomes(players)
+
     if
         battlefield:getStatus() == xi.battlefield.status.WON and
         battlefield:getLocalVar("lootSeen") == 0
