@@ -56,6 +56,7 @@
 #include <algorithm>
 #include <cstring>
 #include <random>
+#include <ai/controllers/player_controller.h>
 
 CMobEntity::CMobEntity()
 {
