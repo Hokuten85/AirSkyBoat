@@ -60,13 +60,6 @@ spellObject.onSpellCast = function(caster, target, spell)
     spell:setMsg(xi.msg.basic.MAGIC_DMG)
     xi.magic.handleBurstMsg(caster, target, spell)
 
-    -- Try to kill same tier Dia (default behavior)
-    if xi.settings.main.DIA_OVERWRITE == 1 and dia ~= nil then
-        if dia:getPower() == 1 then
-            target:delStatusEffect(xi.effect.DIA)
-        end
-    end
-
     return final
 end
 

@@ -46,26 +46,13 @@ spellObject.onSpellCast = function(caster, target, spell)
 
     spell:setMsg(xi.msg.basic.MAGIC_DMG) -- hit for initial damage
     xi.magic.handleBurstMsg(caster, target, spell)
-    -- Check for Bio
-    local bio = target:getStatusEffect(xi.effect.BIO)
 
-    if bio == nil then -- if no bio, just add dia dot
-        if caster:isPC() then
-            target:addStatusEffect(xi.effect.DIA, 3 + dotBonus, 3, merits, 0, 15, 3)
-        else
-            target:addStatusEffect(xi.effect.DIA, 3 + dotBonus, 3, duration, 0, 15, 3)
-        end
-    elseif
-        bio:getSubPower() <= 15 or
-        (xi.settings.main.BIO_OVERWRITE == 1 and bio:getSubPower() <= 20) -- also erase same tier bio if BIO_OVERWRITE option is on (non-default)
-    then -- erase lower tier bio and add dia dot
-        target:delStatusEffect(xi.effect.BIO)
-        if caster:isPC() then
-            target:addStatusEffect(xi.effect.DIA, 3 + dotBonus, 3, merits, 0, 15, 3)
-        else
-            target:addStatusEffect(xi.effect.DIA, 3 + dotBonus, 3, duration, 0, 15, 3)
-        end
+    if caster:isPC() then
+        target:addStatusEffect(xi.effect.DIA, 3 + dotBonus, 3, merits, 0, 15, 3)
+    else
+        target:addStatusEffect(xi.effect.DIA, 3 + dotBonus, 3, duration, 0, 15, 3)
     end
+    
 
     return final
 end
