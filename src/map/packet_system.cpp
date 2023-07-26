@@ -19,6 +19,7 @@ along with this program.  If not, see http://www.gnu.org/licenses/
 ===========================================================================
 */
 
+#include "common/async.h"
 #include "common/blowfish.h"
 #include "common/logging.h"
 #include "common/md52.h"
@@ -2548,8 +2549,49 @@ void SmallPacket0x04D(map_session_data_t* const PSession, CCharEntity* const PCh
     uint8 boxtype = data.ref<uint8>(0x05);
     uint8 slotID  = data.ref<uint8>(0x06);
 
-    ShowInfo("DeliveryBox Action (%02hx)", data.ref<uint8>(0x04));
-    PrintPacket(data);
+    constexpr auto actionToStr = [](uint8 actionIn)
+    {
+        switch (actionIn)
+        {
+            case 0x01:
+                return "Send old items";
+            case 0x02:
+                return "Add item";
+            case 0x03:
+                return "Send confirmation";
+            case 0x04:
+                return "Cancel item";
+            case 0x05:
+                return "Send item count";
+            case 0x06:
+                return "Send new items";
+            case 0x07:
+                return "Remove delivered item";
+            case 0x08:
+                return "Update delivery slot";
+            case 0x09:
+                return "Return to sender";
+            case 0x0A:
+                return "Take item";
+            case 0x0B:
+                return "Remove item";
+            case 0x0C:
+                return "Confirm name";
+            case 0x0D:
+                return "Open send box";
+            case 0x0E:
+                return "Open recv box";
+            case 0x0F:
+                return "Close box";
+            default:
+                return "Unknown";
+        }
+    };
+
+    if (settings::get<bool>("logging.DEBUG_DELIVERY_BOX"))
+    {
+        ShowDebug(fmt::format("DeliveryBox Action 0x{:02X} ({}) by {}", action, actionToStr(action), PChar->name));
+    }
 
     if (jailutils::InPrison(PChar)) // If jailed, no mailbox menu for you.
     {
@@ -2558,7 +2600,7 @@ void SmallPacket0x04D(map_session_data_t* const PSession, CCharEntity* const PCh
 
     if (!zoneutils::IsResidentialArea(PChar) && PChar->m_GMlevel == 0 && !PChar->loc.zone->CanUseMisc(MISC_AH) && !PChar->loc.zone->CanUseMisc(MISC_MOGMENU))
     {
-        ShowDebug("%s is trying to use the delivery box in a disallowed zone [%s]", PChar->GetName(), PChar->loc.zone->GetName());
+        ShowWarning("%s is trying to use the delivery box in a disallowed zone [%s]", PChar->GetName(), PChar->loc.zone->GetName());
         return;
     }
 
@@ -2575,29 +2617,14 @@ void SmallPacket0x04D(map_session_data_t* const PSession, CCharEntity* const PCh
         return;
     }
 
-    // 0x01 - Send old items
-    // 0x02 - Add items to be sent
-    // 0x03 - Send confirmation
-    // 0x04 - Cancel sending item
-    // 0x05 - Send client new item count
-    // 0x06 - Send new items
-    // 0x07 - Removes a delivered item from sending box
-    // 0x08 - Update delivery cell before removing
-    // 0x09 - Return to sender
-    // 0x0a - Take item from cell
-    // 0x0b - Remove item from cell
-    // 0x0c - Confirm name before sending
-    // 0x0d - Opening to send mail
-    // 0x0e - Opening to receive mail
-    // 0x0f - Closing mail window
-
     switch (action)
     {
+        // 0x01 - Send old items
         case 0x01:
         {
-            if (PChar->UContainer->GetType() != UCONTAINER_DELIVERYBOX)
+            if (boxtype < 1 || boxtype > 2 || !charutils::isAnyDeliveryBoxOpen(PChar))
             {
-                ShowWarning("Delivery Box packet handler received action %u while UContainer is in a state other than UCONTAINER_DELIVERYBOX (%s)", action, PChar->GetName());
+                ShowWarning("Delivery Box packet handler received action %u while UContainer is in an invalid state (%s)", action, PChar->GetName());
                 return;
             }
 
@@ -2654,11 +2681,12 @@ void SmallPacket0x04D(map_session_data_t* const PSession, CCharEntity* const PCh
             }
             return;
         }
-        case 0x02: // add items to send box
+        // 0x02 - Add items to be sent
+        case 0x02:
         {
-            if (PChar->UContainer->GetType() != UCONTAINER_DELIVERYBOX)
+            if (!charutils::isSendBoxOpen(PChar))
             {
-                ShowWarning("Delivery Box packet handler received action %u while UContainer is in a state other than UCONTAINER_DELIVERYBOX (%s)", action, PChar->GetName());
+                ShowWarning("Delivery Box packet handler received action %u while UContainer is in a state other than UCONTAINER_SEND_DELIVERYBOX (%s)", action, PChar->GetName());
                 return;
             }
 
@@ -2729,11 +2757,12 @@ void SmallPacket0x04D(map_session_data_t* const PSession, CCharEntity* const PCh
             }
             return;
         }
-        case 0x03: // send items
+        // 0x03 - Send confirmation
+        case 0x03:
         {
-            if (PChar->UContainer->GetType() != UCONTAINER_DELIVERYBOX)
+            if (!charutils::isSendBoxOpen(PChar))
             {
-                ShowWarning("Delivery Box packet handler received action %u while UContainer is in a state other than UCONTAINER_DELIVERYBOX (%s)", action, PChar->GetName());
+                ShowWarning("Delivery Box packet handler received action %u while UContainer is in a state other than UCONTAINER_SEND_DELIVERYBOX (%s)", action, PChar->GetName());
                 return;
             }
 
@@ -2745,6 +2774,7 @@ void SmallPacket0x04D(map_session_data_t* const PSession, CCharEntity* const PCh
                     send_items++;
                 }
             }
+
             if (!PChar->UContainer->IsSlotEmpty(slotID))
             {
                 CItem* PItem = PChar->UContainer->GetItem(slotID);
@@ -2785,6 +2815,7 @@ void SmallPacket0x04D(map_session_data_t* const PSession, CCharEntity* const PCh
                                 }
                             }
                         }
+
                         if (!commit || !sql->TransactionCommit())
                         {
                             sql->TransactionRollback();
@@ -2797,11 +2828,12 @@ void SmallPacket0x04D(map_session_data_t* const PSession, CCharEntity* const PCh
             }
             return;
         }
-        case 0x04: // cancel send
+        // 0x04 - Cancel sending item
+        case 0x04:
         {
-            if (PChar->UContainer->GetType() != UCONTAINER_DELIVERYBOX)
+            if (!charutils::isSendBoxOpen(PChar))
             {
-                ShowWarning("Delivery Box packet handler received action %u while UContainer is in a state other than UCONTAINER_DELIVERYBOX (%s)", action, PChar->GetName());
+                ShowWarning("Delivery Box packet handler received action %u while UContainer is in a state other than UCONTAINER_SEND_DELIVERYBOX (%s)", action, PChar->GetName());
                 return;
             }
 
@@ -2876,12 +2908,13 @@ void SmallPacket0x04D(map_session_data_t* const PSession, CCharEntity* const PCh
             }
             return;
         }
+        // 0x05 - Send client new item count
         case 0x05:
         {
             // Send the player the new items count not seen
-            if (PChar->UContainer->GetType() != UCONTAINER_DELIVERYBOX)
+            if (boxtype < 1 || boxtype > 2 || !charutils::isAnyDeliveryBoxOpen(PChar))
             {
-                ShowWarning("Delivery Box packet handler received action %u while UContainer is in a state other than UCONTAINER_DELIVERYBOX (%s)", action, PChar->GetName());
+                ShowWarning("Delivery Box packet handler received action %u while UContainer is in an invalid state (%s)", action, PChar->GetName());
                 return;
             }
 
@@ -2911,16 +2944,18 @@ void SmallPacket0x04D(map_session_data_t* const PSession, CCharEntity* const PCh
             {
                 received_items = (uint8)sql->NumRows();
             }
+
             PChar->pushPacket(new CDeliveryBoxPacket(action, boxtype, 0xFF, 0x02));
             PChar->pushPacket(new CDeliveryBoxPacket(action, boxtype, received_items, 0x01));
 
             return;
         }
-        case 0x06: // Move item to received
+        // 0x06 - Send new items
+        case 0x06:
         {
-            if (PChar->UContainer->GetType() != UCONTAINER_DELIVERYBOX)
+            if (!charutils::isRecvBoxOpen(PChar))
             {
-                ShowWarning("Delivery Box packet handler received action %u while UContainer is in a state other than UCONTAINER_DELIVERYBOX (%s)", action, PChar->GetName());
+                ShowWarning("Delivery Box packet handler received action %u while UContainer is in a state other than UCONTAINER_RECV_DELIVERYBOX (%s)", action, PChar->GetName());
                 return;
             }
 
@@ -2986,6 +3021,7 @@ void SmallPacket0x04D(map_session_data_t* const PSession, CCharEntity* const PCh
                             }
                         }
                     }
+
                     if (!commit || !sql->TransactionCommit())
                     {
                         destroy(PItem);
@@ -2999,11 +3035,12 @@ void SmallPacket0x04D(map_session_data_t* const PSession, CCharEntity* const PCh
             }
             return;
         }
-        case 0x07: // remove received items from send box
+        // 0x07 - Removes a delivered item from sending box
+        case 0x07:
         {
-            if (PChar->UContainer->GetType() != UCONTAINER_DELIVERYBOX)
+            if (!charutils::isSendBoxOpen(PChar))
             {
-                ShowWarning("Delivery Box packet handler received action %u while UContainer is in a state other than UCONTAINER_DELIVERYBOX (%s)", action, PChar->GetName());
+                ShowWarning("Delivery Box packet handler received action %u while UContainer is in a state other than UCONTAINER_SEND_DELIVERYBOX (%s)", action, PChar->GetName());
                 return;
             }
 
@@ -3037,11 +3074,12 @@ void SmallPacket0x04D(map_session_data_t* const PSession, CCharEntity* const PCh
             }
             return;
         }
+        // 0x08 - Update delivery cell before removing
         case 0x08:
         {
-            if (PChar->UContainer->GetType() != UCONTAINER_DELIVERYBOX)
+            if (!charutils::isAnyDeliveryBoxOpen(PChar))
             {
-                ShowWarning("Delivery Box packet handler received action %u while UContainer is in a state other than UCONTAINER_DELIVERYBOX (%s)", action, PChar->GetName());
+                ShowWarning("Delivery Box packet handler received action %u while UContainer is in an invalid state (%s)", action, PChar->GetName());
                 return;
             }
 
@@ -3052,13 +3090,15 @@ void SmallPacket0x04D(map_session_data_t* const PSession, CCharEntity* const PCh
 
             return;
         }
-        case 0x09: // Option: Return
+        // 0x09 - Return to sender
+        case 0x09:
         {
-            if (PChar->UContainer->GetType() != UCONTAINER_DELIVERYBOX)
+            if (!charutils::isRecvBoxOpen(PChar))
             {
-                ShowWarning("Delivery Box packet handler received action %u while UContainer is in a state other than UCONTAINER_DELIVERYBOX (%s)", action, PChar->GetName());
+                ShowWarning("Delivery Box packet handler received action %u while UContainer is in a state other than UCONTAINER_RECV_DELIVERYBOX (%s)", action, PChar->GetName());
                 return;
             }
+
             if (!PChar->UContainer->IsSlotEmpty(slotID))
             {
                 bool isAutoCommitOn = sql->GetAutoCommit();
@@ -3121,11 +3161,12 @@ void SmallPacket0x04D(map_session_data_t* const PSession, CCharEntity* const PCh
             }
             return;
         }
-        case 0x0A: // Option: Take
+        // 0x0a - Take item from cell
+        case 0x0A:
         {
-            if (PChar->UContainer->GetType() != UCONTAINER_DELIVERYBOX)
+            if (boxtype < 1 || boxtype > 2 || !charutils::isAnyDeliveryBoxOpen(PChar))
             {
-                ShowWarning("Delivery Box packet handler received action %u while UContainer is in a state other than UCONTAINER_DELIVERYBOX (%s)", action, PChar->GetName());
+                ShowWarning("Delivery Box packet handler received action %u while UContainer is in an invalid state (%s)", action, PChar->GetName());
                 return;
             }
 
@@ -3193,11 +3234,12 @@ void SmallPacket0x04D(map_session_data_t* const PSession, CCharEntity* const PCh
             }
             return;
         }
-        case 0x0B: // Option: Drop
+        // 0x0b - Remove item from cell
+        case 0x0B:
         {
-            if (PChar->UContainer->GetType() != UCONTAINER_DELIVERYBOX)
+            if (!charutils::isRecvBoxOpen(PChar))
             {
-                ShowWarning("Delivery Box packet handler received action %u while UContainer is in a state other than UCONTAINER_DELIVERYBOX (%s)", action, PChar->GetName());
+                ShowWarning("Delivery Box packet handler received action %u while UContainer is in a state other than UCONTAINER_RECV_DELIVERYBOX (%s)", action, PChar->GetName());
                 return;
             }
 
@@ -3216,11 +3258,12 @@ void SmallPacket0x04D(map_session_data_t* const PSession, CCharEntity* const PCh
             }
             return;
         }
-        case 0x0C: // Confirm name (send box)
+        // 0x0c - Confirm name before sending
+        case 0x0C:
         {
-            if (PChar->UContainer->GetType() != UCONTAINER_DELIVERYBOX)
+            if (!charutils::isSendBoxOpen(PChar))
             {
-                ShowWarning("Delivery Box packet handler received action %u while UContainer is in a state other than UCONTAINER_DELIVERYBOX (%s)", action, PChar->GetName());
+                ShowWarning("Delivery Box packet handler received action %u while UContainer is in a state other than UCONTAINER_SEND_DELIVERYBOX (%s)", action, PChar->GetName());
                 return;
             }
 
@@ -3248,17 +3291,22 @@ void SmallPacket0x04D(map_session_data_t* const PSession, CCharEntity* const PCh
             }
             return;
         }
-        case 0x0D: // open send box
-        case 0x0E: // open delivery box
+        // 0x0d - Opening to send mail
+        case 0x0D:
         {
-            PChar->UContainer->Clean();
-            PChar->UContainer->SetType(UCONTAINER_DELIVERYBOX);
-            PChar->pushPacket(new CDeliveryBoxPacket(action, boxtype, 0, 1));
+            charutils::OpenSendBox(PChar, action, boxtype);
             return;
         }
+        // 0x0e - Opening to receive mail
+        case 0x0E:
+        {
+            charutils::OpenRecvBox(PChar, action, boxtype);
+            return;
+        }
+        // 0x0f - Closing mail window
         case 0x0F:
         {
-            if (PChar->UContainer->GetType() == UCONTAINER_DELIVERYBOX)
+            if (charutils::isAnyDeliveryBoxOpen(PChar))
             {
                 PChar->UContainer->Clean();
             }
@@ -3267,7 +3315,6 @@ void SmallPacket0x04D(map_session_data_t* const PSession, CCharEntity* const PCh
     }
 
     // Open mail, close mail
-
     PChar->pushPacket(new CDeliveryBoxPacket(action, boxtype, 0, 1));
 }
 
@@ -3344,7 +3391,7 @@ void SmallPacket0x04E(map_session_data_t* const PSession, CCharEntity* const PCh
                 {
                     while (sql->NextRow() == SQL_SUCCESS)
                     {
-                        AuctionHistory_t ah;
+                        AuctionHistory_t ah{};
                         ah.itemid = (uint16)sql->GetIntData(0);
                         ah.price  = sql->GetUIntData(1);
                         ah.stack  = (uint8)sql->GetIntData(2);
@@ -5548,24 +5595,20 @@ void SmallPacket0x0B5(map_session_data_t* const PSession, CCharEntity* const PCh
             {
                 if (settings::get<bool>("map.AUDIT_CHAT") && settings::get<uint8>("map.AUDIT_SAY"))
                 {
-                    char escaped_speaker[16 * 2 + 1];
-                    sql->EscapeString(escaped_speaker, PChar->GetName().c_str());
-
-                    std::string escaped_full_string;
-                    escaped_full_string.reserve(strlen((const char*)data[6]) * 2 + 1);
-                    sql->EscapeString(escaped_full_string.data(), (const char*)data[6]);
-
-                    const char* fmtQuery = "INSERT into audit_chat (speaker,type,message,datetime) VALUES('%s','SAY','%s',current_timestamp())";
-                    if (sql->Query(fmtQuery, escaped_speaker, escaped_full_string.data()) == SQL_ERROR)
+                    // clang-format off
+                    Async::getInstance()->query([name = PChar->GetName(), rawMessage = (const char*)data[6]](SqlConnection* _sql)
                     {
-                        ShowError("packet_system::call: Failed to log inPrison MESSAGE_SAY.");
-                    }
+                        auto message = _sql->EscapeString(rawMessage);
+                        std::ignore  = _sql->Query("INSERT INTO audit_chat (speaker,type,message,datetime) VALUES('%s','SAY','%s',current_timestamp())",
+                            name.c_str(), message.c_str());
+                    });
+                    // clang-format on
                 }
                 PChar->loc.zone->PushPacket(PChar, CHAR_INRANGE, new CChatMessagePacket(PChar, MESSAGE_SAY, (const char*)data[6]));
             }
             else
             {
-                PChar->pushPacket(new CMessageBasicPacket(PChar, PChar, 0, 0, 316));
+                PChar->pushPacket(new CMessageBasicPacket(PChar, PChar, 0, 0, MSGBASIC_CANT_BE_USED_IN_AREA));
             }
         }
         else
@@ -5576,41 +5619,35 @@ void SmallPacket0x0B5(map_session_data_t* const PSession, CCharEntity* const PCh
                 {
                     if (settings::get<bool>("map.AUDIT_CHAT") && settings::get<uint8>("map.AUDIT_SAY"))
                     {
-                        char escaped_speaker[16 * 2 + 1];
-                        sql->EscapeString(escaped_speaker, PChar->GetName().c_str());
-
-                        std::string escaped_full_string;
-                        escaped_full_string.reserve(strlen((const char*)data[6]) * 2 + 1);
-                        sql->EscapeString(escaped_full_string.data(), (const char*)data[6]);
-
-                        const char* fmtQuery = "INSERT into audit_chat (speaker,type,message,datetime) VALUES('%s','SAY','%s',current_timestamp())";
-                        if (sql->Query(fmtQuery, escaped_speaker, escaped_full_string.data()) == SQL_ERROR)
+                        // clang-format off
+                        Async::getInstance()->query([name = PChar->GetName(), rawMessage = (const char*)data[6]](SqlConnection* _sql)
                         {
-                            ShowError("packet_system::call: Failed to log MESSAGE_SAY.");
-                        }
+                            auto message = _sql->EscapeString(rawMessage);
+                            std::ignore  = _sql->Query("INSERT INTO audit_chat (speaker,type,message,datetime) VALUES('%s','SAY','%s',current_timestamp())",
+                                name.c_str(), message.c_str());
+                        });
+                        // clang-format on
                     }
                     PChar->loc.zone->PushPacket(PChar, CHAR_INRANGE, new CChatMessagePacket(PChar, MESSAGE_SAY, (const char*)data[6]));
                 }
                 break;
                 case MESSAGE_EMOTION:
+                {
                     PChar->loc.zone->PushPacket(PChar, CHAR_INRANGE, new CChatMessagePacket(PChar, MESSAGE_EMOTION, (const char*)data[6]));
-                    break;
+                }
+                break;
                 case MESSAGE_SHOUT:
                 {
                     if (settings::get<bool>("map.AUDIT_CHAT") && settings::get<uint8>("map.AUDIT_SHOUT"))
                     {
-                        char escaped_speaker[16 * 2 + 1];
-                        sql->EscapeString(escaped_speaker, PChar->GetName().c_str());
-
-                        std::string escaped_full_string;
-                        escaped_full_string.reserve(strlen((const char*)data[6]) * 2 + 1);
-                        sql->EscapeString(escaped_full_string.data(), (const char*)data[6]);
-
-                        const char* fmtQuery = "INSERT into audit_chat (speaker,type,message,datetime) VALUES('%s','SHOUT','%s',current_timestamp())";
-                        if (sql->Query(fmtQuery, escaped_speaker, escaped_full_string.data()) == SQL_ERROR)
+                        // clang-format off
+                        Async::getInstance()->query([name = PChar->GetName(), rawMessage = (const char*)data[6]](SqlConnection* _sql)
                         {
-                            ShowError("packet_system::call: Failed to log MESSAGE_SHOUT.");
-                        }
+                            auto message = _sql->EscapeString(rawMessage);
+                            std::ignore  = _sql->Query("INSERT INTO audit_chat (speaker,type,message,datetime) VALUES('%s','SHOUT','%s',current_timestamp())",
+                                name.c_str(), message.c_str());
+                        });
+                        // clang-format on
                     }
                     PChar->loc.zone->PushPacket(PChar, CHAR_INSHOUT, new CChatMessagePacket(PChar, MESSAGE_SHOUT, (const char*)data[6]));
                 }
@@ -5627,25 +5664,16 @@ void SmallPacket0x0B5(map_session_data_t* const PSession, CCharEntity* const PCh
 
                         if (settings::get<bool>("map.AUDIT_CHAT") && settings::get<uint8>("map.AUDIT_LINKSHELL"))
                         {
-                            char escaped_speaker[16 * 2 + 1];
-                            sql->EscapeString(escaped_speaker, PChar->GetName().c_str());
-
-                            char DecodedName[DecodeStringLength];
-                            DecodeStringLinkshell(PChar->PLinkshell1->getName(), DecodedName);
-
-                            char escaped_ls[19 * 2 + 1];
-                            sql->EscapeString(escaped_ls, DecodedName);
-
-                            std::string escaped_full_string;
-                            escaped_full_string.reserve(strlen((const char*)data[6]) * 2 + 1);
-                            sql->EscapeString(escaped_full_string.data(), (const char*)data[6]);
-
-                            const char* fmtQuery =
-                                "INSERT into audit_chat (speaker,type,lsName,message,datetime) VALUES('%s','LINKSHELL','%s','%s',current_timestamp())";
-                            if (sql->Query(fmtQuery, escaped_speaker, escaped_ls, escaped_full_string.data()) == SQL_ERROR)
+                            char decodedLinkshellName[DecodeStringLength];
+                            DecodeStringLinkshell(PChar->PLinkshell1->getName(), decodedLinkshellName);
+                            // clang-format off
+                            Async::getInstance()->query([name = PChar->GetName(), rawMessage = (const char*)data[6], decodedLinkshellName](SqlConnection* _sql)
                             {
-                                ShowError("packet_system::call: Failed to log MESSAGE_LINKSHELL.");
-                            }
+                                auto message = _sql->EscapeString(rawMessage);
+                                std::ignore  = _sql->Query("INSERT INTO audit_chat (speaker,type,lsName,message,datetime) VALUES('%s','LINKSHELL','%s','%s',current_timestamp())",
+                                    name.c_str(), decodedLinkshellName, message.c_str());
+                            });
+                            // clang-format on
                         }
                     }
                 }
@@ -5662,25 +5690,15 @@ void SmallPacket0x0B5(map_session_data_t* const PSession, CCharEntity* const PCh
 
                         if (settings::get<bool>("map.AUDIT_CHAT") && settings::get<uint8>("map.AUDIT_LINKSHELL"))
                         {
-                            char escaped_speaker[16 * 2 + 1];
-                            sql->EscapeString(escaped_speaker, PChar->GetName().c_str());
-
-                            char DecodedName[DecodeStringLength];
-                            DecodeStringLinkshell(PChar->PLinkshell2->getName(), DecodedName);
-
-                            char escaped_ls[19 * 2 + 1];
-                            sql->EscapeString(escaped_ls, DecodedName);
-
-                            std::string escaped_full_string;
-                            escaped_full_string.reserve(strlen((const char*)data[6]) * 2 + 1);
-                            sql->EscapeString(escaped_full_string.data(), (const char*)data[6]);
-
-                            const char* fmtQuery =
-                                "INSERT into audit_chat (speaker,type,lsName,message,datetime) VALUES('%s','LINKSHELL','%s','%s',current_timestamp())";
-                            if (sql->Query(fmtQuery, escaped_speaker, escaped_ls, escaped_full_string.data()) == SQL_ERROR)
+                            char decodedLinkshellName[DecodeStringLength];
+                            DecodeStringLinkshell(PChar->PLinkshell2->getName(), decodedLinkshellName);
+                            // clang-format off
+                            Async::getInstance()->query([name = PChar->GetName(), rawMessage = (const char*)data[6], decodedLinkshellName](SqlConnection* _sql)
                             {
-                                ShowError("packet_system::call: Failed to log MESSAGE_LINKSHELL2.");
-                            }
+                                auto message = _sql->EscapeString(rawMessage);
+                                std::ignore  = _sql->Query("INSERT INTO audit_chat (speaker,type,lsName,message,datetime) VALUES('%s','LINKSHELL','%s','%s',current_timestamp())",
+                                    name.c_str(), decodedLinkshellName, message.c_str());
+                            });
                         }
                     }
                 }
@@ -5696,18 +5714,14 @@ void SmallPacket0x0B5(map_session_data_t* const PSession, CCharEntity* const PCh
 
                         if (settings::get<bool>("map.AUDIT_CHAT") && settings::get<uint8>("map.AUDIT_PARTY"))
                         {
-                            char escaped_speaker[16 * 2 + 1];
-                            sql->EscapeString(escaped_speaker, PChar->GetName().c_str());
-
-                            std::string escaped_full_string;
-                            escaped_full_string.reserve(strlen((const char*)data[6]) * 2 + 1);
-                            sql->EscapeString(escaped_full_string.data(), (const char*)data[6]);
-
-                            const char* fmtQuery = "INSERT into audit_chat (speaker,type,message,datetime) VALUES('%s','PARTY','%s',current_timestamp())";
-                            if (sql->Query(fmtQuery, escaped_speaker, escaped_full_string.data()) == SQL_ERROR)
+                            // clang-format off
+                            Async::getInstance()->query([name = PChar->GetName(), rawMessage = (const char*)data[6]](SqlConnection* _sql)
                             {
-                                ShowError("packet_system::call: Failed to log MESSAGE_PARTY.");
-                            }
+                                auto message = _sql->EscapeString(rawMessage);
+                                std::ignore  = _sql->Query("INSERT INTO audit_chat (speaker,type,message,datetime) VALUES('%s','PARTY','%s',current_timestamp())",
+                                    name.c_str(), message.c_str());
+                            });
+                            // clang-format on
                         }
                     }
                 }
@@ -5731,18 +5745,14 @@ void SmallPacket0x0B5(map_session_data_t* const PSession, CCharEntity* const PCh
 
                         if (settings::get<bool>("map.AUDIT_CHAT") && settings::get<uint8>("map.AUDIT_YELL"))
                         {
-                            char escaped_speaker[16 * 2 + 1];
-                            sql->EscapeString(escaped_speaker, PChar->GetName().c_str());
-
-                            std::string escaped_full_string;
-                            escaped_full_string.reserve(strlen((const char*)data[6]) * 2 + 1);
-                            sql->EscapeString(escaped_full_string.data(), (const char*)data[6]);
-
-                            const char* fmtQuery = "INSERT into audit_chat (speaker,type,message,datetime) VALUES('%s','YELL','%s',current_timestamp())";
-                            if (sql->Query(fmtQuery, escaped_speaker, escaped_full_string.data()) == SQL_ERROR)
+                            // clang-format off
+                            Async::getInstance()->query([name = PChar->GetName(), rawMessage = (const char*)data[6]](SqlConnection* _sql)
                             {
-                                ShowError("packet_system::call: Failed to log MESSAGE_YELL.");
-                            }
+                                auto message = _sql->EscapeString(rawMessage);
+                                std::ignore  = _sql->Query("INSERT INTO audit_chat (speaker,type,message,datetime) VALUES('%s','YELL','%s',current_timestamp())",
+                                    name.c_str(), message.c_str());
+                            });
+                            // clang-format on
                         }
                     }
                     else // You cannot use that command in this area.
@@ -5765,18 +5775,14 @@ void SmallPacket0x0B5(map_session_data_t* const PSession, CCharEntity* const PCh
 
                         if (settings::get<bool>("map.AUDIT_CHAT") && settings::get<uint8>("map.AUDIT_UNITY"))
                         {
-                            char escaped_speaker[16 * 2 + 1];
-                            sql->EscapeString(escaped_speaker, PChar->GetName().c_str());
-
-                            std::string escaped_full_string;
-                            escaped_full_string.reserve(strlen((const char*)data[6]) * 2 + 1);
-                            sql->EscapeString(escaped_full_string.data(), (const char*)data[6]);
-
-                            const char* fmtQuery = "INSERT into audit_chat (speaker,type,message,datetime) VALUES('%s','SAY','%s',current_timestamp())";
-                            if (sql->Query(fmtQuery, escaped_speaker, escaped_full_string.data()) == SQL_ERROR)
+                            // clang-format off
+                            Async::getInstance()->query([name = PChar->GetName(), rawMessage = (const char*)data[6]](SqlConnection* _sql)
                             {
-                                ShowError("packet_system::call: Failed to log inPrison MESSAGE_UNITY.");
-                            }
+                                auto message = _sql->EscapeString(rawMessage);
+                                std::ignore  = _sql->Query("INSERT INTO audit_chat (speaker,type,message,datetime) VALUES('%s','UNITY','%s',current_timestamp())",
+                                    name.c_str(), message.c_str());
+                            });
+                            // clang-format on
                         }
                     }
                 }
@@ -5817,7 +5823,7 @@ void SmallPacket0x0B6(map_session_data_t* const PSession, CCharEntity* const PCh
         return;
     }
 
-    int8 packetData[64];
+    int8 packetData[64]{};
     strncpy((char*)packetData + 4, RecipientName.c_str(), RecipientName.length() + 1);
     ref<uint32>(packetData, 0) = PChar->id;
 

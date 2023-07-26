@@ -2170,9 +2170,10 @@ bool CLuaBaseEntity::sendGuild(uint16 guildID, uint8 open, uint8 close, uint8 ho
 
 void CLuaBaseEntity::openSendBox()
 {
-    XI_DEBUG_BREAK_IF(m_PBaseEntity->objtype != TYPE_PC);
-
-    charutils::OpenSendBox(static_cast<CCharEntity*>(m_PBaseEntity));
+    if (auto* PChar = dynamic_cast<CCharEntity*>(m_PBaseEntity))
+    {
+        charutils::OpenSendBox(PChar, 0x0D, 2);
+    }
 }
 
 /************************************************************************
@@ -7791,6 +7792,41 @@ void CLuaBaseEntity::setJobPoints(uint16 amount)
     CCharEntity* PChar = static_cast<CCharEntity*>(m_PBaseEntity);
 
     PChar->PJobPoints->SetJobPoints(amount);
+    PChar->pushPacket(new CMenuJobPointsPacket(PChar));
+}
+
+/************************************************************************
+ *  Function: masterJob()
+ *  Purpose : Fully masters / unlocks player's current job
+ *  Example : player:masterJob()
+ *  Notes   : Used in GM command
+ ************************************************************************/
+
+void CLuaBaseEntity::masterJob()
+{
+    if (m_PBaseEntity->objtype != TYPE_PC)
+    {
+        ShowDebug("Warning: Attempt to master job for non-PC type!");
+        return;
+    }
+
+    CCharEntity* PChar = static_cast<CCharEntity*>(m_PBaseEntity);
+
+    auto jpCategory = 0x020 * PChar->GetMJob();
+    for (auto i = jpCategory; i < jpCategory + 0xA; i++)
+    {
+        auto points       = PChar->PJobPoints->GetJobPointType((JOBPOINT_TYPE)i);
+        auto pointsNeeded = 20 - points->value;
+        auto currentJP    = PChar->PJobPoints->GetJobPoints();
+
+        for (auto x = 0; x < pointsNeeded; x++)
+        {
+            auto cost = JobPointCost(points->value);
+            PChar->PJobPoints->SetJobPoints(currentJP + cost);
+            PChar->PJobPoints->RaiseJobPoint((JOBPOINT_TYPE)i);
+        }
+    }
+
     PChar->pushPacket(new CMenuJobPointsPacket(PChar));
 }
 
@@ -16890,6 +16926,7 @@ void CLuaBaseEntity::Register()
     SOL_REGISTER("addCapacityPoints", CLuaBaseEntity::addCapacityPoints);
     SOL_REGISTER("setCapacityPoints", CLuaBaseEntity::setCapacityPoints);
     SOL_REGISTER("setJobPoints", CLuaBaseEntity::setJobPoints);
+    SOL_REGISTER("masterJob", CLuaBaseEntity::masterJob);
 
     SOL_REGISTER("getGil", CLuaBaseEntity::getGil);
     SOL_REGISTER("addGil", CLuaBaseEntity::addGil);
