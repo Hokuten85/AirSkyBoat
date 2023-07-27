@@ -2842,6 +2842,9 @@ void CLuaBaseEntity::addTeleport(uint8 teleType, uint32 bitval, sol::object cons
             PChar->teleport.waypoints.access[index] |= (1 << setBit);
         }
         break;
+        case TELEPORT_TYPE::ESCHAN_PORTAL:
+            PChar->teleport.eschanPortal |= bit;
+            break;
         default:
             ShowError("LuaBaseEntity::addTeleport : Parameter 1 out of bounds.");
             return;
@@ -2904,6 +2907,9 @@ uint32 CLuaBaseEntity::getTeleport(uint8 type, sol::object const& abysseaRegionO
 
             return PChar->teleport.abysseaConflux[abysseaRegion];
         }
+        case TELEPORT_TYPE::ESCHAN_PORTAL:
+            return PChar->teleport.eschanPortal;
+            break;
         default:
             ShowError("LuaBaseEntity::getteleport : Parameter 1 out of bounds.");
     }
@@ -15282,7 +15288,7 @@ void CLuaBaseEntity::useMobAbility(sol::variadic_args va)
  *  Note    : Params can assume a default value by passing nil
  *          : e.g. triggerDrawIn(true) to pull in a party/alliance
  ************************************************************************/
-inline int32 CLuaBaseEntity::triggerDrawIn(CLuaBaseEntity* PMobEntity, sol::object const& includePt, sol::object const& drawRange, sol::object const& maxReach, sol::object const& target)
+inline int32 CLuaBaseEntity::triggerDrawIn(CLuaBaseEntity* PMobEntity, sol::object const& includePt, sol::object const& drawRange, sol::object const& maxReach, sol::object const& target, sol::object const& incDeadAndMount)
 {
     XI_DEBUG_BREAK_IF(m_PBaseEntity == nullptr);
     XI_DEBUG_BREAK_IF(m_PBaseEntity->objtype != TYPE_MOB);
@@ -15291,10 +15297,11 @@ inline int32 CLuaBaseEntity::triggerDrawIn(CLuaBaseEntity* PMobEntity, sol::obje
     CBattleEntity* PTarget = PMob->GetBattleTarget();
 
     // Default values
-    uint8  drawInRange  = PMob->GetMeleeRange() * 2;
-    uint16 maximumReach = 0xFFFF;
-    bool   includeParty = false;
-    float  offset       = PMob->GetMeleeRange() - 0.2f;
+    uint8  drawInRange         = PMob->GetMeleeRange() * 2;
+    uint16 maximumReach        = 0xFFFF;
+    bool   includeParty        = false;
+    float  offset              = PMob->GetMeleeRange() - 0.2f;
+    bool   includeDeadAndMount = false;
 
     if ((drawRange != sol::lua_nil) && drawRange.is<uint8>())
     {
@@ -15317,10 +15324,15 @@ inline int32 CLuaBaseEntity::triggerDrawIn(CLuaBaseEntity* PMobEntity, sol::obje
         includeParty = includePt.as<bool>();
     }
 
+    if (incDeadAndMount != sol::lua_nil)
+    {
+        includeDeadAndMount = incDeadAndMount.as<bool>();
+    }
+
     if (PTarget)
     {
         // Draw in requires a target
-        battleutils::DrawIn(PTarget, PMob, offset, drawInRange, maximumReach, includeParty);
+        battleutils::DrawIn(PTarget, PMob, offset, drawInRange, maximumReach, includeParty, includeDeadAndMount);
     }
 
     return 0;
