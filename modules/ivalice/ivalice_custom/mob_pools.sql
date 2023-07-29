@@ -1,0 +1,1 @@
+UPDATE  mob_pools SET true_detection = 0 where poolid = 6377; -- fuck Poroggo_Excavator being true sight and blocking access to coffer mobs
