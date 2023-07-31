@@ -514,8 +514,8 @@ namespace itemutils
                                 ((CItemEquipment*)PItem)->addModifier(CModifier(Mod::CRITHITDMG_SLOT, 3));
                                 break;
                             case SKILLTYPE::SKILL_ARCHERY:
-                                ((CItemEquipment*)PItem)->addModifier(CModifier(Mod::CRITHITRATE_SLOT, 2));
-                                ((CItemEquipment*)PItem)->addModifier(CModifier(Mod::CRITHITDMG_SLOT, 2));
+                                ((CItemEquipment*)PItem)->addModifier(CModifier(Mod::CRITHITRATE_SLOT, 4));
+                                ((CItemEquipment*)PItem)->addModifier(CModifier(Mod::CRITHITDMG_SLOT, 4));
                                 break;
                             case SKILLTYPE::SKILL_MARKSMANSHIP: // THESE GUYS GET NOTHING FOR NOW
                             case SKILLTYPE::SKILL_THROWING:

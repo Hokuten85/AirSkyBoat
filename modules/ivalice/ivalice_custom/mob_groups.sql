@@ -36,4 +36,4 @@ AND mg.respawntime > 600;
 REPLACE INTO `mob_groups` VALUES (52,1802,52,'Greater_Colibri',330,0,1225,0,0,81,83,0,'TOAU');
 REPLACE INTO `mob_groups` VALUES (53,4355,52,'Wivre',330,0,2952,0,0,78,83,0,'TOAU');
 
-UPDATE mob_groups SET minLevel = 60 AND maxLevel = 67 WHERE zoneid = 169 AND minLevel > 90; -- reduce level of 90+ mobs in Toraimarai_Canal
+UPDATE mob_groups SET minLevel = 60, maxLevel = 67 WHERE zoneid = 169 AND minLevel >= 85; -- reduce level of 85+ mobs in Toraimarai_Canal
