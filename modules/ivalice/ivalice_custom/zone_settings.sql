@@ -1,0 +1,1 @@
+UPDATE zone_settings SET misc = misc | 2206 WHERE misc = 2208;
