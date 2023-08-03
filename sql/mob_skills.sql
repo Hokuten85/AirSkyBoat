@@ -1803,7 +1803,7 @@ INSERT INTO `mob_skills` VALUES (1840,1148,'rushing_stab',0,7.0,2000,1500,4,0,0,
 -- INSERT INTO `mob_skills` VALUES (1844,1588,'pit_ambush',0,7.0,2000,1500,4,0,0,0,0,0,0);
 -- INSERT INTO `mob_skills` VALUES (1845,1589,'mandibular_bite',0,7.0,2000,1500,4,0,0,0,0,0,0);
 -- INSERT INTO `mob_skills` VALUES (1846,78,'sharp_sting',0,7.0,2000,1500,4,0,0,0,0,0,0);
--- INSERT INTO `mob_skills` VALUES (1847,79,'frenzy_pollen',0,7.0,2000,1500,4,0,0,0,0,0,0);
+INSERT INTO `mob_skills` VALUES (1847,79,'frenzy_pollen',0,7.0,2000,1000,4,0,0,0,0,0,0);
 -- INSERT INTO `mob_skills` VALUES (1848,1592,'final_sting',0,7.0,2000,1500,4,0,0,0,0,0,0);
 -- INSERT INTO `mob_skills` VALUES (1849,1593,'sling_bomb',0,7.0,2000,1500,4,0,0,0,0,0,0);
 -- INSERT INTO `mob_skills` VALUES (1850,1594,'formation_attack',0,7.0,2000,1500,4,0,0,0,0,0,0);
@@ -2039,7 +2039,7 @@ INSERT INTO `mob_skills` VALUES (2074,1415,'detonating_grip',0,7.0,2000,1000,4,0
 -- INSERT INTO `mob_skills` VALUES (2080,1421,'potent_lunge',0,7.0,2000,1500,4,0,0,0,0,0,0);
 INSERT INTO `mob_skills` VALUES (2081,1422,'hammer-go-round',0,7.0,2000,1500,4,0,0,3,0,0,0);
 -- INSERT INTO `mob_skills` VALUES (2082,1423,'hammerblow',0,7.0,2000,1500,4,0,0,0,0,0,0);
--- INSERT INTO `mob_skills` VALUES (2083,1424,'drop_hammer',0,7.0,2000,1500,4,0,0,0,0,0,0);
+INSERT INTO `mob_skills` VALUES (2083,1424,'drop_hammer',0,7.0,2000,1500,4,0,0,0,0,0,0);
 -- INSERT INTO `mob_skills` VALUES (2084,1425,'seismohammer',0,7.0,2000,1500,4,0,0,0,0,0,0);
 -- INSERT INTO `mob_skills` VALUES (2085,1829,'venomous_tail',0,7.0,2000,1500,4,0,0,0,0,0,0);
 -- INSERT INTO `mob_skills` VALUES (2086,1830,'grim_reaper',0,7.0,2000,1500,4,0,0,0,0,0,0);

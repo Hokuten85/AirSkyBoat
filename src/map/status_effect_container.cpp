@@ -1619,6 +1619,7 @@ void CStatusEffectContainer::SetEffectParams(CStatusEffect* StatusEffect)
          effect == EFFECT_DRAIN_DAZE ||
          effect == EFFECT_ASPIR_DAZE ||
          effect == EFFECT_HASTE_DAZE ||
+         effect == EFFECT_ATMA ||
          effect == EFFECT_BATTLEFIELD) &&
         !effectFromItemEnchant)
     {
