@@ -26,7 +26,7 @@ abilityObject.onUseAbility = function(player, target, ability)
 		end
 	end
 
-    target:addStatusEffect(xi.effect.WARDING_CIRCLE, power, 0, duration, subPower)
+    target:addStatusEffect(xi.effect.WARDING_CIRCLE, power, 0, duration, 0, subPower)
 end
 
 return abilityObject

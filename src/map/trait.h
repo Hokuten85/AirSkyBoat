@@ -147,9 +147,10 @@ enum TRAITTYPE
     TRAIT_CRITRATE_BONUS      = 150,
     TRAIT_ENMITY_CAP          = 151,
     TRAIT_DMG_TAKEN_II        = 153,
+    TRAIT_LIFESTEAL           = 154,
 };
 
-#define MAX_TRAIT_ID 153
+#define MAX_TRAIT_ID 155 // needs to be 1 more than max in use
 
 /************************************************************************
  *                                                                       *

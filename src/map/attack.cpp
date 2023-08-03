@@ -514,6 +514,7 @@ void CAttack::ProcessDamage(bool isCritical, bool isGuarded, bool isKick)
     if (m_attacker->objtype == TYPE_PC)
     {
         m_damage = battleutils::doSoulEaterEffect((CCharEntity*)m_attacker, m_damage);
+        m_damage = battleutils::doLifeStealEffect((CCharEntity*)m_attacker, m_damage);
     }
 
     // Consume mana

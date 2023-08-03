@@ -4811,6 +4811,26 @@ namespace battleutils
         return damage;
     }
 
+    /************************************************************************
+     *                                                                       *
+     *   Effect from lifesteal                                               *
+     *                                                                       *
+     ************************************************************************/
+    uint16 doLifeStealEffect(CCharEntity* m_PChar, uint32 damage)
+    {
+        if (auto lifesteal = m_PChar->getMod(Mod::LIFESTEAL))
+        {
+            uint32 stolen = (uint32)std::ceil(static_cast<float>(damage) * lifesteal / 100);
+
+            if (stolen >= 1)
+            {
+                m_PChar->addHP(stolen);
+                damage += stolen;
+            }
+        }
+        return damage;
+    }
+
     uint16 doConsumeManaEffect(CCharEntity* m_PChar, uint32 damage)
     {
         if (m_PChar->StatusEffectContainer->HasStatusEffect(EFFECT_CONSUME_MANA))
@@ -5080,6 +5100,7 @@ namespace battleutils
         if (PAttacker->objtype == TYPE_PC)
         {
             totalDamage = battleutils::doSoulEaterEffect((CCharEntity*)PAttacker, totalDamage);
+            totalDamage = battleutils::doLifeStealEffect((CCharEntity*)PAttacker, totalDamage);
         }
 
         // bonus jump tp is added even if damage is 0, will not add if jump misses

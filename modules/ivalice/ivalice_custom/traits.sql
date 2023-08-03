@@ -63,6 +63,12 @@ UPDATE traits SET level = 75 WHERE traitid = 110 and job = 5 and rank = 1;
 UPDATE traits SET level = 75 WHERE traitid = 3 and job = 8 and rank = 5;
 -- GIVE DRK CRIT ATT BONUS
 UPDATE traits SET level = 75 WHERE traitid = 98 and job = 8 and rank = 1;
+-- GIVE DRK LIFESTEAL
+INSERT INTO traits VALUES ('154','life steal','8','5','1','3005','1',null,0);
+INSERT INTO traits VALUES ('154','life steal','8','10','2','3005','2',null,0);
+INSERT INTO traits VALUES ('154','life steal','8','15','3','3005','3',null,0);
+INSERT INTO traits VALUES ('154','life steal','8','20','4','3005','4',null,0);
+INSERT INTO traits VALUES ('154','life steal','8','25','5','3005','5',null,0);
 
 -- GIVE BST KILLER TRAITS EARLY
 UPDATE traits SET level = 10, value = 10 WHERE traitid IN (32,33,34,35,36,37,38) and job = 9 and rank = 1;

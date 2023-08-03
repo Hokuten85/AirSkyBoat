@@ -261,7 +261,7 @@ xi.job_utils.dragoon.useAncientCircle = function(player, target, ability)
         end
     end
 
-    target:addStatusEffect(xi.effect.ANCIENT_CIRCLE, power, 0, duration, subPower)
+    target:addStatusEffect(xi.effect.ANCIENT_CIRCLE, power, 0, duration, 0, subPower)
 end
 
 xi.job_utils.dragoon.useJump = function(player, target, ability, action)

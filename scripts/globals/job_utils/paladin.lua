@@ -121,7 +121,7 @@ xi.job_utils.paladin.useHolyCircle = function(player, target, ability)
         end
     end
 
-    target:addStatusEffect(xi.effect.HOLY_CIRCLE, power, 0, duration, subPower)
+    target:addStatusEffect(xi.effect.HOLY_CIRCLE, power, 0, duration, 0, subPower)
 end
 
 xi.job_utils.paladin.useIntervene = function(player, target, ability)
