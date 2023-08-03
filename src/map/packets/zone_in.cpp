@@ -19,19 +19,11 @@
 ===========================================================================
 */
 
-#include "common/socket.h"
-
-#include "../entities/charentity.h"
-#include "../instance.h"
-#include "../status_effect_container.h"
-#include "../utils/zoneutils.h"
-#include "common/vana_time.h"
-#include "map/zone.h"
 #include "zone_in.h"
 
 #include "common/vana_time.h"
-
 #include "entities/charentity.h"
+#include "map/zone.h"
 #include "utils/zoneutils.h"
 
 #include "instance.h"
@@ -81,13 +73,7 @@ uint16 GetMogHouseModelID(CCharEntity* PChar)
     // clang-format on
 }
 
-/************************************************************************
- *                                                                       *
- *                                                                       *
- *                                                                       *
- ************************************************************************/
-
-uint8 GetMogHouseFlag(CCharEntity* PChar)
+uint8 GetMogHouseLeavingFlag(CCharEntity* PChar)
 {
     switch (zoneutils::GetCurrentRegion(PChar->getZone()))
     {
@@ -127,25 +113,19 @@ uint8 GetMogHouseFlag(CCharEntity* PChar)
     return 0;
 }
 
-/************************************************************************
- *                                                                       *
- *                                                                       *
- *                                                                       *
- ************************************************************************/
-
 CZoneInPacket::CZoneInPacket(CCharEntity* PChar, const EventInfo* currentEvent)
 {
     this->setType(0x0A);
     this->setSize(0x104);
 
-    // необходимо для работы manaklipper
-    // последние 8 байт похожи на время
+    // It is necessary to work Manaklipper
+    // The last 8 bytes are similar for a while
     // unsigned char packet [] = {
     // 0x0D, 0x3A, 0x0C, 0x00, 0x11, 0x00, 0x19, 0x00, 0x02, 0xE4, 0x93, 0x10, 0x91, 0xE5, 0x93, 0x10}; // 0x2a = 0x10
     // 0x89, 0x39, 0x0C, 0x00, 0x19, 0x00, 0x07, 0x00, 0x5C, 0xE1, 0x93, 0x10, 0x81, 0xE3, 0x93, 0x10}; // 0x2a = 0x08
     // memcpy(data + 0x70, &packet, 16);
 
-    // data[0x2A] = 0x08;//data[0x2A] = 0x80;  // в зоне 3 управляет путями следования транспорта 0x10 и 0x08
+    // data[0x2A] = 0x08;//data[0x2A] = 0x80;  // in zone 3 controls the routes of transport 0x10 and 0x08
 
     ref<uint32>(0x04) = PChar->id;
     ref<uint16>(0x08) = PChar->targid;
@@ -202,13 +182,15 @@ CZoneInPacket::CZoneInPacket(CCharEntity* PChar, const EventInfo* currentEvent)
     ref<uint16>(0x60) = PChar->loc.boundary;
     ref<uint16>(0x68) = PChar->loc.zone->GetWeather();
     ref<uint32>(0x6A) = PChar->loc.zone->GetWeatherChangeTime();
+
+    // TODO: Could this be previous weather, for weather transitions?
     // ref<uint32>(0x6C) = PChar->loc.zone->GetWeather();
     // ref<uint32>(0x70) = PChar->loc.zone->GetWeatherChangeTime();
 
     auto csid = currentEvent->eventId;
     if (csid != -1)
     {
-        // ref<uint8>(data,(0x1F)) = 4;                             // предположительно animation
+        // ref<uint8>(data,(0x1F)) = 4; // Presumably Animation
         // ref<uint8>(data,(0x20)) = 2;
 
         ref<uint16>(0x40) = PChar->currentEvent->textTable == -1 ? PChar->getZone() : PChar->currentEvent->textTable;
@@ -224,20 +206,30 @@ CZoneInPacket::CZoneInPacket(CCharEntity* PChar, const EventInfo* currentEvent)
 
     if (PChar->m_moghouseID != 0)
     {
-        ref<uint8>(0x80)  = 1;
-        ref<uint16>(0xAA) = GetMogHouseModelID(PChar); // Mog House id
-        ref<uint8>(0xAE)  = GetMogHouseFlag(PChar);    // Mog House leaving flag
-        PChar->setCharVar("[Moghouse]Exit_Pending", 1);
+        ref<uint8>(0x80) = 1;
+
+        if (PChar->profile.mhflag & 0x0040) // On MH2F
+        {
+            // Ensure full exit menu appears
+            ref<uint16>(0xA8) = 0x02;
+        }
+
+        ref<uint16>(0xAA) = GetMogHouseModelID(PChar);
     }
     else
     {
         ref<uint8>(0x80)  = 2;
         ref<uint16>(0xAA) = 0x01FF;
-        ref<uint8>(0xAC)  = csid > 0 ? 0x01 : 0x00;                    // if 0x01 then pause between zone
-        ref<uint8>(0xAF)  = PChar->loc.zone->CanUseMisc(MISC_MOGMENU); // флаг, позволяет использовать mog menu за пределами mog house
+
+        // TODO: This has also been seen as 0x04 and 0x07
+        ref<uint8>(0xAC) = csid > 0 ? 0x01 : 0x00;                    // if 0x01 then pause between zone
+        ref<uint8>(0xAF) = PChar->loc.zone->CanUseMisc(MISC_MOGMENU); // flag allows you to use Mog Menu outside Mog House
     }
 
-    ref<uint32>(0xA0) = PChar->GetPlayTime(); // время, проведенное персонажем в игре с момента создания
+    ref<uint32>(0xA0) = PChar->GetPlayTime(); // time spent by the character in the game from the moment of creation
+
+    ref<uint8>(0xAE) = GetMogHouseLeavingFlag(PChar);
+    PChar->setCharVar("[Moghouse]Exit_Pending", 1);
 
     uint32 pktTime = CVanaTime::getInstance()->getVanaTime();
 
