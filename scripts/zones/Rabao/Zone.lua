@@ -49,7 +49,7 @@ zoneObject.onGameHour = function(zone)
 end
 
 zoneObject.onZoneTick = function(zone)
-    xi.events.sunbreeze_festival.onZoneTick(zone)
+   -- xi.events.sunbreeze_festival.onZoneTick(zone)
 end
 
 return zoneObject

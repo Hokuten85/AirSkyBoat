@@ -1,1 +1,26 @@
 UPDATE zone_settings SET misc = misc | 2206 WHERE misc = 2208;
+
+UPDATE zone_settings SET misc = misc | 0x04 WHERE name IN (
+'Wajaom_Woodlands',
+'Bhaflau_Thickets',
+'West_Ronfaure',
+'East_Ronfaure',
+'La_Theine_Plateau',
+'Valkurm_Dunes',
+'Jugner_Forest',
+'Batallia_Downs',
+'North_Gustaberg',
+'South_Gustaberg',
+'Konschtat_Highlands',
+'Pashhow_Marshlands',
+'Rolanberry_Fields',
+'Eastern_Altepa_Desert',
+'West_Sarutabaruta',
+'East_Sarutabaruta',
+'Tahrongi_Canyon',
+'Buburimu_Peninsula',
+'Meriphataud_Mountains',
+'Sauromugue_Champaign',
+'The_Sanctuary_of_ZiTah',
+'Yhoator_Jungle',
+'Western_Altepa_Desert');

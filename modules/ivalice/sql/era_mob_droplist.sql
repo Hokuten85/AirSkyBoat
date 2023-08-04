@@ -16815,6 +16815,7 @@ INSERT INTO `mob_droplist` VALUES (2105,2,0,1000,750,0);          -- Silver Beas
 
 -- ZoneID: 176 - Rivulet Sahagin
 INSERT INTO `mob_droplist` VALUES (2106,0,0,1000,888,@UNCOMMON);  -- Seashell (Uncommon, 10%)
+INSERT INTO `mob_droplist` VALUES (2106,0,0,1000,4704,640);     -- Scroll Of Auspice (64.0%)
 INSERT INTO `mob_droplist` VALUES (2106,0,0,1000,4579,@UNCOMMON); -- Elshimo Newt (Uncommon, 10%)
 INSERT INTO `mob_droplist` VALUES (2106,0,0,1000,4718,@RARE);     -- Scroll Of Regen Ii (Rare, 5%)
 INSERT INTO `mob_droplist` VALUES (2106,0,0,1000,1055,@RARE);     -- Grotto Chest Key (Rare, 5%)
@@ -19244,7 +19245,7 @@ INSERT INTO `mob_droplist` VALUES (2451,0,0,1000,12867,@SRARE); -- White Slacks 
 INSERT INTO `mob_droplist` VALUES (2451,0,0,1000,12995,@SRARE); -- Moccasins (Super Rare, .5%)
 INSERT INTO `mob_droplist` VALUES (2451,2,0,1000,749,0);        -- Mythril Beastcoin (Steal)
 INSERT INTO `mob_droplist` VALUES (2451,4,0,1000,4552,0);       -- Serving Of Herb Crawler Eggs (Despoil)
--- INSERT INTO `mob_droplist` VALUES (2451,0,0,1000,4704,@RARE);   -- Scroll Of Auspice (Rare, 5%) WOTG item
+INSERT INTO `mob_droplist` VALUES (2451,0,0,1000,4704,@RARE);   -- Scroll Of Auspice (Rare, 5%) WOTG item
 
 -- ZoneID: 162 - Topaz Quadav
 INSERT INTO `mob_droplist` VALUES (2452,0,0,1000,4743,@UNCOMMON); -- Scroll Of Reraise (Uncommon, 10%)
@@ -19255,7 +19256,7 @@ INSERT INTO `mob_droplist` VALUES (2452,0,0,1000,12611,@VRARE);   -- White Cloak
 INSERT INTO `mob_droplist` VALUES (2452,0,0,1000,12867,@VRARE);   -- White Slacks (Very Rare, 1%)
 INSERT INTO `mob_droplist` VALUES (2452,0,0,1000,12995,@VRARE);   -- Moccasins (Very Rare, 1%)
 INSERT INTO `mob_droplist` VALUES (2452,2,0,1000,749,0);          -- Mythril Beastcoin (Steal)
--- INSERT INTO `mob_droplist` VALUES (2452,0,0,1000,4704,0);       -- Scroll Of Auspice (0.0%) WOTG
+INSERT INTO `mob_droplist` VALUES (2452,0,0,1000,4704,@UNCOMMON); -- Scroll Of Auspice (Uncommon, 10%)
 
 -- ZoneID: 132 - Toppling Tuber
 INSERT INTO `mob_droplist` VALUES (2453,0,0,1000,4377,390);        -- Slice Of Coeurl Meat (39.0%)
@@ -22019,7 +22020,7 @@ INSERT INTO `mob_droplist` VALUES (2688,2,0,1000,751,0);        -- Platinum Beas
 
 -- ZoneID: 151 - Yagudo Abbot
 INSERT INTO `mob_droplist` VALUES (2689,0,0,1000,1097,@COMMON);   -- Canteen Of Yagudo Holy Water (Common, 15%)
--- INSERT INTO `mob_droplist` VALUES (2689,0,0,1000,4704,@UNCOMMON); -- Scroll Of Auspice (Uncommon, 10%) WOTG Item
+INSERT INTO `mob_droplist` VALUES (2689,0,0,1000,4704,@UNCOMMON); -- Scroll Of Auspice (Uncommon, 10%) WOTG Item
 INSERT INTO `mob_droplist` VALUES (2689,0,0,1000,4743,@VRARE);    -- Scroll Of Reraise (Rare, 5%)
 INSERT INTO `mob_droplist` VALUES (2689,0,0,1000,12611,@SRARE);   -- White Cloak (Super Rare, .5%)
 INSERT INTO `mob_droplist` VALUES (2689,2,0,1000,749,0);          -- Mythril Beastcoin (Steal)
@@ -22034,7 +22035,7 @@ INSERT INTO `mob_droplist` VALUES (2690,0,0,1000,12611,@VRARE); -- White Cloak (
 INSERT INTO `mob_droplist` VALUES (2690,0,0,1000,12867,@VRARE); -- White Slacks (Very Rare, 1%)
 INSERT INTO `mob_droplist` VALUES (2690,0,0,1000,12995,@VRARE); -- Moccasins (Very Rare, 1%)
 INSERT INTO `mob_droplist` VALUES (2690,2,0,1000,749,0);        -- Mythril Beastcoin (Steal)
--- INSERT INTO `mob_droplist` VALUES (2690,0,0,1000,4704,0);       -- Scroll Of Auspice (0.0%) WOTG
+INSERT INTO `mob_droplist` VALUES (2690,0,0,1000,4704,@UNCOMMON); -- Scroll Of Auspice (Uncommon, 10%)
 
 -- ZoneID:  95 - Yagudo Acolyte
 INSERT INTO `mob_droplist` VALUES (2691,0,0,1000,4666,60); -- Scroll Of Paralyze (6.0%)
