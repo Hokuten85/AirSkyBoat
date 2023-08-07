@@ -3840,11 +3840,13 @@ void SmallPacket0x053(map_session_data_t* const PSession, CCharEntity* const PCh
                     break;
             }
         }
+        charutils::UpdateRemovedSlots(PChar);
         charutils::SaveCharLook(PChar);
     }
     else if (type == 4) // /lockstyle on (Turns on Lockstyle)
     {
         charutils::SetStyleLock(PChar, true);
+        charutils::UpdateRemovedSlots(PChar);
         charutils::SaveCharLook(PChar);
     }
 
