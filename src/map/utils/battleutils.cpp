@@ -390,6 +390,13 @@ namespace battleutils
         // than the size of the array.
         auto maxLevel = static_cast<uint8>(g_SkillTable.size() - 1);
 
+        // TODO: Research on mobs level 99+ is still on-going. This line can be removed once the correct formula/skilltype have been established.
+        // max indexed value and level is capped at 99 as stated above for skill_caps table
+        if (level > 99)
+        {
+            level = 99;
+        }
+
         if (level > maxLevel)
         {
             // ShowDebug("battleutils::GetMaxSkill() received level value greater than array size! (Received: %d, Clamped to: %d)", level, maxLevel); // Removed for OOE mob levels
@@ -2819,31 +2826,32 @@ namespace battleutils
         int32 attackerDex = PAttacker->DEX();
         int32 defenderAgi = PDefender->AGI();
         int32 dDex        = attackerDex - defenderAgi;
-        int32 dDexAbs     = std::abs(dDex);
+        // only care for values between 0 and 50
+        int32 dDexClamp = std::clamp(dDex, 0, 50);
 
         // Default to +0 crit rate for a delta of 0-6
         int32 critRate = 0;
-        if (dDexAbs > 39)
+        if (dDexClamp > 39)
         {
             // 40-50: (dDEX-35)
-            critRate = dDexAbs - 35;
+            critRate = dDexClamp - 35;
         }
-        else if (dDexAbs > 29)
+        else if (dDexClamp > 29)
         {
             // 30-39: +4
             critRate = 4;
         }
-        else if (dDexAbs > 19)
+        else if (dDexClamp > 19)
         {
             // 20-29: +3
             critRate = 3;
         }
-        else if (dDexAbs > 13)
+        else if (dDexClamp > 13)
         {
             // 14-19: +2
             critRate = 2;
         }
-        else if (dDexAbs > 6)
+        else if (dDexClamp > 6)
         {
             critRate = 1;
         }

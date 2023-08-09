@@ -946,7 +946,7 @@ uint16 CBattleEntity::DEF()
 
     if (this->StatusEffectContainer->HasStatusEffect(EFFECT_COUNTERSTANCE, 0))
     {
-        return std::clamp((int)(DEF * 0.85), 0, 65535);
+        DEF = std::clamp((int)(DEF * 0.85), 0, 65535);
     }
 
     return std::clamp(DEF + (DEF * m_modStat[Mod::DEFP] / 100) + std::min<int16>((DEF * m_modStat[Mod::FOOD_DEFP] / 100), m_modStat[Mod::FOOD_DEF_CAP]), 0, 65535);
@@ -957,7 +957,9 @@ uint16 CBattleEntity::EVA()
     // Mobs do not have SKILL_EVASION. Their stats are set in the mobutils.cpp. m_modStat[Mod::EVA] includes all mob evasion
     int16 evasion = (this->objtype == TYPE_MOB || this->objtype == TYPE_PET) ? 0 : GetSkill(SKILL_EVASION);
 
-    return std::max(0, (m_modStat[Mod::EVA] + evasion + AGI() / 2));
+    evasion += AGI() / 2;
+
+    return std::max(0, evasion + (this->objtype == TYPE_MOB || this->objtype == TYPE_PET ? 0 : m_modStat[Mod::EVA])); // The mod for a pet or mob is already calclated in the above so return 0
 }
 
 /************************************************************************
