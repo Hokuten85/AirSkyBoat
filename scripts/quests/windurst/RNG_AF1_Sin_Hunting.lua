@@ -131,8 +131,8 @@ quest.sections =
             {
                 onTrigger = function(player, npc)
                     if
-                        quest:getVar(player, 'Prog') == 4 and
-                        IsMoonFull()
+                        quest:getVar(player, 'Prog') == 4
+						-- and IsMoonFull()
                     then
                         return quest:progressEvent(13, 0, xi.items.GLITTERSAND)
                     end
