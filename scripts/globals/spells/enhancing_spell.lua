@@ -26,39 +26,39 @@ local pTable =
     [xi.magic.spell.AQUAVEIL     ] = { 1, xi.effect.AQUAVEIL,       1,    1,  600, true,  true,  0 },
 
     -- Auspice
-    [xi.magic.spell.AUSPICE      ] = { 1, xi.effect.AUSPICE,       55,    0,  180, true,  false, 0 },
+    [xi.magic.spell.AUSPICE      ] = { 1, xi.effect.AUSPICE,       55,    0,  600, true,  false, 0 },
 
     -- Bar-Element
-    [xi.magic.spell.BARAERO      ] = { 1, xi.effect.BARAERO,        1,    0,  300, true,  true,  0 },
-    [xi.magic.spell.BARBLIZZARD  ] = { 1, xi.effect.BARBLIZZARD,    1,    0,  300, true,  true,  0 },
-    [xi.magic.spell.BARFIRE      ] = { 1, xi.effect.BARFIRE,        1,    0,  300, true,  true,  0 },
-    [xi.magic.spell.BARSTONE     ] = { 1, xi.effect.BARSTONE,       1,    0,  300, true,  true,  0 },
-    [xi.magic.spell.BARTHUNDER   ] = { 1, xi.effect.BARTHUNDER,     1,    0,  300, true,  true,  0 },
-    [xi.magic.spell.BARWATER     ] = { 1, xi.effect.BARWATER,       1,    0,  300, true,  true,  0 },
-    [xi.magic.spell.BARAERA      ] = { 2, xi.effect.BARAERO,        1,    0,  300, true,  true,  0 },
-    [xi.magic.spell.BARBLIZZARA  ] = { 2, xi.effect.BARBLIZZARD,    1,    0,  300, true,  true,  0 },
-    [xi.magic.spell.BARFIRA      ] = { 2, xi.effect.BARFIRE,        1,    0,  300, true,  true,  0 },
-    [xi.magic.spell.BARSTONRA    ] = { 2, xi.effect.BARSTONE,       1,    0,  300, true,  true,  0 },
-    [xi.magic.spell.BARTHUNDRA   ] = { 2, xi.effect.BARTHUNDER,     1,    0,  300, true,  true,  0 },
-    [xi.magic.spell.BARWATERA    ] = { 2, xi.effect.BARWATER,       1,    0,  300, true,  true,  0 },
+    [xi.magic.spell.BARAERO      ] = { 1, xi.effect.BARAERO,        1,    0,  600, true,  true,  0 },
+    [xi.magic.spell.BARBLIZZARD  ] = { 1, xi.effect.BARBLIZZARD,    1,    0,  600, true,  true,  0 },
+    [xi.magic.spell.BARFIRE      ] = { 1, xi.effect.BARFIRE,        1,    0,  600, true,  true,  0 },
+    [xi.magic.spell.BARSTONE     ] = { 1, xi.effect.BARSTONE,       1,    0,  600, true,  true,  0 },
+    [xi.magic.spell.BARTHUNDER   ] = { 1, xi.effect.BARTHUNDER,     1,    0,  600, true,  true,  0 },
+    [xi.magic.spell.BARWATER     ] = { 1, xi.effect.BARWATER,       1,    0,  600, true,  true,  0 },
+    [xi.magic.spell.BARAERA      ] = { 2, xi.effect.BARAERO,        1,    0,  600, true,  true,  0 },
+    [xi.magic.spell.BARBLIZZARA  ] = { 2, xi.effect.BARBLIZZARD,    1,    0,  600, true,  true,  0 },
+    [xi.magic.spell.BARFIRA      ] = { 2, xi.effect.BARFIRE,        1,    0,  600, true,  true,  0 },
+    [xi.magic.spell.BARSTONRA    ] = { 2, xi.effect.BARSTONE,       1,    0,  600, true,  true,  0 },
+    [xi.magic.spell.BARTHUNDRA   ] = { 2, xi.effect.BARTHUNDER,     1,    0,  600, true,  true,  0 },
+    [xi.magic.spell.BARWATERA    ] = { 2, xi.effect.BARWATER,       1,    0,  600, true,  true,  0 },
 
     -- Bar-Status
-    [xi.magic.spell.BARAMNESIA   ] = { 1, xi.effect.BARAMNESIA,     1,    1,  300, true,  true,  0 },
-    [xi.magic.spell.BARBLIND     ] = { 1, xi.effect.BARBLIND,       1,    1,  300, true,  true,  0 },
-    [xi.magic.spell.BARPARALYZE  ] = { 1, xi.effect.BARPARALYZE,    1,    1,  300, true,  true,  0 },
-    [xi.magic.spell.BARPETRIFY   ] = { 1, xi.effect.BARPETRIFY,     1,    1,  300, true,  true,  0 },
-    [xi.magic.spell.BARPOISON    ] = { 1, xi.effect.BARPOISON,      1,    1,  300, true,  true,  0 },
-    [xi.magic.spell.BARSILENCE   ] = { 1, xi.effect.BARSILENCE,     1,    1,  300, true,  true,  0 },
-    [xi.magic.spell.BARSLEEP     ] = { 1, xi.effect.BARSLEEP,       1,    1,  300, true,  true,  0 },
-    [xi.magic.spell.BARVIRUS     ] = { 1, xi.effect.BARVIRUS,       1,    1,  300, true,  true,  0 },
-    [xi.magic.spell.BARAMNESRA   ] = { 2, xi.effect.BARAMNESIA,     1,    1,  300, true,  true,  0 },
-    [xi.magic.spell.BARBLINDRA   ] = { 2, xi.effect.BARBLIND,       1,    1,  300, true,  true,  0 },
-    [xi.magic.spell.BARPARALYZRA ] = { 2, xi.effect.BARPARALYZE,    1,    1,  300, true,  true,  0 },
-    [xi.magic.spell.BARPETRA     ] = { 2, xi.effect.BARPETRIFY,     1,    1,  300, true,  true,  0 },
-    [xi.magic.spell.BARPOISONRA  ] = { 2, xi.effect.BARPOISON,      1,    1,  300, true,  true,  0 },
-    [xi.magic.spell.BARSILENCERA ] = { 2, xi.effect.BARSILENCE,     1,    1,  300, true,  true,  0 },
-    [xi.magic.spell.BARSLEEPRA   ] = { 2, xi.effect.BARSLEEP,       1,    1,  300, true,  true,  0 },
-    [xi.magic.spell.BARVIRA      ] = { 2, xi.effect.BARVIRUS,       1,    1,  300, true,  true,  0 },
+    [xi.magic.spell.BARAMNESIA   ] = { 1, xi.effect.BARAMNESIA,     1,    1,  600, true,  true,  0 },
+    [xi.magic.spell.BARBLIND     ] = { 1, xi.effect.BARBLIND,       1,    1,  600, true,  true,  0 },
+    [xi.magic.spell.BARPARALYZE  ] = { 1, xi.effect.BARPARALYZE,    1,    1,  600, true,  true,  0 },
+    [xi.magic.spell.BARPETRIFY   ] = { 1, xi.effect.BARPETRIFY,     1,    1,  600, true,  true,  0 },
+    [xi.magic.spell.BARPOISON    ] = { 1, xi.effect.BARPOISON,      1,    1,  600, true,  true,  0 },
+    [xi.magic.spell.BARSILENCE   ] = { 1, xi.effect.BARSILENCE,     1,    1,  600, true,  true,  0 },
+    [xi.magic.spell.BARSLEEP     ] = { 1, xi.effect.BARSLEEP,       1,    1,  600, true,  true,  0 },
+    [xi.magic.spell.BARVIRUS     ] = { 1, xi.effect.BARVIRUS,       1,    1,  600, true,  true,  0 },
+    [xi.magic.spell.BARAMNESRA   ] = { 2, xi.effect.BARAMNESIA,     1,    1,  600, true,  true,  0 },
+    [xi.magic.spell.BARBLINDRA   ] = { 2, xi.effect.BARBLIND,       1,    1,  600, true,  true,  0 },
+    [xi.magic.spell.BARPARALYZRA ] = { 2, xi.effect.BARPARALYZE,    1,    1,  600, true,  true,  0 },
+    [xi.magic.spell.BARPETRA     ] = { 2, xi.effect.BARPETRIFY,     1,    1,  600, true,  true,  0 },
+    [xi.magic.spell.BARPOISONRA  ] = { 2, xi.effect.BARPOISON,      1,    1,  600, true,  true,  0 },
+    [xi.magic.spell.BARSILENCERA ] = { 2, xi.effect.BARSILENCE,     1,    1,  600, true,  true,  0 },
+    [xi.magic.spell.BARSLEEPRA   ] = { 2, xi.effect.BARSLEEP,       1,    1,  600, true,  true,  0 },
+    [xi.magic.spell.BARVIRA      ] = { 2, xi.effect.BARVIRUS,       1,    1,  600, true,  true,  0 },
 
     -- Blink
     [xi.magic.spell.BLINK        ] = { 1, xi.effect.BLINK,          1,    2,  300, true,  false, 0 },
@@ -400,7 +400,7 @@ xi.spells.enhancing.calculateEnhancingDuration = function(caster, target, spell,
 
     -- Bar-Element
     elseif (spellEffect >= xi.effect.BARFIRE and spellEffect <= xi.effect.BARWATER) or spellEffect == xi.effect.BARAMNESIA or (spellEffect >= xi.effect.BARSLEEP and spellEffect <= xi.effect.BARVIRUS) then
-        duration = utils.clamp(duration + 0.8 * (skillLevel - 180), 150, 240) -- Min duration is 2.5 minutes, Max duration is 4 minutes
+        duration = utils.clamp(duration + 0.8 * (skillLevel - 180), 600, 1200) -- Min duration is 2.5 minutes, Max duration is 4 minutes
 
     -- En-Spells
     elseif (spellEffect >= xi.effect.ENFIRE and spellEffect <= xi.effect.ENWATER) or (spellEffect >= xi.effect.ENFIRE_II and spellEffect <= xi.effect.ENWATER_II) then

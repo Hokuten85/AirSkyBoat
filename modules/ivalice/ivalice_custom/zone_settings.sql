@@ -24,7 +24,7 @@ UPDATE zone_settings SET misc = misc | 0x04 WHERE name IN (
 'Sauromugue_Champaign',
 'The_Sanctuary_of_ZiTah',
 'Yhoator_Jungle',
-'Western_Altepa_Desert',);
+'Western_Altepa_Desert');
 
 UPDATE zone_settings SET misc = misc | 0x08 WHERE name IN (
 'Bibiki_Bay',
