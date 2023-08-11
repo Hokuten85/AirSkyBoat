@@ -211,7 +211,9 @@ xi.automaton.onAttachmentUnequip = function(pet, attachment)
     local modTable = attachmentModifiers[attachment:getName()]
 
     for k, modList in ipairs(modTable) do
-        pet:delMod(modList[1], modList[2][1])
+		if modList[2][1] then
+			pet:delMod(modList[1], modList[2][1])
+		end
     end
 end
 
