@@ -39,7 +39,6 @@ zones[xi.zone.BASTOK_MARKETS] =
         NOT_HAVE_ENOUGH_GP            = 7140,  -- You do not have enough guild points.
         RENOUNCE_CRAFTSMAN            = 7153,  -- Renounce your rank at which guild? None. Carpenters'. Blacksmiths'. Goldsmiths'. Weavers'. Tanners'. Boneworkers'. Alchemists'. Culinarians'.
         FISHING_MESSAGE_OFFSET        = 7236,  -- You can't fish here.
-        MERRYMAKER_DEFAULT            = 7415,  -- ...
         SOMNPAEMN_CLOSED_DIALOG       = 7602,  -- Sorry, I don't have anything to sell you. I'm trying to start a business selling goods from Sarutabaruta, but it's not easy getting stuff out of areas that aren't under Bastokan control.
         YAFAFA_CLOSED_DIALOG          = 7603,  -- Sorry, I don't have anything to sell you. I'm trying to start a business selling goods from Kolshushu, but it's not easy getting stuff out of areas that aren't under Bastokan control.
         OGGODETT_CLOSED_DIALOG        = 7604,  -- Sorry, I don't have anything to sell you. I'm trying to start a business selling goods from Aragoneu, but it's not easy getting stuff out of areas that aren't under Bastokan control.
@@ -72,10 +71,15 @@ zones[xi.zone.BASTOK_MARKETS] =
         THANK_YOU                     = 8303,  -- Thank you...
         RETRIEVE_DIALOG_ID            = 12909, -- You retrieve <item> from the porter moogle's care.
         MERRYMAKER_TOY                = 13970, -- Happy toy, happy toy, where be me happy toy?
+        MERRYMAKER_TOY2               = 13971, -- Ev'ry girl, ev'ry boy, ev'rybody, happy toy! Me nose holes smell the joy, the joy from happy toy! Where cooould iiit beee?
+        MERRYMAKER_WAHH               = 13973, -- Waaah! It you! You give yum-yums for me tum-tum. Good [boy, girl]!
         MERRYMAKER_GIVE               = 13974, -- Not for us, not for me? I give it back. Now you happy? Happy toy, happy toy, where be me happy toy?
         MERRYMAKER_NO                 = 13975, -- No no no no no! Go away! Nose holes busy sniff for happy toy!
+        MERRYMAKER_DEFAULT            = 13976, -- ...
+        MERRYMAKER_FRIEND             = 13977, -- You have friend you do? We gobbies have friend too.
         MERRYMAKER_TRADE              = 13978, -- Yum-yums for me? Gobbies remember...till our tummies go rumble-rumble again.
         MERRYMAKER_BLECH              = 13981, -- Blech. What this yucky thing? It make me want upgut food. Take it away.
+        MERRYMAKER_NPC_RETURNED       = 14016, -- I see you've returned. Mmm...that's good news indeed. Thank you for the kindess you've shown me and my friend.
         TURNING_IN_SPARKS             = 14234, -- Ohohoho... Turning in sparks, I see.
         DO_NOT_POSSESS_ENOUGH         = 14258, -- You do not possess enough <item> to complete the transaction.
         NOT_ENOUGH_SPARKS             = 14259, -- You do not possess enough sparks of eminence to complete the transaction.
@@ -93,7 +97,7 @@ zones[xi.zone.BASTOK_MARKETS] =
 
         HALLOWEEN_SKINS =
         {
-            [17739805] = 45, -- Olwyn
+            [GetFirstID("Olwyn")] = 45, -- Olwyn
         },
         STARLIGHT_DECORATIONS =
         {

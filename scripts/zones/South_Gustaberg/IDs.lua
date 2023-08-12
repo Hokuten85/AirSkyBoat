@@ -33,6 +33,7 @@ zones[xi.zone.SOUTH_GUSTABERG] =
         FIRE_LONGER                   = 7418,  -- It may take a little while more to cook the <item>.
         MEAT_ALREADY_PUT              = 7419,  -- The <item> is already in the fire.
         GOLDFISH_NPC_DIALOGUE         = 7454,  -- Hey! Get over here and play this game!
+        GOLDFISH_POINT_UPDATE         = 7499,  -- <player>'s current point total is <int>.
         ITEMS_ITEMS_LA_LA             = 7515,  -- You can hear a strange voice... Items, items, la la la la la
         GOBLIN_SLIPPED_AWAY           = 7521,  -- The Goblin slipped away when you were not looking...
         PLAYER_OBTAINS_ITEM           = 7535,  -- <name> obtains <item>!
@@ -42,7 +43,12 @@ zones[xi.zone.SOUTH_GUSTABERG] =
         NO_COMBINATION                = 7543,  -- You were unable to enter a combination.
         UNITY_WANTED_BATTLE_INTERACT  = 7605,  -- Those who have accepted % must pay # Unity accolades to participate. The content for this Wanted battle is #. [Ready to begin?/You do not have the appropriate object set, so your rewards will be limited.]
         REGIME_REGISTERED             = 9904,  -- New training regime registered!
+        SMILEBRINGER_START            = 11047, -- So, are you ready-steady? Beginner level training...GO! Come on, pump those legs like there's no tomorrow!
+        SMILEHELPER_CHECKPOINT_1      = 11069, -- Checkpoint <number> cleared, Elasped time: [minutes], [seconds]
+        SMILEHELPER_CHECKPOINT_2      = 11070, -- Checkpoint <number> cleared! You gain the effect of Flee. Elasped time: [minutes], [seconds]
+        SMILEHELPER_ALREADY_VISITED   = 11071, -- You have already cleared this checkpoint. Elapsed time: [minutes], [seconds]
         SMILEHELPER_POINTS_CLEARED    = 11073, -- All checkpoints cleared! Please report back to the smile sergeant in charge.
+        SMILEHELPER_IDLE              = 11075, -- This is a checkpointaru for the Smilebringer Boot camp. To learny-wearn more, please speak with the smile sergeant posted by the town entrance.
     },
     mob =
     {
