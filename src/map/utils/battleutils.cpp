@@ -1600,6 +1600,12 @@ namespace battleutils
         hitrate = hitrate + ((acc - eva) / 2) - (PDefender->GetMLevel() - PAttacker->GetMLevel()) * 2;
 
         uint8 finalhitrate = std::clamp(hitrate, 20, 95);
+
+        // Check to see if distance is greater than 25 and force hitrate to be 0
+        if (distance(PAttacker->loc.p, PDefender->loc.p) > 25)
+        {
+            finalhitrate = 0;
+        }
         return finalhitrate;
     }
 
@@ -6303,7 +6309,7 @@ namespace battleutils
         // Snap nearEntity to a guaranteed valid position
         if (PMob->loc.zone->m_navMesh)
         {
-            PMob->loc.zone->m_navMesh->snapToValidPosition(nearEntity, pos.y, true);
+            PMob->loc.zone->m_navMesh->snapToValidPosition(nearEntity);
         }
 
         // Move the target a little higher, just in case
