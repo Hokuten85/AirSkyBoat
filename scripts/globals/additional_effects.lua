@@ -178,10 +178,7 @@ xi.additionalEffect.attack = function(attacker, defender, baseAttackDamage, item
         addStatus == xi.effect.DEFENSE_DOWN and
         item:getSkillType() == xi.skill.MARKSMANSHIP
     then
-        local dLvl = defender:getMainLvl() - attacker:getMainLvl()
-        if dLvl <= 0 then
-            chance = 99
-        end
+		chance = 99
     end
 
     -- If player is level synced below the level of the item, do no proc
