@@ -252,6 +252,12 @@ uint8 CBattleEntity::GetSpeed()
 {
     // Note: retail treats mounted speed as double what it actually is! 40 is in fact retail accurate!
     int16 startingSpeed = isMounted() ? 40 + settings::get<int8>("map.MOUNT_SPEED_MOD") : speed;
+
+    if (this->objtype == TYPE_MOB)
+    {
+        startingSpeed = this->speed;
+    }
+
     // Mod::MOVE (169)
     // Mod::MOUNT_MOVE (972)
     Mod mod = isMounted() ? Mod::MOUNT_MOVE : Mod::MOVE;
