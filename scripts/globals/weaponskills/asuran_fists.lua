@@ -23,11 +23,11 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     local params = {}
     params.numHits = 7
     -- This is a 8 hit ws but H2H ws are done in a different way, the off hand hit is been taking into account in another place
-    params.ftp100 = 1 params.ftp200 = 1 params.ftp300 = 1
-    params.str_wsc = 0.15 params.dex_wsc = 0.0 params.vit_wsc = 0.15 params.agi_wsc = 0.0 params.int_wsc = 0.0 params.mnd_wsc = 0.0 params.chr_wsc = 0.0
+    params.ftp100 = 1.25 params.ftp200 = 1.25 params.ftp300 = 1.25
+    params.str_wsc = 0.2 params.dex_wsc = 0.0 params.vit_wsc = 0.2 params.agi_wsc = 0.0 params.int_wsc = 0.0 params.mnd_wsc = 0.0 params.chr_wsc = 0.0
     params.crit100 = 0.0 params.crit200 = 0.0 params.crit300 = 0.0
     params.canCrit = false
-    params.acc100 = 1.0 params.acc200 = 1.25 params.acc300 = 1.5 -- TODO: verify -- "Accuracy varies with TP" in retail. All current evidence points to that this modifier is static values, not percentages.
+    params.acc100 = 1.25 params.acc200 = 1.5 params.acc300 = 1.75 -- TODO: verify -- "Accuracy varies with TP" in retail. All current evidence points to that this modifier is static values, not percentages.
     params.atk100 = 1 params.atk200 = 1 params.atk300 = 1
     params.multiHitfTP = true -- http://wiki.ffo.jp/html/2424.html
 
