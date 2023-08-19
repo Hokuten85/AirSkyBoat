@@ -303,7 +303,7 @@ namespace blueutils
         }
         else
         {
-            uint8 points = std::clamp(((level - 1) / 10) * 5 + 10, 0, 55);
+            uint8 points = std::clamp(((level - 1) / 10) * 5 + 20, 0, 55);
             if (level >= 75)
             {
                 points = points + PChar->PMeritPoints->GetMeritValue(MERIT_ASSIMILATION, PChar);
