@@ -821,9 +821,11 @@ local list =
     },
 	[xi.zone.BHAFLAU_THICKETS] =
 	{
+		{ "Greater Colibri", "Greater Colibri" },
+		{ "Wivre", "Wivre" },
 		{ "Locus Colibri", "Greater Colibri" },
 		{ "Locus Wivre", "Wivre" },
-	}
+	},
     [xi.zone.CRAWLERS_NEST] =
     {
         { "Soldier Crawler", "King Crawler" },
