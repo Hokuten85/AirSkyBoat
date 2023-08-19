@@ -819,6 +819,11 @@ local list =
     { "H. Avatar", "Hydra's Avatar"},
     { "D. Avatar", "Dagourmarche's Avatar" },
     },
+	[xi.zone.BHAFLAU_THICKETS] =
+	{
+		{ "Locus Colibri", "Greater Colibri" },
+		{ "Locus Wivre", "Wivre" },
+	}
     [xi.zone.CRAWLERS_NEST] =
     {
         { "Soldier Crawler", "King Crawler" },
