@@ -1,10 +1,6 @@
 ------------------------------------
 -- Starlight Celebration
 ------------------------------------
-require("scripts/globals/settings")
-require("scripts/globals/utils")
-require("scripts/globals/npc_util")
-------------------------------------
 xi = xi or {}
 xi.events = xi.events or {}
 xi.events.sunbreeze_festival = xi.events.sunbreeze_festival or {}
