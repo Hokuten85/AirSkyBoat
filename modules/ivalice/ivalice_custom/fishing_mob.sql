@@ -1,0 +1,1 @@
+UPDATE fishing_mob SET min_respawn = 60, max_respawn = 60 WHERE mobid = 17489925; -- Devil Manta in Kuftal Tunnel
