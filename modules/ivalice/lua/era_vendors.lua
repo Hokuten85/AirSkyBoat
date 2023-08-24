@@ -3,7 +3,6 @@
 -----------------------------------
 require("scripts/globals/shop")
 require("modules/module_utils")
-require("scripts/globals/keyitems")
 
 local m = Module:new("era_vendors")
 
@@ -403,7 +402,7 @@ xi.eraShops.Creepstix =
     5023,   8160, -- Scroll of Goblin Gavotte
     4734,   7074, -- Scroll of Protectra II
     4738,   1700, -- Scroll of Shellra
-	5089,  73740, -- Scroll of Gain-VIT
+    5089,  73740, -- Scroll of Gain-VIT
     5092,  77500, -- Scroll of Gain-MND
     5090,  85680, -- Scroll of Gain-AGI
     5093,  81900, -- Scroll of Gain-CHR
@@ -416,7 +415,7 @@ xi.eraShops.Creepstix =
 
 xi.eraShops.Hasim =
 {
-	4612,  23400, -- Scroll of Cure IV
+    4612,  23400, -- Scroll of Cure IV
     4616,  11200, -- Scroll of Curaga II
     4617,  19932, -- Scroll of Curaga III
     4625,   2330, -- Scroll of Silena
@@ -510,7 +509,7 @@ xi.eraShops.Susu =
     4625,  2330, -- Scroll of Silena
     4626, 19200, -- Scroll of Stona
     4627, 13300, -- Scroll of Viruna
-	4813, 119180, -- Scroll of Flare II
+    4813, 119180, -- Scroll of Flare II
     4815, 119180, -- Scroll of Freeze II
     4817, 119180, -- Scroll of Tornado II
     4819, 119180, -- Scroll of Quake II
@@ -568,20 +567,20 @@ xi.eraShops.Areebah =
 --Kazham
 xi.eraShops.TojiMumosulah =
 {
-	112,    456,    -- Yellow Jar
-    13199,   95,    -- Blood Stone
-    13076, 3510,    -- Fang Necklace
-    13321, 1667,    -- Bone Earring
-    17351, 4747,    -- Gemshorn
-    16993,   69,    -- Peeled Crayfish
-    16998,   36,    -- Insect Paste
-    17876,  165,    -- Fish Broth
-    17880,  695,    -- Seedbed Soil
-    1021,   450,    -- Hatchet
-    4987,   328,    -- Scroll of Army's Paeon II
-    5079, 64528,    -- Scroll of Foe Lullaby II
-    4988,  3312,    -- Scroll of Army's Paeon III
+    112,    456, -- Yellow Jar
+    13199,   95, -- Blood Stone
+    13076, 3510, -- Fang Necklace
+    13321, 1667, -- Bone Earring
+    17351, 4747, -- Gemshorn
+    16993,   69, -- Peeled Crayfish
+    16998,   36, -- Insect Paste
+    17876,  165, -- Fish Broth
+    17880,  695, -- Seedbed Soil
+    1021,   450, -- Hatchet
+    4987,   328, -- Scroll of Army's Paeon II
+    4988,  3312, -- Scroll of Army's Paeon III
     4964,  8726,    -- Scroll of Monomi: Ichi
+    5079, 64528,    -- Scroll of Foe Lullaby II
 }
 
 -- Rulude Gardens
@@ -643,7 +642,7 @@ xi.eraShops.Mamaroon =
     4859,   9000, -- Scroll of Shock Spikes
     2502,  29950, -- White Puppet Turban
     2501,  29950, -- Black Puppet Turban
-	4706, 100800,    -- Scroll of Enlight
+    4706, 100800,    -- Scroll of Enlight
     4707, 100800,    -- Scroll of Endark
 }
 
@@ -670,8 +669,8 @@ xi.eraShops.Yoyoroon =
 -- Norg
 xi.eraShops.SolbyMaholby =
 {
-    17395,     9,    -- Lugworm
-    4899,    450,    -- Earth Spirit Pact
+    17395,     9, -- Lugworm
+    4899,    450, -- Earth Spirit Pact
     2870,   9000,    -- Norg Waystone
     4965,  79380,    -- Scroll of Aisha: Ichi
     4966,  93243,    -- Scroll of Myoshu: Ichi
@@ -686,6 +685,7 @@ xi.eraShops.SolbyMaholby =
     4942, 119250,    -- Scroll of Raiton: San
     4945, 119250,    -- Scroll of Suiton: San
 }
+
 
 -- Port Jeuno
 xi.eraShops.Gekko =
