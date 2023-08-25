@@ -2822,6 +2822,11 @@ namespace battleutils
             {
                 critHitRate -= PDefender->StatusEffectContainer->GetStatusEffect(EFFECT_YONIN)->GetPower();
             }
+            // Check for Impetus
+            if (PAttacker->StatusEffectContainer->HasStatusEffect(EFFECT_IMPETUS))
+            {
+                critHitRate += PAttacker->getMod(Mod::IMPETUS);
+            }
 
             critHitRate += GetDexCritBonus(PAttacker, PDefender);
             critHitRate += PAttacker->getMod(Mod::CRITHITRATE);
@@ -7561,4 +7566,24 @@ namespace battleutils
 
         return 0;
     }
+
+    void HandleImpetus(CBattleEntity* PEntity, REACTION reaction)
+    {
+        if (PEntity->objtype == TYPE_PC && PEntity->StatusEffectContainer->HasStatusEffect(EFFECT_IMPETUS))
+        {
+            int16 impetus = PEntity->getMod(Mod::IMPETUS);
+            if ((reaction & (REACTION::HIT | REACTION::BLOCK | REACTION::GUARDED)) > REACTION::NONE)
+            {
+                if (impetus < 50)
+                {
+                    PEntity->addModifier(Mod::IMPETUS, 1);
+                }
+            }
+            else
+            {
+                PEntity->delModifier(Mod::IMPETUS, impetus);
+            }
+        }
+    }
+
 }; // namespace battleutils

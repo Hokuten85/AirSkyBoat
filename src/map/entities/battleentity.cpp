@@ -781,6 +781,12 @@ uint16 CBattleEntity::ATT(uint16 slot, bool ignoreWeaponMods)
                 ATT += static_cast<int32>(ATT * this->getMod(Mod::SMITE) / 256.f); // Divide smite value by 256
             }
         }
+
+        // Check for Impetus
+        if (this->StatusEffectContainer->HasStatusEffect(EFFECT_IMPETUS))
+        {
+            ATT += this->getMod(Mod::IMPETUS) * 2;
+        }
     }
     else if (this->objtype == TYPE_PET && ((CPetEntity*)this)->getPetType() == PET_TYPE::AUTOMATON)
     {
@@ -2336,6 +2342,8 @@ bool CBattleEntity::OnAttack(CAttackState& state, action_t& action)
                 attackRound.AddAttackSwing(PHYSICAL_ATTACK_TYPE::ZANSHIN, PHYSICAL_ATTACK_DIRECTION::RIGHTATTACK, 1);
             }
         }
+
+        battleutils::HandleImpetus(this, actionTarget.reaction);
 
         attackRound.DeleteAttackSwing();
 

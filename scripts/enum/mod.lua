@@ -956,4 +956,5 @@ xi.mod =
 	DOUBLEUP_ENHANCEMENT = 3003,
 	TH_EXTRA_ROLL        = 3004,
 	LIFESTEAL            = 3005,
+    IMPETUS              = 3006,
 }

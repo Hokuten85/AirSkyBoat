@@ -269,7 +269,7 @@ REPLACE INTO `mob_spawn_points` (`mobid`, `spawnset`, `mobname`, `polutils_name`
     (16990471, 0,  'Greater_Colibri',          'Greater Colibri',          52,  -597,      -5,        -49,       127       ),
     (16990472, 0,  'Greater_Colibri',          'Greater Colibri',          52,  -593,      -4,         -8,       127       ),
 	(16990479, 0,  'Greater_Colibri',          'Greater Colibri',          52,  -524,      -11,       -57,       127       ),
-	(16990481, 0,  'Greater_Colibri',          'Greater Colibri',          52,  -562,      -15,       -99,       127       ),
+	(16990481, 0,  'Wivre',                    'Wivre',                    53,  -562,      -15,       -99,       127       ),
     (16990506, 0,  'Lividroot_Amooshah',       'Lividroot Amooshah',       54,  334,       -10,       184,       129       ),
     (16990507, 0,  'Dea',                      'Dea',                      55,  -34,       -32,       481,       221       ),
     (16990508, 0,  'Lamia_Immolator',          'Lamia Immolator',          56,  380.069,   -10.664,   -17.216,   68        ),

@@ -333,6 +333,8 @@ local function getSingleHitDamage(attacker, target, dmg, wsParams, calcParams, f
 
     missChance = xi.weaponskills.handleParry(attacker, target, missChance, calcParams.guaranteedHit)
 
+    local miss = true
+    local impetus = { active = attacker:hasStatusEffect(xi.effect.IMPETUS), value = attacker:getMod(xi.mod.IMPETUS) }
     if
         (missChance <= calcParams.hitRate or
         calcParams.guaranteedHit or
@@ -340,8 +342,16 @@ local function getSingleHitDamage(attacker, target, dmg, wsParams, calcParams, f
         not calcParams.mustMiss
     then
         if not shadowAbsorb(target) then
+            miss = false
+
+            local critRate = calcParams.critRate
+            -- Impetus critical boost 
+            if impetus.active then
+                critRate = critRate + impetus.value
+            end
+
             local critChance = math.random() -- See if we land a critical hit
-            criticalHit = (wsParams.canCrit and critChance <= calcParams.critRate) or
+            criticalHit = (wsParams.canCrit and critChance <= critRate) or
                 calcParams.forcedFirstCrit or
                 calcParams.mightyStrikesApplicable
 
@@ -385,6 +395,16 @@ local function getSingleHitDamage(attacker, target, dmg, wsParams, calcParams, f
             calcParams.hitsLanded = calcParams.hitsLanded + 1
         else
             calcParams.shadowsAbsorbed = calcParams.shadowsAbsorbed + 1
+        end
+    end
+
+    if impetus.active then
+        if not miss then
+            if impetus.value < 50 then
+                attacker:addMod(xi.mod.IMPETUS, 1)
+            end
+        else
+            attacker:delMod(xi.mod.IMPETUS, impetus.value)
         end
     end
 
@@ -1435,4 +1455,31 @@ xi.weaponskills.handleWSGorgetBelt = function(attacker)
     end
 
     return ftpBonus, accBonus
+end
+
+local function impetusBonus(attacker)
+    local bonus = 0
+
+    if attacker:getObjType() ~= xi.objType.PC then
+        return 0
+    end
+
+    local mainEquip = attacker:getStorageItem(0, 0, xi.slot.MAIN)
+    if
+        mainEquip and
+        not mainEquip:isTwoHanded() and
+        not mainEquip:isHandToHand()
+    then
+        local subEquip = attacker:getStorageItem(0, 0, xi.slot.SUB)
+
+        if
+            subEquip == nil or
+            subEquip:getSkillType() == xi.skill.NONE or
+            subEquip:isShield()
+        then
+            bonus = attacker:getMod(xi.mod.FENCER_CRITHITRATE) / 100
+        end
+    end
+
+    return bonus
 end

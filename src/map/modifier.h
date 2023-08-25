@@ -1035,6 +1035,7 @@ enum class Mod
     DOUBLEUP_ENHANCEMENT    = 3003,
     TH_EXTRA_ROLL           = 3004,
     LIFESTEAL               = 3005,
+    IMPETUS                 = 3006,
 };
 
 // temporary workaround for using enum class as unordered_map key until compilers support it

@@ -275,7 +275,8 @@ namespace battleutils
 
     int16 CalculateReturnedTPWS(CBattleEntity* PAttacker, bool isRanged, CItemWeapon* weapon);
 
-    int32          getTraitValue(CBattleEntity* PEntity, uint8 TraitID);
+    int32 getTraitValue(CBattleEntity* PEntity, uint8 TraitID);
+    void  HandleImpetus(CBattleEntity* PEntity, REACTION reaction);
 }; // namespace battleutils
 
 #endif
