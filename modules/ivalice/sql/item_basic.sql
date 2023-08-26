@@ -2197,7 +2197,7 @@ REPLACE INTO `item_basic` (`itemid`, `subid`, `name`, `sortname`, `stackSize`, `
     (17211, 0, 'almogavar_bow', 'almogavar_bow', 1, 34820, 13, 0, 970),
     (17221, 0, 'repeating_crossbow', 'rpt._crossbow', 1, 2084, 13, 0, 4063),
     (17252, 0, 'culverin', 'culverin', 1, 2084, 13, 0, 4315),
-    (17304, 0, 'fuma_shuriken', 'fuma_shuriken', 12, 2052, 15, 0, 50),
+    (17304, 0, 'fuma_shuriken', 'fuma_shuriken', 99, 2052, 15, 0, 50),
     (17345, 0, 'flute', 'flute', 1, 2084, 14, 0, 11),
     (17358, 0, 'oneiros_harp', 'oneiros_harp', 1, 34820, 14, 0, 0),
     (17376, 0, 'rose_harp_+1', 'rose_harp_+1', 1, 2080, 14, 0, 2910),
