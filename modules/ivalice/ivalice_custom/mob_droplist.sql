@@ -136,3 +136,4 @@ INSERT INTO `mob_droplist` VALUES (2046,0,0,1000,9083,@UNCOMMON); -- Mandragora 
 
 UPDATE mob_droplist SET itemRate = 50 WHERE itemId = 17662; -- Company Sword
 UPDATE mob_droplist SET itemRate = 50 WHERE itemId = 18002; -- Perseus's Harpe
+UPDATE mob_droplist SET itemRate = @UNCOMMON WHERE dropId = 644 AND itemId = 1312; -- angel-skin
