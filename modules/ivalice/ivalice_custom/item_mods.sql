@@ -7,3 +7,6 @@ INSERT INTO item_mods VALUES (15920,3003,1);
 INSERT INTO item_mods VALUES (19007,3003,1);
 
 INSERT INTO item_mods VALUES (11993,3004,1); -- Rogue's Torque
+
+INSERT INTO item_mods VALUES (14226,68,10); -- Ninja Hakama
+INSERT INTO item_mods VALUES (14101,169,18); -- Ninja Kyahan

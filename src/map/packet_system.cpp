@@ -768,6 +768,8 @@ void SmallPacket0x015(map_session_data_t* const PSession, CCharEntity* const PCh
                     PChar->pushPacket(new CBazaarMessagePacket(PChar));
                 }
             }
+
+            PChar->loc.zone->UpdateCharPacket(PChar, ENTITY_UPDATE, PChar->updatemask);
         }
 
         // Request updates for all entity types
