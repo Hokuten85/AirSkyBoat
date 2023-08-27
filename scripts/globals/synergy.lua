@@ -17,6 +17,7 @@ local synergyRecipes = {
 	{ ingredients = {11755,11760,11756,11759,11758,11757,11761,11762}, result = 28420 }, -- fotia-belt
 	{ ingredients = {15441,15442,15435,15436,15437,15438,15439,15440}, result = 28419 }, -- hachirin-no-obi
 	{ ingredients = {2570,2570}, result = 19051 }, -- vivid-strap
+	{ ingredients = {2818,12156}, result = 12162 }, -- Shikkoku Togi
 }
 
 xi.synergy.onTrade = function(player, npc, trade)
