@@ -8078,24 +8078,24 @@ INSERT INTO `pydarkstar_items` VALUES
 (19800,'gargouille_arrow',0,0,1,30,1,0,89,30),
 (19802,'orichalcum_bullet',1,0,10,30,1,0,891,30),
 (19803,'adaman_bullet',1,0,10,30,1,0,891,30),
-(5534, 'apkallufa',1,0,1000,30,1,0,89000,30);
-(6297, 'juji_shuriken_pouch',1,0,1000,30,1,0,1000,30);
-(6298, 'manji_shuriken_pouch',1,0,1000,30,1,0,1000,30);
-(6299, 'shuriken_pouch',1,0,1000,30,1,0,1000,30);
-(6300, 'koga_shuriken_pouch',1,0,1000,30,1,0,1000,30);
-(6301, 'togakushi_shuriken_pouch',1,0,1000,30,1,0,1000,30);
-(6302, 'fuma_shuriken_pouch',1,0,1000,30,1,0,1000,30);
-(6303, 'iga_shuriken_pouch',1,0,1000,30,1,0,1000,30);
-(6304, 'roppo_shuriken_pouch',1,0,1000,30,1,0,1000,30);
-(6305, 'roppo_shuriken_+1_pouch',1,0,1000,30,1,0,1000,30);
-(6306, 'happo_shuriken_pouch',1,0,1000,30,1,0,1000,30);
-(6307, 'happo_shuriken_+1_pouch',1,0,1000,30,1,0,1000,30);
-(6308, 'hachiya_shuriken_pouch',1,0,1000,30,1,0,1000,30);
-(6309, 'suppa_shuriken_pouch',1,0,1000,30,1,0,1000,30);
-(6415, 'seki_shuriken_pouch',1,0,1000,30,1,0,1000,30);
-(6447, 'sasuke_shuriken_pouch',1,0,1000,30,1,0,1000,30);
-(6448, 'sasuke_shuriken_pouch_+1',1,0,1000,30,1,0,1000,30);
-(6449, 'date_shuriken_pouch',1,0,1000,30,1,0,1000,30);
+(5534,'apkallufa',1,0,1000,30,1,0,89000,30),
+(6297,'juji_shuriken_pouch',1,0,1000,30,1,0,1000,30),
+(6298,'manji_shuriken_pouch',1,0,1000,30,1,0,1000,30),
+(6299,'shuriken_pouch',1,0,1000,30,1,0,1000,30),
+(6300,'koga_shuriken_pouch',1,0,1000,30,1,0,1000,30),
+(6301,'togakushi_shuriken_pouch',1,0,1000,30,1,0,1000,30),
+(6302,'fuma_shuriken_pouch',1,0,1000,30,1,0,1000,30),
+(6303,'iga_shuriken_pouch',1,0,1000,30,1,0,1000,30),
+(6304,'roppo_shuriken_pouch',1,0,1000,30,1,0,1000,30),
+(6305,'roppo_shuriken_+1_pouch',1,0,1000,30,1,0,1000,30),
+(6306,'happo_shuriken_pouch',1,0,1000,30,1,0,1000,30),
+(6307,'happo_shuriken_+1_pouch',1,0,1000,30,1,0,1000,30),
+(6308,'hachiya_shuriken_pouch',1,0,1000,30,1,0,1000,30),
+(6309,'suppa_shuriken_pouch',1,0,1000,30,1,0,1000,30),
+(6415,'seki_shuriken_pouch',1,0,1000,30,1,0,1000,30),
+(6447,'sasuke_shuriken_pouch',1,0,1000,30,1,0,1000,30),
+(6448,'sasuke_shuriken_pouch_+1',1,0,1000,30,1,0,1000,30),
+(6449,'date_shuriken_pouch',1,0,1000,30,1,0,1000,30);
 
 /*!40000 ALTER TABLE `pydarkstar_items` ENABLE KEYS */;
 UNLOCK TABLES;
