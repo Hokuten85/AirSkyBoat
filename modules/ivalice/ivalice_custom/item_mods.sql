@@ -10,3 +10,5 @@ INSERT INTO item_mods VALUES (11993,3004,1); -- Rogue's Torque
 
 INSERT INTO item_mods VALUES (14226,68,10); -- Ninja Hakama
 INSERT INTO item_mods VALUES (14101,169,18); -- Ninja Kyahan
+
+UPDATE item_mods SET value = 2 WHERE itemId IN (12162, 12198) AND modid = 421;
