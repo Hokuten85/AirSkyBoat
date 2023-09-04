@@ -24,7 +24,7 @@ entity.onTrigger = function(player, npc)
         VanadielRSERace() == playerRace and
         not player:hasItem(18246 + playerRace - raceOffset)
     then
-        npcUtil.popFromQM(player, npc, ID.mob.AROMA_CRAWLER, { claim = true, hide = math.random(600, 1800), look = true, radius = 1 })  -- ??? despawns and respawns 10-30 minutes after NM dies
+        npcUtil.popFromQM(player, npc, ID.mob.AROMA_CRAWLER, { claim = true, hide = math.random(30, 60), look = true, radius = 1 })  -- ??? despawns and respawns 10-30 minutes after NM dies
 
         local item = 18246 + playerRace - raceOffset
         GetMobByID(ID.mob.AROMA_CRAWLER):addListener("ITEM_DROPS", "ITEM_DROPS_RSE", function(mob, loot)
