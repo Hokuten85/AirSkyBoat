@@ -3306,7 +3306,7 @@ INSERT INTO `mob_droplist` VALUES (356,0,0,1000,2929,@RARE);     -- Helm Of Bria
 
 -- ZoneID: 177 - Brigandish Blade
 INSERT INTO `mob_droplist` VALUES (357,0,0,1000,1420,@ALWAYS);  -- Gem Of The South (Always, 100%)
-INSERT INTO `mob_droplist` VALUES (357,0,0,1000,1420,@VCOMMON);  -- Gem Of The South (Always, 100%) Dec 7th 2010
+-- INSERT INTO `mob_droplist` VALUES (357,0,0,1000,1420,@ALWAYS);  -- Gem Of The South (Always, 100%) Dec 7th 2010
 INSERT INTO `mob_droplist` VALUES (357,0,0,1000,1441,@VCOMMON); -- Libation Abjuration (Very Common, 24%)
 INSERT INTO `mob_droplist` VALUES (357,2,0,1000,17622,0);       -- Buccaneers Knife (Steal)
 
@@ -3590,7 +3590,6 @@ INSERT INTO `mob_droplist` VALUES (393,0,0,1000,511,70);          -- Goblin Mask
 
 -- ZoneID: 130 - Byakko
 INSERT INTO `mob_droplist` VALUES (394,0,0,1000,1406,@ALWAYS);  -- Seal Of Byakko (Always, 100%)
-INSERT INTO `mob_droplist` VALUES (394,0,0,1000,1406,@VCOMMON);  -- Seal Of Byakko (Always, 100%)
 INSERT INTO `mob_droplist` VALUES (394,0,0,1000,18163,@ALWAYS); -- Zephyr (Always, 100%)
 INSERT INTO `mob_droplist` VALUES (394,0,0,1000,12818,@COMMON); -- Byakkos Haidate (Common, 15%)
 INSERT INTO `mob_droplist` VALUES (394,0,0,1000,18198,@COMMON); -- Byakkos Axe (Common, 15%)
@@ -5459,7 +5458,7 @@ INSERT INTO `mob_droplist` VALUES (637,0,0,1000,11531,@COMMON); -- Fidelity Mant
 
 -- ZoneID: 130 - Despot
 INSERT INTO `mob_droplist` VALUES (638,0,0,1000,1422,@ALWAYS);  -- Gem Of The West (Always, 100%)
-INSERT INTO `mob_droplist` VALUES (638,0,0,1000,1422,@VCOMMON);  -- Gem Of The West (Always, 100%) Dec 7th 2010
+-- INSERT INTO `mob_droplist` VALUES (638,0,0,1000,1422,@ALWAYS);  -- Gem Of The West (Always, 100%) Dec 7th 2010
 INSERT INTO `mob_droplist` VALUES (638,0,0,1000,1442,@VCOMMON); -- Oblation Abjuration (Very Common, 24%)
 INSERT INTO `mob_droplist` VALUES (638,0,0,1000,18044,@COMMON); -- Scarecrow Scythe (Common, 15%)
 
@@ -7715,7 +7714,6 @@ INSERT INTO `mob_droplist` VALUES (945,0,0,1000,2503,300); -- Handful Of Almonds
 
 -- ZoneID: 130 - Genbu
 INSERT INTO `mob_droplist` VALUES (946,0,0,1000,1404,@ALWAYS);   -- Seal Of Genbu (Always, 100%)
-INSERT INTO `mob_droplist` VALUES (946,0,0,1000,1404,@VCOMMON);   -- Seal Of Genbu (Always, 100%)
 INSERT INTO `mob_droplist` VALUES (946,0,0,1000,18161,@ALWAYS);  -- Arctic Wind (Always, 100%)
 INSERT INTO `mob_droplist` VALUES (946,0,0,1000,901,@COMMON);    -- Venomous Claw (Common, 15%)
 INSERT INTO `mob_droplist` VALUES (946,0,0,1000,12296,@COMMON);  -- Genbus Shield (Common, 15%)
@@ -17429,7 +17427,6 @@ INSERT INTO `mob_droplist` VALUES (2195,0,0,1000,1613,@UNCOMMON); -- Remnant Of 
 
 -- ZoneID: 130 - Seiryu
 INSERT INTO `mob_droplist` VALUES (2196,0,0,1000,1405,@ALWAYS);   -- Seal Of Seiryu (Always, 100%)
-INSERT INTO `mob_droplist` VALUES (2196,0,0,1000,1405,@VCOMMON);   -- Seal Of Seiryu (Always, 100%)
 INSERT INTO `mob_droplist` VALUES (2196,0,0,1000,18162,@ALWAYS);  -- East Wind (Always, 100%)
 INSERT INTO `mob_droplist` VALUES (2196,0,0,1000,17659,@COMMON);  -- Seiryus Sword (Common, 15%)
 INSERT INTO `mob_droplist` VALUES (2196,0,0,1000,12690,@COMMON);  -- Seiryus Kote (Common, 15%)
@@ -18300,7 +18297,7 @@ INSERT INTO `mob_droplist` VALUES (2325,0,0,1000,889,0);         -- Beetle Shell
 
 -- ZoneID: 177 - Steam Cleaner
 INSERT INTO `mob_droplist` VALUES (2326,0,0,1000,1418,@ALWAYS);  -- Gem Of The East (Always, 100%)
-INSERT INTO `mob_droplist` VALUES (2326,0,0,1000,1418,@VCOMMON);  -- Gem Of The East (Always, 100%) Dec 7th 2010
+-- INSERT INTO `mob_droplist` VALUES (2326,0,0,1000,1418,@ALWAYS);  -- Gem Of The East (Always, 100%) Dec 7th 2010
 INSERT INTO `mob_droplist` VALUES (2326,0,0,1000,1441,@VCOMMON); -- Libation Abjuration (Very Common, 24%)
 INSERT INTO `mob_droplist` VALUES (2326,0,0,1000,17511,@COMMON); -- Indra Katars (Common, 15%)
 INSERT INTO `mob_droplist` VALUES (2326,0,0,1000,1445,@RARE);    -- Freyas Tear (Rare, 5%)
@@ -18542,7 +18539,6 @@ INSERT INTO `mob_droplist` VALUES (2361,0,0,1000,19216,88);     -- Failnaught (8
 
 -- ZoneID: 130 - Suzaku
 INSERT INTO `mob_droplist` VALUES (2362,0,0,1000,1407,@ALWAYS);   -- Seal Of Suzaku (Always, 100%)
-INSERT INTO `mob_droplist` VALUES (2362,0,0,1000,1407,@VCOMMON);   -- Seal Of Suzaku (Always, 100%)
 INSERT INTO `mob_droplist` VALUES (2362,0,0,1000,18164,@ALWAYS);  -- Antarctic Wind (Always, 100%)
 INSERT INTO `mob_droplist` VALUES (2362,0,0,1000,1313,@COMMON);   -- Lock Of Sirens Hair (Common, 15%)
 INSERT INTO `mob_droplist` VALUES (2362,0,0,1000,1313,@COMMON);   -- Lock Of Sirens Hair (Common, 15%)
@@ -18763,7 +18759,6 @@ INSERT INTO `mob_droplist` VALUES (2393,0,0,1000,995,@UNCOMMON); -- Ten Of Sword
 -- ZoneID:  28 - Teratotaur
 INSERT INTO `mob_droplist` VALUES (2394,0,0,1000,1620,@UNCOMMON); -- Taurus Horn (Uncommon, 10%)
 INSERT INTO `mob_droplist` VALUES (2394,0,0,1000,1877,@UNCOMMON); -- Fomor Codex (Uncommon, 10%)
-INSERT INTO `mob_droplist` VALUES (2394,2,0,1000,886,0);          -- Demon Skull (Steal)
 INSERT INTO `mob_droplist` VALUES (2394,4,0,1000,902,0);          -- Demon Horn (Despoil)
 
 -- ZoneID: 215 - Terminus Eft
@@ -22954,7 +22949,7 @@ INSERT INTO `mob_droplist` VALUES (2799,0,0,1000,18390,@UNCOMMON); -- Templar Ha
 
 -- ZoneID: 177 - Zipacna
 INSERT INTO `mob_droplist` VALUES (2800,0,0,1000,1424,@ALWAYS);  -- Gem Of The North (Always, 100%)
-INSERT INTO `mob_droplist` VALUES (2800,0,0,1000,1424,@VCOMMON);  -- Gem Of The North (Always, 100%) Dec 7th 2010
+-- INSERT INTO `mob_droplist` VALUES (2800,0,0,1000,1424,@ALWAYS);  -- Gem Of The North (Always, 100%) Dec 7th 2010
 INSERT INTO `mob_droplist` VALUES (2800,0,0,1000,1442,@VCOMMON); -- Oblation Abjuration (Very Common, 24%)
 INSERT INTO `mob_droplist` VALUES (2800,0,0,1000,17804,@COMMON); -- Ushikirimaru (Common, 15%)
 
@@ -23082,25 +23077,25 @@ INSERT INTO `mob_droplist` VALUES (2819,1,2,@VCOMMON,1337,333);   -- Wyrmal Abju
 
 -- ZoneID: 178 - Mother Globe
 INSERT INTO `mob_droplist` VALUES (2820,0,0,1000,1419,@ALWAYS);  -- Springstone (Always, 100%)
-INSERT INTO `mob_droplist` VALUES (2820,0,0,1000,1419,@VCOMMON);  -- Springstone (Always, 100%) Dec 7th 2010
+-- INSERT INTO `mob_droplist` VALUES (2820,0,0,1000,1419,@ALWAYS);  -- Springstone (Always, 100%) Dec 7th 2010
 INSERT INTO `mob_droplist` VALUES (2820,0,0,1000,1441,@VCOMMON); -- Libation Abjuration (Very Common, 24%)
 INSERT INTO `mob_droplist` VALUES (2820,0,0,1000,17774,@COMMON); -- Shiranui (Common, 15%)
 
 -- ZoneID: 178 - Faust
 INSERT INTO `mob_droplist` VALUES (2821,0,0,1000,1421,@ALWAYS);  -- Summerstone (Always, 100%)
-INSERT INTO `mob_droplist` VALUES (2821,0,0,1000,1421,@VCOMMON);  -- Summerstone (Always, 100%) Dec 7th 2010
+-- INSERT INTO `mob_droplist` VALUES (2821,0,0,1000,1421,@ALWAYS);  -- Summerstone (Always, 100%) Dec 7th 2010
 INSERT INTO `mob_droplist` VALUES (2821,0,0,1000,1442,@VCOMMON); -- Oblation Abjuration (Very Common, 24%)
 INSERT INTO `mob_droplist` VALUES (2821,0,0,1000,16838,@COMMON); -- Tonbo-Giri (Common, 15%)
 
 -- ZoneID: 178 - Ullikummi
 INSERT INTO `mob_droplist` VALUES (2822,0,0,1000,1423,@ALWAYS);  -- Autumnstone (Always, 100%)
-INSERT INTO `mob_droplist` VALUES (2822,0,0,1000,1423,@VCOMMON);  -- Autumnstone (Always, 100%) Dec 7th 2010
+-- INSERT INTO `mob_droplist` VALUES (2822,0,0,1000,1423,@ALWAYS);  -- Autumnstone (Always, 100%) Dec 7th 2010
 INSERT INTO `mob_droplist` VALUES (2822,0,0,1000,1442,@VCOMMON); -- Oblation Abjuration (Very Common, 24%)
 INSERT INTO `mob_droplist` VALUES (2822,0,0,1000,18199,@COMMON); -- Ulfhedinn Axe (Common, 15%)
 
 -- ZoneID: 178 - Olla Grande
 INSERT INTO `mob_droplist` VALUES (2823,0,0,1000,1425,@ALWAYS);  -- Winterstone (Always, 100%)
-INSERT INTO `mob_droplist` VALUES (2823,0,0,1000,1425,@VCOMMON);  -- Winterstone (Always, 100%) Dec 7th 2010
+-- INSERT INTO `mob_droplist` VALUES (2823,0,0,1000,1425,@ALWAYS);  -- Winterstone (Always, 100%) Dec 7th 2010
 INSERT INTO `mob_droplist` VALUES (2823,0,0,1000,1441,@VCOMMON); -- Libation Abjuration (Very Common, 24%)
 INSERT INTO `mob_droplist` VALUES (2823,0,0,1000,16956,@COMMON); -- Skofnung (Common, 15%)
 INSERT INTO `mob_droplist` VALUES (2823,0,0,1000,1445,@RARE);    -- Freyas Tear (Rare, 5%)

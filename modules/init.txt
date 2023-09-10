@@ -41,7 +41,6 @@
 #-----------------------
 #      General Lua
 #-----------------------
-ivalice/commands/
 ivalice/lua/
 ivalice/scripts
 #-----------------------
