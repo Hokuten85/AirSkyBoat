@@ -43,6 +43,7 @@
 #-----------------------
 ivalice/commands/
 ivalice/lua/
+ivalice/scripts
 #-----------------------
 #      General C++
 #-----------------------
