@@ -5689,7 +5689,7 @@ namespace battleutils
             resist += PDefender->getMod(Mod::DMGPHYS_II) / 10000.f; // Add Burtgang reduction after 50% cap. Extends cap to -68%
             resist = std::max(resist, 0.32f);                       // Total cap with MDT-% II included is 87.5%
 
-            resist += PDefender->getMod(Mod::DMG_II) / 100.0f;
+            resist += PDefender->getMod(Mod::DMG_II) / 10000.f;
             resist = std::max(resist, 0.1f); // allows for DT II to take reduction to 90%
 
             resist += PDefender->getMod(Mod::UDMG) + PDefender->getMod(Mod::UDMGPHYS) / 10000.f;
@@ -5741,7 +5741,7 @@ namespace battleutils
 
             resist = std::max(resist, 0.5f);
 
-            resist += PDefender->getMod(Mod::DMG_II) / 100.0f;
+            resist += PDefender->getMod(Mod::DMG_II) / 10000.f;
             resist = std::max(resist, 0.1f); // allows for DT II to take reduction to 90%
 
             resist += PDefender->getMod(Mod::UDMG) + PDefender->getMod(Mod::UDMGRANGE) / 10000.f;

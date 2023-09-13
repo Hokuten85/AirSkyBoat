@@ -57,5 +57,6 @@ UPDATE abilities SET recastTime = 220 WHERE name = 'sharpshot';
 UPDATE abilities SET isAOE = 1 WHERE name = 'divine_waltz_ii';
 UPDATE abilities SET `range` = 12 WHERE abilityId IN (98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,302,303,304,305,390,391); -- cor rolls 12 range
 UPDATE abilities SET level = 50 WHERE name = 'retaliation';
+UPDATE abilities SET recastTime = 60 WHERE abilityId = 170; -- angon
 
 UPDATE abilities SET content_tag = NULL;

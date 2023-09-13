@@ -13,6 +13,7 @@ local attMods =
         { mod = xi.mod.DMGPHYS_II, min = -0.5, max = 1000 },
         { mod = xi.mod.UDMGPHYS },
         { mod = xi.mod.DMG },
+        { mod = xi.mod.DMG_II },
     },
     [xi.attackType.MAGICAL] =
     {
@@ -20,26 +21,31 @@ local attMods =
         { mod = xi.mod.DMGMAGIC_II, min = -0.5, max = 1000 },
         { mod = xi.mod.UDMGMAGIC },
         { mod = xi.mod.DMG },
+        { mod = xi.mod.DMG_II },
     },
     [xi.attackType.BREATH] =
     {
         { mod = xi.mod.DMGBREATH, min = -0.5, max = 1000 },
         { mod = xi.mod.UDMGBREATH },
         { mod = xi.mod.DMG },
+        { mod = xi.mod.DMG_II },
     },
     [xi.attackType.RANGED] =
     {
         { mod = xi.mod.DMGRANGE, min = -0.5, max = 1000 },
         { mod = xi.mod.UDMGRANGE },
         { mod = xi.mod.DMG },
+        { mod = xi.mod.DMG_II },
     },
     [xi.attackType.SPECIAL] =
     {
         { mod = xi.mod.DMG },
+        { mod = xi.mod.DMG_II },
     },
     [xi.attackType.NONE] =
     {
         { mod = xi.mod.DMG },
+        { mod = xi.mod.DMG_II },
     },
 }
 
