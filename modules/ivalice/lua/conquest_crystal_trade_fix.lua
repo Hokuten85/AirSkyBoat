@@ -116,6 +116,8 @@ m:addOverride("xi.conquest.overseerOnTrade", function(player, npc, trade, guardN
             end
         end
     end
+	
+	xi.conquest.handleConquestItemSwap(player, npc, trade, guardNation)
 end)
 
 return m
