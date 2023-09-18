@@ -147,3 +147,8 @@ INSERT INTO `mob_droplist` VALUES (638,0,0,1000,1422,@VCOMMON);  -- Gem Of The W
 INSERT INTO `mob_droplist` VALUES (2822,0,0,1000,1423,@VCOMMON);  -- Autumnstone (VCOMMON, 24%) Dec 7th 2010
 INSERT INTO `mob_droplist` VALUES (2800,0,0,1000,1424,@VCOMMON);  -- Gem Of The North (VCOMMON, 24%) Dec 7th 2010
 INSERT INTO `mob_droplist` VALUES (2823,0,0,1000,1425,@VCOMMON);  -- Winterstone (VCOMMON, 24%) Dec 7th 2010
+
+INSERT INTO `mob_droplist` VALUES (946,0,0,1000,1404,@VCOMMON);       -- Seal Of Genbu (24.0%)
+INSERT INTO `mob_droplist` VALUES (2196,0,0,1000,1405,@VCOMMON);      -- Seal Of Seiryu (24.0%)
+INSERT INTO `mob_droplist` VALUES (2362,0,0,1000,1407,@VCOMMON);       -- Seal Of Suzaku (24.0%)
+INSERT INTO `mob_droplist` VALUES (394,0,0,1000,1406,@VCOMMON);      -- Seal Of Byakko (24.0%)
