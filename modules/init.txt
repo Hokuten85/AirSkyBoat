@@ -42,7 +42,7 @@
 #      General Lua
 #-----------------------
 ivalice/lua/
-ivalice/scripts
+ivalice/scripts/
 #-----------------------
 #      General C++
 #-----------------------
