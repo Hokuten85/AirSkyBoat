@@ -118,4 +118,12 @@ UPDATE item_equipment SET jobs = jobs | 65536 WHERE name = 'silver_bullet'; -- A
 
 UPDATE item_equipment SET jobs = jobs | 128 WHERE name = 'joyeuse'; -- ADD DRK
 
-update item_equipment set jobs = jobs | 32 where itemid = 12818; -- Byakko's Haidate add THF
+UPDATE item_equipment SET jobs = jobs | 65536 | 8192 | 64 | 32 WHERE itemid = 12818; -- Byakko's Haidate add THF, PLD, DRG, COR
+
+UPDATE item_equipment SET jobs = jobs | 65536 | 8192 | 64 | 32 WHERE itemid = 12690; -- seiryus_kote add THF, PLD, DRG, COR
+
+UPDATE item_equipment SET jobs = jobs | 65536 | 8192 | 64 | 32 WHERE itemid = 12946; -- suzakus_sune-ate add THF, PLD, DRG, COR
+
+UPDATE item_equipment SET jobs = jobs | 65536 | 8192 | 64 | 32 WHERE itemid = 12434; -- suzakus_sune-ate add THF, PLD, DRG, COR
+
+UPDATE item_equipment SET jobs = jobs | 65536 | 8192 | 64 | 32 WHERE itemid = 12562; -- Kirin's Osode add THF, PLD, DRG, COR
