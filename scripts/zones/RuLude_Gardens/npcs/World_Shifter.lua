@@ -158,7 +158,7 @@ entity.onTrade = function(player, npc, trade)
 									player:PrintToPlayer(string.format("I asked for a %s.", chapterMap[upgradeCost[matchingTier+1].item]), xi.msg.channel.SAY, npcName);
 								else
 									trade:confirmItem(tradeGear:getID(),1) -- CONFIRM EQUIPMENT
-									trade:confirmSlot(0,upgradeCost[1].gil) -- CONFIRM GIL
+									trade:confirmSlot(0,upgradeCost[matchingTier+1].gil) -- CONFIRM GIL
 									trade:confirmItem(tradeChapter:getID(),1) -- CONFIRM CHAPTER
 									
 									augmentItem(player, npc, tradeGear, matchingTier+1) -- AUGMENT THAT SHIT!!!
