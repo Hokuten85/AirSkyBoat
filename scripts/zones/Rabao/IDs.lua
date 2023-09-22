@@ -15,6 +15,7 @@ zones[xi.zone.RABAO] =
         ITEM_OBTAINED                 = 6412,  -- Obtained: <item>.
         GIL_OBTAINED                  = 6413,  -- Obtained <number> gil.
         KEYITEM_OBTAINED              = 6415,  -- Obtained key item: <keyitem>.
+        KEYITEM_LOST                  = 6416,  -- Lost Key Item: <keyitem>.
         NOT_HAVE_ENOUGH_GIL           = 6417,  -- You do not have enough gil.
         CARRIED_OVER_POINTS           = 6451,  -- You have carried over <number> login point[/s].
         LOGIN_CAMPAIGN_UNDERWAY       = 6452,  -- The [/January/February/March/April/May/June/July/August/September/October/November/December] <number> Login Campaign is currently underway!
@@ -41,8 +42,8 @@ zones[xi.zone.RABAO] =
         LUCKY_ROLL_CLOSE              = 10329, -- And for bringing the total so close to 400, here is your extra prize!
         LUCKY_ROLL_GAMEOVER           = 10330, -- I'm sorry, but that's it for today's game of Lucky Roll. Come by tomorrow, and maybe Lady Luck will be waiting for you!
         GOLDFISH_NPC_DIALOGUE         = 10403, -- Goldfish... Goldfish...something...
-        RETRIEVE_DIALOG_ID            = 10770, -- You retrieve <item> from the porter moogle's care.
-        COMMON_SENSE_SURVIVAL         = 11848, -- It appears that you have arrived at a new survival guide provided by the Adventurers' Mutual Aid Network. Common sense dictates that you should now be able to teleport here from similar tomes throughout the world.
+        RETRIEVE_DIALOG_ID            = 10771, -- You retrieve <item> from the porter moogle's care.
+        COMMON_SENSE_SURVIVAL         = 11849, -- It appears that you have arrived at a new survival guide provided by the Adventurers' Mutual Aid Network. Common sense dictates that you should now be able to teleport here from similar tomes throughout the world.
     },
     mob =
     {
