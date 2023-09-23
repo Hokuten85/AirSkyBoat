@@ -126,3 +126,7 @@ UPDATE traits SET level = 75 WHERE traitid = 108 and job = 19 and rank = 1;
 
 -- GIVE SCH Magic Burst Bonus
 UPDATE traits SET level = 75 WHERE traitid = 110 and job = 20 and rank = 1;
+
+--BLUE MAGE
+INSERT INTO traits VALUES ('10','auto refresh','16','30','1','369','1',null,0);
+
