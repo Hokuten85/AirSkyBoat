@@ -42,6 +42,8 @@ spellObject.onSpellCast = function(caster, target, spell)
 
     spell:setMsg(xi.msg.basic.MAGIC_DMG) -- hit for initial damage
     xi.magic.handleBurstMsg(caster, target, spell)
+	
+	target:addStatusEffect(xi.effect.DIA, 1 + dotBonus, 3, duration, 0, 5, 1)
 
     return final
 end
