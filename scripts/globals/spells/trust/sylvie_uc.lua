@@ -73,7 +73,7 @@ spellObject.onMobSpawn = function(mob)
 	
 	mob:addSimpleGambit(ai.t.MELEE, ai.c.NOT_STATUS, xi.effect.AUSPICE, ai.r.MA, ai.s.SPECIFIC, xi.magic.spell.AUSPICE)
 	
-	mob:addSimpleGambit(ai.t.TARGET, ai.c.NOT_STATUS, xi.effect.DIA, ai.r.MA, ai.s.HIGHEST, xi.magic.spellFamily.DIA, 180)
+	mob:addSimpleGambit(ai.t.TARGET, ai.c.NOT_STATUS, xi.effect.DIA, ai.r.MA, ai.s.HIGHEST, xi.magic.spellFamily.DIA)
 
     mob:setAutoAttackEnabled(false)
 end

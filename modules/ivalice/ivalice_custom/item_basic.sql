@@ -38,3 +38,5 @@ UPDATE item_basic SET name = 'toolbag_shikanofuda' WHERE name = 'toolbag_(shikan
 UPDATE item_basic SET name = 'toolbag_chonofuda' WHERE name = 'toolbag_(chonofuda)';
 UPDATE item_basic SET name = 'toolbag_ranka' WHERE name = 'toolbag_(ranka)';
 UPDATE item_basic SET name = 'toolbag_furu' WHERE name = 'toolbag_(furu)';
+
+UPDATE item_basic SET aH = 46 WHERE itemid = 8740; -- pizza_cutter

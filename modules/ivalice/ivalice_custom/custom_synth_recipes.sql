@@ -82,3 +82,5 @@ REPLACE INTO `synth_recipes` VALUES (34016,0,0,0,0,32,82,39,0,0,0,4099,4241,681,
 
 REPLACE INTO `synth_recipes` VALUES (15034,0,0,0,104,51,0,0,0,0,0,4096,4238,655,655,655,655,745,745,745,2535,19151,19152,19152,19152,1,1,1,1,'Bahadur');
 REPLACE INTO `synth_recipes` VALUES (14502,0,0,42,91,45,0,0,0,0,0,4096,4238,650,655,719,745,745,914,0,0,18745,18746,18746,18746,1,1,1,1,'Adaman Sainti');  -- JPWiki data 91SM, 45GS, 42WW, subs/mats unconfirmed elsewhere
+
+UPDATE synth_recipes SET ResultHQ1 = 6212, ResultHQ1Qty = 6, ResultHQ2Qty = 8, ResultHQ3Qty = 10 WHERE ID = 71545; -- Marinara Slice +1
