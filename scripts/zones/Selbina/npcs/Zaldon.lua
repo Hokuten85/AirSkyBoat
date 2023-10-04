@@ -24,7 +24,7 @@ entity.fishRewards =
     [   xi.items.GIANT_DONKO] = { gil =  96, items = { { chance =  4.7, itemId = xi.items.BROKEN_HALCYON_FISHING_ROD } } },
     [     xi.items.BLADEFISH] = { gil = 200, items = { { chance = 11.7, itemId =                 xi.items.ROBBER_RIG } } },
     [xi.items.BHEFHEL_MARLIN] = { gil = 150, items = { { chance =  3.0, itemId =             xi.items.BRIGANDS_CHART }, { chance = 4.4, itemId = xi.items.PIRATES_CHART } } },
-    [  xi.items.SILVER_SHARK] = { gil = 250, items = { { chance =  1.3, itemId =                    xi.items.TRIDENT } }, title = xi.title.ACE_ANGLER },
+    [  xi.items.SILVER_SHARK] = { gil = 250, items = { { chance =  4.0, itemId =                    xi.items.TRIDENT } }, title = xi.title.ACE_ANGLER },
     ----- Quest 3 -----
     [xi.items.JUNGLE_CATFISH] = { gil = 300, items = { { chance =    3, itemId =    xi.items.BROKEN_HUME_FISHING_ROD } } },
     [   xi.items.GAVIAL_FISH] = { gil = 250, items = { { chance =    5, itemId =              xi.items.DRONE_EARRING } } },
