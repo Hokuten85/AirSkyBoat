@@ -68,8 +68,8 @@ spellObject.onMobSpawn = function(mob)
     mob:addSimpleGambit(ai.t.MASTER, ai.c.NOT_STATUS, xi.effect.HASTE, ai.r.MA, ai.s.SPECIFIC, xi.magic.spell.HASTE)
     mob:addSimpleGambit(ai.t.MELEE, ai.c.NOT_STATUS, xi.effect.HASTE, ai.r.MA, ai.s.SPECIFIC, xi.magic.spell.HASTE)
 	
-	mob:addSimpleGambit(ai.t.MASTER, ai.c.NOT_STATUS, xi.effect.REGEN, ai.r.MA, ai.s.HIGHEST, xi.magic.spellFamily.REGEN)
-    mob:addSimpleGambit(ai.t.MELEE, ai.c.NOT_STATUS, xi.effect.REGEN, ai.r.MA, ai.s.HIGHEST, xi.magic.spellFamily.REGEN)
+	mob:addSimpleGambit(ai.t.TOP_ENMITY, ai.c.NOT_STATUS, xi.effect.REGEN, ai.r.MA, ai.s.HIGHEST, xi.magic.spellFamily.REGEN)
+    mob:addSimpleGambit(ai.t.PARTY, ai.c.HPP_LT, 80, ai.r.MA, ai.s.HIGHEST, xi.magic.spellFamily.REGEN)
 	
 	mob:addSimpleGambit(ai.t.MELEE, ai.c.NOT_STATUS, xi.effect.AUSPICE, ai.r.MA, ai.s.SPECIFIC, xi.magic.spell.AUSPICE)
 	
