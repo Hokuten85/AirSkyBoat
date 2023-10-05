@@ -1058,6 +1058,10 @@ void CBattleEntity::SetSLevel(uint8 slvl)
     {
         m_slvl = this->GetMLevel();
     }
+    else if (this->objtype == TYPE_TRUST)
+    {
+        m_slvl = slvl;
+    }
     else
     {
         auto ratio = settings::get<uint8>("map.SUBJOB_RATIO");
