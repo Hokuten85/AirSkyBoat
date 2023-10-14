@@ -84,3 +84,5 @@ REPLACE INTO `synth_recipes` VALUES (15034,0,0,0,104,51,0,0,0,0,0,4096,4238,655,
 REPLACE INTO `synth_recipes` VALUES (14502,0,0,42,91,45,0,0,0,0,0,4096,4238,650,655,719,745,745,914,0,0,18745,18746,18746,18746,1,1,1,1,'Adaman Sainti');  -- JPWiki data 91SM, 45GS, 42WW, subs/mats unconfirmed elsewhere
 
 UPDATE synth_recipes SET ResultHQ1 = 6212, ResultHQ1Qty = 6, ResultHQ2Qty = 8, ResultHQ3Qty = 10 WHERE ID = 71545; -- Marinara Slice +1
+
+REPLACE INTO `synth_recipes` VALUES (63520,0,2037,0,0,10,0,0,0,73,0,4096,4238,668,1886,2309,2310,2362,0,0,0,8589,8589,8589,8589,12,12,12,12,'Dynamo III');  -- BG and JP wiki shows an unknown GS sub
