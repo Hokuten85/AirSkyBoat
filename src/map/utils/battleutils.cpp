@@ -1432,11 +1432,12 @@ namespace battleutils
                     if (auto* PMaster = dynamic_cast<CCharEntity*>(PAttacker->PMaster))
                     {
                         PMaster->ForPartyWithTrusts([&](CBattleEntity* PMember)
-                                                    {
+                        {
                             if (attackerID == PMember->id)
                             {
                                 power = PDefender->StatusEffectContainer->GetStatusEffect(daze)->GetPower();
-                            } });
+                            }
+                        });
                     }
                 }
                 else if (PAttacker->PMaster == nullptr)

@@ -19,7 +19,7 @@ spellObject.onSpellCast = function(caster, target, spell)
     params.effect = xi.effect.NONE
     params.bonusEffect = xi.effect.NONE
     params.msgFail = xi.msg.basic.MAGIC_FAIL
-    params.bonus = 0
+    params.bonus = 100
     params.baseDuration = 0
 
     return xi.magic.doAbsorbSpell(caster, target, spell, params)

@@ -14,6 +14,11 @@ mobskillObject.onMobWeaponSkill = function(target, mob, skill)
     local numhits = 1
     local accmod = 1
     local dmgmod = 1
+	
+	local doubleShotRate = mob:getMod(xi.mod.DOUBLE_SHOT_RATE)
+	if doubleShotRate > 0 and math.random(0,100) < doubleShotRate then
+		numhits = 2
+	end
 
     local info = xi.mobskills.mobRangedMove(mob, target, skill, numhits, accmod, dmgmod, xi.mobskills.magicalTpBonus.NO_EFFECT)
 

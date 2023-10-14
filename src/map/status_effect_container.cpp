@@ -1882,6 +1882,20 @@ void CStatusEffectContainer::HandleAura(CStatusEffect* PStatusEffect)
                                                                4);                                // Duration
                     PEffect->SetFlag(EFFECTFLAG_NO_LOSS_MESSAGE);
                     PMember->StatusEffectContainer->AddStatusEffect(PEffect, true);
+
+                    if (PMember->PPet != nullptr &&
+                        m_POwner->loc.zone->GetID() == PMember->PPet->loc.zone->GetID() &&
+                        distance(m_POwner->loc.p, PMember->PPet->loc.p) <= aura_range &&
+                        PMember->PPet->status != STATUS_TYPE::DISAPPEAR)
+                    {
+                        CStatusEffect* PEffect = new CStatusEffect((EFFECT)PStatusEffect->GetSubID(), // Effect ID
+                                                               PStatusEffect->GetSubID(),         // Effect Icon (Associated with ID)
+                                                               PStatusEffect->GetSubPower(),      // Power
+                                                               3,                                 // Tick
+                                                               4);                                // Duration
+                        PEffect->SetFlag(EFFECTFLAG_NO_LOSS_MESSAGE);
+                        PMember->PPet->StatusEffectContainer->AddStatusEffect(PEffect, true);
+                    }
                 }
             });
             // clang-format on

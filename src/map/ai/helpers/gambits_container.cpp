@@ -116,6 +116,11 @@ namespace gambits
                     {
                         result = true;
                     }
+
+                    if (PMember->PPet != nullptr && PMember->PPet->status != STATUS_TYPE::DISAPPEAR && isValidMember(PMember->PPet) && CheckTrigger(PMember->PPet, predicate))
+                    {
+                        result = true;
+                    }
                 });
                 // clang-format on
                 return result;
@@ -200,6 +205,11 @@ namespace gambits
                     static_cast<CCharEntity*>(POwner->PMaster)->ForPartyWithTrusts([&](CBattleEntity* PMember)
                     {
                         if (isValidMember(PMember) && CheckTrigger(PMember, predicate) && PMob->PEnmityContainer->GetHighestEnmity() == PMember)
+                        {
+                            result = true;
+                        }
+                        if (PMember->PPet != nullptr && PMember->PPet->status != STATUS_TYPE::DISAPPEAR
+                            && isValidMember(PMember->PPet) && CheckTrigger(PMember->PPet, predicate) && PMob->PEnmityContainer->GetHighestEnmity() == PMember->PPet)
                         {
                             result = true;
                         }
@@ -316,6 +326,11 @@ namespace gambits
                     // clang-format off
                     static_cast<CCharEntity*>(POwner->PMaster)->ForPartyWithTrusts([&](CBattleEntity* PMember)
                     {
+                        if (PMember->PPet != nullptr && PMember->PPet->status != STATUS_TYPE::DISAPPEAR
+                            && isValidMember(target, PMember->PPet) && CheckTrigger(PMember->PPet, gambit.predicates[0]))
+                        {
+                            target = PMember->PPet;
+                        }
                         if (isValidMember(target, PMember) && CheckTrigger(PMember, gambit.predicates[0]))
                         {
                             target = PMember;
@@ -401,6 +416,13 @@ namespace gambits
                         // clang-format off
                         static_cast<CCharEntity*>(POwner->PMaster)->ForPartyWithTrusts([&](CBattleEntity* PMember)
                         {
+                            if (PMember->PPet != nullptr && PMember->PPet->status != STATUS_TYPE::DISAPPEAR
+                                && isValidMember(target, PMember->PPet) && CheckTrigger(PMember->PPet, gambit.predicates[0])
+                                && PMob->PEnmityContainer->GetHighestEnmity() == PMember->PPet)
+                            {
+                                target = PMember->PPet;
+                            }
+
                             if (isValidMember(target, PMember) && CheckTrigger(PMember, gambit.predicates[0]) &&
                                 PMob->PEnmityContainer->GetHighestEnmity() == PMember)
                             {
