@@ -343,6 +343,8 @@ local function getSingleHitDamage(attacker, target, dmg, wsParams, calcParams, f
 
     -- Catastrophe ignores shadows (thus need special case here)
     local wsIgnoreShadows = calcParams.wsID == xi.weaponskill.CATASTROPHE
+    local miss = true
+    local impetus = { active = attacker:hasStatusEffect(xi.effect.IMPETUS), value = attacker:getMod(xi.mod.IMPETUS) }
 
     if
         (missChance <= calcParams.hitRate or

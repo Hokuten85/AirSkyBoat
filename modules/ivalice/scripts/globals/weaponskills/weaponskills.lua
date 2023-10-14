@@ -7,7 +7,6 @@ require("scripts/globals/aftermath")
 require("scripts/globals/magic")
 require("scripts/globals/weaponskills")
 -----------------------------------
-
 local m = Module:new("era_weaponskills")
 
 m:addOverride("xi.globals.weaponskills.arching_arrow.onUseWeaponSkill", function(player, target, wsID, tp, primary, action, taChar)
@@ -67,7 +66,7 @@ m:addOverride("xi.globals.weaponskills.ascetics_fury.onUseWeaponSkill", function
     params.canCrit = true
     params.acc100 = 1.0 params.acc200 = 1.0 params.acc300 = 1.0
     params.atk100 = 1 params.atk200 = 1 params.atk300 = 1
-	params.multiHitfTP = true -- http://wiki.ffo.jp/html/2419.html
+    params.multiHitfTP = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.multiHitfTP = true -- http://wiki.ffo.jp/html/15880.html
@@ -93,7 +92,7 @@ m:addOverride("xi.globals.weaponskills.asuran_fists.onUseWeaponSkill", function(
     params.canCrit = false
     params.acc100 = 1.25 params.acc200 = 1.5 params.acc300 = 1.75 -- TODO: verify -- "Accuracy varies with TP" in retail. All current evidence points to that this modifier is static values, not percentages.
     params.atk100 = 1 params.atk200 = 1 params.atk300 = 1
-	params.multiHitfTP = true -- http://wiki.ffo.jp/html/2424.html
+    params.multiHitfTP = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.multiHitfTP = true -- http://wiki.ffo.jp/html/2424.html
@@ -214,7 +213,7 @@ m:addOverride("xi.globals.weaponskills.backhand_blow.onUseWeaponSkill", function
     params.canCrit = true
     params.acc100 = 1.0 params.acc200 = 1.0 params.acc300 = 1.0
     params.atk100 = 1 params.atk200 = 1 params.atk300 = 1
-	params.multiHitfTP = true -- http://wiki.ffo.jp/html/2419.html
+    params.multiHitfTP = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.multiHitfTP = true -- http://wiki.ffo.jp/html/2419.html
@@ -274,7 +273,7 @@ m:addOverride("xi.globals.weaponskills.blade_ei.onUseWeaponSkill", function(play
     params.element = xi.magic.ele.DARK
     params.skillType = xi.skill.KATANA
     params.includemab = true
-	params.hybridWS = true
+    params.hybridWS = true
     -- to do ignore shadow and blink https://www.bg-wiki.com/ffxi/Blade:_Ei
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.str_wsc = 0.4 params.int_wsc = 0.4
@@ -296,7 +295,7 @@ m:addOverride("xi.globals.weaponskills.blade_jin.onUseWeaponSkill", function(pla
     params.canCrit = true
     params.acc100 = 1.0 params.acc200 = 1.0 params.acc300 = 1.0
     params.atk100 = 1.0 params.atk200 = 1.0 params.atk300 = 1.0
-	params.multiHitfTP = true
+    params.multiHitfTP = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.ftp100 = 1.375 params.ftp200 = 1.375 params.ftp300 = 1.375
@@ -354,7 +353,7 @@ m:addOverride("xi.globals.weaponskills.blade_ku.onUseWeaponSkill", function(play
     -- https://www.bg-wiki.com/ffxi/Blade:_Ku does not list ACC Bonus
     params.acc100 = 1.0 params.acc200 = 1.1 params.acc300 = 1.2 -- TODO: verify -- "Accuracy varies with TP" in retail. All current evidence points to that this modifier is static values, not percentages.
     params.atk100 = 1.0 params.atk200 = 1.0 params.atk300 = 1.0
-	params.multiHitfTP = true
+    params.multiHitfTP = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.ftp100 = 1.25 params.ftp200 = 1.25 params.ftp300 = 1.25
@@ -577,7 +576,7 @@ m:addOverride("xi.globals.weaponskills.burning_blade.onUseWeaponSkill", function
     params.element = xi.magic.ele.FIRE
     params.skillType = xi.skill.SWORD
     params.includemab = true
-	params.hybridWS = true
+    params.hybridWS = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.ftp200 = 2.1 params.ftp300 = 3.4
@@ -627,7 +626,7 @@ m:addOverride("xi.globals.weaponskills.catastrophe.onUseWeaponSkill", function(p
     local damage, criticalHit, tpHits, extraHits = xi.weaponskills.doPhysicalWeaponskill(player, target, wsID, params, tp, action, primary, taChar)
 
     if not target:isUndead() then
-        local drain = math.floor(damage * (math.random(30,70)/100))
+        local drain = math.floor(damage * (math.random(30, 70) / 100))
         player:addHP(drain)
     end
 
@@ -662,7 +661,7 @@ m:addOverride("xi.globals.weaponskills.combo.onUseWeaponSkill", function(player,
     params.canCrit = false
     params.acc100 = 1.0 params.acc200 = 1.0 params.acc300 = 1.0
     params.atk100 = 1 params.atk200 = 1 params.atk300 = 1
-	params.multiHitfTP = true
+    params.multiHitfTP = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.multiHitfTP = true -- http://wiki.ffo.jp/html/2416.html
@@ -736,7 +735,7 @@ m:addOverride("xi.globals.weaponskills.cross_reaper.onUseWeaponSkill", function(
     params.acc100 = 0 params.acc200 = 0 params.acc300 = 0
     -- attack multiplier (only some WSes use this, this varies the actual ratio value, see Tachi: Kasha) 1 is default.
     params.atk100 = 1 params.atk200 = 1 params.atk300 = 1
-	params.multiHitfTP = true
+    params.multiHitfTP = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.ftp100 = 2.0 params.ftp200 = 4.0 params.ftp300 = 7.0
@@ -754,7 +753,7 @@ m:addOverride("xi.globals.weaponskills.cyclone.onUseWeaponSkill", function(playe
     params.element = xi.magic.ele.WIND
     params.skillType = xi.skill.DAGGER
     params.includemab = true
-	params.hybridWS = true
+    params.hybridWS = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.dex_wsc = 0.4 params.int_wsc = 0.4
@@ -774,7 +773,7 @@ m:addOverride("xi.globals.weaponskills.dancing_edge.onUseWeaponSkill", function(
     params.canCrit = false
     params.acc100 = 1.0 params.acc200 = 1.25 params.acc300 = 1.5 -- TODO: verify -- "Accuracy varies with TP" in retail. All current evidence points to that this modifier is static values, not percentages.
     params.atk100 = 1 params.atk200 = 1 params.atk300 = 1
-	params.multiHitfTP = true
+    params.multiHitfTP = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.dex_wsc = 0.4
@@ -792,7 +791,7 @@ m:addOverride("xi.globals.weaponskills.dark_harvest.onUseWeaponSkill", function(
     params.element = xi.magic.ele.DARK
     params.skillType = xi.skill.SCYTHE
     params.includemab = true
-	params.hybridWS = true
+    params.hybridWS = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.str_wsc = 0.4 params.int_wsc = 0.4
@@ -817,7 +816,7 @@ m:addOverride("xi.globals.weaponskills.death_blossom.onUseWeaponSkill", function
     params.acc100 = 1.0 params.acc200 = 1.0 params.acc300 = 1.0
     -- attack multiplier (only some WSes use this, this varies the actual ratio value, see Tachi: Kasha) 1 is default.
     params.atk100 = 1 params.atk200 = 1 params.atk300 = 1
-	params.multiHitfTP = true
+    params.multiHitfTP = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.ftp100 = 4.0 params.ftp200 = 4.0 params.ftp300 = 4.0
@@ -848,7 +847,7 @@ m:addOverride("xi.globals.weaponskills.decimation.onUseWeaponSkill", function(pl
     params.canCrit = false
     params.acc100 = 1.0 params.acc200 = 1.25 params.acc300 = 1.5 -- TODO: verify -- "Accuracy varies with TP" in retail. All current evidence points to that this modifier is static values, not percentages.
     params.atk100 = 1.1 params.atk200 = 1.1 params.atk300 = 1.1
-	params.multiHitfTP = true
+    params.multiHitfTP = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.ftp100 = 1.75 params.ftp200 = 1.75 params.ftp300 = 1.75
@@ -900,14 +899,14 @@ end)
 m:addOverride("xi.globals.weaponskills.dragon_kick.onUseWeaponSkill", function(player, target, wsID, tp, primary, action, taChar)
     local params = {}
     params.numHits = 1
-    params.ftp100 = 2.75 params.ftp200 = 2.75 params.ftp300 = 3.5
+    params.ftp100 = 2.75 params.ftp200 = 3.0 params.ftp300 = 3.5
     params.str_wsc = 0.5 params.dex_wsc = 0.0 params.vit_wsc = 0.5 params.agi_wsc = 0.0 params.int_wsc = 0.0 params.mnd_wsc = 0.0 params.chr_wsc = 0.0
     params.crit100 = 0.0 params.crit200 = 0.0 params.crit300 = 0.0
     params.canCrit = false
     params.acc100 = 1.0 params.acc200 = 1.0 params.acc300 = 1.0
     params.atk100 = 1 params.atk200 = 1 params.atk300 = 1
     params.kick = true -- https://www.bluegartr.com/threads/112776-Dev-Tracker-Findings-Posts-%28NO-DISCUSSION%29?p=6712150&viewfull=1#post6712150
-	params.multiHitfTP = true
+    params.multiHitfTP = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.multiHitfTP = true -- https://www.bg-wiki.com/ffxi/Dragon_Kick
@@ -928,7 +927,7 @@ m:addOverride("xi.globals.weaponskills.drakesbane.onUseWeaponSkill", function(pl
     params.canCrit = true
     params.acc100 = 1.0 params.acc200 = 1.0 params.acc300 = 1.0
     params.atk100 = 1.0 params.atk200 = 1.0 params.atk300 = 1.0
-	params.multiHitfTP = true
+    params.multiHitfTP = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.crit100 = 0.1 params.crit200 = 0.25 params.crit300 = 0.4
@@ -967,7 +966,7 @@ m:addOverride("xi.globals.weaponskills.earth_crusher.onUseWeaponSkill", function
     params.element = xi.magic.ele.EARTH
     params.skillType = xi.skill.STAFF
     params.includemab = true
-	params.hybridWS = true
+    params.hybridWS = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.str_wsc = 0.4 params.int_wsc = 0.4
@@ -1084,11 +1083,11 @@ m:addOverride("xi.globals.weaponskills.evisceration.onUseWeaponSkill", function(
     params.numHits = 5
     params.ftp100 = 1.25 params.ftp200 = 1.25 params.ftp300 = 1.25
     params.str_wsc = 0.0 params.dex_wsc = 0.4 params.vit_wsc = 0.0 params.agi_wsc = 0.0 params.int_wsc = 0.0 params.mnd_wsc = 0.0 params.chr_wsc = 0.0
-    params.crit100 = 0.1 params.crit200 = 0.3 params.crit300 = 0.5
+    params.crit100 = 0.3 params.crit200 = 0.4 params.crit300 = 0.5
     params.canCrit = true
     params.acc100 = 1.0 params.acc200 = 1.0 params.acc300 = 1.0
     params.atk100 = 1 params.atk200 = 1 params.atk300 = 1
-	params.multiHitfTP = true
+    params.multiHitfTP = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.multiHitfTP = true
@@ -1270,7 +1269,7 @@ m:addOverride("xi.globals.weaponskills.freezebite.onUseWeaponSkill", function(pl
     params.element = xi.magic.ele.ICE
     params.skillType = xi.skill.GREAT_SWORD
     params.includemab = true
-	params.hybridWS = true
+    params.hybridWS = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.str_wsc = 0.4 params.int_wsc = 0.4
@@ -1287,7 +1286,7 @@ m:addOverride("xi.globals.weaponskills.frostbite.onUseWeaponSkill", function(pla
     params.element = xi.magic.ele.ICE
     params.skillType = xi.skill.GREAT_SWORD
     params.includemab = true
-	params.hybridWS = true
+    params.hybridWS = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.str_wsc = 0.4 params.int_wsc = 0.4
@@ -1394,7 +1393,7 @@ m:addOverride("xi.globals.weaponskills.garland_of_bliss.onUseWeaponSkill", funct
     params.element = xi.magic.ele.LIGHT
     params.skillType = xi.skill.STAFF
     params.includemab = true
-	params.hybridWS = true
+    params.hybridWS = true
 
     local effectParams = {}
     effectParams.element = xi.magic.ele.LIGHT
@@ -1477,7 +1476,7 @@ m:addOverride("xi.globals.weaponskills.glory_slash.onUseWeaponSkill", function(p
     params.crit100 = 0.0 params.crit200 = 0.0 params.crit300 = 0.0
     params.canCrit = false
     params.acc100 = 1.0 params.acc200 = 1.0 params.acc300 = 1.0
-    params.atk100 = 1; params.atk200 = 1; params.atk300 = 1
+    params.atk100 = 1 params.atk200 = 1 params.atk300 = 1
 
     local effectParams = {}
     effectParams.element = xi.magic.ele.LIGHTNING
@@ -1522,7 +1521,7 @@ m:addOverride("xi.globals.weaponskills.guillotine.onUseWeaponSkill", function(pl
     -- ftp damage mods (for Damage Varies with TP lines are calculated in the function
     params.ftp100 = 1.0 params.ftp200 = 1.1 params.ftp300 = 1.2
     -- wscs are in % so 0.2=20%
-    params.str_wsc = 0.3 params.dex_wsc = 0.1 params.vit_wsc = 0.0 params.agi_wsc = 0.0 params.int_wsc = 0.0 params.mnd_wsc = 0.25 params.chr_wsc = 0.0
+    params.str_wsc = 0.3 params.dex_wsc = 0.2 params.vit_wsc = 0.0 params.agi_wsc = 0.0 params.int_wsc = 0.0 params.mnd_wsc = 0.25 params.chr_wsc = 0.0
     -- critical mods, again in % (ONLY USE FOR critICAL HIT VARIES WITH TP)
     params.crit100 = 0.0 params.crit200 = 0.0 params.crit300 = 0.0
     params.canCrit = false
@@ -1530,7 +1529,7 @@ m:addOverride("xi.globals.weaponskills.guillotine.onUseWeaponSkill", function(pl
     params.acc100 = 0 params.acc200 = 0 params.acc300 = 0
     -- attack multiplier (only some WSes use this, this varies the actual ratio value, see Tachi: Kasha) 1 is default.
     params.atk100 = 1 params.atk200 = 1 params.atk300 = 1
-	params.multiHitfTP = true
+    params.multiHitfTP = true
 
     local effectParams = {}
     effectParams.element = xi.magic.ele.WIND
@@ -1557,7 +1556,7 @@ m:addOverride("xi.globals.weaponskills.gust_slash.onUseWeaponSkill", function(pl
     params.element = xi.magic.ele.WIND
     params.skillType = xi.skill.DAGGER
     params.includemab = true
-	params.hybridWS = true
+    params.hybridWS = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.dex_wsc = 0.4 params.int_wsc = 0.4
@@ -1638,7 +1637,7 @@ m:addOverride("xi.globals.weaponskills.hexa_strike.onUseWeaponSkill", function(p
     params.canCrit = true
     params.acc100 = 1.0 params.acc200 = 1.0 params.acc300 = 1.0
     params.atk100 = 1.0 params.atk200 = 1.0 params.atk300 = 1.0
-	params.multiHitfTP = true
+    params.multiHitfTP = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.ftp100 = 1.125 params.ftp200 = 1.125 params.ftp300 = 1.125
@@ -1684,7 +1683,7 @@ m:addOverride("xi.globals.weaponskills.howling_fist.onUseWeaponSkill", function(
     params.canCrit = false
     params.acc100 = 1.0 params.acc200 = 1.0 params.acc300 = 1.0
     params.atk100 = 1.5 params.atk200 = 1.5 params.atk300 = 1.5
-	params.multiHitfTP = true
+    params.multiHitfTP = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.multiHitfTP = true -- http://wiki.ffo.jp/html/2422.html
@@ -1705,7 +1704,7 @@ m:addOverride("xi.globals.weaponskills.impulse_drive.onUseWeaponSkill", function
     params.canCrit = false
     params.acc100 = 1.0 params.acc200 = 1.0 params.acc300 = 1.0
     params.atk100 = 1 params.atk200 = 1 params.atk300 = 1
-	params.multiHitfTP = true
+    params.multiHitfTP = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.ftp200 = 3 params.ftp300 = 5.5
@@ -1726,7 +1725,7 @@ m:addOverride("xi.globals.weaponskills.insurgency.onUseWeaponSkill", function(pl
     params.canCrit = false
     params.acc100 = 1.0 params.acc200 = 1.0 params.acc300 = 1.0
     params.atk100 = 1 params.atk200 = 1 params.atk300 = 1
-	params.multiHitfTP = true
+    params.multiHitfTP = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.ftp200 = 3.25 params.ftp300 = 6
@@ -1805,7 +1804,7 @@ m:addOverride("xi.globals.weaponskills.kings_justice.onUseWeaponSkill", function
     params.canCrit = false
     params.acc100 = 1.0 params.acc200 = 1.0 params.acc300 = 1.0
     params.atk100 = 1 params.atk200 = 1 params.atk300 = 1
-	params.multiHitfTP = true
+    params.multiHitfTP = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.ftp200 = 3 params.ftp300 = 5
@@ -1849,7 +1848,7 @@ m:addOverride("xi.globals.weaponskills.leaden_salute.onUseWeaponSkill", function
     params.element = xi.magic.ele.DARK
     params.skillType = xi.skill.MARKSMANSHIP
     params.includemab = true
-	params.hybridWS = true
+    params.hybridWS = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.ftp200 = 6.7 params.ftp300 = 10.0
@@ -2009,7 +2008,7 @@ m:addOverride("xi.globals.weaponskills.mordant_rime.onUseWeaponSkill", function(
     params.canCrit = false
     params.acc100 = 1.0 params.acc200 = 1.0 params.acc300 = 1.0
     params.atk100 = 1 params.atk200 = 1 params.atk300 = 1
-	params.multiHitfTP = true
+    params.multiHitfTP = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.ftp100 = 5 params.ftp200 = 5 params.ftp300 = 5
@@ -2115,7 +2114,7 @@ m:addOverride("xi.globals.weaponskills.omniscience.onUseWeaponSkill", function(p
     params.element = xi.magic.ele.DARK
     params.skillType = xi.skill.STAFF
     params.includemab = true
-	params.hybridWS = true
+    params.hybridWS = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.mnd_wsc = 0.8
@@ -2151,7 +2150,7 @@ m:addOverride("xi.globals.weaponskills.one_inch_punch.onUseWeaponSkill", functio
     params.ignored100 = 0.1
     params.ignored200 = 0.3
     params.ignored300 = 0.5
-	params.multiHitfTP = true
+    params.multiHitfTP = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.multiHitfTP = true -- http://wiki.ffo.jp/html/2418.html
@@ -2202,8 +2201,6 @@ m:addOverride("xi.globals.weaponskills.penta_thrust.onUseWeaponSkill", function(
     params.canCrit = false
     params.acc100 = 1.0 params.acc200 = 1.25 params.acc300 = 1.5 -- TODO: verify -- "Accuracy varies with TP" in retail. All current evidence points to that this modifier is static values, not percentages.
     params.atk100 = 1.0 params.atk200 = 1.0 params.atk300 = 1.0
-	params.multiHitfTP = true
-	
     local damage, criticalHit, tpHits, extraHits = xi.weaponskills.doPhysicalWeaponskill(player, target, wsID, params, tp, action, primary, taChar)
     return tpHits, extraHits, criticalHit, damage
 end)
@@ -2262,7 +2259,7 @@ m:addOverride("xi.globals.weaponskills.primal_rend.onUseWeaponSkill", function(p
     params.element = xi.magic.ele.LIGHT
     params.skillType = xi.skill.AXE
     params.includemab = true
-	params.hybridWS = true
+    params.hybridWS = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.ftp100 = 3.0625 params.ftp200 = 5.8398 params.ftp300 = 7.5625
@@ -2287,7 +2284,7 @@ m:addOverride("xi.globals.weaponskills.pyrrhic_kleos.onUseWeaponSkill", function
     params.canCrit = false
     params.acc100 = 1 params.acc200 = 1 params.acc300 = 1
     params.atk100 = 1 params.atk200 = 1 params.atk300 = 1
-	params.multiHitfTP = true
+    params.multiHitfTP = true
 
     local effectParams = {}
     effectParams.element = xi.magic.ele.ICE
@@ -2319,7 +2316,7 @@ m:addOverride("xi.globals.weaponskills.raging_axe.onUseWeaponSkill", function(pl
     params.canCrit = false
     params.acc100 = 1.0 params.acc200 = 1.0 params.acc300 = 1.0
     params.atk100 = 1 params.atk200 = 1 params.atk300 = 1
-	params.multiHitfTP = true
+    params.multiHitfTP = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.str_wsc = 0.6
@@ -2334,12 +2331,12 @@ m:addOverride("xi.globals.weaponskills.raging_fists.onUseWeaponSkill", function(
     params.numHits = 4
     -- This is a 5 hit ws but H2H ws are done in a different way, the off hand hit is been taking into account in another place
     params.ftp100 = 1 params.ftp200 = 1.5 params.ftp300 = 2
-    params.str_wsc = 0.3 params.dex_wsc = 0.2 params.vit_wsc = 0.0 params.agi_wsc = 0.0 params.int_wsc = 0.0 params.mnd_wsc = 0.0 params.chr_wsc = 0.0
+    params.str_wsc = 0.3 params.dex_wsc = 0.3 params.vit_wsc = 0.0 params.agi_wsc = 0.0 params.int_wsc = 0.0 params.mnd_wsc = 0.0 params.chr_wsc = 0.0
     params.crit100 = 0.0 params.crit200 = 0.0 params.crit300 = 0.0
     params.canCrit = false
     params.acc100 = 1.0 params.acc200 = 1.0 params.acc300 = 1.0
     params.atk100 = 1 params.atk200 = 1 params.atk300 = 1
-	params.multiHitfTP = true
+    params.multiHitfTP = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.multiHitfTP = true -- http://wiki.ffo.jp/html/2420.html
@@ -2360,7 +2357,7 @@ m:addOverride("xi.globals.weaponskills.raging_rush.onUseWeaponSkill", function(p
     params.canCrit = true
     params.acc100 = 1.0 params.acc200 = 1.0 params.acc300 = 1.0
     params.atk100 = 1 params.atk200 = 1 params.atk300 = 1
-	params.multiHitfTP = true
+    params.multiHitfTP = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.crit100 = 0.15
@@ -2374,11 +2371,11 @@ end)
 m:addOverride("xi.globals.weaponskills.raiden_thrust.onUseWeaponSkill", function(player, target, wsID, tp, primary, action, taChar)
     local params = {}
     params.ftp100 = 1 params.ftp200 = 2 params.ftp300 = 3
-    params.str_wsc = 0.35 params.dex_wsc = 0.0 params.vit_wsc = 0.0 params.agi_wsc = 0.0 params.int_wsc = 0.3 params.mnd_wsc = 0.0 params.chr_wsc = 0.0
+    params.str_wsc = 0.4 params.dex_wsc = 0.0 params.vit_wsc = 0.0 params.agi_wsc = 0.0 params.int_wsc = 0.3 params.mnd_wsc = 0.0 params.chr_wsc = 0.0
     params.element = xi.magic.ele.LIGHTNING
     params.skillType = xi.skill.POLEARM
     params.includemab = true
-	params.hybridWS = true
+    params.hybridWS = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.str_wsc = 0.4 params.int_wsc = 0.4
@@ -2399,7 +2396,7 @@ m:addOverride("xi.globals.weaponskills.rampage.onUseWeaponSkill", function(playe
     params.canCrit = true
     params.acc100 = 1.1 params.acc200 = 1.1 params.acc300 = 1.1
     params.atk100 = 1.0 params.atk200 = 1.0 params.atk300 = 1.0
-	params.multiHitfTP = true
+    params.multiHitfTP = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.ftp100 = 1 params.ftp200 = 1 params.ftp300 = 1
@@ -2447,11 +2444,11 @@ end)
 m:addOverride("xi.globals.weaponskills.red_lotus_blade.onUseWeaponSkill", function(player, target, wsID, tp, primary, action, taChar)
     local params = {}
     params.ftp100 = 1 params.ftp200 = 2.38 params.ftp300 = 3
-    params.str_wsc = 0.35 params.dex_wsc = 0.0 params.vit_wsc = 0.0 params.agi_wsc = 0.0 params.int_wsc = 0.3 params.mnd_wsc = 0.0 params.chr_wsc = 0.0
+    params.str_wsc = 0.4 params.dex_wsc = 0.0 params.vit_wsc = 0.0 params.agi_wsc = 0.0 params.int_wsc = 0.3 params.mnd_wsc = 0.0 params.chr_wsc = 0.0
     params.element = xi.magic.ele.FIRE
     params.skillType = xi.skill.SWORD
     params.includemab = true
-	params.hybridWS = true
+    params.hybridWS = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.ftp300 = 3.75
@@ -2487,7 +2484,7 @@ m:addOverride("xi.globals.weaponskills.rock_crusher.onUseWeaponSkill", function(
     params.element = xi.magic.ele.EARTH
     params.skillType = xi.skill.STAFF
     params.includemab = true
-	params.hybridWS = true
+    params.hybridWS = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.str_wsc = 0.4 params.int_wsc = 0.4
@@ -2506,7 +2503,7 @@ m:addOverride("xi.globals.weaponskills.savage_blade.onUseWeaponSkill", function(
     params.canCrit = false
     params.acc100 = 1.1 params.acc200 = 1.1 params.acc300 = 1.1
     params.atk100 = 1 params.atk200 = 1 params.atk300 = 1
-	params.multiHitfTP = true
+    params.multiHitfTP = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.ftp100 = 4 params.ftp200 = 10.25 params.ftp300 = 13.75
@@ -2542,11 +2539,11 @@ end)
 m:addOverride("xi.globals.weaponskills.seraph_blade.onUseWeaponSkill", function(player, target, wsID, tp, primary, action, taChar)
     local params = {}
     params.ftp100 = 1 params.ftp200 = 2.5 params.ftp300 = 3
-    params.str_wsc = 0.35 params.dex_wsc = 0.0 params.vit_wsc = 0.0 params.agi_wsc = 0.0 params.int_wsc = 0.0 params.mnd_wsc = 0.3 params.chr_wsc = 0.0
+    params.str_wsc = 0.4 params.dex_wsc = 0.0 params.vit_wsc = 0.0 params.agi_wsc = 0.0 params.int_wsc = 0.0 params.mnd_wsc = 0.3 params.chr_wsc = 0.0
     params.element = xi.magic.ele.LIGHT
     params.skillType = xi.skill.SWORD
     params.includemab = true
-	params.hybridWS = true
+    params.hybridWS = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.ftp100 = 1.125 params.ftp200 = 2.625 params.ftp300 = 4.125
@@ -2560,11 +2557,11 @@ end)
 m:addOverride("xi.globals.weaponskills.seraph_strike.onUseWeaponSkill", function(player, target, wsID, tp, primary, action, taChar)
     local params = {}
     params.ftp100 = 1 params.ftp200 = 2 params.ftp300 = 3
-    params.str_wsc = 0.35 params.dex_wsc = 0.0 params.vit_wsc = 0.0 params.agi_wsc = 0.0 params.int_wsc = 0.0 params.mnd_wsc = 0.3 params.chr_wsc = 0.0
+    params.str_wsc = 0.4 params.dex_wsc = 0.0 params.vit_wsc = 0.0 params.agi_wsc = 0.0 params.int_wsc = 0.0 params.mnd_wsc = 0.3 params.chr_wsc = 0.0
     params.element = xi.magic.ele.LIGHT
     params.skillType = xi.skill.CLUB
     params.includemab = true
-	params.hybridWS = true
+    params.hybridWS = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.ftp100 = 2.125 params.ftp200 = 3.675 params.ftp300 = 6.125
@@ -2578,11 +2575,11 @@ end)
 m:addOverride("xi.globals.weaponskills.shadow_of_death.onUseWeaponSkill", function(player, target, wsID, tp, primary, action, taChar)
     local params = {}
     params.ftp100 = 1 params.ftp200 = 2.5 params.ftp300 = 3
-    params.str_wsc = 0.35 params.dex_wsc = 0.0 params.vit_wsc = 0.0 params.agi_wsc = 0.0 params.int_wsc = 0.3 params.mnd_wsc = 0.0 params.chr_wsc = 0.0
+    params.str_wsc = 0.4 params.dex_wsc = 0.0 params.vit_wsc = 0.0 params.agi_wsc = 0.0 params.int_wsc = 0.3 params.mnd_wsc = 0.0 params.chr_wsc = 0.0
     params.element = xi.magic.ele.DARK
     params.skillType = xi.skill.SCYTHE
     params.includemab = true
-	params.hybridWS = true
+    params.hybridWS = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.str_wsc = 0.4 params.int_wsc = 0.4
@@ -2630,7 +2627,7 @@ m:addOverride("xi.globals.weaponskills.shark_bite.onUseWeaponSkill", function(pl
     params.canCrit = false
     params.acc100 = 1.0 params.acc200 = 1.0 params.acc300 = 1.0
     params.atk100 = 1 params.atk200 = 1 params.atk300 = 1
-	params.multiHitfTP = true
+    params.multiHitfTP = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.ftp100 = 4.5 params.ftp200 = 6.8 params.ftp300 = 8.5
@@ -2705,7 +2702,7 @@ m:addOverride("xi.globals.weaponskills.shining_blade.onUseWeaponSkill", function
     params.element = xi.magic.ele.LIGHT
     params.skillType = xi.skill.SWORD
     params.includemab = true
-	params.hybridWS = true
+    params.hybridWS = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.ftp100 = 1.125 params.ftp200 = 2.222 params.ftp300 = 3.523
@@ -2723,7 +2720,7 @@ m:addOverride("xi.globals.weaponskills.shining_strike.onUseWeaponSkill", functio
     params.element = xi.magic.ele.LIGHT
     params.skillType = xi.skill.CLUB
     params.includemab = true
-	params.hybridWS = true
+    params.hybridWS = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.ftp100 = 1.625 params.ftp200 = 3 params.ftp300 = 4.625
@@ -2805,7 +2802,7 @@ m:addOverride("xi.globals.weaponskills.sickle_moon.onUseWeaponSkill", function(p
     params.acc100 = 0 params.acc200 = 0 params.acc300 = 0
     -- attack multiplier (only some WSes use this, this varies the actual ratio value, see Tachi: Kasha) 1 is default.
     params.atk100 = 1.1 params.atk200 = 1.2 params.atk300 = 1.3
-	params.multiHitfTP = true
+    params.multiHitfTP = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.str_wsc = 0.4 params.agi_wsc = 0.4
@@ -2842,7 +2839,7 @@ m:addOverride("xi.globals.weaponskills.skewer.onUseWeaponSkill", function(player
     params.canCrit = true
     params.acc100 = 1.0 params.acc200 = 1.0 params.acc300 = 1.0
     params.atk100 = 1 params.atk200 = 1 params.atk300 = 1
-	params.multiHitfTP = true
+    params.multiHitfTP = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.str_wsc = 0.5
@@ -2995,7 +2992,7 @@ m:addOverride("xi.globals.weaponskills.spinning_axe.onUseWeaponSkill", function(
     params.canCrit = false
     params.acc100 = 1.0 params.acc200 = 1.0 params.acc300 = 1.0
     params.atk100 = 1 params.atk200 = 1 params.atk300 = 1
-	params.multiHitfTP = true
+    params.multiHitfTP = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.str_wsc = 0.6
@@ -3172,8 +3169,8 @@ m:addOverride("xi.globals.weaponskills.starburst.onUseWeaponSkill", function(pla
     params.chr_wsc = 0.0
     params.skillType = xi.skill.STAFF
     params.includemab = true
-	params.hybridWS = true
-	
+    params.hybridWS = true
+
     -- 50/50 shot of being light or dark
     params.element = xi.magic.ele.LIGHT
     if math.random() < 0.5 then
@@ -3227,7 +3224,7 @@ m:addOverride("xi.globals.weaponskills.stringing_pummel.onUseWeaponSkill", funct
     params.canCrit = true
     params.acc100 = 1.0 params.acc200 = 1.0 params.acc300 = 1.0
     params.atk100 = 1 params.atk200 = 1 params.atk300 = 1
-	params.multiHitfTP = true
+    params.multiHitfTP = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.ftp100 = 1 params.ftp200 = 1 params.ftp300 = 1
@@ -3251,7 +3248,7 @@ m:addOverride("xi.globals.weaponskills.sturmwind.onUseWeaponSkill", function(pla
     params.canCrit = false
     params.acc100 = 1.0 params.acc200 = 1.0 params.acc300 = 1.0
     params.atk100 = 1.5 params.atk200 = 1.5 params.atk300 = 1.5
-	params.multiHitfTP = true
+    params.multiHitfTP = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.str_wsc = 0.6
@@ -3270,8 +3267,8 @@ m:addOverride("xi.globals.weaponskills.sunburst.onUseWeaponSkill", function(play
     params.chr_wsc = 0.0
     params.skillType = xi.skill.STAFF
     params.includemab = true
-	params.hybridWS = true
-	
+    params.hybridWS = true
+
     -- 50/50 shot of being light or dark
     params.element = xi.magic.ele.LIGHT
     if math.random() < 0.5 then
@@ -3300,7 +3297,7 @@ m:addOverride("xi.globals.weaponskills.swift_blade.onUseWeaponSkill", function(p
     -- https://www.bg-wiki.com/ffxi/Swift_Blade does not list ACC Bonus
     params.acc100 = 1.0 params.acc200 = 1.25 params.acc300 = 1.5 -- TODO: verify -- "Accuracy varies with TP" in retail. All current evidence points to that this modifier is static values, not percentages.
     params.atk100 = 1.0 params.atk200 = 1.0 params.atk300 = 1.0
-	params.multiHitfTP = true
+    params.multiHitfTP = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.str_wsc = 0.5 params.mnd_wsc = 0.5
@@ -3321,7 +3318,7 @@ m:addOverride("xi.globals.weaponskills.tachi_enpi.onUseWeaponSkill", function(pl
     params.canCrit = false
     params.acc100 = 1.0 params.acc200 = 1.0 params.acc300 = 1.0
     params.atk100 = 1 params.atk200 = 1 params.atk300 = 1
-	params.multiHitfTP = true
+    params.multiHitfTP = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.str_wsc = 0.6
@@ -3531,13 +3528,13 @@ m:addOverride("xi.globals.weaponskills.tachi_rana.onUseWeaponSkill", function(pl
     local params = {}
     params.numHits = 3
     params.ftp100 = 1 params.ftp200 = 1 params.ftp300 = 1
-    params.str_wsc = 0.4 params.dex_wsc = 0.0 params.vit_wsc = 0.0 params.agi_wsc = 0.0 params.int_wsc = 0.0
+    params.str_wsc = 0.5 params.dex_wsc = 0.0 params.vit_wsc = 0.0 params.agi_wsc = 0.0 params.int_wsc = 0.0
     params.mnd_wsc = 0.0 params.chr_wsc = 0.0
     params.crit100 = 0.0 params.crit200 = 0.0 params.crit300 = 0.0
     params.canCrit = false
     params.acc100 = 1.0 params.acc200 = 1.25 params.acc300 = 1.5 -- TODO: verify -- "Accuracy varies with TP" in retail. All current evidence points to that this modifier is static values, not percentages.
     params.atk100 = 1 params.atk200 = 1 params.atk300 = 1
-	params.multiHitfTP = true
+    params.multiHitfTP = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.str_wsc = 0.5
@@ -3586,7 +3583,7 @@ m:addOverride("xi.globals.weaponskills.thunder_thrust.onUseWeaponSkill", functio
     params.element = xi.magic.ele.LIGHTNING
     params.skillType = xi.skill.POLEARM
     params.includemab = true
-	params.hybridWS = true
+    params.hybridWS = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.str_wsc = 0.4 params.int_wsc = 0.4
@@ -3623,7 +3620,7 @@ m:addOverride("xi.globals.weaponskills.trueflight.onUseWeaponSkill", function(pl
     params.element = xi.magic.ele.LIGHT
     params.skillType = xi.skill.MARKSMANSHIP
     params.includemab = true
-	params.hybridWS = true
+    params.hybridWS = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.ftp100 = 3.8906 params.ftp200 = 6.3906 params.ftp300 = 9.3906
@@ -3649,7 +3646,7 @@ m:addOverride("xi.globals.weaponskills.uriel_blade.onUseWeaponSkill", function(p
     local damage, criticalHit, tpHits, extraHits = xi.weaponskills.doMagicWeaponskill(player, target, wsID, params, tp, action, primary)
 
     if damage > 0 and not target:hasStatusEffect(xi.effect.FLASH) then
-		target:addStatusEffect(xi.effect.FLASH, 200, 0, 15)
+    target:addStatusEffect(xi.effect.FLASH, 200, 0, 15)
     end
 
     return tpHits, extraHits, criticalHit, damage
@@ -3663,7 +3660,7 @@ m:addOverride("xi.globals.weaponskills.vidohunir.onUseWeaponSkill", function(pla
     params.element = xi.magic.ele.DARK
     params.skillType = xi.skill.STAFF
     params.includemab = true
-	params.hybridWS = true
+    params.hybridWS = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.int_wsc = 0.8
@@ -3716,14 +3713,14 @@ m:addOverride("xi.globals.weaponskills.vorpal_blade.onUseWeaponSkill", function(
     local params = {}
     params.numHits = 4
     params.ftp100 = 1.1 params.ftp200 = 1.2 params.ftp300 = 1.3
-    params.str_wsc = 0.3 params.dex_wsc = 0.2 params.vit_wsc = 0.0
+    params.str_wsc = 0.5 params.dex_wsc = 0.2 params.vit_wsc = 0.0
     params.agi_wsc = 0.0 params.int_wsc = 0.0 params.mnd_wsc = 0.0
     params.chr_wsc = 0.0
     params.crit100 = 0.1 params.crit200 = 0.3 params.crit300 = 0.5
     params.canCrit = true
     params.acc100 = 1.0 params.acc200 = 1.0 params.acc300 = 1.0
     params.atk100 = 1.0 params.atk200 = 1.0 params.atk300 = 1.0
-	params.multiHitfTP = true
+    params.multiHitfTP = true
 
     if xi.settings.main.USE_ADOULIN_WEAPON_SKILL_CHANGES then
         params.ftp100 = 1.375 params.ftp200 = 1.375 params.ftp300 = 1.375
@@ -3742,7 +3739,7 @@ m:addOverride("xi.globals.weaponskills.vorpal_scythe.onUseWeaponSkill", function
     -- ftp damage mods (for Damage Varies with TP lines are calculated in the function
     params.ftp100 = 1.0 params.ftp200 = 1.0 params.ftp300 = 1.0
     -- wscs are in % so 0.2=20%
-    params.str_wsc = 0.4 params.dex_wsc = 0.2 params.vit_wsc = 0.0 params.agi_wsc = 0.0 params.int_wsc = 0.0 params.mnd_wsc = 0.0 params.chr_wsc = 0.0
+    params.str_wsc = 0.4 params.dex_wsc = 0.3 params.vit_wsc = 0.0 params.agi_wsc = 0.0 params.int_wsc = 0.0 params.mnd_wsc = 0.0 params.chr_wsc = 0.0
     -- critical mods, again in % (ONLY USE FOR critICAL HIT VARIES WITH TP)
     params.crit100 = 0.3 params.crit200 = 0.6 params.crit300 = 0.9
     params.canCrit = true
@@ -3809,7 +3806,7 @@ m:addOverride("xi.globals.weaponskills.weapon_break.onUseWeaponSkill", function(
     local params = {}
     params.numHits = 1
     params.ftp100 = 1 params.ftp200 = 1 params.ftp300 = 1
-    params.str_wsc = 0.32 params.dex_wsc = 0.2 params.vit_wsc = 0.32 params.agi_wsc = 0.0 params.int_wsc = 0.0 params.mnd_wsc = 0.0 params.chr_wsc = 0.0
+    params.str_wsc = 0.4 params.dex_wsc = 0.2 params.vit_wsc = 0.32 params.agi_wsc = 0.0 params.int_wsc = 0.0 params.mnd_wsc = 0.0 params.chr_wsc = 0.0
     params.crit100 = 0.0 params.crit200 = 0.0 params.crit300 = 0.0
     params.canCrit = false
     params.acc100 = 1 params.acc200 = 1 params.acc300 = 1
@@ -3840,9 +3837,9 @@ m:addOverride("xi.globals.weaponskills.wheeling_thrust.onUseWeaponSkill", functi
     params.str_wsc = 0.5 params.dex_wsc = 0.0 params.vit_wsc = 0.0 params.agi_wsc = 0.0 params.int_wsc = 0.0 params.mnd_wsc = 0.0 params.chr_wsc = 0.0
     params.crit100 = 0.0 params.crit200 = 0.0 params.crit300 = 0.0
     params.canCrit = false
-	params.multiHitfTP = true
     params.acc100 = 1.0 params.acc200 = 1.0 params.acc300 = 1.0
     params.atk100 = 1 params.atk200 = 1 params.atk300 = 1
+    params.multiHitfTP = true
     -- Defense ignored is 50%, 75%, 100% (50% at 100 TP is accurate, other values are guesses)
     params.ignoresDef = true
     params.ignored100 = 0.5
