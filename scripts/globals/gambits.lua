@@ -85,6 +85,7 @@ ai.select =
     BEST_INDI           = 10,
     STORM_DAY           = 11,
     HELIX_DAY           = 12,
+	BEST_DOUBLE_UP      = 30,
 }
 ai.s = ai.select
 

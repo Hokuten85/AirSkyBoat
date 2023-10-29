@@ -17,6 +17,7 @@
 #include "../../weapon_skill.h"
 #include "../controllers/player_controller.h"
 #include "../controllers/trust_controller.h"
+#include <recast_container.h>
 
 namespace gambits
 {
@@ -707,6 +708,45 @@ namespace gambits
                             controller->Ability(target->targid, PAbility->getID());
                         }
                     }
+
+                    if (action.select == G_SELECT::BEST_DOUBLE_UP)
+                    {
+                        auto effect   = POwner->StatusEffectContainer->GetStatusEffect(EFFECT::EFFECT_DOUBLE_UP_CHANCE);
+                        auto prevRoll = POwner->StatusEffectContainer->GetStatusEffect((EFFECT)effect->GetSubPower());
+                        if (prevRoll != nullptr)
+                        {
+                            auto roll = prevRoll->GetSubPower();
+
+                            if (roll == effects::GetLuckyRollInfo(prevRoll->GetStatusID()).lucky || roll == 11)
+                            {
+                                break; // do nothing with double up
+                            }
+                            else if (roll <= 7 || (POwner->getMod(Mod::DOUBLEUP_ENHANCEMENT) > 1 && roll <= 8))
+                            {
+                                controller->Ability(target->targid, ABILITY::ABILITY_DOUBLE_UP);
+                            }
+                            else if (roll == 10 &&
+                                     !static_cast<CMobEntity*>(POwner)->PRecastContainer->HasRecast(RECAST_ABILITY, ABILITY::ABILITY_SNAKE_EYE, 0) &&
+                                     trustutils::hasAbility(static_cast<CTrustEntity*>(POwner), ABILITY::ABILITY_SNAKE_EYE))
+                            {
+                                controller->Ability(target->targid, ABILITY::ABILITY_SNAKE_EYE);
+                                EnqueueJA(ABILITY::ABILITY_DOUBLE_UP, target->targid);
+                                return;
+                            }
+                            else if (POwner->StatusEffectContainer->CheckForElevenRoll())
+                            {
+                                controller->Ability(target->targid, ABILITY::ABILITY_DOUBLE_UP);
+                            }
+                            else if (roll == effects::GetLuckyRollInfo(prevRoll->GetStatusID()).unlucky &&
+                                     !static_cast<CMobEntity*>(POwner)->PRecastContainer->HasRecast(RECAST_ABILITY, ABILITY::ABILITY_SNAKE_EYE, 0) &&
+                                     trustutils::hasAbility(static_cast<CTrustEntity*>(POwner), ABILITY::ABILITY_SNAKE_EYE))
+                            {
+                                controller->Ability(target->targid, ABILITY::ABILITY_SNAKE_EYE);
+                                EnqueueJA(ABILITY::ABILITY_DOUBLE_UP, target->targid);
+                                return;
+                            }
+                        }
+                    }
                 }
                 else if (action.reaction == G_REACTION::MS)
                 {
@@ -1128,5 +1168,19 @@ namespace gambits
         });
         // clang-format on
         return hasTank;
+    }
+
+    bool CGambitsContainer::EnqueueJA(const uint16 abilityId, const uint16 targid)
+    {
+        auto* controller = static_cast<CTrustController*>(POwner->PAI->GetController());
+        if (static_cast<CMobEntity*>(POwner)->PRecastContainer->HasRecast(RECAST_ABILITY, abilityId, 0) ||
+            POwner->StatusEffectContainer->HasStatusEffect({ EFFECT_AMNESIA, EFFECT_IMPAIRMENT }) ||
+            !trustutils::hasAbility(static_cast<CTrustEntity*>(POwner), abilityId))
+        {
+            return false;
+        }
+
+        controller->actionQueue->emplace(new QueueAction_t{ ACTION_TYPE::JA, targid, abilityId });
+        return true;
     }
 } // namespace gambits

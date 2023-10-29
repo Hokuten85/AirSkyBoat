@@ -31,6 +31,7 @@
 #include "../status_effect_container.h"
 #include "../weapon_skill.h"
 #include "../zone_instance.h"
+#include <ability.h>
 
 struct TrustSpell_ID
 {
@@ -414,6 +415,7 @@ namespace trustutils
         PTrust->SetSLevel(PMaster->GetMLevel());
 
         LoadTrustStatsAndSkills(PTrust);
+        BuildingTrustAbilityTable(PTrust);
 
         // Use Mob formulas to work out base "weapon" damage, but scale down to reasonable values.
         auto mobStyleDamage   = static_cast<float>(mobutils::GetWeaponDamage(PTrust, SLOT_MAIN));
@@ -778,5 +780,75 @@ namespace trustutils
                 controller->m_GambitsContainer->tp_skills.emplace_back(skill);
             }
         }
+    }
+
+    void BuildingTrustAbilityTable(CTrustEntity* PTrust)
+    {
+        std::vector<CAbility*> AbilitiesList;
+
+        memset(&PTrust->m_Abilities, 0, sizeof(PTrust->m_Abilities));
+
+        AbilitiesList = ability::GetAbilities(PTrust->GetMJob());
+
+        for (auto PAbility : AbilitiesList)
+        {
+            if (PAbility == nullptr)
+            {
+                continue;
+            }
+
+            if (PTrust->GetMLevel() >= PAbility->getLevel())
+            {
+                if (PAbility->getID() < ABILITY_HEALING_RUBY && PAbility->getID() != ABILITY_PET_COMMANDS)
+                {
+                    addAbility(PTrust, PAbility->getID());
+                }
+            }
+            else
+            {
+                break;
+            }
+        }
+
+        // To stop a character with no SJob to receive the traits with job = 0 in the DB.
+        if (PTrust->GetSJob() == JOB_NON)
+        {
+            return;
+        }
+
+        AbilitiesList = ability::GetAbilities(PTrust->GetSJob());
+
+        for (auto PAbility : AbilitiesList)
+        {
+            if (PTrust->GetSLevel() >= PAbility->getLevel())
+            {
+                if (PAbility == nullptr)
+                {
+                    continue;
+                }
+
+                if (PAbility->getLevel() != 0 && PAbility->getID() < ABILITY_HEALING_RUBY)
+                {
+                    if (PAbility->getID() != ABILITY_PET_COMMANDS && !(PAbility->getAddType() & ADDTYPE_MAIN_ONLY))
+                    {
+                        addAbility(PTrust, PAbility->getID());
+                    }
+                }
+            }
+            else
+            {
+                break;
+            }
+        }
+    }
+
+    int32 hasAbility(CTrustEntity* PTrust, uint16 AbilityID)
+    {
+        return hasBit(AbilityID, PTrust->m_Abilities, sizeof(PTrust->m_Abilities));
+    }
+
+    int32 addAbility(CTrustEntity* PTrust, uint16 AbilityID)
+    {
+        return addBit(AbilityID, PTrust->m_Abilities, sizeof(PTrust->m_Abilities));
     }
 }; // namespace trustutils

@@ -18,8 +18,12 @@ end
 spellObject.onMobSpawn = function(mob)
     xi.trust.message(mob, xi.trust.message_offset.SPAWN)
 
+    mob:addSimpleGambit(ai.t.SELF, ai.c.STATUS, xi.effect.DOUBLE_UP_CHANCE, ai.r.JA, ai.s.BEST_DOUBLE_UP, xi.ja.DOUBLE_UP)
+
     mob:addSimpleGambit(ai.t.PARTY, ai.c.NOT_STATUS, xi.effect.HUNTERS_ROLL, ai.r.JA, ai.s.SPECIFIC, xi.ja.HUNTERS_ROLL)
     mob:addSimpleGambit(ai.t.PARTY, ai.c.NOT_STATUS, xi.effect.CHAOS_ROLL, ai.r.JA, ai.s.SPECIFIC, xi.ja.CHAOS_ROLL)
+	
+	mob:addSimpleGambit(ai.t.SELF, ai.c.STATUS, xi.effect.BUST, ai.r.JA, ai.s.SPECIFIC, xi.ja.FOLD)
 
     mob:addSimpleGambit(ai.t.TARGET, ai.c.ALWAYS, 0, ai.r.RATTACK, 0, 0, 10)
 
@@ -32,6 +36,14 @@ spellObject.onMobSpawn = function(mob)
     -- "The "Enhanced Magic Accuracy" attribute has been added."
     local power = mob:getMainLvl() / 5
     mob:addMod(xi.mod.MACC, power)
+	
+	if mob:getMainLvl() >= 30 then
+		mob:addMod(xi.mod.DOUBLEUP_ENHANCEMENT, 1)
+		
+		if mob:getMainLvl() >= 70 then
+			mob:addMod(xi.mod.DOUBLEUP_ENHANCEMENT, 1)
+		end
+	end
 end
 
 spellObject.onMobDespawn = function(mob)

@@ -292,6 +292,20 @@ local removeValue = function(tbl, value)
     return out
 end
 
+local removeValueGreaterThan = function(tbl, value)
+	local out = {}
+	local valueRemoved = false
+    for k, v in pairs(tbl) do
+        if v > value or valueRemoved then
+            table.insert(out, v)
+		else
+			valueRemoved = true
+        end
+    end
+
+    return out
+end
+
 xi.job_utils.corsair.useDoubleUp = function(caster, target, ability, action)
 	local rollWeights = {
 		[1]  = {1,1,2,2,3,3,4,4,5,5,6,6},
@@ -312,6 +326,10 @@ xi.job_utils.corsair.useDoubleUp = function(caster, target, ability, action)
         local roll     = prevRoll:getSubPower()
         local job      = duEffect:getTier()
 
+        local abilityId = GetAbility(duEffect:getSubType()):getID()
+		local lucky = luckyNumbers[abilityId][1]
+		local unlucky = luckyNumbers[abilityId][2]
+
         caster:setLocalVar("corsairActiveRoll", duEffect:getSubType())
         local snakeEye = caster:getStatusEffect(xi.effect.SNAKE_EYE)
         if snakeEye then
@@ -327,19 +345,18 @@ xi.job_utils.corsair.useDoubleUp = function(caster, target, ability, action)
 			if weights then
 				local buff = caster:getMod(xi.mod.DOUBLEUP_ENHANCEMENT)
 				if buff > 0 then
-					local abilityId = GetAbility(duEffect:getSubType()):getID()
-					local lucky = luckyNumbers[abilityId][1]
-					local unlucky = luckyNumbers[abilityId][2]
 					for i=1, buff do
 						if roll < lucky then
 							table.insert(weights, lucky-roll)
 						elseif roll > 5 then
 							table.insert(weights, 11-roll)
 						end
-					end
-					
-					if roll < unlucky then
-						weights = removeValue(weights, unlucky-roll)
+
+                        if roll < unlucky then
+						    weights = removeValue(weights, unlucky-roll)
+					    end
+
+                        weights = removeValueGreaterThan(weights, 12-roll)
 					end
 				end
 			
@@ -355,7 +372,7 @@ xi.job_utils.corsair.useDoubleUp = function(caster, target, ability, action)
             caster:delStatusEffectSilent(xi.effect.DOUBLE_UP_CHANCE)
         end
 
-        if roll == 11 then
+        if roll == 11 or roll == lucky then
             caster:resetRecast(xi.recast.ABILITY, 193)
         end
 

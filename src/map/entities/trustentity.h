@@ -63,6 +63,8 @@ public:
 
     uint32              m_TrustID{};
     TRUST_MOVEMENT_TYPE m_MovementType;
+
+    uint8 m_Abilities[62];
 };
 
 #endif

@@ -122,29 +122,31 @@ namespace effects
 
     std::array<EffectParams_t, MAX_EFFECTID> EffectsParams;
 
-    std::map<EFFECT, uint8> LuckyRolls = {
-        { EFFECT::EFFECT_CORSAIRS_ROLL, 5 },
-        { EFFECT::EFFECT_NINJA_ROLL, 4 },
-        { EFFECT::EFFECT_HUNTERS_ROLL, 4 },
-        { EFFECT::EFFECT_CHAOS_ROLL, 4 },
-        { EFFECT::EFFECT_MAGUSS_ROLL, 2 },
-        { EFFECT::EFFECT_HEALERS_ROLL, 3 },
-        { EFFECT::EFFECT_DRACHEN_ROLL, 4 },
-        { EFFECT::EFFECT_CHORAL_ROLL, 2 },
-        { EFFECT::EFFECT_MONKS_ROLL, 3 },
-        { EFFECT::EFFECT_BEAST_ROLL, 4 },
-        { EFFECT::EFFECT_SAMURAI_ROLL, 2 },
-        { EFFECT::EFFECT_EVOKERS_ROLL, 5 },
-        { EFFECT::EFFECT_ROGUES_ROLL, 5 },
-        { EFFECT::EFFECT_WARLOCKS_ROLL, 4 },
-        { EFFECT::EFFECT_FIGHTERS_ROLL, 5 },
-        { EFFECT::EFFECT_PUPPET_ROLL, 3 },
-        { EFFECT::EFFECT_GALLANTS_ROLL, 3 },
-        { EFFECT::EFFECT_WIZARDS_ROLL, 5 },
-        { EFFECT::EFFECT_DANCERS_ROLL, 3 },
-        { EFFECT::EFFECT_SCHOLARS_ROLL, 2 },
-        { EFFECT::EFFECT_NATURALISTS_ROLL, 3 },
-        { EFFECT::EFFECT_RUNEISTS_ROLL, 4 },
+ 
+
+    std::map<EFFECT, LuckyRoll_t> LuckyRolls = {
+        { EFFECT::EFFECT_CORSAIRS_ROLL, LuckyRoll_t{ 5, 9 } },
+        { EFFECT::EFFECT_NINJA_ROLL, LuckyRoll_t{ 4, 8 } },
+        { EFFECT::EFFECT_HUNTERS_ROLL, LuckyRoll_t{ 4, 8 } },
+        { EFFECT::EFFECT_CHAOS_ROLL, LuckyRoll_t{ 4, 8 } },
+        { EFFECT::EFFECT_MAGUSS_ROLL, LuckyRoll_t{ 2, 6 } },
+        { EFFECT::EFFECT_HEALERS_ROLL, LuckyRoll_t{ 3, 7 } },
+        { EFFECT::EFFECT_DRACHEN_ROLL, LuckyRoll_t{ 4, 8 } },
+        { EFFECT::EFFECT_CHORAL_ROLL, LuckyRoll_t{ 2, 6 } },
+        { EFFECT::EFFECT_MONKS_ROLL, LuckyRoll_t{ 3, 7 } },
+        { EFFECT::EFFECT_BEAST_ROLL, LuckyRoll_t{ 4, 8 } },
+        { EFFECT::EFFECT_SAMURAI_ROLL, LuckyRoll_t{ 2, 6 } },
+        { EFFECT::EFFECT_EVOKERS_ROLL, LuckyRoll_t{ 5, 9 } },
+        { EFFECT::EFFECT_ROGUES_ROLL, LuckyRoll_t{ 5, 9 } },
+        { EFFECT::EFFECT_WARLOCKS_ROLL, LuckyRoll_t{ 4, 8 } },
+        { EFFECT::EFFECT_FIGHTERS_ROLL, LuckyRoll_t{ 5, 9 } },
+        { EFFECT::EFFECT_PUPPET_ROLL, LuckyRoll_t{ 3, 7 } },
+        { EFFECT::EFFECT_GALLANTS_ROLL, LuckyRoll_t{ 3, 7 } },
+        { EFFECT::EFFECT_WIZARDS_ROLL, LuckyRoll_t{ 5, 9 } },
+        { EFFECT::EFFECT_DANCERS_ROLL, LuckyRoll_t{ 3, 7 } },
+        { EFFECT::EFFECT_SCHOLARS_ROLL, LuckyRoll_t{ 2, 6 } },
+        { EFFECT::EFFECT_NATURALISTS_ROLL, LuckyRoll_t{ 3, 7 } },
+        { EFFECT::EFFECT_RUNEISTS_ROLL, LuckyRoll_t{ 4, 8 } },
     };
 
     void LoadEffectsParameters()
@@ -194,6 +196,11 @@ namespace effects
     std::string GetEffectName(uint16 effect)
     {
         return EffectsParams[effect].Name;
+    }
+
+    LuckyRoll_t GetLuckyRollInfo(uint16 effect)
+    {
+        return LuckyRolls.at((EFFECT)effect);
     }
 } // namespace effects
 
@@ -2180,7 +2187,7 @@ bool CStatusEffectContainer::CheckForElevenRoll()
     {
         if ((PStatusEffect->GetStatusID() >= EFFECT_FIGHTERS_ROLL && PStatusEffect->GetStatusID() <= EFFECT_NATURALISTS_ROLL) || PStatusEffect->GetStatusID() == EFFECT_RUNEISTS_ROLL)
         {
-            if (PStatusEffect->GetSubPower() == 11 || PStatusEffect->GetSubPower() == effects::LuckyRolls.at(PStatusEffect->GetStatusID()))
+            if (PStatusEffect->GetSubPower() == 11 || PStatusEffect->GetSubPower() == effects::LuckyRolls.at(PStatusEffect->GetStatusID()).lucky)
             {
                 return true;
             }

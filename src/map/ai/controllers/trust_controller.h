@@ -34,6 +34,21 @@ namespace gambits
     class CGambitsContainer;
 }
 
+enum class ACTION_TYPE : uint16
+{
+    NOTHING = 0,
+    SPELL   = 1,
+    JA      = 2,
+};
+
+struct QueueAction_t
+{
+    ACTION_TYPE action_type  = ACTION_TYPE::NOTHING;
+    uint16      targId       = 0;
+    uint16      actionId     = 0;
+    bool        requiresMove = false;
+};
+
 class CTrustController : public CMobController
 {
 public:
@@ -58,6 +73,7 @@ public:
     uint8 GetPartyPosition();
 
     std::unique_ptr<gambits::CGambitsContainer> m_GambitsContainer;
+    std::queue<QueueAction_t*>*                 actionQueue = new std::queue<QueueAction_t*>;
 
 private:
     void DoCombatTick(time_point tick) override;

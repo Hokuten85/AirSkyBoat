@@ -1,4 +1,4 @@
-#ifndef _ITRUSTUTILS_H
+﻿#ifndef _ITRUSTUTILS_H
 #define _ITRUSTUTILS_H
 
 #include "common/cbasetypes.h"
@@ -19,6 +19,10 @@ namespace trustutils
     void          BuildTrust(uint32 TrustID);
     CTrustEntity* LoadTrust(CCharEntity* PMaster, uint32 TrustID);
     void          LoadTrustStatsAndSkills(CTrustEntity* PTrust);
+
+    void  BuildingTrustAbilityTable(CTrustEntity* PTrust);
+    int32 hasAbility(CTrustEntity* PTrust, uint16 AbilityID);
+    int32 addAbility(CTrustEntity* PTrust, uint16 AbilityID);
 }; // namespace trustutils
 
 #endif

@@ -28,6 +28,7 @@
 #include <set>
 
 #include "status_effect.h"
+#include <map>
 
 /************************************************************************
  *                                                                       *
@@ -154,9 +155,18 @@ private:
 
 namespace effects
 {
+    struct LuckyRoll_t
+    {
+        uint8 lucky;
+        uint8 unlucky;
+    };
+
     void        LoadEffectsParameters();
     uint16      GetEffectElement(uint16 effect);
     std::string GetEffectName(uint16 effect);
+
+    LuckyRoll_t GetLuckyRollInfo(uint16 effect);
+
 }; // namespace effects
 
 #endif

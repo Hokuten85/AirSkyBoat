@@ -20,7 +20,7 @@ spellObject.onSpellCast = function(caster, target, spell)
     params.bonusEffect = xi.effect.STR_BOOST
     params.msgFail = xi.msg.basic.MAGIC_RESIST
     params.bonus = 100
-    params.baseDuration = 120
+    params.baseDuration = 300
 
     return xi.magic.doAbsorbSpell(caster, target, spell, params)
 end

@@ -11,6 +11,7 @@
 #include "../controllers/trust_controller.h"
 
 #include <set>
+#include <ability.h>
 
 namespace gambits
 {
@@ -86,6 +87,7 @@ namespace gambits
         BEST_INDI           = 10,
         STORM_DAY           = 11,
         HELIX_DAY           = 12,
+        BEST_DOUBLE_UP      = 30,
     };
 
     enum class G_TP_TRIGGER : uint16
@@ -245,6 +247,8 @@ namespace gambits
         bool TryTrustSkill();
         bool PartyHasHealer();
         bool PartyHasTank();
+
+        bool EnqueueJA(const uint16 abilityId, const uint16 targid);
 
         CTrustEntity*         POwner;
         time_point            m_lastAction;
