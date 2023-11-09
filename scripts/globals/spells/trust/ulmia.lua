@@ -24,6 +24,18 @@ spellObject.onMobSpawn = function(mob)
     mob:addSimpleGambit(ai.t.SELF, ai.c.NOT_STATUS, xi.effect.MINUET, ai.r.MA, ai.s.HIGHEST, xi.magic.spellFamily.VALOR_MINUET)
 
     mob:setAutoAttackEnabled(false)
+	
+	if mob:getMainLvl() >= 4 then
+		mob:addMod(xi.mod.MINUET_EFFECT, 2)
+	end
+	
+	if mob:getMainLvl() >= 32 then
+		mob:addMod(xi.mod.MADRIGAL_EFFECT, 2)
+	end
+	
+	if mob:getMainLvl() >= 36 then
+		mob:addMod(xi.mod.MARCH_EFFECT, 2)
+	end
 end
 
 spellObject.onMobDespawn = function(mob)

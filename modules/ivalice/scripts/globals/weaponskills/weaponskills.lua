@@ -725,7 +725,7 @@ m:addOverride("xi.globals.weaponskills.cross_reaper.onUseWeaponSkill", function(
     local params = {}
     params.numHits = 2
     -- ftp damage mods (for Damage Varies with TP lines are calculated in the function
-    params.ftp100 = 2.0 params.ftp200 = 2.25 params.ftp300 = 2.5
+    params.ftp100 = 2.0 params.ftp200 = 2.25 params.ftp300 = 2.75
     -- wscs are in % so 0.2=20%
     params.str_wsc = 0.3 params.dex_wsc = 0.0 params.vit_wsc = 0.0 params.agi_wsc = 0.0 params.int_wsc = 0.0 params.mnd_wsc = 0.3 params.chr_wsc = 0.0
     -- critical mods, again in % (ONLY USE FOR CRITICAL HIT VARIES WITH TP)
@@ -1678,7 +1678,7 @@ m:addOverride("xi.globals.weaponskills.howling_fist.onUseWeaponSkill", function(
     params.numHits = 1
     -- This is a 2 hit ws but H2H ws are done in a different way, the off hand hit is been taking into account in another place
     params.ftp100 = 2.5 params.ftp200 = 2.75 params.ftp300 = 3
-    params.str_wsc = 0.3 params.dex_wsc = 0.0 params.vit_wsc = 0.5 params.agi_wsc = 0.0 params.int_wsc = 0.0 params.mnd_wsc = 0.0 params.chr_wsc = 0.0
+    params.str_wsc = 0.5 params.dex_wsc = 0.0 params.vit_wsc = 0.5 params.agi_wsc = 0.0 params.int_wsc = 0.0 params.mnd_wsc = 0.0 params.chr_wsc = 0.0
     params.crit100 = 0.0 params.crit200 = 0.0 params.crit300 = 0.0
     params.canCrit = false
     params.acc100 = 1.0 params.acc200 = 1.0 params.acc300 = 1.0
@@ -2330,7 +2330,7 @@ m:addOverride("xi.globals.weaponskills.raging_fists.onUseWeaponSkill", function(
     local params = {}
     params.numHits = 4
     -- This is a 5 hit ws but H2H ws are done in a different way, the off hand hit is been taking into account in another place
-    params.ftp100 = 1.1 params.ftp200 = 1.5 params.ftp300 = 2
+    params.ftp100 = 1.2 params.ftp200 = 1.5 params.ftp300 = 2
     params.str_wsc = 0.3 params.dex_wsc = 0.3 params.vit_wsc = 0.0 params.agi_wsc = 0.0 params.int_wsc = 0.0 params.mnd_wsc = 0.0 params.chr_wsc = 0.0
     params.crit100 = 0.0 params.crit200 = 0.0 params.crit300 = 0.0
     params.canCrit = false
@@ -2792,9 +2792,9 @@ m:addOverride("xi.globals.weaponskills.sickle_moon.onUseWeaponSkill", function(p
     local params = {}
     params.numHits = 2
     -- ftp damage mods (for Damage Varies with TP lines are calculated in the function
-    params.ftp100 = 1.5 params.ftp200 = 2 params.ftp300 = 2.75
+    params.ftp100 = 2.0 params.ftp200 = 2.25 params.ftp300 = 2.75
     -- wscs are in % so 0.2=20%
-    params.str_wsc = 0.5 params.dex_wsc = 0.0 params.vit_wsc = 0.0 params.agi_wsc = 0.3 params.int_wsc = 0.0 params.mnd_wsc = 0.0 params.chr_wsc = 0.0
+    params.str_wsc = 0.5 params.dex_wsc = 0.0 params.vit_wsc = 0.0 params.agi_wsc = 0.4 params.int_wsc = 0.0 params.mnd_wsc = 0.0 params.chr_wsc = 0.0
     -- critical mods, again in % (ONLY USE FOR CRITICAL HIT VARIES WITH TP)
     params.crit100 = 0.0 params.crit200 = 0.0 params.crit300 = 0.0
     params.canCrit = false
@@ -3778,11 +3778,11 @@ m:addOverride("xi.globals.weaponskills.wasp_sting.onUseWeaponSkill", function(pl
     local params = {}
     params.numHits = 1
     params.ftp100 = 1 params.ftp200 = 1 params.ftp300 = 1
-    params.str_wsc = 0.0 params.dex_wsc = 0.4 params.vit_wsc = 0.0 params.agi_wsc = 0.0 params.int_wsc = 0.0 params.mnd_wsc = 0.0 params.chr_wsc = 0.0
+    params.str_wsc = 0.0 params.dex_wsc = 0.5 params.vit_wsc = 0.0 params.agi_wsc = 0.0 params.int_wsc = 0.0 params.mnd_wsc = 0.0 params.chr_wsc = 0.0
     params.crit100 = 0.0 params.crit200 = 0.0 params.crit300 = 0.0
     params.canCrit = false
     params.acc100 = 1 params.acc200 = 1 params.acc300 = 1
-    params.atk100 = 1 params.atk200 = 1 params.atk300 = 1
+    params.atk100 = 1.2 params.atk200 = 1.2 params.atk300 = 1.2
 
     local effectParams = {}
     effectParams.element = xi.magic.ele.WATER

@@ -19,7 +19,7 @@ spellObject.onSpellCast = function(caster, target, spell)
         return
     end
 
-    local duration = 30
+    local duration = 120
     -- local pCHR = caster:getStat(xi.mod.CHR)
     -- local mCHR = target:getStat(xi.mod.CHR)
     -- local dCHR = pCHR - mCHR
