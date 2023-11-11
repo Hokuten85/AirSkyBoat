@@ -1121,6 +1121,7 @@ void SmallPacket0x01A(map_session_data_t* const PSession, CCharEntity* const PCh
             {
                 return;
             }
+            PChar->setCharVar("expLost", 0);
             charutils::HomePoint(PChar);
         }
         break;
@@ -5072,9 +5073,7 @@ void SmallPacket0x077(map_session_data_t* const PSession, CCharEntity* const PCh
                 char memberName[PacketNameLength] = {};
                 memcpy(&memberName, data[0x04], PacketNameLength - 1);
 
-                uint8 role = data.ref<uint8>(0x15);
-
-                ShowDebug("(Party)Altering permissions of %s to %u", memberName, role);
+                ShowDebug(fmt::format("(Party)Altering permissions of {} to {}", memberName, data[0x15]));
                 PChar->PParty->AssignPartyRole(memberName, data.ref<uint8>(0x15));
             }
         }
@@ -5110,7 +5109,10 @@ void SmallPacket0x077(map_session_data_t* const PSession, CCharEntity* const PCh
             if (PChar->PParty && PChar->PParty->m_PAlliance && PChar->PParty->GetLeader() == PChar &&
                 PChar->PParty->m_PAlliance->getMainParty() == PChar->PParty)
             {
-                ShowDebug("(Alliance)Changing leader to %s", data[0x04]);
+                char memberName[PacketNameLength] = {};
+                memcpy(&memberName, data[0x04], PacketNameLength - 1);
+
+                ShowDebug(fmt::format("(Alliance)Changing leader to {}", memberName));
                 PChar->PParty->m_PAlliance->assignAllianceLeader((const char*)data[0x04]);
 
                 uint8 allianceData[4]{};
