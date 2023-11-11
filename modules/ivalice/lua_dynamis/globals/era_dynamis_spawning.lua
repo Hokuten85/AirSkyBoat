@@ -1573,10 +1573,10 @@ xi.dynamis.nmDynamicSpawn = function(mobIndex, oMobIndex, forceLink, zoneID, tar
             end },
 
             ["onMobEngaged"] = { function(mob, mobTarget)
+                xi.dynamis.onEngageMorbol(mob, mobTarget)
             end },
 
             ["onMobFight"] = { function(mob, mobTarget)
-                xi.dynamis.onFightMorbol(mob, mobTarget)
             end },
 
             ["onMobRoam"] = { function(mob)
@@ -1762,7 +1762,7 @@ xi.dynamis.nmDynamicSpawn = function(mobIndex, oMobIndex, forceLink, zoneID, tar
 
             ["mixins"] = {   },
         },
-        ["Buburimu Dwagon"] =
+        ["Buburimu Dragon"] =
         {
             ["onMobSpawn"] = { function(mob)
                 xi.dynamis.onSpawnNoAuto(mob)
@@ -1772,11 +1772,11 @@ xi.dynamis.nmDynamicSpawn = function(mobIndex, oMobIndex, forceLink, zoneID, tar
             end },
 
             ["onMobFight"] = { function(mob, mobTarget)
-                xi.dynamis.onFightDwagon(mob, mobTarget)
+                xi.dynamis.onFightDragon(mob, mobTarget)
             end },
 
             ["onMobRoam"] = { function(mob)
-                xi.dynamis.onRoamDwagon(mob)
+                xi.dynamis.onRoamDragon(mob)
             end },
 
             ["onMobMagicPrepare"] = { function(mob, mobTarget, spellId)
@@ -2294,7 +2294,7 @@ xi.dynamis.spawnDynamicPet = function(target, oMob, mobJob)
                     ["Blazox Boneybod"] = { "V. Slime", 130, 134, 0, 54, 229 }, -- NM Goblin BST (VSlime)
                     ["Routsix Rubbertendon"] = { "V. Slime" , 130, 134, 0, 54, 229 }, -- NM Goblin BST (VSlime)
                     ["Blazax Boneybad"] = { "V. Slime" , 130, 134, 0, 54, 229 }, -- NM Goblin BST (VSlime)
-                    ["Woodnix Shrillwistle"] = { "W. Slime" , 7, 40, 0, 54, 229 }, -- NM Goblin BST (WSSlime)
+                    ["Woodnix Shrillwhistle"] = { "W. Slime" , 7, 40, 0, 54, 229 }, -- NM Goblin BST (WSSlime)
                 },
             },
         },
