@@ -19,3 +19,20 @@ REPLACE INTO `mob_spawn_points` VALUES (17481776,0,'Colliery_Bat','Colliery Bat'
 REPLACE INTO `mob_spawn_points` VALUES (17481777,0,'Colliery_Bat','Colliery Bat',3,-41.7,9.25,-155.3,127);
 REPLACE INTO `mob_spawn_points` VALUES (17481778,0,'Colliery_Bat','Colliery Bat',3,-36.0,9.5,-145.2,174);
 REPLACE INTO `mob_spawn_points` VALUES (17481779,0,'Colliery_Bat','Colliery Bat',3,-14.7,9.8,-153.6,210);
+
+REPLACE INTO `mob_spawn_points` VALUES (16990444,0,'Greater_Colibri','Greater Colibri',52,-514,-11,-74,127);
+REPLACE INTO `mob_spawn_points` VALUES (16990445,0,'Greater_Colibri','Greater Colibri',52,-517,-11,-51,127);
+REPLACE INTO `mob_spawn_points` VALUES (16990446,0,'Greater_Colibri','Greater Colibri',52,-540,-11,-74,127);
+REPLACE INTO `mob_spawn_points` VALUES (16990447,0,'Greater_Colibri','Greater Colibri',52,-529,-11,-43,127);
+REPLACE INTO `mob_spawn_points` VALUES (16990448,0,'Greater_Colibri','Greater Colibri',52,-545,-11,-41,127);
+REPLACE INTO `mob_spawn_points` VALUES (16990451,0,'Greater_Colibri','Greater Colibri',52,-533,-11,-74,127);
+REPLACE INTO `mob_spawn_points` VALUES (16990452,0,'Greater_Colibri','Greater Colibri',52,-540,-12,-58,127);
+REPLACE INTO `mob_spawn_points` VALUES (16990454,0,'Greater_Colibri','Greater Colibri',52,-517.8,-12,-71.7,127);
+REPLACE INTO `mob_spawn_points` VALUES (16990455,0,'Greater_Colibri','Greater Colibri',52,-516,-12,-41.5,127);
+REPLACE INTO `mob_spawn_points` VALUES (16990457,0,'Greater_Colibri','Greater Colibri',52,-527.3,-12,-37.5,127);
+REPLACE INTO `mob_spawn_points` VALUES (16990458,0,'Greater_Colibri','Greater Colibri',52,-539.5,-12,-38,127);
+REPLACE INTO `mob_spawn_points` VALUES (16990461,0,'Greater_Colibri','Greater Colibri',52,-558,-12,-80,127);
+REPLACE INTO `mob_spawn_points` VALUES (16990463,0,'Greater_Colibri','Greater_Colibri',52,-572,-13,-90,127);
+REPLACE INTO `mob_spawn_points` VALUES (16990464,0,'Greater_Colibri','Greater_Colibri',52,-562,-12,-81,127);
+REPLACE INTO `mob_spawn_points` VALUES (16990465,0,'Greater_Colibri','Greater Colibri',52,-561,-11,-49,127);
+REPLACE INTO `mob_spawn_points` VALUES (16990479,0,'Greater_Colibri','Greater Colibri',52,-524,-11,-57,127);
