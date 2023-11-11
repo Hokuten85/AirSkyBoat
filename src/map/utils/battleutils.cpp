@@ -5570,7 +5570,7 @@ namespace battleutils
 
             resist = std::max(resist, 0.5f); // assuming if its floored at .5f its capped at 1.5f but who's stacking +dmgtaken equip anyway???
 
-            resist += PDefender->getMod(Mod::DMG_II) / 100.0f;
+            resist += PDefender->getMod(Mod::DMG_II) / 10000.0f;
             resist = std::max(resist, 0.1f); // allows for DT II to take reduction to 90%
 
 
@@ -5622,7 +5622,7 @@ namespace battleutils
             resist += PDefender->getMod(Mod::DMGMAGIC_II) / 10000.f;
             resist = std::max(resist, 0.125f); // Total cap with MDT-% II included is 87.5%
 
-            resist += PDefender->getMod(Mod::DMG_II) / 100.0f;
+            resist += PDefender->getMod(Mod::DMG_II) / 10000.0f;
             resist = std::max(resist, 0.1f); // allows for DT II to take reduction to 90%
 
             resist += PDefender->getMod(Mod::UDMG) + PDefender->getMod(Mod::UDMGMAGIC) / 10000.f;
