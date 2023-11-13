@@ -1718,7 +1718,7 @@ end)
 m:addOverride("xi.globals.weaponskills.insurgency.onUseWeaponSkill", function(player, target, wsID, tp, primary, action, taChar)
     local params = {}
     params.numHits = 4
-    params.ftp100 = 1.0 params.ftp200 = 1.25 params.ftp300 = 1.5
+    params.ftp100 = 1.0 params.ftp200 = 2.0 params.ftp300 = 3
     params.str_wsc = 0.2 params.dex_wsc = 0.0 params.vit_wsc = 0.0 params.agi_wsc = 0.0 params.int_wsc = 0.2
     params.mnd_wsc = 0.0 params.chr_wsc = 0.0
     params.crit100 = 0.0 params.crit200 = 0.0 params.crit300 = 0.0
@@ -1895,7 +1895,7 @@ end)
 m:addOverride("xi.globals.weaponskills.mandalic_stab.onUseWeaponSkill", function(player, target, wsID, tp, primary, action, taChar)
     local params = {}
     params.numHits = 1
-    params.ftp100 = 2 params.ftp200 = 2.13 params.ftp300 = 2.5
+    params.ftp100 = 2 params.ftp200 = 3.5 params.ftp300 = 5.0
     params.str_wsc = 0.0 params.dex_wsc = 0.5 params.vit_wsc = 0.0 params.agi_wsc = 0.2 params.int_wsc = 0.0
     params.mnd_wsc = 0.0 params.chr_wsc = 0.0
     params.crit100 = 0.0 params.crit200 = 0.0 params.crit300 = 0.0
@@ -2497,7 +2497,7 @@ end)
 m:addOverride("xi.globals.weaponskills.savage_blade.onUseWeaponSkill", function(player, target, wsID, tp, primary, action, taChar)
     local params = {}
     params.numHits = 2
-    params.ftp100 = 2.25 params.ftp200 = 4.5 params.ftp300 = 6.75
+    params.ftp100 = 2.25 params.ftp200 = 3.0 params.ftp300 = 7.0
     params.str_wsc = 0.5 params.dex_wsc = 0.0 params.vit_wsc = 0.0 params.agi_wsc = 0.0 params.int_wsc = 0.0 params.mnd_wsc = 0.5 params.chr_wsc = 0.0
     params.crit100 = 0.0 params.crit200 = 0.0 params.crit300 = 0.0
     params.canCrit = false
@@ -2621,7 +2621,7 @@ end)
 m:addOverride("xi.globals.weaponskills.shark_bite.onUseWeaponSkill", function(player, target, wsID, tp, primary, action, taChar)
     local params = {}
     params.numHits = 2
-    params.ftp100 = 2.25 params.ftp200 = 2.75 params.ftp300 = 3.25
+    params.ftp100 = 2.25 params.ftp200 = 3.5 params.ftp300 = 5.0
     params.str_wsc = 0.0 params.dex_wsc = 0.5 params.vit_wsc = 0.0 params.agi_wsc = 0.3 params.int_wsc = 0.0 params.mnd_wsc = 0.0 params.chr_wsc = 0.0
     params.crit100 = 0.0 params.crit200 = 0.0 params.crit300 = 0.0
     params.canCrit = false
@@ -3024,9 +3024,9 @@ m:addOverride("xi.globals.weaponskills.spinning_slash.onUseWeaponSkill", functio
     local params = {}
     params.numHits = 1
     -- ftp damage mods (for Damage Varies with TP lines are calculated in the function
-    params.ftp100 = 2.5 params.ftp200 = 3 params.ftp300 = 3.5
+    params.ftp100 = 2.5 params.ftp200 = 4.0 params.ftp300 = 5.0
     -- wscs are in % so 0.2=20%
-    params.str_wsc = 0.5 params.dex_wsc = 0.0 params.vit_wsc = 0.0 params.agi_wsc = 0.0 params.int_wsc = 0.4 params.mnd_wsc = 0.0 params.chr_wsc = 0.0
+    params.str_wsc = 0.6 params.dex_wsc = 0.0 params.vit_wsc = 0.0 params.agi_wsc = 0.0 params.int_wsc = 0.6 params.mnd_wsc = 0.0 params.chr_wsc = 0.0
     -- critical mods, again in % (ONLY USE FOR critICAL HIT VARIES WITH TP)
     params.crit100 = 0.0 params.crit200 = 0.0 params.crit300 = 0.0
     params.canCrit = false
