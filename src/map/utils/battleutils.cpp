@@ -6559,6 +6559,11 @@ namespace battleutils
 
         for (auto&& PTrait : *traitList)
         {
+            if (PTrait->getID() >= 150 && PEntity->objtype == TYPE_MOB) 
+            {
+                continue;
+            }
+
             if (level >= PTrait->getLevel() && PTrait->getLevel() > 0)
             {
                 bool add = true;
