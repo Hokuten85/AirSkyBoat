@@ -92,113 +92,113 @@ end
 --xi.dynamis.mobList[zoneID][MobIndex].info = {"Statue/NM/Nightmare", "Mob Name", "Family", "Main Job", "MobLocalVarName"}
 
 xi.dynamis.mobList[zoneID][1  ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (001-Q)
-xi.dynamis.mobList[zoneID][2  ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (002-Q)
+--xi.dynamis.mobList[zoneID][2  ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (002-Q)
 xi.dynamis.mobList[zoneID][3  ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (003-Q)
 xi.dynamis.mobList[zoneID][4  ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (004-Q)
-xi.dynamis.mobList[zoneID][5  ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (005-Q)
-xi.dynamis.mobList[zoneID][6  ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (006-Q)
+--xi.dynamis.mobList[zoneID][5  ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (005-Q)
+--xi.dynamis.mobList[zoneID][6  ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (006-Q)
 xi.dynamis.mobList[zoneID][7  ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (007-Q)
 xi.dynamis.mobList[zoneID][8  ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (008-Q)
-xi.dynamis.mobList[zoneID][9  ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (009-Q)
+--xi.dynamis.mobList[zoneID][9  ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (009-Q)
 xi.dynamis.mobList[zoneID][10 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (010-Q)
-xi.dynamis.mobList[zoneID][11 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (011-Q)
-xi.dynamis.mobList[zoneID][12 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (012-Q)
+--xi.dynamis.mobList[zoneID][11 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (011-Q)
+--xi.dynamis.mobList[zoneID][12 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (012-Q)
 xi.dynamis.mobList[zoneID][13 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (013-Q)
-xi.dynamis.mobList[zoneID][14 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (014-Q)
+--xi.dynamis.mobList[zoneID][14 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (014-Q)
 xi.dynamis.mobList[zoneID][15 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (015-Q)
-xi.dynamis.mobList[zoneID][16 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (016-Q)
+--xi.dynamis.mobList[zoneID][16 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (016-Q)
 xi.dynamis.mobList[zoneID][17 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (017-Q)
-xi.dynamis.mobList[zoneID][18 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (018-Q)
+--xi.dynamis.mobList[zoneID][18 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (018-Q)
 xi.dynamis.mobList[zoneID][19 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (019-Q)
 xi.dynamis.mobList[zoneID][20 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (020-Q)
-xi.dynamis.mobList[zoneID][21 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (021-Q)
-xi.dynamis.mobList[zoneID][22 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (022-Q)
-xi.dynamis.mobList[zoneID][23 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (023-Q)
+--xi.dynamis.mobList[zoneID][21 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (021-Q)
+--xi.dynamis.mobList[zoneID][22 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (022-Q)
+--xi.dynamis.mobList[zoneID][23 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (023-Q)
 xi.dynamis.mobList[zoneID][24 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (024-Q)
 xi.dynamis.mobList[zoneID][25 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (025-Q)
 xi.dynamis.mobList[zoneID][26 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (026-Q)
-xi.dynamis.mobList[zoneID][27 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (027-Q)
+--xi.dynamis.mobList[zoneID][27 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (027-Q)
 xi.dynamis.mobList[zoneID][28 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (028-Q)
 xi.dynamis.mobList[zoneID][29 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (029-Q)
 xi.dynamis.mobList[zoneID][30 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (030-Q)
 xi.dynamis.mobList[zoneID][31 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (031-Q)
-xi.dynamis.mobList[zoneID][32 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (032-Q)
+--xi.dynamis.mobList[zoneID][32 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (032-Q)
 xi.dynamis.mobList[zoneID][33 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (033-Q)
-xi.dynamis.mobList[zoneID][34 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (034-Q)
+--xi.dynamis.mobList[zoneID][34 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (034-Q)
 xi.dynamis.mobList[zoneID][35 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (035-Q)
 xi.dynamis.mobList[zoneID][36 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (036-Q)
 xi.dynamis.mobList[zoneID][37 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (037-Q)
 xi.dynamis.mobList[zoneID][38 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (038-Q)
-xi.dynamis.mobList[zoneID][39 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (039-Q)
+--xi.dynamis.mobList[zoneID][39 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (039-Q)
 xi.dynamis.mobList[zoneID][40 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (040-Q)
 xi.dynamis.mobList[zoneID][41 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (041-Q)
 xi.dynamis.mobList[zoneID][42 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (042-Q)
 xi.dynamis.mobList[zoneID][43 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (043-Q)
-xi.dynamis.mobList[zoneID][44 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (044-Q)
+--xi.dynamis.mobList[zoneID][44 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (044-Q)
 xi.dynamis.mobList[zoneID][45 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (045-Q)
 xi.dynamis.mobList[zoneID][46 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (046-Q)
-xi.dynamis.mobList[zoneID][47 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (047-Q)
+--xi.dynamis.mobList[zoneID][47 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (047-Q)
 xi.dynamis.mobList[zoneID][48 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (048-Q)
 xi.dynamis.mobList[zoneID][49 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (049-Q)
-xi.dynamis.mobList[zoneID][50 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (050-Q)
+--xi.dynamis.mobList[zoneID][50 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (050-Q)
 xi.dynamis.mobList[zoneID][51 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (051-Q)
-xi.dynamis.mobList[zoneID][52 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (052-Q)
+--xi.dynamis.mobList[zoneID][52 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (052-Q)
 xi.dynamis.mobList[zoneID][53 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (053-Q)
 xi.dynamis.mobList[zoneID][54 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (054-Q)
 xi.dynamis.mobList[zoneID][55 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (055-Q)
-xi.dynamis.mobList[zoneID][56 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (056-Q)
-xi.dynamis.mobList[zoneID][57 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (057-Q)
-xi.dynamis.mobList[zoneID][58 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (058-Q)
+--xi.dynamis.mobList[zoneID][56 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (056-Q)
+--xi.dynamis.mobList[zoneID][57 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (057-Q)
+--xi.dynamis.mobList[zoneID][58 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (058-Q)
 xi.dynamis.mobList[zoneID][59 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (059-Q)
-xi.dynamis.mobList[zoneID][60 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (060-Q)
-xi.dynamis.mobList[zoneID][61 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (061-Q)
+--xi.dynamis.mobList[zoneID][60 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (060-Q)
+--xi.dynamis.mobList[zoneID][61 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (061-Q)
 xi.dynamis.mobList[zoneID][62 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (062-Q)
-xi.dynamis.mobList[zoneID][63 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (063-Q)
+--xi.dynamis.mobList[zoneID][63 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (063-Q)
 xi.dynamis.mobList[zoneID][64 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (064-Q)
 xi.dynamis.mobList[zoneID][65 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (065-Q)
-xi.dynamis.mobList[zoneID][66 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (066-Q)
-xi.dynamis.mobList[zoneID][67 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (067-Q)
-xi.dynamis.mobList[zoneID][68 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (068-Q)
+--xi.dynamis.mobList[zoneID][66 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (066-Q)
+--xi.dynamis.mobList[zoneID][67 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (067-Q)
+--xi.dynamis.mobList[zoneID][68 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (068-Q)
 xi.dynamis.mobList[zoneID][69 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (069-Q)
 xi.dynamis.mobList[zoneID][70 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (070-Q)
 xi.dynamis.mobList[zoneID][71 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (071-Q)
-xi.dynamis.mobList[zoneID][72 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (072-Q)
-xi.dynamis.mobList[zoneID][73 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (073-Q)
+--xi.dynamis.mobList[zoneID][72 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (072-Q)
+--xi.dynamis.mobList[zoneID][73 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (073-Q)
 xi.dynamis.mobList[zoneID][74 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (074-Q)
-xi.dynamis.mobList[zoneID][75 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (075-Q)
+--xi.dynamis.mobList[zoneID][75 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (075-Q)
 xi.dynamis.mobList[zoneID][76 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (076-Q)
 xi.dynamis.mobList[zoneID][77 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (077-Q)
 xi.dynamis.mobList[zoneID][78 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (078-Q)
-xi.dynamis.mobList[zoneID][79 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (079-Q)
-xi.dynamis.mobList[zoneID][80 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (080-Q)(MP)
+--xi.dynamis.mobList[zoneID][79 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (079-Q)
+--xi.dynamis.mobList[zoneID][80 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (080-Q)(MP)
 xi.dynamis.mobList[zoneID][81 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (081-Q)
 xi.dynamis.mobList[zoneID][82 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (082-Q)(HP)
 xi.dynamis.mobList[zoneID][83 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (083-Q)
-xi.dynamis.mobList[zoneID][84 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (084-Q)
+--xi.dynamis.mobList[zoneID][84 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (084-Q)
 xi.dynamis.mobList[zoneID][85 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (085-Q)(HP)
-xi.dynamis.mobList[zoneID][86 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (086-Q)
+--xi.dynamis.mobList[zoneID][86 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (086-Q)
 xi.dynamis.mobList[zoneID][87 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (087-Q)
 xi.dynamis.mobList[zoneID][88 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (088-Q)
 xi.dynamis.mobList[zoneID][89 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (089-Q)
-xi.dynamis.mobList[zoneID][90 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (090-Q)
+--xi.dynamis.mobList[zoneID][90 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (090-Q)
 xi.dynamis.mobList[zoneID][91 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (091-Q)
 xi.dynamis.mobList[zoneID][92 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (092-Q)(HP)
-xi.dynamis.mobList[zoneID][93 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (093-Q)
+--xi.dynamis.mobList[zoneID][93 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (093-Q)
 xi.dynamis.mobList[zoneID][94 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (094-Q)(HP)
-xi.dynamis.mobList[zoneID][95 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (095-Q)
+--xi.dynamis.mobList[zoneID][95 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (095-Q)
 xi.dynamis.mobList[zoneID][96 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (096-Q)
-xi.dynamis.mobList[zoneID][97 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (097-Q)
+--xi.dynamis.mobList[zoneID][97 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (097-Q)
 xi.dynamis.mobList[zoneID][98 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (098-Q)
-xi.dynamis.mobList[zoneID][99 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (099-Q)
+--xi.dynamis.mobList[zoneID][99 ].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (099-Q)
 xi.dynamis.mobList[zoneID][100].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (100-Q)
-xi.dynamis.mobList[zoneID][101].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (101-Q)
+--xi.dynamis.mobList[zoneID][101].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (101-Q)
 xi.dynamis.mobList[zoneID][102].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (102-Q)
 xi.dynamis.mobList[zoneID][103].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (103-Q)
 xi.dynamis.mobList[zoneID][104].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (104-Q)
-xi.dynamis.mobList[zoneID][105].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (105-Q)
+--xi.dynamis.mobList[zoneID][105].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (105-Q)
 xi.dynamis.mobList[zoneID][106].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (106-Q)
 xi.dynamis.mobList[zoneID][107].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (107-Q)
-xi.dynamis.mobList[zoneID][108].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (108-Q)
+--xi.dynamis.mobList[zoneID][108].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (108-Q)
 xi.dynamis.mobList[zoneID][109].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (109-Q)
 xi.dynamis.mobList[zoneID][111].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (111-Q)
 xi.dynamis.mobList[zoneID][112].info = {"Statue", "Adamantking Effigy", nil, nil, nil} -- (112-Q)(HP)
@@ -279,106 +279,106 @@ xi.dynamis.mobList[zoneID].waveDefeatRequirements =
 xi.dynamis.mobList[zoneID][1].wave =
 {
     1  , -- (001-Q) Adamantking Effigy
-    2  , -- (002-Q) Adamantking Effigy
+    --2  , -- (002-Q) Adamantking Effigy
     3  , -- (003-Q) Adamantking Effigy
     4  , -- (004-Q) Adamantking Effigy
-    5  , -- (005-Q) Adamantking Effigy
-    6  , -- (006-Q) Adamantking Effigy
+    --5  , -- (005-Q) Adamantking Effigy
+    --6  , -- (006-Q) Adamantking Effigy
     7  , -- (007-Q) Adamantking Effigy
     8  , -- (008-Q) Adamantking Effigy
-    9  , -- (009-Q) Adamantking Effigy
+    --9  , -- (009-Q) Adamantking Effigy
     10 , -- (010-Q) Adamantking Effigy
-    11 , -- (011-Q) Adamantking Effigy
-    12 , -- (012-Q) Adamantking Effigy
+    --11 , -- (011-Q) Adamantking Effigy
+    --12 , -- (012-Q) Adamantking Effigy
     13 , -- (013-Q) Adamantking Effigy
-    14 , -- (014-Q) Adamantking Effigy
+    --14 , -- (014-Q) Adamantking Effigy
     15 , -- (015-Q) Adamantking Effigy
-    16 , -- (016-Q) Adamantking Effigy
+    --16 , -- (016-Q) Adamantking Effigy
     17 , -- (017-Q) Adamantking Effigy
-    18 , -- (018-Q) Adamantking Effigy
+    --18 , -- (018-Q) Adamantking Effigy
     19 , -- (019-Q) Adamantking Effigy
     20 , -- (020-Q) Adamantking Effigy
-    21 , -- (021-Q) Adamantking Effigy
-    22 , -- (022-Q) Adamantking Effigy
-    23 , -- (023-Q) Adamantking Effigy
+    --21 , -- (021-Q) Adamantking Effigy
+    --22 , -- (022-Q) Adamantking Effigy
+    --23 , -- (023-Q) Adamantking Effigy
     24 , -- (024-Q) Adamantking Effigy
     25 , -- (025-Q) Adamantking Effigy
-    27 , -- (027-Q) Adamantking Effigy
+    --27 , -- (027-Q) Adamantking Effigy
     28 , -- (028-Q) Adamantking Effigy
-    32 , -- (032-Q) Adamantking Effigy
+    --32 , -- (032-Q) Adamantking Effigy
     33 , -- (033-Q) Adamantking Effigy
-    34 , -- (034-Q) Adamantking Effigy
+    --34 , -- (034-Q) Adamantking Effigy
     35 , -- (035-Q) Adamantking Effigy
     36 , -- (036-Q) Adamantking Effigy
     37 , -- (037-Q) Adamantking Effigy
     38 , -- (038-Q) Adamantking Effigy
-    39 , -- (039-Q) Adamantking Effigy
+    --39 , -- (039-Q) Adamantking Effigy
     40 , -- (040-Q) Adamantking Effigy
     41 , -- (041-Q) Adamantking Effigy
     42 , -- (042-Q) Adamantking Effigy
     43 , -- (043-Q) Adamantking Effigy
-    44 , -- (044-Q) Adamantking Effigy
+    --44 , -- (044-Q) Adamantking Effigy
     45 , -- (045-Q) Adamantking Effigy
     46 , -- (046-Q) Adamantking Effigy
-    47 , -- (047-Q) Adamantking Effigy
+    --47 , -- (047-Q) Adamantking Effigy
     48 , -- (048-Q) Adamantking Effigy
     49 , -- (049-Q) Adamantking Effigy
-    50 , -- (050-Q) Adamantking Effigy
+    --50 , -- (050-Q) Adamantking Effigy
     51 , -- (051-Q) Adamantking Effigy
-    52 , -- (052-Q) Adamantking Effigy
+    --52 , -- (052-Q) Adamantking Effigy
     53 , -- (053-Q) Adamantking Effigy
     55 , -- (055-Q) Adamantking Effigy
-    56 , -- (056-Q) Adamantking Effigy
-    57 , -- (057-Q) Adamantking Effigy
-    58 , -- (058-Q) Adamantking Effigy
+    --56 , -- (056-Q) Adamantking Effigy
+    --57 , -- (057-Q) Adamantking Effigy
+    --58 , -- (058-Q) Adamantking Effigy
     59 , -- (059-Q) Adamantking Effigy
-    60 , -- (060-Q) Adamantking Effigy
-    61 , -- (061-Q) Adamantking Effigy
+    --60 , -- (060-Q) Adamantking Effigy
+    --61 , -- (061-Q) Adamantking Effigy
     62 , -- (062-Q) Adamantking Effigy
-    63 , -- (063-Q) Adamantking Effigy
+    --63 , -- (063-Q) Adamantking Effigy
     64 , -- (064-Q) Adamantking Effigy
     65 , -- (065-Q) Adamantking Effigy
-    66 , -- (066-Q) Adamantking Effigy
-    67 , -- (067-Q) Adamantking Effigy
-    68 , -- (068-Q) Adamantking Effigy
+    --66 , -- (066-Q) Adamantking Effigy
+    --67 , -- (067-Q) Adamantking Effigy
+    --68 , -- (068-Q) Adamantking Effigy
     69 , -- (069-Q) Adamantking Effigy
     70 , -- (070-Q) Adamantking Effigy
     71 , -- (071-Q) Adamantking Effigy
-    72 , -- (072-Q) Adamantking Effigy
-    73 , -- (073-Q) Adamantking Effigy
+    --72 , -- (072-Q) Adamantking Effigy
+    --73 , -- (073-Q) Adamantking Effigy
     74 , -- (074-Q) Adamantking Effigy
-    75 , -- (075-Q) Adamantking Effigy
+    --75 , -- (075-Q) Adamantking Effigy
     76 , -- (076-Q) Adamantking Effigy
     77 , -- (077-Q) Adamantking Effigy
     78 , -- (078-Q) Adamantking Effigy
-    79 , -- (079-Q) Adamantking Effigy
-    80 , -- (080-Q) Adamantking Effigy
+    --79 , -- (079-Q) Adamantking Effigy
+    --80 , -- (080-Q) Adamantking Effigy
     81 , -- (081-Q) Adamantking Effigy
     82 , -- (082-Q) Adamantking Effigy
     83 , -- (083-Q) Adamantking Effigy
-    84 , -- (084-Q) Adamantking Effigy
+    --84 , -- (084-Q) Adamantking Effigy
     85 , -- (085-Q) Adamantking Effigy
-    86 , -- (086-Q) Adamantking Effigy
+    --86 , -- (086-Q) Adamantking Effigy
     87 , -- (087-Q) Adamantking Effigy
     88 , -- (088-Q) Adamantking Effigy
-    90 , -- (090-Q) Adamantking Effigy
+    --90 , -- (090-Q) Adamantking Effigy
     91 , -- (091-Q) Adamantking Effigy
-    93 , -- (093-Q) Adamantking Effigy
+    --93 , -- (093-Q) Adamantking Effigy
     94 , -- (094-Q) Adamantking Effigy
-    95 , -- (095-Q) Adamantking Effigy
+    --95 , -- (095-Q) Adamantking Effigy
     96 , -- (096-Q) Adamantking Effigy
-    97 , -- (097-Q) Adamantking Effigy
+    --97 , -- (097-Q) Adamantking Effigy
     98 , -- (098-Q) Adamantking Effigy
-    99 , -- (099-Q) Adamantking Effigy
+    --99 , -- (099-Q) Adamantking Effigy
     100, -- (100-Q) Adamantking Effigy
-    101, -- (101-Q) Adamantking Effigy
+    --101, -- (101-Q) Adamantking Effigy
     102, -- (102-Q) Adamantking Effigy
     103, -- (103-Q) Adamantking Effigy
     104, -- (104-Q) Adamantking Effigy
-    105, -- (105-Q) Adamantking Effigy
-    106, -- (106-Q) Adamantking Effigy
+    --105, -- (105-Q) Adamantking Effigy
+    --106, -- (106-Q) Adamantking Effigy
     107, -- (107-Q) Adamantking Effigy
-    108, -- (108-Q) Adamantking Effigy
+    --108, -- (108-Q) Adamantking Effigy
     109  -- (109-Q) Adamantking Effigy
 }
 
@@ -431,34 +431,34 @@ xi.dynamis.mobList[zoneID][3].wave =
 -- xi.dynamis.mobList[zoneID][MobIndex].mobchildren = {#WAR, #MNK, #WHM, #BLM, #RDM, #THF, #PLD, #DRK, #BST, #BRD, #RNG, #SAM, #NIN, #DRG, #SMN}
 
 xi.dynamis.mobList[zoneID][1  ].mobchildren = { nil, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil, nil,   1, nil, nil  }  -- 1 BLM  1 NIN
-xi.dynamis.mobList[zoneID][2  ].mobchildren = { nil, nil, nil, nil, nil, nil, nil, nil, nil,   1, nil,   1, nil, nil, nil  }  -- 1 BRD  1 SAM
+--xi.dynamis.mobList[zoneID][2  ].mobchildren = { nil, nil, nil, nil, nil, nil, nil, nil, nil,   1, nil,   1, nil, nil, nil  }  -- 1 BRD  1 SAM
 xi.dynamis.mobList[zoneID][3  ].mobchildren = {   1, nil, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil  }  -- 1 WAR  1 RDM
 xi.dynamis.mobList[zoneID][4  ].mobchildren = {   1, nil, nil, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil, nil, nil  }  -- 1 WAR  1 THF
-xi.dynamis.mobList[zoneID][5  ].mobchildren = { nil, nil, nil, nil, nil, nil, nil, nil, nil,   1, nil, nil, nil,   1, nil  }  -- 1 BRD  1 DRG
-xi.dynamis.mobList[zoneID][6  ].mobchildren = { nil, nil, nil, nil, nil, nil, nil, nil,   2, nil, nil, nil, nil, nil, nil  }  -- 2 BST
+--xi.dynamis.mobList[zoneID][5  ].mobchildren = { nil, nil, nil, nil, nil, nil, nil, nil, nil,   1, nil, nil, nil,   1, nil  }  -- 1 BRD  1 DRG
+--xi.dynamis.mobList[zoneID][6  ].mobchildren = { nil, nil, nil, nil, nil, nil, nil, nil,   2, nil, nil, nil, nil, nil, nil  }  -- 2 BST
 xi.dynamis.mobList[zoneID][7  ].mobchildren = { nil, nil, nil, nil, nil, nil, nil, nil,   2, nil, nil, nil, nil, nil, nil  }  -- 2 BST
 xi.dynamis.mobList[zoneID][8  ].mobchildren = { nil, nil, nil, nil, nil, nil, nil, nil,   2, nil, nil, nil, nil, nil, nil  }  -- 2 BST
-xi.dynamis.mobList[zoneID][9  ].mobchildren = { nil, nil, nil, nil, nil, nil, nil, nil, nil,   1, nil,   1, nil, nil, nil  }  -- 1 BRD  1 SAM
+--xi.dynamis.mobList[zoneID][9  ].mobchildren = { nil, nil, nil, nil, nil, nil, nil, nil, nil,   1, nil,   1, nil, nil, nil  }  -- 1 BRD  1 SAM
 xi.dynamis.mobList[zoneID][10 ].mobchildren = { nil, nil, nil, nil, nil, nil, nil, nil, nil,   1, nil,   1, nil, nil, nil  }  -- 1 BRD  1 SAM
-xi.dynamis.mobList[zoneID][11 ].mobchildren = {   1, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil, nil,   1, nil, nil  }  -- 1 WAR  1 BLM  1 NIN
-xi.dynamis.mobList[zoneID][12 ].mobchildren = { nil, nil, nil, nil, nil, nil, nil, nil, nil,   1, nil,   1, nil,   1, nil  }  -- 1 BRD  1 SAM  1 DRG
+--xi.dynamis.mobList[zoneID][11 ].mobchildren = {   1, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil, nil,   1, nil, nil  }  -- 1 WAR  1 BLM  1 NIN
+--xi.dynamis.mobList[zoneID][12 ].mobchildren = { nil, nil, nil, nil, nil, nil, nil, nil, nil,   1, nil,   1, nil,   1, nil  }  -- 1 BRD  1 SAM  1 DRG
 xi.dynamis.mobList[zoneID][13 ].mobchildren = { nil, nil,   1, nil, nil, nil, nil, nil, nil, nil, nil, nil,   1, nil, nil  }  -- 1 WHM  1 NIN
-xi.dynamis.mobList[zoneID][14 ].mobchildren = { nil, nil, nil,   1, nil, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil  }  -- 1 BLM  1 DRK
-xi.dynamis.mobList[zoneID][16 ].mobchildren = { nil, nil, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil  }  -- 1 RDM
-xi.dynamis.mobList[zoneID][18 ].mobchildren = { nil, nil, nil, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil, nil, nil  }  -- 1 THF
+--xi.dynamis.mobList[zoneID][14 ].mobchildren = { nil, nil, nil,   1, nil, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil  }  -- 1 BLM  1 DRK
+--xi.dynamis.mobList[zoneID][16 ].mobchildren = { nil, nil, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil  }  -- 1 RDM
+--xi.dynamis.mobList[zoneID][18 ].mobchildren = { nil, nil, nil, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil, nil, nil  }  -- 1 THF
 xi.dynamis.mobList[zoneID][20 ].mobchildren = { nil, nil, nil,   1, nil, nil, nil,   1, nil, nil, nil, nil,   1, nil, nil  }  -- 1 BLM  1 DRK  1 NIN
-xi.dynamis.mobList[zoneID][21 ].mobchildren = { nil, nil, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil, nil,   1, nil  }  -- 1 RDM  1 DRG
-xi.dynamis.mobList[zoneID][22 ].mobchildren = { nil, nil, nil, nil, nil, nil, nil,   1, nil,   1, nil, nil, nil, nil, nil  }  -- 1 DRK  1 BRD
-xi.dynamis.mobList[zoneID][23 ].mobchildren = { nil, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil,   1, nil, nil, nil  }  -- 1 BLM  1 SAM
+--xi.dynamis.mobList[zoneID][21 ].mobchildren = { nil, nil, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil, nil,   1, nil  }  -- 1 RDM  1 DRG
+--xi.dynamis.mobList[zoneID][22 ].mobchildren = { nil, nil, nil, nil, nil, nil, nil,   1, nil,   1, nil, nil, nil, nil, nil  }  -- 1 DRK  1 BRD
+--xi.dynamis.mobList[zoneID][23 ].mobchildren = { nil, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil,   1, nil, nil, nil  }  -- 1 BLM  1 SAM
 xi.dynamis.mobList[zoneID][24 ].mobchildren = { nil,   1, nil, nil, nil, nil, nil, nil, nil, nil,   1, nil, nil, nil, nil  }  -- 1 MNK  1 RNG
 xi.dynamis.mobList[zoneID][25 ].mobchildren = {   1, nil,   1, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil  }  -- 1 WAR  1 WHM
-xi.dynamis.mobList[zoneID][27 ].mobchildren = { nil, nil, nil, nil,   1,   1, nil, nil, nil, nil, nil, nil, nil, nil, nil  }  -- 1 RDM  1 THF
+--xi.dynamis.mobList[zoneID][27 ].mobchildren = { nil, nil, nil, nil,   1,   1, nil, nil, nil, nil, nil, nil, nil, nil, nil  }  -- 1 RDM  1 THF
 xi.dynamis.mobList[zoneID][29 ].mobchildren = { nil, nil, nil, nil, nil, nil,   1, nil, nil, nil, nil, nil,   1, nil, nil  }  -- 1 PLD  1 NIN
 xi.dynamis.mobList[zoneID][30 ].mobchildren = {   1, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil,   1, nil, nil, nil  }  -- 1 WAR  1 SAM
 xi.dynamis.mobList[zoneID][31 ].mobchildren = { nil, nil, nil,   1, nil, nil, nil, nil, nil,   1, nil, nil, nil, nil, nil  }  -- 1 BLM  1 BRD
-xi.dynamis.mobList[zoneID][32 ].mobchildren = { nil, nil,   1, nil, nil, nil, nil,   1, nil, nil, nil, nil,   1, nil, nil  }  -- 1 WHM  1 DRK  1 NIN
+--xi.dynamis.mobList[zoneID][32 ].mobchildren = { nil, nil,   1, nil, nil, nil, nil,   1, nil, nil, nil, nil,   1, nil, nil  }  -- 1 WHM  1 DRK  1 NIN
 xi.dynamis.mobList[zoneID][33 ].mobchildren = {   1, nil, nil, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil, nil, nil  }  -- 1 WAR  1 THF
-xi.dynamis.mobList[zoneID][34 ].mobchildren = { nil, nil,   1, nil, nil, nil, nil, nil, nil, nil, nil,   1, nil, nil, nil  }  -- 1 WHM  1 SAM
+--xi.dynamis.mobList[zoneID][34 ].mobchildren = { nil, nil,   1, nil, nil, nil, nil, nil, nil, nil, nil,   1, nil, nil, nil  }  -- 1 WHM  1 SAM
 xi.dynamis.mobList[zoneID][35 ].mobchildren = { nil,   1, nil, nil, nil, nil,   1, nil, nil,   1, nil, nil, nil, nil, nil  }  -- 1 MNK  1 PLD  1 BRD
 xi.dynamis.mobList[zoneID][36 ].mobchildren = { nil,   1, nil, nil,   1, nil,   1, nil, nil, nil, nil, nil, nil, nil, nil  }  -- 1 MNK  1 RDM  1 PLD
 xi.dynamis.mobList[zoneID][37 ].mobchildren = { nil, nil, nil, nil,   1, nil,   1, nil, nil, nil, nil, nil,   1, nil, nil  }  -- 1 RDM  1 PLD  1 NIN
@@ -467,57 +467,57 @@ xi.dynamis.mobList[zoneID][42 ].mobchildren = { nil, nil, nil, nil, nil, nil, ni
 xi.dynamis.mobList[zoneID][43 ].mobchildren = { nil, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil,   1, nil, nil, nil  }  -- 1 BLM  1 SAM
 xi.dynamis.mobList[zoneID][45 ].mobchildren = {   1,   1, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil  }  -- 1 WAR  1 MNK  1 RDM
 xi.dynamis.mobList[zoneID][46 ].mobchildren = {   1, nil, nil, nil,   1, nil, nil, nil, nil, nil, nil,   1, nil, nil, nil  }  -- 1 WAR  1 RDM  1 SAM
-xi.dynamis.mobList[zoneID][47 ].mobchildren = { nil,   1, nil, nil,   1, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil  }  -- 1 MNK  1 RDM  1 DRK
+--xi.dynamis.mobList[zoneID][47 ].mobchildren = { nil,   1, nil, nil,   1, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil  }  -- 1 MNK  1 RDM  1 DRK
 xi.dynamis.mobList[zoneID][48 ].mobchildren = { nil, nil, nil,   1, nil,   1,   1, nil, nil, nil, nil, nil, nil, nil, nil  }  -- 1 BLM  1 THF  1 PLD
 xi.dynamis.mobList[zoneID][49 ].mobchildren = { nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil,   1, nil, nil  }  -- 1 NIN
-xi.dynamis.mobList[zoneID][50 ].mobchildren = {   1, nil, nil, nil, nil, nil, nil, nil, nil,   1, nil, nil, nil, nil, nil  }  -- 1 WAR  1 BRD
+--xi.dynamis.mobList[zoneID][50 ].mobchildren = {   1, nil, nil, nil, nil, nil, nil, nil, nil,   1, nil, nil, nil, nil, nil  }  -- 1 WAR  1 BRD
 xi.dynamis.mobList[zoneID][51 ].mobchildren = { nil, nil, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil,   1,   1, nil  }  -- 1 RDM  1 NIN  1 DRG
-xi.dynamis.mobList[zoneID][52 ].mobchildren = { nil, nil, nil, nil, nil, nil, nil,   1, nil,   1, nil,   1, nil, nil, nil  }  -- 1 DRK  1 BRD  1 SAM
+--xi.dynamis.mobList[zoneID][52 ].mobchildren = { nil, nil, nil, nil, nil, nil, nil,   1, nil,   1, nil,   1, nil, nil, nil  }  -- 1 DRK  1 BRD  1 SAM
 xi.dynamis.mobList[zoneID][53 ].mobchildren = { nil, nil,   1, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil  }  -- 1 WHM
 xi.dynamis.mobList[zoneID][55 ].mobchildren = { nil, nil,   1, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil  }  -- 1 WHM
-xi.dynamis.mobList[zoneID][56 ].mobchildren = { nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil,   1  }  -- 1 SMN
-xi.dynamis.mobList[zoneID][57 ].mobchildren = { nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil,   1  }  -- 1 SMN
-xi.dynamis.mobList[zoneID][58 ].mobchildren = {   1,   1,   1, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil  }  -- 1 WAR  1 MNK  1 WHM
+--xi.dynamis.mobList[zoneID][56 ].mobchildren = { nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil,   1  }  -- 1 SMN
+--xi.dynamis.mobList[zoneID][57 ].mobchildren = { nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil,   1  }  -- 1 SMN
+--xi.dynamis.mobList[zoneID][58 ].mobchildren = {   1,   1,   1, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil  }  -- 1 WAR  1 MNK  1 WHM
 xi.dynamis.mobList[zoneID][59 ].mobchildren = {   1, nil, nil, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil, nil, nil  }  -- 1 WAR  1 THF
-xi.dynamis.mobList[zoneID][60 ].mobchildren = { nil,   1,   1, nil, nil, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil  }  -- 1 MNK  1 WHM  1 DRK
-xi.dynamis.mobList[zoneID][61 ].mobchildren = { nil,   1,   1, nil, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil, nil  }  -- 1 MNK  1 WHM  1 PLD
+--xi.dynamis.mobList[zoneID][60 ].mobchildren = { nil,   1,   1, nil, nil, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil  }  -- 1 MNK  1 WHM  1 DRK
+--xi.dynamis.mobList[zoneID][61 ].mobchildren = { nil,   1,   1, nil, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil, nil  }  -- 1 MNK  1 WHM  1 PLD
 xi.dynamis.mobList[zoneID][62 ].mobchildren = { nil, nil,   1, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil  }  -- 1 WHM
-xi.dynamis.mobList[zoneID][63 ].mobchildren = { nil,   1,   1, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil,   1, nil  }  -- 1 MNK  1 WHM  1 DRG
+--xi.dynamis.mobList[zoneID][63 ].mobchildren = { nil,   1,   1, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil,   1, nil  }  -- 1 MNK  1 WHM  1 DRG
 xi.dynamis.mobList[zoneID][64 ].mobchildren = { nil, nil, nil, nil, nil, nil, nil,   1,   1, nil, nil, nil, nil, nil,   1  }  -- 1 DRK  1 BST  1 SMN
 xi.dynamis.mobList[zoneID][65 ].mobchildren = { nil,   1, nil, nil, nil, nil, nil,   1, nil,   1, nil, nil, nil, nil, nil  }  -- 1 MNK  1 DRK  1 BRD
-xi.dynamis.mobList[zoneID][66 ].mobchildren = {   1, nil, nil, nil,   1,   1, nil, nil, nil, nil, nil, nil, nil, nil, nil  }  -- 1 WAR  1 RDM  1 THF
-xi.dynamis.mobList[zoneID][68 ].mobchildren = { nil, nil, nil,   1, nil, nil,   1, nil, nil, nil, nil,   1, nil, nil, nil  }  -- 1 BLM  1 PLD  1 SAM
+--xi.dynamis.mobList[zoneID][66 ].mobchildren = {   1, nil, nil, nil,   1,   1, nil, nil, nil, nil, nil, nil, nil, nil, nil  }  -- 1 WAR  1 RDM  1 THF
+--xi.dynamis.mobList[zoneID][68 ].mobchildren = { nil, nil, nil,   1, nil, nil,   1, nil, nil, nil, nil,   1, nil, nil, nil  }  -- 1 BLM  1 PLD  1 SAM
 xi.dynamis.mobList[zoneID][69 ].mobchildren = { nil, nil,   1, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil  }  -- 1 WHM
 xi.dynamis.mobList[zoneID][70 ].mobchildren = { nil, nil, nil, nil, nil, nil, nil, nil, nil, nil,   2, nil, nil, nil, nil  }  -- 2 RNG
 xi.dynamis.mobList[zoneID][71 ].mobchildren = { nil, nil, nil, nil, nil, nil, nil, nil, nil, nil,   1, nil, nil, nil, nil  }  -- 1 RNG
-xi.dynamis.mobList[zoneID][72 ].mobchildren = { nil, nil, nil, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil,   1, nil  }  -- 1 THF  1 DRG
-xi.dynamis.mobList[zoneID][73 ].mobchildren = { nil, nil, nil, nil, nil, nil, nil,   1, nil, nil, nil,   1, nil, nil, nil  }  -- 1 DRK  1 SAM
-xi.dynamis.mobList[zoneID][75 ].mobchildren = { nil, nil, nil, nil, nil, nil,   1, nil, nil, nil, nil, nil,   1, nil, nil  }  -- 1 PLD  1 NIN
+--xi.dynamis.mobList[zoneID][72 ].mobchildren = { nil, nil, nil, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil,   1, nil  }  -- 1 THF  1 DRG
+--xi.dynamis.mobList[zoneID][73 ].mobchildren = { nil, nil, nil, nil, nil, nil, nil,   1, nil, nil, nil,   1, nil, nil, nil  }  -- 1 DRK  1 SAM
+--xi.dynamis.mobList[zoneID][75 ].mobchildren = { nil, nil, nil, nil, nil, nil,   1, nil, nil, nil, nil, nil,   1, nil, nil  }  -- 1 PLD  1 NIN
 xi.dynamis.mobList[zoneID][76 ].mobchildren = {   1, nil, nil, nil, nil, nil, nil, nil, nil,   1, nil, nil, nil, nil, nil  }  -- 1 WAR  1 BRD
 xi.dynamis.mobList[zoneID][77 ].mobchildren = { nil, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil, nil, nil,   1, nil  }  -- 1 BLM  1 DRG
 xi.dynamis.mobList[zoneID][78 ].mobchildren = { nil,   1, nil,   1, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil, nil  }  -- 1 MNK  1 BLM  1 PLD
-xi.dynamis.mobList[zoneID][79 ].mobchildren = { nil,   1, nil,   1, nil, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil  }  -- 1 MNK  1 BLM  1 DRK
+--xi.dynamis.mobList[zoneID][79 ].mobchildren = { nil,   1, nil,   1, nil, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil  }  -- 1 MNK  1 BLM  1 DRK
 xi.dynamis.mobList[zoneID][82 ].mobchildren = { nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil,   1, nil, nil  }  -- 1 NIN
 xi.dynamis.mobList[zoneID][83 ].mobchildren = { nil, nil, nil, nil, nil, nil,   1, nil, nil, nil, nil, nil,   1, nil, nil  }  -- 1 PLD  1 NIN
-xi.dynamis.mobList[zoneID][86 ].mobchildren = {   1, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil,   1, nil, nil  }  -- 1 WAR  1 NIN
+--xi.dynamis.mobList[zoneID][86 ].mobchildren = {   1, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil,   1, nil, nil  }  -- 1 WAR  1 NIN
 xi.dynamis.mobList[zoneID][87 ].mobchildren = { nil, nil, nil, nil, nil, nil, nil,   1, nil,   1, nil,   1, nil, nil, nil  }  -- 1 DRK  1 BRD  1 SAM
 xi.dynamis.mobList[zoneID][88 ].mobchildren = { nil,   2, nil, nil, nil, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil  }  -- 2 MNK  1 DRK
 xi.dynamis.mobList[zoneID][89 ].mobchildren = { nil, nil, nil,   1, nil, nil, nil, nil, nil, nil,   2, nil, nil, nil, nil  }  -- 1 WAR  1 MNK  1 WHM  1 BLM  2 RNG
-xi.dynamis.mobList[zoneID][90 ].mobchildren = { nil, nil,   1, nil, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil, nil  }  -- 1 WHM  1 PLD
+--xi.dynamis.mobList[zoneID][90 ].mobchildren = { nil, nil,   1, nil, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil, nil  }  -- 1 WHM  1 PLD
 xi.dynamis.mobList[zoneID][91 ].mobchildren = { nil, nil,   1, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil  }  -- 1 WHM
-xi.dynamis.mobList[zoneID][93 ].mobchildren = { nil,   1, nil, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil,   1, nil  }  -- 1 MNK  1 THF  1 DRG
-xi.dynamis.mobList[zoneID][95 ].mobchildren = { nil, nil, nil, nil, nil,   1,   1, nil, nil, nil, nil, nil, nil, nil, nil  }  -- 1 THF  1 PLD
+--xi.dynamis.mobList[zoneID][93 ].mobchildren = { nil,   1, nil, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil,   1, nil  }  -- 1 MNK  1 THF  1 DRG
+--xi.dynamis.mobList[zoneID][95 ].mobchildren = { nil, nil, nil, nil, nil,   1,   1, nil, nil, nil, nil, nil, nil, nil, nil  }  -- 1 THF  1 PLD
 xi.dynamis.mobList[zoneID][96 ].mobchildren = { nil, nil, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil,   1, nil, nil  }  -- 1 RDM  1 NIN
-xi.dynamis.mobList[zoneID][97 ].mobchildren = { nil, nil, nil,   1, nil,   1, nil, nil, nil, nil, nil, nil, nil, nil, nil  }  -- 1 BLM  1 THF
+--xi.dynamis.mobList[zoneID][97 ].mobchildren = { nil, nil, nil,   1, nil,   1, nil, nil, nil, nil, nil, nil, nil, nil, nil  }  -- 1 BLM  1 THF
 xi.dynamis.mobList[zoneID][98 ].mobchildren = { nil, nil, nil, nil, nil, nil, nil, nil, nil,   1, nil, nil,   1, nil, nil  }  -- 1 BRD  1 NIN
-xi.dynamis.mobList[zoneID][99 ].mobchildren = { nil, nil, nil, nil, nil, nil, nil,   1, nil,   1, nil, nil, nil, nil, nil  }  -- 1 DRK  1 BRD
+--xi.dynamis.mobList[zoneID][99 ].mobchildren = { nil, nil, nil, nil, nil, nil, nil,   1, nil,   1, nil, nil, nil, nil, nil  }  -- 1 DRK  1 BRD
 xi.dynamis.mobList[zoneID][100].mobchildren = { nil, nil, nil, nil,   1, nil,   1, nil, nil, nil, nil, nil, nil, nil, nil  }  -- 1 RDM  1 PLD
-xi.dynamis.mobList[zoneID][101].mobchildren = { nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil,   1, nil,   1, nil  }  -- 1 SAM  1 DRG
+--xi.dynamis.mobList[zoneID][101].mobchildren = { nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil,   1, nil,   1, nil  }  -- 1 SAM  1 DRG
 xi.dynamis.mobList[zoneID][102].mobchildren = { nil, nil, nil, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil, nil, nil  }  -- 1 THF
-xi.dynamis.mobList[zoneID][105].mobchildren = { nil, nil, nil, nil,   1, nil, nil, nil, nil, nil, nil,   1, nil, nil, nil  }  -- 1 RDM  1 SAM
-xi.dynamis.mobList[zoneID][106].mobchildren = { nil, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil, nil,   1, nil, nil  }  -- 1 BLM  1 NIN
+--xi.dynamis.mobList[zoneID][105].mobchildren = { nil, nil, nil, nil,   1, nil, nil, nil, nil, nil, nil,   1, nil, nil, nil  }  -- 1 RDM  1 SAM
+--xi.dynamis.mobList[zoneID][106].mobchildren = { nil, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil, nil,   1, nil, nil  }  -- 1 BLM  1 NIN
 xi.dynamis.mobList[zoneID][107].mobchildren = { nil,   1, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil,   1, nil  }  -- 1 MNK  1 DRG
-xi.dynamis.mobList[zoneID][108].mobchildren = { nil, nil, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil, nil,   1, nil  }  -- 1 RDM  1 DRG
+--xi.dynamis.mobList[zoneID][108].mobchildren = { nil, nil, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil, nil,   1, nil  }  -- 1 RDM  1 DRG
 xi.dynamis.mobList[zoneID][109].mobchildren = { nil, nil, nil,   1, nil, nil,   1, nil, nil, nil, nil, nil, nil, nil, nil  }  -- 1 BLM  1 PLD
 xi.dynamis.mobList[zoneID][112].mobchildren = {   3, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil  }  -- 3 WAR
 xi.dynamis.mobList[zoneID][113].mobchildren = { nil, nil, nil,   3, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil  }  -- 3 BLM
@@ -577,113 +577,113 @@ xi.dynamis.mobList[zoneID][110].nmchildren = { true, 111, 149, 150, 151, 152, 15
 -- xi.dynamis.mobList[zoneID][MobIndex].pos = {xpos, ypos, zpos, rot}
 
 xi.dynamis.mobList[zoneID][1  ].pos = { 81.7644, 0.0000, -71.8662, 0   } -- W1 Mog C
-xi.dynamis.mobList[zoneID][2  ].pos = { 76.1541, 0.0000, -66.1046, 10  } -- W1 Mog N
+--xi.dynamis.mobList[zoneID][2  ].pos = { 76.1541, 0.0000, -66.1046, 10  } -- W1 Mog N
 xi.dynamis.mobList[zoneID][3  ].pos = { 60.4041, 0.0000, -81.5565, 8   } -- W1 Mog S
 xi.dynamis.mobList[zoneID][4  ].pos = { 42.8057, 0.0000, -56.8658, 80  } -- W1 AH E.Alley S
-xi.dynamis.mobList[zoneID][5  ].pos = { 38.2376, 0.0000, -42.7884, 75  } -- W1 AH E.Alley C
-xi.dynamis.mobList[zoneID][6  ].pos = { 39.9337, 0.7986, -88.8102, 192 } -- W1 Choc C
+--xi.dynamis.mobList[zoneID][5  ].pos = { 38.2376, 0.0000, -42.7884, 75  } -- W1 AH E.Alley C
+--xi.dynamis.mobList[zoneID][6  ].pos = { 39.9337, 0.7986, -88.8102, 192 } -- W1 Choc C
 xi.dynamis.mobList[zoneID][7  ].pos = { 49.9168, 0.8720, -90.7635, 182 } -- W1 Choc E
 xi.dynamis.mobList[zoneID][8  ].pos = { 28.6896, 0.8720, -91.7210, 202 } -- W1 Choc W
-xi.dynamis.mobList[zoneID][9  ].pos = { 19.0447, 0.0000, -71.2227, 45  } -- W1 AH EE
+--xi.dynamis.mobList[zoneID][9  ].pos = { 19.0447, 0.0000, -71.2227, 45  } -- W1 AH EE
 xi.dynamis.mobList[zoneID][10 ].pos = { 10.7120, 0.0000, -78.6646, 53  } -- W1 AH E
-xi.dynamis.mobList[zoneID][11 ].pos = {  7.0503, 0.0000,-100.7739, 192 } -- W1 W of Choc
-xi.dynamis.mobList[zoneID][12 ].pos = {  0.0159, 0.0000, -73.3527, 61  } -- W1 AH C
+--xi.dynamis.mobList[zoneID][11 ].pos = {  7.0503, 0.0000,-100.7739, 192 } -- W1 W of Choc
+--xi.dynamis.mobList[zoneID][12 ].pos = {  0.0159, 0.0000, -73.3527, 61  } -- W1 AH C
 xi.dynamis.mobList[zoneID][13 ].pos = { -9.0602, 0.0000, -78.5527, 69  } -- W1 AH W
-xi.dynamis.mobList[zoneID][14 ].pos = {-18.9468, 0.0000, -71.3164, 77  } -- W1 AH WW
+--xi.dynamis.mobList[zoneID][14 ].pos = {-18.9468, 0.0000, -71.3164, 77  } -- W1 AH WW
 xi.dynamis.mobList[zoneID][15 ].pos = { 16.3665,-3.0000, -54.6565, 175 } -- W1 AHtop EE
-xi.dynamis.mobList[zoneID][16 ].pos = {  8.4347,-3.0000, -56.4465, 183 } -- W1 AHtop E
+--xi.dynamis.mobList[zoneID][16 ].pos = {  8.4347,-3.0000, -56.4465, 183 } -- W1 AHtop E
 xi.dynamis.mobList[zoneID][17 ].pos = { -0.0019,-3.0000, -57.3668, 191 } -- W1 AHtop C
-xi.dynamis.mobList[zoneID][18 ].pos = { -8.4375,-3.0000, -56.5214, 199 } -- W1 AHtop W
+--xi.dynamis.mobList[zoneID][18 ].pos = { -8.4375,-3.0000, -56.5214, 199 } -- W1 AHtop W
 xi.dynamis.mobList[zoneID][19 ].pos = {-16.4125,-3.0000, -54.3911, 207 } -- W1 AHtop WW
 xi.dynamis.mobList[zoneID][20 ].pos = {-35.5730, 0.0000, -78.3345, 9   } -- W1 SW of AH
-xi.dynamis.mobList[zoneID][21 ].pos = {-24.4831, 0.0000, -97.2766, 192 } -- W1 S.Gate NW
-xi.dynamis.mobList[zoneID][22 ].pos = {-10.4154,-1.0008,-106.0800, 192 } -- W1 S.Gate C
-xi.dynamis.mobList[zoneID][23 ].pos = {-24.4167,-1.0008,-106.3167, 192 } -- W1 S.Gate W
+--xi.dynamis.mobList[zoneID][21 ].pos = {-24.4831, 0.0000, -97.2766, 192 } -- W1 S.Gate NW
+--xi.dynamis.mobList[zoneID][22 ].pos = {-10.4154,-1.0008,-106.0800, 192 } -- W1 S.Gate C
+--xi.dynamis.mobList[zoneID][23 ].pos = {-24.4167,-1.0008,-106.3167, 192 } -- W1 S.Gate W
 xi.dynamis.mobList[zoneID][24 ].pos = { -5.6342,-1.0008,-115.6188, 192 } -- W1 S.Gate SE
 xi.dynamis.mobList[zoneID][25 ].pos = {-16.2038,-1.0008,-122.3855, 192 } -- W1 S.Gate S
 xi.dynamis.mobList[zoneID][26 ].pos = {-23.9244,-1.0008,-121.6056, 227 } -- W1 spawned by 330
-xi.dynamis.mobList[zoneID][27 ].pos = {-26.3670,-1.0008,-121.4364, 192 } -- W1 S.Gate SW
+--xi.dynamis.mobList[zoneID][27 ].pos = {-26.3670,-1.0008,-121.4364, 192 } -- W1 S.Gate SW
 xi.dynamis.mobList[zoneID][28 ].pos = {-37.0065, 0.0000, -56.1556, 60  } -- W1 W of AH (S)
 xi.dynamis.mobList[zoneID][29 ].pos = {-35.4041, 0.0000, -58.2174, 60  } -- W1 spawned by 313
 xi.dynamis.mobList[zoneID][30 ].pos = {-38.9458, 0.0000, -58.3568, 60  } -- W1 spawned by 313
 xi.dynamis.mobList[zoneID][31 ].pos = {-37.0648, 0.0000, -53.8018, 64  } -- W1 spawned by 313
-xi.dynamis.mobList[zoneID][32 ].pos = {-38.4296, 0.0000, -38.0029, 60  } -- W1 W of AH (C)
+--xi.dynamis.mobList[zoneID][32 ].pos = {-38.4296, 0.0000, -38.0029, 60  } -- W1 W of AH (C)
 xi.dynamis.mobList[zoneID][33 ].pos = {-28.5587, 0.0000, -25.8180, 82  } -- W1 W of AH (NE)
-xi.dynamis.mobList[zoneID][34 ].pos = {-46.8709, 0.0000, -20.4151, 49  } -- W1 W of AH (NW)
+--xi.dynamis.mobList[zoneID][34 ].pos = {-46.8709, 0.0000, -20.4151, 49  } -- W1 W of AH (NW)
 xi.dynamis.mobList[zoneID][35 ].pos = {  0.4871, 0.0000, -24.9742, 128 } -- W1 AH N.Alley C
 xi.dynamis.mobList[zoneID][36 ].pos = { -4.9191, 0.0000, -17.1571, 190 } -- W1 AH N.Alley Catwalk
 xi.dynamis.mobList[zoneID][37 ].pos = { 30.4976, 0.0000, -26.9415, 55  } -- W1 AH E.Alley N
 xi.dynamis.mobList[zoneID][38 ].pos = {-41.0685, 0.0000,  -2.1238, 255 } -- W1 W of Boytz (S)
-xi.dynamis.mobList[zoneID][39 ].pos = {-45.5975, 0.0000,   4.8671, 128 } -- W1 W of Boytz (C)
+--xi.dynamis.mobList[zoneID][39 ].pos = {-45.5975, 0.0000,   4.8671, 128 } -- W1 W of Boytz (C)
 xi.dynamis.mobList[zoneID][40 ].pos = {-44.9282,-3.4933,  15.1018, 93  } -- W1 W of Boytz (N)
 xi.dynamis.mobList[zoneID][41 ].pos = {-57.7503, 0.0000,  41.0368, 192 } -- W1 Corner Shed E
 xi.dynamis.mobList[zoneID][42 ].pos = {-64.5615, 0.0000,  41.3409, 192 } -- W1 Corner Sheds W
 xi.dynamis.mobList[zoneID][43 ].pos = { -21.3849, 7.0000, 31.8739, 119 } -- W1 O.St. Entr N
-xi.dynamis.mobList[zoneID][44 ].pos = { -20.1820, 7.0000, 27.5603, 130 } -- W1 O.St. Entr S
+--xi.dynamis.mobList[zoneID][44 ].pos = { -20.1820, 7.0000, 27.5603, 130 } -- W1 O.St. Entr S
 xi.dynamis.mobList[zoneID][45 ].pos = {   2.0635, 7.0000, 18.2131, 159 } -- W1 O.St. NW
 xi.dynamis.mobList[zoneID][46 ].pos = {  -2.5034, 7.0000, -6.0080, 0   } -- W1 O.St. SW
-xi.dynamis.mobList[zoneID][47 ].pos = {  21.0685, 7.0000,  1.1670, 115 } -- W1 O.St. NE
+--xi.dynamis.mobList[zoneID][47 ].pos = {  21.0685, 7.0000,  1.1670, 115 } -- W1 O.St. NE
 xi.dynamis.mobList[zoneID][48 ].pos = {  14.0251, 7.0000, -8.5442, 192 } -- W1 O.St. SE
 xi.dynamis.mobList[zoneID][49 ].pos = {  30.9778, 7.0000,  5.6604, 64  } -- W1 O.St. CW S.Well Base
-xi.dynamis.mobList[zoneID][50 ].pos = {  31.0277, 0.0000, 23.8121, 64  } -- W1 O.St. CW S.Well#2
+--xi.dynamis.mobList[zoneID][50 ].pos = {  31.0277, 0.0000, 23.8121, 64  } -- W1 O.St. CW S.Well#2
 xi.dynamis.mobList[zoneID][51 ].pos = {  69.9420, 7.0000,  2.5947, 64  } -- W1 Alch NW
-xi.dynamis.mobList[zoneID][52 ].pos = {  81.9570, 7.0000,  2.3986, 64  } -- W1 Alch NE
+--xi.dynamis.mobList[zoneID][52 ].pos = {  81.9570, 7.0000,  2.3986, 64  } -- W1 Alch NE
 xi.dynamis.mobList[zoneID][53 ].pos = {  90.2082, 7.0029, -2.4041, 128 } -- W1 Alch E
 xi.dynamis.mobList[zoneID][54 ].pos = {  90.0454, 7.0000, -5.9869, 133 } -- W1 spawned by 222
 xi.dynamis.mobList[zoneID][55 ].pos = {  73.8867, 7.0029,-34.8135, 185 } -- W1 Gal.Dist. S
-xi.dynamis.mobList[zoneID][56 ].pos = {  83.5793, 7.0000,-32.4353, 145 } -- W1 Gal.Dist. E
-xi.dynamis.mobList[zoneID][57 ].pos = {  63.8661, 7.0000,-32.7333, 215 } -- W1 Gal.Dist. W
-xi.dynamis.mobList[zoneID][58 ].pos = {-78.0000, 0.0000,   4.0000, 0   } -- W1 Under Bridge NE
+--xi.dynamis.mobList[zoneID][56 ].pos = {  83.5793, 7.0000,-32.4353, 145 } -- W1 Gal.Dist. E
+--xi.dynamis.mobList[zoneID][57 ].pos = {  63.8661, 7.0000,-32.7333, 215 } -- W1 Gal.Dist. W
+--xi.dynamis.mobList[zoneID][58 ].pos = {-78.0000, 0.0000,   4.0000, 0   } -- W1 Under Bridge NE
 xi.dynamis.mobList[zoneID][59 ].pos = {-74.0000, 0.0000,   0.0000, 0   } -- W1 Under Bridge E
-xi.dynamis.mobList[zoneID][60 ].pos = {-78.0000, 0.0000,  -4.0000, 0   } -- W1 Under Bridge SE
-xi.dynamis.mobList[zoneID][61 ].pos = {-91.2000, 0.0000,   6.0000, 0   } -- W1 Under Bridge NW
+--xi.dynamis.mobList[zoneID][60 ].pos = {-78.0000, 0.0000,  -4.0000, 0   } -- W1 Under Bridge SE
+--xi.dynamis.mobList[zoneID][61 ].pos = {-91.2000, 0.0000,   6.0000, 0   } -- W1 Under Bridge NW
 xi.dynamis.mobList[zoneID][62 ].pos = {-91.2000, 0.0000,  -1.0000, 0   } -- W1 Under Bridge W
-xi.dynamis.mobList[zoneID][63 ].pos = {-91.2000, 0.0000,  -6.0000, 0   } -- W1 Under Bridge SW
+--xi.dynamis.mobList[zoneID][63 ].pos = {-91.2000, 0.0000,  -6.0000, 0   } -- W1 Under Bridge SW
 xi.dynamis.mobList[zoneID][64 ].pos = {-108.8306, 0.0000, -9.2511, 234 } -- W1 Chokepoint/Zeruhn Sect
 xi.dynamis.mobList[zoneID][65 ].pos = { -99.3387, 8.0000, 46.4492, 72  } -- W1 Markets S
-xi.dynamis.mobList[zoneID][66 ].pos = {-103.6146,10.0026, 56.2027, 60  } -- W1 Markets C
-xi.dynamis.mobList[zoneID][67 ].pos = {-111.2602,12.0000, 65.9353, 64  } -- W1 Markets W
-xi.dynamis.mobList[zoneID][68 ].pos = { -96.7740,12.0000, 66.2248, 64  } -- W1 Markets E
+--xi.dynamis.mobList[zoneID][66 ].pos = {-103.6146,10.0026, 56.2027, 60  } -- W1 Markets C
+--xi.dynamis.mobList[zoneID][67 ].pos = {-111.2602,12.0000, 65.9353, 64  } -- W1 Markets W
+--xi.dynamis.mobList[zoneID][68 ].pos = { -96.7740,12.0000, 66.2248, 64  } -- W1 Markets E
 xi.dynamis.mobList[zoneID][69 ].pos = {-104.0242,12.0000, 72.8178, 64  } -- W1 Markets N
 xi.dynamis.mobList[zoneID][70 ].pos = {-108.1392,-0.3415,-37.2321, 189 } -- W1 Depot Ramp Base
 xi.dynamis.mobList[zoneID][71 ].pos = { -99.4389,-8.0000,-59.8070, 127 } -- W1 Depot Ramp Top
-xi.dynamis.mobList[zoneID][72 ].pos = { -52.6932,-8.0000,-54.5636, 106 } -- W1 Depot Balc N
-xi.dynamis.mobList[zoneID][73 ].pos = { -52.3919,-8.0000,-66.1270, 147 } -- W1 Depot Balc C
+--xi.dynamis.mobList[zoneID][72 ].pos = { -52.6932,-8.0000,-54.5636, 106 } -- W1 Depot Balc N
+--xi.dynamis.mobList[zoneID][73 ].pos = { -52.3919,-8.0000,-66.1270, 147 } -- W1 Depot Balc C
 xi.dynamis.mobList[zoneID][74 ].pos = { -58.0759,-8.0000,-79.5513, 194 } -- W1 Depot Balc S
-xi.dynamis.mobList[zoneID][75 ].pos = {-128.0898,-0.5724, -0.9718, 64  } -- W1 Zer N.Ramp (NW)
+--xi.dynamis.mobList[zoneID][75 ].pos = {-128.0898,-0.5724, -0.9718, 64  } -- W1 Zer N.Ramp (NW)
 xi.dynamis.mobList[zoneID][76 ].pos = {-133.1783,-0.5393,  4.0241, 64  } -- W1 Zer N.Ramp (SW)
 xi.dynamis.mobList[zoneID][77 ].pos = {-133.5637, 0.0000,-31.0000, 96  } -- W1 Zer S.Clearing (NW)
 xi.dynamis.mobList[zoneID][78 ].pos = {-122.6414, 0.0000,-43.4918, 192 } -- W1 Zer S.Clearing (N)
-xi.dynamis.mobList[zoneID][79 ].pos = {-117.1745, 0.0000,-43.4918, 192 } -- W1 Zer S.Clearing (NE)
-xi.dynamis.mobList[zoneID][80 ].pos = {-123.7850,-3.4933,-74.1327, 189 } -- W1 Zer S.Clearing (S)
+--xi.dynamis.mobList[zoneID][79 ].pos = {-117.1745, 0.0000,-43.4918, 192 } -- W1 Zer S.Clearing (NE)
+--xi.dynamis.mobList[zoneID][80 ].pos = {-123.7850,-3.4933,-74.1327, 189 } -- W1 Zer S.Clearing (S)
 xi.dynamis.mobList[zoneID][81 ].pos = {-122.9294, 0.0000,-78.9028, 165 } -- W1 Zer S.Clearing (SE)
 xi.dynamis.mobList[zoneID][82 ].pos = {-138.1234,-11.9249,29.2820, 28  } -- W1 Zer N.Ramp (top)
 xi.dynamis.mobList[zoneID][83 ].pos = {-147.1535, 0.0000,  4.2789, 60  } -- W1 Zer W.Clearing (NE)
-xi.dynamis.mobList[zoneID][84 ].pos = {-155.1991, 0.0000,  2.2134, 28  } -- W1 Zer W.Clearing (N)
+--xi.dynamis.mobList[zoneID][84 ].pos = {-155.1991, 0.0000,  2.2134, 28  } -- W1 Zer W.Clearing (N)
 xi.dynamis.mobList[zoneID][85 ].pos = {-164.7690,-3.4933, -2.0815, 2   } -- W1 Zer W.Clearing (NW)
-xi.dynamis.mobList[zoneID][86 ].pos = {-161.1492, 0.0000,-11.3847, 249 } -- W1 Zer W.Clearing (W)
+--xi.dynamis.mobList[zoneID][86 ].pos = {-161.1492, 0.0000,-11.3847, 249 } -- W1 Zer W.Clearing (W)
 xi.dynamis.mobList[zoneID][87 ].pos = {-152.0940, 0.0000,-20.0017, 245 } -- W1 Zer W.Clearing (S)
 xi.dynamis.mobList[zoneID][88 ].pos = {-153.7795, 0.0000,-40.9650, 191 } -- W1 Zer W.Ramp Base
 xi.dynamis.mobList[zoneID][89 ].pos = {-160.1865, 0.0000,-40.8198, 232 } -- W1 spawned by 13
-xi.dynamis.mobList[zoneID][90 ].pos = {-175.8118,-7.7793,-21.0173, 223 } -- W1 Zer W.Ramp (S)
+--xi.dynamis.mobList[zoneID][90 ].pos = {-175.8118,-7.7793,-21.0173, 223 } -- W1 Zer W.Ramp (S)
 xi.dynamis.mobList[zoneID][91 ].pos = {-178.4068,-8.1360,-17.9503, 254 } -- W1 Zer W.Ramp (W)
 xi.dynamis.mobList[zoneID][92 ].pos = {-177.2654,-8.3147,-13.5608, 17  } -- W1 spawned by 1
-xi.dynamis.mobList[zoneID][93 ].pos = {-173.8426,-7.8933,-10.8492, 21  } -- W1 Zer W.Ramp (N)
+--xi.dynamis.mobList[zoneID][93 ].pos = {-173.8426,-7.8933,-10.8492, 21  } -- W1 Zer W.Ramp (N)
 xi.dynamis.mobList[zoneID][94 ].pos = {-29.5942, 0.0000,  23.0013, 0   } -- W1 N of Boytz, Catwalk
-xi.dynamis.mobList[zoneID][95 ].pos = { -14.0588, 0.0000, 30.0374, 143 } -- W1 O.St. Entr Bridge
+--xi.dynamis.mobList[zoneID][95 ].pos = { -14.0588, 0.0000, 30.0374, 143 } -- W1 O.St. Entr Bridge
 xi.dynamis.mobList[zoneID][96 ].pos = {  -0.3031, 0.0000, 37.6598, 125 } -- W1 O.St. Entr Catwalk
-xi.dynamis.mobList[zoneID][97 ].pos = {   8.8358, 0.0000, 22.4781, 170 } -- W1 O.St. CW Enc.#1
+--xi.dynamis.mobList[zoneID][97 ].pos = {   8.8358, 0.0000, 22.4781, 170 } -- W1 O.St. CW Enc.#1
 xi.dynamis.mobList[zoneID][98 ].pos = {   2.1785, 0.0000, 10.0314, 154 } -- W1 O.St. CW Bridge
-xi.dynamis.mobList[zoneID][99 ].pos = {   8.9690, 0.0000, -5.4239, 192 } -- W1 O.St. CW W Enc.#1
+--xi.dynamis.mobList[zoneID][99 ].pos = {   8.9690, 0.0000, -5.4239, 192 } -- W1 O.St. CW W Enc.#1
 xi.dynamis.mobList[zoneID][100].pos = {   8.8837, 0.0000,-16.3382, 192 } -- W1 O.St. CW W Enc.#2
-xi.dynamis.mobList[zoneID][101].pos = {  17.7209, 0.0000,  7.9742, 133 } -- W1 O.St. CW Enc.#2
+--xi.dynamis.mobList[zoneID][101].pos = {  17.7209, 0.0000,  7.9742, 133 } -- W1 O.St. CW Enc.#2
 xi.dynamis.mobList[zoneID][102].pos = {  36.0086, 0.0000,  8.1324, 191 } -- W1 O.St. CW Enc.#3
 xi.dynamis.mobList[zoneID][103].pos = {  37.0316, 0.0000, 20.2594, 147 } -- W1 O.St. CW S.Well#1
 xi.dynamis.mobList[zoneID][104].pos = {  60.1261, 0.0000,  8.1024, 129 } -- W1 O.St. CW Enc.#4
-xi.dynamis.mobList[zoneID][105].pos = {  60.0449, 0.0000, -1.2954, 192 } -- W1 O.St. CW E Enc.#1
-xi.dynamis.mobList[zoneID][106].pos = {  50.8795,-0.0029,-13.2487, 232 } -- W1 O.St. CW E Enc.#2
+--xi.dynamis.mobList[zoneID][105].pos = {  60.0449, 0.0000, -1.2954, 192 } -- W1 O.St. CW E Enc.#1
+--xi.dynamis.mobList[zoneID][106].pos = {  50.8795,-0.0029,-13.2487, 232 } -- W1 O.St. CW E Enc.#2
 xi.dynamis.mobList[zoneID][107].pos = {  61.7784, 0.0000,-20.6739, 187 } -- W1 O.St. CW E Enc.#3
-xi.dynamis.mobList[zoneID][108].pos = {  69.9259, 0.0000, 10.5869, 64  } -- W1 O.St. CW Enc.#5
+--xi.dynamis.mobList[zoneID][108].pos = {  69.9259, 0.0000, 10.5869, 64  } -- W1 O.St. CW Enc.#5
 xi.dynamis.mobList[zoneID][109].pos = {  86.0668, 0.0000, 10.5541, 64  } -- W1 O.St. CW Enc.#6
 xi.dynamis.mobList[zoneID][110].pos = {-16.1024,-1.0008,-124.9145, 192 } -- W2 Final Boss South Gate
 xi.dynamis.mobList[zoneID][111].pos = {-31.7986,-1.0008,-122.3744, 218 } -- W2 W of Final Boss
@@ -730,29 +730,29 @@ xi.dynamis.mobList[zoneID][142].pos = {117.2442, 0.9944, -71.5537, 128 } -- W3 M
 -- xi.dynamis.mobList[zoneID][8  ].patrolPath = { -96,  -2, -123,     -60,  -2, -113,    -96,   -2, -123  }    -- Entrance Bridge W
 
 xi.dynamis.mobList[zoneID].patrolPaths = {6, 35, 11, 21, 14, 12, 9, 34, 25, 32, 58, 60, 59, 61, 63, 62, 75, 76, 70, 71, 47, 49, 50, 104, 102}
-xi.dynamis.mobList[zoneID][6  ].patrolPath = { {40,    0,   -85},  {  40,    1,  -96,}                      } -- W1 Choc C
+--xi.dynamis.mobList[zoneID][6  ].patrolPath = { {40,    0,   -85},  {  40,    1,  -96,}                      } -- W1 Choc C
 xi.dynamis.mobList[zoneID][35 ].patrolPath = { { 3,    0,   -25},  { -12,    0,  -25,}                      } -- W1 AH N.Alley C
-xi.dynamis.mobList[zoneID][11 ].patrolPath = { { 7,    0,  -100},  {   5,    0,  -79,}                      } -- W1 W of Choc
-xi.dynamis.mobList[zoneID][21 ].patrolPath = { {-24,    0, -100},  { -24,    0,  -79,}                      } -- W1 W of Choc
-xi.dynamis.mobList[zoneID][14 ].patrolPath = { {-20,    0,  -79},  { -16,   -3,  -64,}                      } -- W1 AH WW
-xi.dynamis.mobList[zoneID][12 ].patrolPath = { { 0,    0,   -79},  {  0,    -3,  -64,}                      } -- W1 AH C
-xi.dynamis.mobList[zoneID][9  ].patrolPath = { {20,    0,   -79},  {  16,   -3,  -64,}                      } -- W1 AH EE
-xi.dynamis.mobList[zoneID][34 ].patrolPath = { {-44,    0,  -29},  { -42,    0,   -9,}                      } -- W1 W of AH (NW)
+--xi.dynamis.mobList[zoneID][11 ].patrolPath = { { 7,    0,  -100},  {   5,    0,  -79,}                      } -- W1 W of Choc
+--xi.dynamis.mobList[zoneID][21 ].patrolPath = { {-24,    0, -100},  { -24,    0,  -79,}                      } -- W1 W of Choc
+--xi.dynamis.mobList[zoneID][14 ].patrolPath = { {-20,    0,  -79},  { -16,   -3,  -64,}                      } -- W1 AH WW
+--xi.dynamis.mobList[zoneID][12 ].patrolPath = { { 0,    0,   -79},  {  0,    -3,  -64,}                      } -- W1 AH C
+--xi.dynamis.mobList[zoneID][9  ].patrolPath = { {20,    0,   -79},  {  16,   -3,  -64,}                      } -- W1 AH EE
+--xi.dynamis.mobList[zoneID][34 ].patrolPath = { {-44,    0,  -29},  { -42,    0,   -9,}                      } -- W1 W of AH (NW)
 xi.dynamis.mobList[zoneID][25 ].patrolPath = { {-10,   -1, -114},  { -25,   -1, -114,}                      } -- W1 S.Gate S
-xi.dynamis.mobList[zoneID][32 ].patrolPath = { {-32,    0,  -38},  { -45,    0,  -38,}                      } -- W1 W of AH (C)
-xi.dynamis.mobList[zoneID][58 ].patrolPath = { {-78,    0,    4},  { -70,    0,    9,}                      } -- W1 Under Bridge NE
-xi.dynamis.mobList[zoneID][60 ].patrolPath = { {-78,    0,   -4},  { -70,    0,   -9,}                      } -- W1 Under Bridge SE
+--xi.dynamis.mobList[zoneID][32 ].patrolPath = { {-32,    0,  -38},  { -45,    0,  -38,}                      } -- W1 W of AH (C)
+--xi.dynamis.mobList[zoneID][58 ].patrolPath = { {-78,    0,    4},  { -70,    0,    9,}                      } -- W1 Under Bridge NE
+--xi.dynamis.mobList[zoneID][60 ].patrolPath = { {-78,    0,   -4},  { -70,    0,   -9,}                      } -- W1 Under Bridge SE
 xi.dynamis.mobList[zoneID][59 ].patrolPath = { {-70,    0,    0},  { -78,    0,    0,}                      } -- W1 Under Bridge E
-xi.dynamis.mobList[zoneID][61 ].patrolPath = { {-94,    0,    9},  { -87,    0,    4,}                      } -- W1 Under Bridge NW
-xi.dynamis.mobList[zoneID][63 ].patrolPath = { {-94,    0,   -9},  { -87,    0,   -4,}                      } -- W1 Under Bridge SW
+--xi.dynamis.mobList[zoneID][61 ].patrolPath = { {-94,    0,    9},  { -87,    0,    4,}                      } -- W1 Under Bridge NW
+--xi.dynamis.mobList[zoneID][63 ].patrolPath = { {-94,    0,   -9},  { -87,    0,   -4,}                      } -- W1 Under Bridge SW
 xi.dynamis.mobList[zoneID][62 ].patrolPath = { {-94,    0,    0},  { -86,    0,    0,}                      } -- W1 Under Bridge W
-xi.dynamis.mobList[zoneID][75 ].patrolPath = { {-128, -1.6,   4},  {-128,    0,   -6,}                      } -- W1 Zer N.Ramp (SW)
+--xi.dynamis.mobList[zoneID][75 ].patrolPath = { {-128, -1.6,   4},  {-128,    0,   -6,}                      } -- W1 Zer N.Ramp (SW)
 xi.dynamis.mobList[zoneID][76 ].patrolPath = { {-132,    0,  -6},  {-132, -1.6,    4,}                      } -- W1 Zer N.Ramp (NW)
 xi.dynamis.mobList[zoneID][70 ].patrolPath = { {-108,   -8, -60},  {-108,   -0, -35  }, {-108,    0,  -14,} } -- W1 Depot Ramp Base
 xi.dynamis.mobList[zoneID][71 ].patrolPath = { {-102,   -8, -60},  { -60,    0,  -60,}                      } -- W1 Depot Ramp Top
-xi.dynamis.mobList[zoneID][47 ].patrolPath = { {  31,    7,  -2},  {   4,    7,   -2,}                      } -- W1 O.St. NE
+--xi.dynamis.mobList[zoneID][47 ].patrolPath = { {  31,    7,  -2},  {   4,    7,   -2,}                      } -- W1 O.St. NE
 xi.dynamis.mobList[zoneID][49 ].patrolPath = { {  31,    7,   5},  {  31,    3,   16,}                      } -- W1 O.St. CW S.Well Base
-xi.dynamis.mobList[zoneID][50 ].patrolPath = { {  31,    0,  24},  {  31,    2,   18,}                      } -- W1 O.St. CW S.Well#2
+--xi.dynamis.mobList[zoneID][50 ].patrolPath = { {  31,    0,  24},  {  31,    2,   18,}                      } -- W1 O.St. CW S.Well#2
 xi.dynamis.mobList[zoneID][104].patrolPath = { {  74,    0,   8},  {  60,    0,    8,}                      } -- W1 O.St. CW Enc.#4
 xi.dynamis.mobList[zoneID][102].patrolPath = { {  36,    0,   8},  {  21,    0,    8,}                      } -- W1 O.St. CW Enc.#3
 
@@ -768,7 +768,7 @@ xi.dynamis.mobList[zoneID][25 ].eyes = xi.dynamis.eye.BLUE
 xi.dynamis.mobList[zoneID][26 ].eyes = xi.dynamis.eye.GREEN
 xi.dynamis.mobList[zoneID][31 ].eyes = xi.dynamis.eye.GREEN
 xi.dynamis.mobList[zoneID][38 ].eyes = xi.dynamis.eye.GREEN
-xi.dynamis.mobList[zoneID][39 ].eyes = xi.dynamis.eye.BLUE
+--xi.dynamis.mobList[zoneID][39 ].eyes = xi.dynamis.eye.BLUE
 xi.dynamis.mobList[zoneID][42 ].eyes = xi.dynamis.eye.BLUE
 xi.dynamis.mobList[zoneID][81 ].eyes = xi.dynamis.eye.GREEN
 xi.dynamis.mobList[zoneID][82 ].eyes = xi.dynamis.eye.BLUE
