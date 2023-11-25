@@ -1878,7 +1878,7 @@ xi.magic.incrementBuildDuration = function(target, effect, caster)
 
         local buildResMod = target:getMod(resType)
 
-        if buildResMod ~= nil then
+        if buildResMod > 0 then
             local durationDecrease = target:getLocalVar(string.format("[RESBUILD]Base_%s", resType))
             local spellCount = target:getLocalVar(string.format("[RESBUILD]Base_%s_Count", resType))
 
@@ -1901,7 +1901,7 @@ xi.magic.calculateBuildDuration = function(target, duration, effect, caster)
 
         local buildResMod = target:getMod(resType)
 
-        if buildResMod ~= nil then
+        if buildResMod > 0 then
             local durationDecrease = target:getLocalVar(string.format("[RESBUILD]Base_%s", resType))
             duration = utils.clamp(duration - durationDecrease, 0, 65535) -- Used to add more fidelity to the build. Adding a mod of 30 will be -3 seconds per cast.
         end
