@@ -24,6 +24,8 @@ entity.onTrigger = function(player, npc)
         17351,  4644, 3,    -- Gemshorn
         17345,    43, 3,    -- Flute
         5045,  54000, 3,    -- Scroll of Bewitching Etude
+		5077,  91425, 3,	-- Adventurer's Dirge
+		
     }
 
     player:showText(npc, ID.text.HARMODIOS_SHOP_DIALOG)

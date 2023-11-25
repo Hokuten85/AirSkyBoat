@@ -11,7 +11,7 @@ end
 
 itemObject.onItemUse = function(target)
     if not target:hasStatusEffect(xi.effect.REFRESH) then
-        target:addStatusEffect(xi.effect.REFRESH, 2, 3, 135)
+        target:addStatusEffect(xi.effect.REFRESH, 2, 3, 300)
     else
         target:messageBasic(xi.msg.basic.NO_EFFECT)
     end
