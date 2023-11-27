@@ -592,7 +592,17 @@ xi.dynamis.mobList[zoneID][151].nmchildren = { false, 36  }
 xi.dynamis.mobList[zoneID][70 ].nmchildren = { true,  152 }                                    -- Westgate NM Reapertongue Gadguok (SMN)
 xi.dynamis.mobList[zoneID][152].nmchildren = { false, 61  }
 xi.dynamis.mobList[zoneID][93 ].nmchildren = { true,  153, 94, 95 }                            -- Manor NM Voidstreaker Butchnotch (NIN) as well as N/S manor pop statues
-xi.dynamis.mobList[zoneID][109].nmchildren = { true,  154, 155, 110, 111, 112, 113, 114, 115 } -- Megaboss spawns twin BRD NMs Battlechoir Gitchfotch and Soulsender Fugbrag and a bunch of statues
+xi.dynamis.mobList[zoneID][109].nmchildren = {
+	true,
+	154,
+	155, 
+	110,
+	111,
+	--112,
+	--113,
+	--114,
+	--115 
+} -- Megaboss spawns twin BRD NMs Battlechoir Gitchfotch and Soulsender Fugbrag and a bunch of statues
 
 ------------------------------------------
 --          Mob Position Info           --
