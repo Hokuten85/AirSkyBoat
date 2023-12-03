@@ -204,28 +204,28 @@ INSERT INTO `augments` VALUES (152,0,0,0,0,0); -- 152 currently unused. Leave at
 INSERT INTO `augments` VALUES (153,0,485,1,0,0); -- Shield Mastery+1 (tested in retail,this is correct)
 
 -- 154 to 175 currently unused. Leave at zero. Edit+move or remove this note as new augments get discovered.
-INSERT INTO `augments` VALUES (154,0,0,0,0,0);
+INSERT INTO `augments` VALUES (154,0,0,0,0,0); -- 155 
 INSERT INTO `augments` VALUES (155,0,0,0,0,0);
-INSERT INTO `augments` VALUES (156,0,0,0,0,0);
-INSERT INTO `augments` VALUES (157,0,0,0,0,0);
-INSERT INTO `augments` VALUES (158,0,0,0,0,0);
+INSERT INTO `augments` VALUES (156,0,0,0,0,0); -- 157
+INSERT INTO `augments` VALUES (157,0,0,0,0,0); 
+INSERT INTO `augments` VALUES (158,0,0,0,0,0); -- 159
 INSERT INTO `augments` VALUES (159,0,0,0,0,0);
-INSERT INTO `augments` VALUES (160,0,0,0,0,0);
+INSERT INTO `augments` VALUES (160,0,0,0,0,0); -- 161
 INSERT INTO `augments` VALUES (161,0,0,0,0,0);
-INSERT INTO `augments` VALUES (162,0,0,0,0,0);
+INSERT INTO `augments` VALUES (162,0,0,0,0,0); -- 163
 INSERT INTO `augments` VALUES (163,0,0,0,0,0);
-INSERT INTO `augments` VALUES (164,0,0,0,0,0);
+INSERT INTO `augments` VALUES (164,0,0,0,0,0); -- 165
 INSERT INTO `augments` VALUES (165,0,0,0,0,0);
-INSERT INTO `augments` VALUES (166,0,0,0,0,0);
+INSERT INTO `augments` VALUES (166,0,0,0,0,0); -- 167
 INSERT INTO `augments` VALUES (167,0,0,0,0,0);
-INSERT INTO `augments` VALUES (168,0,0,0,0,0);
+INSERT INTO `augments` VALUES (168,0,0,0,0,0); -- 169
 INSERT INTO `augments` VALUES (169,0,0,0,0,0);
-INSERT INTO `augments` VALUES (170,0,0,0,0,0);
+INSERT INTO `augments` VALUES (170,0,0,0,0,0); -- 171
 INSERT INTO `augments` VALUES (171,0,0,0,0,0);
-INSERT INTO `augments` VALUES (172,0,0,0,0,0);
+INSERT INTO `augments` VALUES (172,0,0,0,0,0); -- 173
 INSERT INTO `augments` VALUES (173,0,0,0,0,0);
-INSERT INTO `augments` VALUES (174,0,0,0,0,0);
-INSERT INTO `augments` VALUES (175,0,0,0,0,0);
+INSERT INTO `augments` VALUES (174,0,0,0,0,0); -- 175
+INSERT INTO `augments` VALUES (175,0,0,0,0,0); -- 176 
 -- End unused block
 
 INSERT INTO `augments` VALUES (176,0,240,1,0,0); -- Resist Sleep+1
@@ -253,9 +253,9 @@ INSERT INTO `augments` VALUES (197,0,0,0,0,0); -- 197 currently unused. Leave at
 INSERT INTO `augments` VALUES (198,0,306,1,0,0); -- Zanshin+1
 
 -- 199 to 210 currently unused. Leave at zero. Edit+move or remove this note as new augments get discovered.
-INSERT INTO `augments` VALUES (199,0,0,0,0,0);
+INSERT INTO `augments` VALUES (199,0,0,0,0,0); -- 200
 INSERT INTO `augments` VALUES (200,0,0,0,0,0);
-INSERT INTO `augments` VALUES (201,0,0,0,0,0);
+INSERT INTO `augments` VALUES (201,0,0,0,0,0); -- 202
 INSERT INTO `augments` VALUES (202,0,0,0,0,0);
 INSERT INTO `augments` VALUES (203,0,0,0,0,0);
 INSERT INTO `augments` VALUES (204,0,0,0,0,0);
@@ -264,7 +264,7 @@ INSERT INTO `augments` VALUES (206,0,0,0,0,0);
 INSERT INTO `augments` VALUES (207,0,0,0,0,0);
 INSERT INTO `augments` VALUES (208,0,0,0,0,0);
 INSERT INTO `augments` VALUES (209,0,0,0,0,0);
-INSERT INTO `augments` VALUES (210,0,0,0,0,0);
+INSERT INTO `augments` VALUES (210,0,0,0,0,0); -- 211
 -- End unused block
 
 INSERT INTO `augments` VALUES (211,0,365,1,0,0); -- Snapshot+1
@@ -274,7 +274,7 @@ INSERT INTO `augments` VALUES (214,0,0,0,0,0); -- 214 currently unused. Leave at
 INSERT INTO `augments` VALUES (215,0,308,1,0,0); -- Ninja tool expertise+1
 
 -- 216 to 231 currently unused. Leave at zero. Edit+move or remove this note as new augments get discovered.
-INSERT INTO `augments` VALUES (216,0,0,0,0,0);
+INSERT INTO `augments` VALUES (216,0,0,0,0,0); -- 217
 INSERT INTO `augments` VALUES (217,0,0,0,0,0);
 INSERT INTO `augments` VALUES (218,0,0,0,0,0);
 INSERT INTO `augments` VALUES (219,0,0,0,0,0);
@@ -289,22 +289,22 @@ INSERT INTO `augments` VALUES (227,0,0,0,0,0);
 INSERT INTO `augments` VALUES (228,0,0,0,0,0);
 INSERT INTO `augments` VALUES (229,0,0,0,0,0);
 INSERT INTO `augments` VALUES (230,0,0,0,0,0);
-INSERT INTO `augments` VALUES (231,0,0,0,0,0);
+INSERT INTO `augments` VALUES (231,0,0,0,0,0); -- 232
 INSERT INTO `augments` VALUES (232,0,0,0,0,0); -- True Shot +1
 -- End unused block
 
 INSERT INTO `augments` VALUES (233,0,913,1,0,0); -- Blood Boon+1
 
 -- 234 to 236 currently unused. Leave at zero. Edit+move or remove this note as new augments get discovered.
-INSERT INTO `augments` VALUES (234,0,0,0,0,0);
+INSERT INTO `augments` VALUES (234,0,0,0,0,0); -- 235
 INSERT INTO `augments` VALUES (235,0,0,0,0,0);
-INSERT INTO `augments` VALUES (236,0,0,0,0,0);
+INSERT INTO `augments` VALUES (236,0,0,0,0,0); -- 237
 -- End unused block
 
 INSERT INTO `augments` VALUES (237,0,902,1,0,0); -- Occult Acumen+1
 
 -- 238 to 250 currently unused. Leave at zero. Edit+move or remove this note as new augments get discovered.
-INSERT INTO `augments` VALUES (238,0,0,0,0,0);
+INSERT INTO `augments` VALUES (238,0,0,0,0,0); -- 239
 INSERT INTO `augments` VALUES (239,0,0,0,0,0);
 INSERT INTO `augments` VALUES (240,0,0,0,0,0);
 INSERT INTO `augments` VALUES (241,0,0,0,0,0);
@@ -316,17 +316,17 @@ INSERT INTO `augments` VALUES (246,0,0,0,0,0);
 INSERT INTO `augments` VALUES (247,0,0,0,0,0);
 INSERT INTO `augments` VALUES (248,0,0,0,0,0);
 INSERT INTO `augments` VALUES (249,0,0,0,0,0);
-INSERT INTO `augments` VALUES (250,0,0,0,0,0);
+INSERT INTO `augments` VALUES (250,0,0,0,0,0); -- 251
 -- End unused block
 
 INSERT INTO `augments` VALUES (251,1,911,0,0,0); -- Daken +1
 
 -- 252 to 256 currently unused. Leave at zero. Edit+move or remove this note as new augments get discovered.
-INSERT INTO `augments` VALUES (252,0,0,0,0,0);
+INSERT INTO `augments` VALUES (252,0,0,0,0,0); -- 253
 INSERT INTO `augments` VALUES (253,0,0,0,0,0);
-INSERT INTO `augments` VALUES (254,0,0,0,0,0);
-INSERT INTO `augments` VALUES (255,0,0,0,0,0);
-INSERT INTO `augments` VALUES (256,0,0,0,0,0);
+INSERT INTO `augments` VALUES (254,0,0,0,0,0); -- 255
+INSERT INTO `augments` VALUES (255,0,0,0,0,0); -- 256
+INSERT INTO `augments` VALUES (256,0,0,0,0,0); -- 256
 -- End unused block
 
 INSERT INTO `augments` VALUES (257,0,80,1,0,0); -- Hand-to-Hand skill+1
@@ -343,7 +343,7 @@ INSERT INTO `augments` VALUES (267,0,90,1,0,0); -- Club skill+1
 INSERT INTO `augments` VALUES (268,0,91,1,0,0); -- Staff skill+1
 
 -- 269 to 277 currently unused. Leave at zero. Edit+move or remove this note as new augments get discovered.
-INSERT INTO `augments` VALUES (269,0,0,0,0,0);
+INSERT INTO `augments` VALUES (269,0,0,0,0,0); -- 269
 INSERT INTO `augments` VALUES (270,0,0,0,0,0);
 INSERT INTO `augments` VALUES (271,0,0,0,0,0);
 INSERT INTO `augments` VALUES (272,0,0,0,0,0);
@@ -351,7 +351,7 @@ INSERT INTO `augments` VALUES (273,0,0,0,0,0);
 INSERT INTO `augments` VALUES (274,0,0,0,0,0);
 INSERT INTO `augments` VALUES (275,0,0,0,0,0);
 INSERT INTO `augments` VALUES (276,0,0,0,0,0);
-INSERT INTO `augments` VALUES (277,0,0,0,0,0);
+INSERT INTO `augments` VALUES (277,0,0,0,0,0); -- 277
 -- End unused block
 
 INSERT INTO `augments` VALUES (278,0,101,1,0,0); -- Melee skill+1 (for automaton)
@@ -380,7 +380,7 @@ INSERT INTO `augments` VALUES (300,0,123,1,0,0); -- Geomancy Skill+1
 INSERT INTO `augments` VALUES (301,0,124,1,0,0); -- Handbell Skill+1
 
 -- 302 to 319 currently unused. Leave at zero. Edit+move or remove this note as new augments get discovered.
-INSERT INTO `augments` VALUES (302,0,0,0,0,0);
+INSERT INTO `augments` VALUES (302,0,0,0,0,0); -- 302
 INSERT INTO `augments` VALUES (303,0,0,0,0,0);
 INSERT INTO `augments` VALUES (304,0,0,0,0,0);
 INSERT INTO `augments` VALUES (305,0,0,0,0,0);
@@ -397,7 +397,7 @@ INSERT INTO `augments` VALUES (315,0,0,0,0,0);
 INSERT INTO `augments` VALUES (316,0,0,0,0,0);
 INSERT INTO `augments` VALUES (317,0,0,0,0,0);
 INSERT INTO `augments` VALUES (318,0,0,0,0,0);
-INSERT INTO `augments` VALUES (319,0,0,0,0,0);
+INSERT INTO `augments` VALUES (319,0,0,0,0,0); -- 319
 -- End unused block
 
 INSERT INTO `augments` VALUES (320,0,357,1,0,0); -- Blood Pact ability delay -1
@@ -426,9 +426,9 @@ INSERT INTO `augments` VALUES (342,0,0,0,0,0); -- Waltz TP cost -1
 INSERT INTO `augments` VALUES (343,0,315,1,0,0); -- "Drain" and "Aspir" Potency +1
 
 -- 344 to 346 currently unused. Leave at zero. Edit+move or remove this note as new augments get discovered.
-INSERT INTO `augments` VALUES (344,0,0,0,0,0);
+INSERT INTO `augments` VALUES (344,0,0,0,0,0); -- 345
 INSERT INTO `augments` VALUES (345,0,0,0,0,0);
-INSERT INTO `augments` VALUES (346,0,0,0,0,0);
+INSERT INTO `augments` VALUES (346,0,0,0,0,0); -- 347
 -- End unused block
 
 INSERT INTO `augments` VALUES (347,0,0,0,0,0); -- Healing Magic Recast Delay -1
@@ -443,11 +443,11 @@ INSERT INTO `augments` VALUES (355,0,0,0,0,0); -- Enhancing Magic Recast Delay -
 INSERT INTO `augments` VALUES (356,0,375,1,0,0); -- Potency of Cure received+1%
 
 -- 354 to 362 currently unused. Leave at zero. Edit+move or remove this note as new augments get discovered.
-INSERT INTO `augments` VALUES (357,0,0,0,0,0);
+INSERT INTO `augments` VALUES (357,0,0,0,0,0); -- 358
 INSERT INTO `augments` VALUES (358,0,0,0,0,0);
-INSERT INTO `augments` VALUES (359,0,0,0,0,0);
+INSERT INTO `augments` VALUES (359,0,0,0,0,0); -- 360
 INSERT INTO `augments` VALUES (360,0,880,10,0,0); -- Save TP+10: Mod undefined as of yet so leaving blank.
-INSERT INTO `augments` VALUES (361,0,0,0,0,0);
+INSERT INTO `augments` VALUES (361,0,0,0,0,0); -- 362
 -- End unused block
 
 INSERT INTO `augments` VALUES (362,0,311,1,0,0); -- Magic Damage+1
@@ -462,19 +462,19 @@ INSERT INTO `augments` VALUES (370,0,836,1,0,0); -- Reverse Flourish+1
 INSERT INTO `augments` VALUES (371,0,989,1,0,0); -- Regen Potency+1
 INSERT INTO `augments` VALUES (372,0,0,0,0,0); -- Embolden+1: Mod undefined as of yet so leaving blank.
 
-INSERT INTO `augments` VALUES (373,0,0,0,0,0);
+INSERT INTO `augments` VALUES (373,0,0,0,0,0); -- 374
 INSERT INTO `augments` VALUES (374,0,0,0,0,0); -- Enhancing Magic Duration +1
-INSERT INTO `augments` VALUES (375,0,0,0,0,0);
+INSERT INTO `augments` VALUES (375,0,0,0,0,0); -- 376
 INSERT INTO `augments` VALUES (376,0,0,0,0,0);
 INSERT INTO `augments` VALUES (377,0,0,0,0,0);
-INSERT INTO `augments` VALUES (378,0,0,0,0,0);
+INSERT INTO `augments` VALUES (378,0,0,0,0,0); -- 379
 INSERT INTO `augments` VALUES (379,0,0,0,0,0); -- Enmity +1 for each Utsusemi
 INSERT INTO `augments` VALUES (380,0,0,0,0,0); -- Physical Damage Limit +1%
 
 -- 381 to 511 currently unused. Leave at zero. Edit+move or remove this note as new augments get discovered.
-INSERT INTO `augments` VALUES (381,0,0,0,0,0);
+INSERT INTO `augments` VALUES (381,0,0,0,0,0); -- 382
 INSERT INTO `augments` VALUES (382,0,0,0,0,0);
-INSERT INTO `augments` VALUES (383,0,0,0,0,0);
+INSERT INTO `augments` VALUES (383,0,0,0,0,0); -- 384
 INSERT INTO `augments` VALUES (384,0,0,0,0,0);
 INSERT INTO `augments` VALUES (385,0,0,0,0,0);
 INSERT INTO `augments` VALUES (386,0,0,0,0,0);
@@ -838,8 +838,8 @@ INSERT INTO `augments` VALUES (680,0,0,0,0,0);
 INSERT INTO `augments` VALUES (681,0,0,0,0,0);
 INSERT INTO `augments` VALUES (682,0,0,0,0,0);
 INSERT INTO `augments` VALUES (683,0,0,0,0,0);
-INSERT INTO `augments` VALUES (684,0,0,0,0,0);
-INSERT INTO `augments` VALUES (685,0,0,0,0,0);
+INSERT INTO `augments` VALUES (684,0,0,0,0,0); 
+INSERT INTO `augments` VALUES (685,0,0,0,0,0); 
 INSERT INTO `augments` VALUES (686,0,0,0,0,0);
 INSERT INTO `augments` VALUES (687,0,0,0,0,0);
 INSERT INTO `augments` VALUES (688,0,0,0,0,0);
@@ -1018,7 +1018,7 @@ INSERT INTO `augments` VALUES (814,0,0,0,0,0);
 INSERT INTO `augments` VALUES (815,0,0,0,0,0);
 INSERT INTO `augments` VALUES (816,0,0,0,0,0);
 INSERT INTO `augments` VALUES (817,0,0,0,0,0);
-INSERT INTO `augments` VALUES (818,0,0,0,0,0);
+INSERT INTO `augments` VALUES (818,0,0,0,0,0); 
 INSERT INTO `augments` VALUES (819,0,0,0,0,0);
 INSERT INTO `augments` VALUES (820,0,0,0,0,0);
 INSERT INTO `augments` VALUES (821,0,0,0,0,0);
@@ -1058,7 +1058,7 @@ INSERT INTO `augments` VALUES (853,0,0,0,0,0); -- Additional Effect: Lowers Magi
 INSERT INTO `augments` VALUES (854,0,0,0,0,0); -- Additional Effect: Lowers Magic Attack +1
 INSERT INTO `augments` VALUES (855,0,0,0,0,0); -- Additional Effect: Lowers Magic Defense +1
 INSERT INTO `augments` VALUES (856,0,0,0,0,0); -- Additional Effect: Lowers Magic Accuracy +1
-INSERT INTO `augments` VALUES (857,0,0,0,0,0);
+INSERT INTO `augments` VALUES (857,0,0,0,0,0); -- 475 weapon
 INSERT INTO `augments` VALUES (858,0,0,0,0,0);
 INSERT INTO `augments` VALUES (859,0,0,0,0,0);
 INSERT INTO `augments` VALUES (860,0,0,0,0,0);
@@ -1113,9 +1113,9 @@ INSERT INTO `augments` VALUES (908,0,0,0,0,0);
 INSERT INTO `augments` VALUES (909,0,0,0,0,0);
 INSERT INTO `augments` VALUES (910,0,0,0,0,0);
 INSERT INTO `augments` VALUES (911,0,0,0,0,0);
-INSERT INTO `augments` VALUES (912,0,0,0,0,0);
-INSERT INTO `augments` VALUES (913,0,0,0,0,0);
-INSERT INTO `augments` VALUES (914,0,0,0,0,0);
+INSERT INTO `augments` VALUES (912,0,0,0,0,0); -- 545
+INSERT INTO `augments` VALUES (913,0,0,0,0,0); -- 561
+INSERT INTO `augments` VALUES (914,0,0,0,0,0); -- 577
 INSERT INTO `augments` VALUES (915,0,0,0,0,0);
 INSERT INTO `augments` VALUES (916,0,0,0,0,0);
 INSERT INTO `augments` VALUES (917,0,0,0,0,0);
@@ -1530,38 +1530,38 @@ INSERT INTO `augments` VALUES (1250,0,960,1,0,0); -- Indi Effect Duration+1
 INSERT INTO `augments` VALUES (1251,0,0,0,0,0); -- Enfeebling Magic Duration +1
 
 -- 1252 to 1263 currently unused. Leave at zero. Edit+move or remove this note as new augments get discovered.
-INSERT INTO `augments` VALUES (1252,0,0,0,0,0);
+INSERT INTO `augments` VALUES (1252,0,0,0,0,0); -- 1253 gear
 INSERT INTO `augments` VALUES (1253,0,0,0,0,0);
-INSERT INTO `augments` VALUES (1254,0,0,0,0,0);
+INSERT INTO `augments` VALUES (1254,0,0,0,0,0); -- 1255
 INSERT INTO `augments` VALUES (1255,0,0,0,0,0);
-INSERT INTO `augments` VALUES (1256,0,0,0,0,0);
+INSERT INTO `augments` VALUES (1256,0,0,0,0,0); -- 1257
 INSERT INTO `augments` VALUES (1257,0,0,0,0,0);
-INSERT INTO `augments` VALUES (1258,0,0,0,0,0);
+INSERT INTO `augments` VALUES (1258,0,0,0,0,0); -- 1259
 INSERT INTO `augments` VALUES (1259,0,0,0,0,0);
-INSERT INTO `augments` VALUES (1260,0,0,0,0,0);
+INSERT INTO `augments` VALUES (1260,0,0,0,0,0); -- 1261 
 INSERT INTO `augments` VALUES (1261,0,0,0,0,0);
-INSERT INTO `augments` VALUES (1262,0,0,0,0,0);
-INSERT INTO `augments` VALUES (1263,0,0,0,0,0);
+INSERT INTO `augments` VALUES (1262,0,0,0,0,0); -- 1263
+INSERT INTO `augments` VALUES (1263,0,0,0,0,0); -- 1264
 -- End unused block
 
 INSERT INTO `augments` VALUES (1264,0,94,1,0,0); -- Meditate Effect Duration +1
 
 -- 1265 to 1279 currently unused. Leave at zero. Edit+move or remove this note as new augments get discovered.
-INSERT INTO `augments` VALUES (1265,0,0,0,0,0);
+INSERT INTO `augments` VALUES (1265,0,0,0,0,0); -- 1266
 INSERT INTO `augments` VALUES (1266,0,0,0,0,0);
-INSERT INTO `augments` VALUES (1267,0,0,0,0,0);
+INSERT INTO `augments` VALUES (1267,0,0,0,0,0); -- 1268
 INSERT INTO `augments` VALUES (1268,0,0,0,0,0);
-INSERT INTO `augments` VALUES (1269,0,0,0,0,0);
+INSERT INTO `augments` VALUES (1269,0,0,0,0,0); -- 1270
 INSERT INTO `augments` VALUES (1270,0,0,0,0,0);
-INSERT INTO `augments` VALUES (1271,0,0,0,0,0);
+INSERT INTO `augments` VALUES (1271,0,0,0,0,0); -- 1272
 INSERT INTO `augments` VALUES (1272,0,0,0,0,0);
-INSERT INTO `augments` VALUES (1273,0,0,0,0,0);
+INSERT INTO `augments` VALUES (1273,0,0,0,0,0); -- 1274
 INSERT INTO `augments` VALUES (1274,0,0,0,0,0);
-INSERT INTO `augments` VALUES (1275,0,0,0,0,0);
+INSERT INTO `augments` VALUES (1275,0,0,0,0,0); -- 1276
 INSERT INTO `augments` VALUES (1276,0,0,0,0,0);
-INSERT INTO `augments` VALUES (1277,0,0,0,0,0);
+INSERT INTO `augments` VALUES (1277,0,0,0,0,0); -- 1278
 INSERT INTO `augments` VALUES (1278,0,0,0,0,0);
-INSERT INTO `augments` VALUES (1279,0,0,0,0,0);
+INSERT INTO `augments` VALUES (1279,0,0,0,0,0); -- 1280
 -- End unused block
 
 INSERT INTO `augments` VALUES (1280,0,0,0,0,0); -- Enhances Mighty Strikes effect
@@ -1588,8 +1588,8 @@ INSERT INTO `augments` VALUES (1300,0,1028,1,0,0); -- Enhances Bolster effect
 INSERT INTO `augments` VALUES (1301,0,0,0,0,0); -- Enhances Elemental Sforzo effect
 
  -- 1302 to 1327 currently unused. Leave at zero. Edit+move or remove this note as new augments get discovered.
-INSERT INTO `augments` VALUES (1302,0,0,0,0,0);
-INSERT INTO `augments` VALUES (1303,0,0,0,0,0);
+INSERT INTO `augments` VALUES (1302,0,0,0,0,0); -- 823
+INSERT INTO `augments` VALUES (1303,0,0,0,0,0); -- 824
 INSERT INTO `augments` VALUES (1304,0,0,0,0,0);
 INSERT INTO `augments` VALUES (1305,0,0,0,0,0);
 INSERT INTO `augments` VALUES (1306,0,0,0,0,0);
@@ -1748,25 +1748,25 @@ INSERT INTO `augments` VALUES (1456,0,0,0,0,0); -- Enhances "Inspire" effect
 INSERT INTO `augments` VALUES (1457,0,0,0,0,0); -- Enhances "Sleight of Sword" effect
 
 -- 1458 to 1471 currently unused. Leave at zero. Edit+move or remove this note as new augments get discovered.
-INSERT INTO `augments` VALUES (1458,0,0,0,0,0);
-INSERT INTO `augments` VALUES (1459,0,0,0,0,0);
-INSERT INTO `augments` VALUES (1460,0,0,0,0,0);
-INSERT INTO `augments` VALUES (1461,0,0,0,0,0);
+INSERT INTO `augments` VALUES (1458,0,0,0,0,0); -- 979
+INSERT INTO `augments` VALUES (1459,0,0,0,0,0); -- 980
+INSERT INTO `augments` VALUES (1460,0,0,0,0,0); -- 981
+INSERT INTO `augments` VALUES (1461,0,0,0,0,0); -- 982
 INSERT INTO `augments` VALUES (1462,0,0,0,0,0);
-INSERT INTO `augments` VALUES (1463,0,0,0,0,0);
+INSERT INTO `augments` VALUES (1463,0,0,0,0,0); -- 984
 INSERT INTO `augments` VALUES (1464,0,0,0,0,0);
-INSERT INTO `augments` VALUES (1465,0,0,0,0,0);
+INSERT INTO `augments` VALUES (1465,0,0,0,0,0); -- 986
 INSERT INTO `augments` VALUES (1466,0,0,0,0,0);
-INSERT INTO `augments` VALUES (1467,0,0,0,0,0);
+INSERT INTO `augments` VALUES (1467,0,0,0,0,0); -- 988
 INSERT INTO `augments` VALUES (1468,0,0,0,0,0);
-INSERT INTO `augments` VALUES (1469,0,0,0,0,0);
+INSERT INTO `augments` VALUES (1469,0,0,0,0,0); -- 990
 INSERT INTO `augments` VALUES (1470,0,0,0,0,0);
-INSERT INTO `augments` VALUES (1471,0,0,0,0,0);
+INSERT INTO `augments` VALUES (1471,0,0,0,0,0); -- 992
 -- End unused block
 
 INSERT INTO `augments` VALUES (1472,0,963,1,0,0); -- Parrying rate +1% (not +skill)
 
--- 1473 to 1791 currently unused. Leave at zero. Edit+move or remove this note as new augments get discovered.
+-- 1473 to 1791 currently unused . Leave at zero. Edit+move or remove this note as new augments get discovered.
 INSERT INTO `augments` VALUES (1473,0,0,0,0,0);
 INSERT INTO `augments` VALUES (1474,0,0,0,0,0);
 INSERT INTO `augments` VALUES (1475,0,0,0,0,0);
@@ -1958,22 +1958,22 @@ INSERT INTO `augments` VALUES (1660,0,0,0,0,0);
 INSERT INTO `augments` VALUES (1661,0,0,0,0,0);
 INSERT INTO `augments` VALUES (1662,0,0,0,0,0);
 INSERT INTO `augments` VALUES (1663,0,0,0,0,0);
-INSERT INTO `augments` VALUES (1664,0,0,0,0,0);
+INSERT INTO `augments` VALUES (1664,0,0,0,0,0); -- 1663
 INSERT INTO `augments` VALUES (1665,0,0,0,0,0);
-INSERT INTO `augments` VALUES (1666,0,0,0,0,0);
+INSERT INTO `augments` VALUES (1666,0,0,0,0,0); -- 1665
 INSERT INTO `augments` VALUES (1667,0,0,0,0,0);
-INSERT INTO `augments` VALUES (1668,0,0,0,0,0);
+INSERT INTO `augments` VALUES (1668,0,0,0,0,0); -- 1667
 INSERT INTO `augments` VALUES (1669,0,0,0,0,0);
-INSERT INTO `augments` VALUES (1670,0,0,0,0,0);
+INSERT INTO `augments` VALUES (1670,0,0,0,0,0); -- 1669
 INSERT INTO `augments` VALUES (1671,0,0,0,0,0);
-INSERT INTO `augments` VALUES (1672,0,0,0,0,0);
+INSERT INTO `augments` VALUES (1672,0,0,0,0,0); -- 1671
 INSERT INTO `augments` VALUES (1673,0,0,0,0,0);
-INSERT INTO `augments` VALUES (1674,0,0,0,0,0);
+INSERT INTO `augments` VALUES (1674,0,0,0,0,0); -- 1673
 INSERT INTO `augments` VALUES (1675,0,0,0,0,0);
-INSERT INTO `augments` VALUES (1676,0,0,0,0,0);
+INSERT INTO `augments` VALUES (1676,0,0,0,0,0); -- 1675
 INSERT INTO `augments` VALUES (1677,0,0,0,0,0);
-INSERT INTO `augments` VALUES (1678,0,0,0,0,0);
-INSERT INTO `augments` VALUES (1679,0,0,0,0,0);
+INSERT INTO `augments` VALUES (1678,0,0,0,0,0); -- 1677
+INSERT INTO `augments` VALUES (1679,0,0,0,0,0); -- 1678 
 INSERT INTO `augments` VALUES (1680,0,0,0,0,0);
 INSERT INTO `augments` VALUES (1681,0,0,0,0,0);
 INSERT INTO `augments` VALUES (1682,0,0,0,0,0);
@@ -2085,7 +2085,7 @@ INSERT INTO `augments` VALUES (1787,0,0,0,0,0);
 INSERT INTO `augments` VALUES (1788,0,0,0,0,0);
 INSERT INTO `augments` VALUES (1789,0,0,0,0,0);
 INSERT INTO `augments` VALUES (1790,0,0,0,0,0);
-INSERT INTO `augments` VALUES (1791,0,0,0,0,0);
+INSERT INTO `augments` VALUES (1791,0,0,0,0,0); 
 -- End unused block
 
 INSERT INTO `augments` VALUES (1792,0,8,1,1,0); -- Pet: STR+1
