@@ -314,7 +314,7 @@ xi.magic.calculateMagicHitRate = function(magicacc, magiceva, target, element, s
     if target and element and element ~= xi.magic.ele.NONE and target:isMob() then
         eemTier = xi.magic.calculateEEMTier(target, element, skillchainCount)
         if target:isNM() and isDamageSpell then
-            resBuild = xi.magic.tryBuildNukeWall(target, xi.magic.resistMod[element], caster)
+            --resBuild = xi.magic.tryBuildNukeWall(target, xi.magic.resistMod[element], caster)
         end
 
         mevaMult = xi.magic.calculateMEVAMult(utils.clamp(eemTier + resBuild, -18, 11))
@@ -1101,7 +1101,7 @@ xi.magic.getMagicResist = function(magicHitRate, target, element, effectRes, ski
     local damageSpell = utils.ternary(isDamageSpell, true, false)
     local resistTier = 0
     if target:isNM() and damageSpell then
-        resistTier = xi.magic.getBuildNukeWall(target, xi.magic.resistMod[element])
+        --resistTier = xi.magic.getBuildNukeWall(target, xi.magic.resistMod[element])
     end
 
     xi.msg.debugValue(caster, "Base Resist Tier", resistTier)
