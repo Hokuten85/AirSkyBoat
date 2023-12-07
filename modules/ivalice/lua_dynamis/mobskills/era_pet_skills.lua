@@ -4,7 +4,7 @@
 ---------------------------------------------
 --        Module Required Scripts          --
 ---------------------------------------------
-require("modules/era/lua_dynamis/globals/era_dynamis_spawning")
+require("modules/ivalice/lua_dynamis/globals/era_dynamis_spawning")
 require("modules/module_utils")
 require("scripts/globals/mobskills/astral_flow")
 require("scripts/globals/mobskills/call_wyvern")

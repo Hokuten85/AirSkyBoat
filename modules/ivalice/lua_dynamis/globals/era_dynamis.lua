@@ -16,15 +16,15 @@ require("modules/module_utils")
 --------------------------------------------
 --       Module Extended Scripts          --
 --------------------------------------------
-require("modules/era/lua_dynamis/mob_spawning_files/dynamis_bastok_mobs")
-require("modules/era/lua_dynamis/mob_spawning_files/dynamis_beaucedine_mobs")
-require("modules/era/lua_dynamis/mob_spawning_files/dynamis_buburimu_mobs")
-require("modules/era/lua_dynamis/mob_spawning_files/dynamis_jeuno_mobs")
-require("modules/era/lua_dynamis/mob_spawning_files/dynamis_qufim_mobs")
-require("modules/era/lua_dynamis/mob_spawning_files/dynamis_san_d_oria_mobs")
-require("modules/era/lua_dynamis/mob_spawning_files/dynamis_valkurm_mobs")
-require("modules/era/lua_dynamis/mob_spawning_files/dynamis_windurst_mobs")
-require("modules/era/lua_dynamis/mob_spawning_files/dynamis_xarcabard_mobs")
+require("modules/ivalice/lua_dynamis/mob_spawning_files/dynamis_bastok_mobs")
+require("modules/ivalice/lua_dynamis/mob_spawning_files/dynamis_beaucedine_mobs")
+require("modules/ivalice/lua_dynamis/mob_spawning_files/dynamis_buburimu_mobs")
+require("modules/ivalice/lua_dynamis/mob_spawning_files/dynamis_jeuno_mobs")
+require("modules/ivalice/lua_dynamis/mob_spawning_files/dynamis_qufim_mobs")
+require("modules/ivalice/lua_dynamis/mob_spawning_files/dynamis_san_d_oria_mobs")
+require("modules/ivalice/lua_dynamis/mob_spawning_files/dynamis_valkurm_mobs")
+require("modules/ivalice/lua_dynamis/mob_spawning_files/dynamis_windurst_mobs")
+require("modules/ivalice/lua_dynamis/mob_spawning_files/dynamis_xarcabard_mobs")
 --------------------------------------------
 --       Module Affected Scripts          --
 --------------------------------------------
