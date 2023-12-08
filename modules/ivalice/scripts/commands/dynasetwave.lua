@@ -56,5 +56,5 @@ function onTrigger(player, zoneName, wave)
     player:PrintToPlayer(string.format("[DynaSetWave] Despawning current wave for %s...", zone:getName()))
     xi.dynamis.despawnAll(zone)
     xi.dynamis.spawnWave(zone, zone:getID(), wave)
-    player:PrintToPlayer(string.format("[DynaSetWave] Finished Spawning Wave %n for %s", wave, zone:getName()))
+    player:PrintToPlayer(string.format("[DynaSetWave] Finished Spawning Wave %s for %s", wave, zone:getName()))
 end

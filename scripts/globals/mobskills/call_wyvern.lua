@@ -3,7 +3,7 @@
 -- Call my pet.
 -----------------------------------
 require("scripts/globals/mobskills")
-require("modules/era/lua_dynamis/globals/era_dynamis_spawning")
+require("modules/ivalice/lua_dynamis/globals/era_dynamis_spawning")
 -----------------------------------
 local mobskillObject = {}
 
