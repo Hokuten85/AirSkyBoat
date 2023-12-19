@@ -1359,7 +1359,7 @@ void CMobEntity::DropItems(CCharEntity* PChar)
         {
             uint16 itemId = coloredDrops[xirand::GetRandomNumber(coloredDrops.size())];
             loot.drops.Items.emplace_back(DROP_TYPE::DROP_NORMAL, itemId, 50);
-            loot.drops.Items.emplace_back(DROP_TYPE::DROP_NORMAL, 1312, 50); // Angel Skin
+            loot.drops.Items.emplace_back(DROP_TYPE::DROP_NORMAL, 1312, 100); // Angel Skin
         }
 
         loot.ForEachItem([&](const DropItem_t& item)

@@ -47,7 +47,7 @@ local animationTable =
 -- Local functions.
 -----------------------------------
 local function getMaxFinishingMoves(player)
-    return 5 + player:getMod(xi.mod.MAX_FINISHING_MOVE_BONUS)
+    return 6 + player:getMod(xi.mod.MAX_FINISHING_MOVE_BONUS)
 end
 
 -- This function returns the default number of finishing moves awarded.
@@ -300,7 +300,7 @@ xi.job_utils.dancer.useReverseFlourishAbility = function(player, target, ability
     local tpGained             = 0
 
     local usedMoves = math.min(numMoves, 5)
-    tpGained = (95 + reverseFlourishBonus) * usedMoves + (5 + gearMod) * usedMoves ^ 2 + 30 * numMerits
+    tpGained = (100 + reverseFlourishBonus) * usedMoves + (5 + gearMod) * usedMoves ^ 2 + 30 * numMerits
 
     player:addTP(tpGained * 1.05)
     setFinishingMoves(player, numMoves - usedMoves)

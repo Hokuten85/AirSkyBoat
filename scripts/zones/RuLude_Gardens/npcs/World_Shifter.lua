@@ -33,12 +33,12 @@ chapterMap = {
 
 local equipmentList = {
 	[13281] = { -- Sniper's Ring +1
-		[1]  = { {33,  2}, }, -- DEF
-		[2]  = { {33,  4}, },
-		[3]  = { {33,  6}, },
-		[4]  = { {33,  8}, },
-		[5]  = { {33, 10}, },
-		[6]  = { {33, 12}, },
+		[1]   = { {33,  2}, {775, 4}, }, -- DEF
+		[2]   = { {33,  4}, {775, 8}, },
+		[3]   = { {33,  6}, {775, 12}, },
+		[4]   = { {33,  8}, {775, 16}, },
+		[5]   = { {33, 10}, {775, 20}, },
+		[6]   = { {33, 12}, {775, 25}, },
 	},
 	[15270] = { -- Walahra Turban
 		[1]   = { {33,  2}, }, -- DEF
@@ -71,9 +71,10 @@ local equipmentList = {
 		[4]   = { {23, 3}, {27, 1}, }, -- Rng.Acc.+1
 		[5]   = { {23, 3}, {27, 2}, },
 		[6]   = { {23, 3}, {27, 3}, },
-		[7]   = { {23, 3}, {27, 1}, {332, 1}, }, -- Sklchn.dmg.+1%
-		[8]   = { {23, 3}, {27, 1}, {332, 2}, },
-		[9]   = { {23, 3}, {27, 1}, {332, 3}, },
+		[7]   = { {23, 3}, {27, 3}, {332, 1}, }, -- Sklchn.dmg.+1%
+		[8]   = { {23, 3}, {27, 3}, {332, 2}, },
+		[9]   = { {23, 3}, {27, 3}, {332, 3}, },
+		[10]  = { {23, 5}, {27, 5}, {332, 5}, },
 	},
 	[13056] = { -- Peacock Charm
 		[1]  = { {1274, 1}, {775, 1}, }, -- Combat Skills +1, Dark Resist +1
@@ -106,7 +107,7 @@ local equipmentList = {
 		[4]   = { {518, 4}, {322, 1}, }, -- Song Casting Time-1
 		[5]   = { {518, 4}, {322, 2}, },
 		[6]   = { {518, 4}, {322, 3}, },
-		[7]   = { {518, 4}, {322, 4}, {1267, 1}, }, -- Elegy+1
+		[7]   = { {518, 4}, {322, 4}, {1267, 2}, }, -- Elegy+1
 	},
 	[12647] = { -- Choral Jstcorps
 		[1]   = { {296, 1}, }, -- Singing Skill+1
@@ -115,7 +116,7 @@ local equipmentList = {
 		[4]   = { {296, 4}, {1273, 1}, }, -- Song Duration+1
 		[5]   = { {296, 5}, {1273, 2}, },
 		[6]   = { {296, 6}, {1273, 3}, },
-		[7]   = { {296, 7}, {1273, 4}, {1252, 2}, }, -- Minne+1
+		[7]   = { {296, 7}, {1273, 4}, {1252, 1}, }, -- Minne+1
 	},
 	[14482] = { -- Choral Jstcorps+1
 		[1]   = { {296, 1}, }, -- Singing Skill+1
@@ -142,7 +143,7 @@ local equipmentList = {
 		[4]   = { {298, 4}, {322, 1}, }, -- Song Casting Time-1
 		[5]   = { {298, 5}, {322, 2}, },
 		[6]   = { {298, 6}, {322, 3}, },
-		[7]   = { {298, 7}, {322, 4}, {1257, 1}, }, -- Madrigal+1
+		[7]   = { {298, 7}, {322, 4}, {1257, 2}, }, -- Madrigal+1
 	},
 	[14899] = { -- Choral Cannions
 		[1]   = { {518, 1}, }, -- Wind Instrument Skill+1
@@ -160,7 +161,7 @@ local equipmentList = {
 		[4]   = { {518, 4}, {1273, 1}, }, -- Song Duration+1
 		[5]   = { {518, 5}, {1273, 2}, },
 		[6]   = { {518, 6}, {1273, 3}, },
-		[7]   = { {518, 7}, {1273, 4}, {1253, 1}, }, -- Minuet+1
+		[7]   = { {518, 7}, {1273, 4}, {1253, 2}, }, -- Minuet+1
 	},
 	[14098] = { -- Choral Slippers
 		[1]   = { {33, 3}, }, -- Def+1
@@ -178,7 +179,7 @@ local equipmentList = {
 		[4]   = { {33, 12}, {35, 2}, }, -- MAcc+1
 		[5]   = { {33, 15}, {35, 4}, },
 		[6]   = { {33, 18}, {35, 6}, },
-		[7]   = { {33, 21}, {35, 8}, {1266, 1}, }, -- Mazurka+1
+		[7]   = { {33, 21}, {35, 8}, {1266, 2}, }, -- Mazurka+1
 	},
 	[15081] = { -- Bard's Roundlet
 		[1]   = { {296, 1}, }, -- Wind Instrument Skill+1
@@ -205,7 +206,7 @@ local equipmentList = {
 		[4]   = { {258, 16}, {550, 2}, }, -- STR/DEX+1
 		[5]   = { {258, 20}, {550, 4}, },
 		[6]   = { {258, 24}, {550, 6}, },
-		[7]   = { {258, 28}, {550, 8}, {353, 10}, }, -- TP Bonus+1
+		[7]   = { {258, 28}, {550, 8}, {353, 10}, }, -- TP Bonus+50
 	},
 	[14509] = { -- Bard's Jstcorps+1
 		[1]   = { {258, 4}, }, -- Dagger Skill+1
@@ -357,7 +358,7 @@ entity.onTrade = function(player, npc, trade)
 									player:PrintToPlayer("You gave me too much Gil. I will return the extra.", xi.msg.channel.SAY, npcName);
 								end
 								
-								if tradeChapter:getID() ~= upgradeItem then
+								if tradeChapter:getID() < upgradeItem then -- traded chapter can be higher than required item
 									player:PrintToPlayer(string.format("I asked for a %s.", chapterMap[upgradeItem]), xi.msg.channel.SAY, npcName);
 								else
 									trade:confirmItem(tradeGear:getID(),1) -- CONFIRM EQUIPMENT
@@ -378,7 +379,7 @@ entity.onTrade = function(player, npc, trade)
 								player:PrintToPlayer("You gave me too much Gil. I will return the extra.", xi.msg.channel.SAY, npcName);
 							end
 						
-							if tradeChapter:getID() ~= upgradeCost[1].item then
+							if tradeChapter:getID() < upgradeCost[1].item then -- traded chapter can be higher than required item
 								player:PrintToPlayer(string.format("I asked for a %s.", chapterMap[upgradeCost[1].item]), xi.msg.channel.SAY, npcName);
 							else
 								trade:confirmItem(tradeGear:getID(),1) -- CONFIRM EQUIPMENT

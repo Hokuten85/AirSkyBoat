@@ -220,7 +220,7 @@ xi.settings.map =
     -- Max allowed merits points players can hold
     --  10 classic
     --  30 abyssea
-    MAX_MERIT_POINTS = 10,
+    MAX_MERIT_POINTS = 60,
 
     -- Minimum time between uses of yell command (in seconds).
     YELL_COOLDOWN = 30,
