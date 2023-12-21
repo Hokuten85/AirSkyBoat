@@ -2731,8 +2731,6 @@ namespace charutils
             }
         }
 
-        charutils::BuildingCharSkillsTable(PChar);
-
         if (equipSlotID == SLOT_MAIN || equipSlotID == SLOT_RANGED || equipSlotID == SLOT_SUB)
         {
             if (!PItem || (!PItem->isType(ITEM_EQUIPMENT) && PItem->getID() != 0) ||
@@ -2749,7 +2747,6 @@ namespace charutils
                 CheckUnarmedWeapon(PChar);
             }
 
-            BuildingCharWeaponSkills(PChar);
             PChar->pushPacket(new CCharAbilitiesPacket(PChar));
         }
 
@@ -2759,6 +2756,7 @@ namespace charutils
         }
 
         charutils::BuildingCharSkillsTable(PChar);
+        charutils::BuildingCharWeaponSkills(PChar);
 
         PChar->UpdateHealth();
         PChar->m_EquipSwap = true;
