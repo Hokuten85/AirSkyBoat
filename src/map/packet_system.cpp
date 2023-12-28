@@ -4374,6 +4374,8 @@ void SmallPacket0x061(map_session_data_t* const PSession, CCharEntity* const PCh
     PChar->pushPacket(new CCharUpdatePacket(PChar));
     PChar->pushPacket(new CCharHealthPacket(PChar));
     PChar->pushPacket(new CCharStatsPacket(PChar));
+
+    charutils::BuildingCharSkillsTable(PChar);
     PChar->pushPacket(new CCharSkillsPacket(PChar));
     PChar->pushPacket(new CCharRecastPacket(PChar));
     PChar->pushPacket(new CMenuMeritPacket(PChar));

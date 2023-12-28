@@ -283,6 +283,8 @@ namespace charutils
 
     uint8 GetHighestLevel(CCharEntity* PChar);
     void AddCharMod(CCharEntity* PChar, Mod type, int value);
+
+    void SetCharCombatSkill(CCharEntity* PChar, SKILLTYPE skillType);
 }; // namespace charutils
 
 #endif // _CHARUTILS_H

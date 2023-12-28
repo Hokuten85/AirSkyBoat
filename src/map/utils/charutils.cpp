@@ -1879,6 +1879,19 @@ namespace charutils
 
             luautils::OnItemUnequip(PChar, PItem);
 
+            if (equipSlotID != SLOT_MAIN && equipSlotID != SLOT_RANGED && equipSlotID != SLOT_SUB)
+            {
+                for (int32 i = (int32)Mod::HTH; i < (int32)Mod::MARKSMAN; ++i)
+                {
+                    if (((CItemEquipment*)PItem)->getModifier((Mod)i) != 0)
+                    {
+                        charutils::BuildingCharWeaponSkills(PChar);
+                        PChar->pushPacket(new CCharAbilitiesPacket(PChar));
+                        break;
+                    }
+                }
+            }
+
             if (update)
             {
                 charutils::BuildingCharSkillsTable(PChar);
@@ -2747,16 +2760,26 @@ namespace charutils
                 CheckUnarmedWeapon(PChar);
             }
 
+            charutils::BuildingCharWeaponSkills(PChar);
             PChar->pushPacket(new CCharAbilitiesPacket(PChar));
+        }
+        else
+        {
+            for (int32 i = (int32)Mod::HTH; i < (int32)Mod::MARKSMAN; ++i)
+            {
+                if (((CItemEquipment*)PItem)->getModifier((Mod)i) != 0)
+                {
+                    charutils::BuildingCharWeaponSkills(PChar);
+                    PChar->pushPacket(new CCharAbilitiesPacket(PChar));
+                    break;
+                }
+            }
         }
 
         if (PItem != nullptr)
         {
             luautils::OnItemEquip(PChar, PItem);
         }
-
-        charutils::BuildingCharSkillsTable(PChar);
-        charutils::BuildingCharWeaponSkills(PChar);
 
         PChar->UpdateHealth();
         PChar->m_EquipSwap = true;
@@ -2902,6 +2925,7 @@ namespace charutils
         // add in melee ws
         PItem       = dynamic_cast<CItemWeapon*>(PChar->getEquip(SLOT_MAIN));
         uint8 skill = PItem ? PItem->getSkillType() : (uint8)SKILL_HAND_TO_HAND;
+        charutils::SetCharCombatSkill(PChar, (SKILLTYPE)skill);
 
         const auto& MeleeWeaponSkillList = battleutils::GetWeaponSkills(skill);
         for (auto&& PSkill : MeleeWeaponSkillList)
@@ -2917,6 +2941,8 @@ namespace charutils
         if (PItem != nullptr && PItem->isType(ITEM_WEAPON) && PItem->getSkillType() != SKILL_THROWING)
         {
             skill                             = PItem ? PItem->getSkillType() : 0;
+            charutils::SetCharCombatSkill(PChar, (SKILLTYPE)skill);
+
             const auto& RangedWeaponSkillList = battleutils::GetWeaponSkills(skill);
             for (auto&& PSkill : RangedWeaponSkillList)
             {
@@ -7468,6 +7494,67 @@ namespace charutils
         if (ret == SQL_ERROR)
         {
             ShowError("Error writing char mod for: '%s'", PChar->name.c_str());
+        }
+    }
+
+    void SetCharCombatSkill(CCharEntity* PChar, SKILLTYPE skillType)
+    {
+        std::map<SKILLTYPE, std::pair<MERIT_TYPE, Mod>> validSkill = {
+            { SKILL_HAND_TO_HAND, std::pair(MERIT_H2H, Mod::HTH) },
+            { SKILL_DAGGER, std::pair(MERIT_DAGGER, Mod::DAGGER) },
+            { SKILL_SWORD, std::pair(MERIT_SWORD, Mod::SWORD) },
+            { SKILL_GREAT_SWORD, std::pair(MERIT_GSWORD, Mod::GSWORD) },
+            { SKILL_AXE, std::pair(MERIT_AXE, Mod::AXE) },
+            { SKILL_GREAT_AXE, std::pair(MERIT_GAXE, Mod::GAXE) },
+            { SKILL_SCYTHE, std::pair(MERIT_SCYTHE, Mod::SCYTHE) },
+            { SKILL_POLEARM, std::pair(MERIT_POLEARM, Mod::POLEARM) },
+            { SKILL_KATANA, std::pair(MERIT_KATANA, Mod::KATANA) },
+            { SKILL_GREAT_KATANA, std::pair(MERIT_GKATANA, Mod::GKATANA) },
+            { SKILL_CLUB, std::pair(MERIT_CLUB, Mod::CLUB) },
+            { SKILL_STAFF, std::pair(MERIT_STAFF, Mod::STAFF) },
+            { SKILL_ARCHERY, std::pair(MERIT_ARCHERY, Mod::ARCHERY) },
+            { SKILL_MARKSMANSHIP, std::pair(MERIT_MARKSMANSHIP, Mod::MARKSMAN) },
+        };
+
+        if (validSkill.find(skillType) == validSkill.end())
+        {
+            return;
+        }
+
+        std::pair skillMods  = validSkill.at(skillType);
+        uint8 meritIndex = 0;
+
+        uint16 MaxMSkill  = battleutils::GetMaxSkill(skillType, PChar->GetMJob(), PChar->GetMLevel());
+        uint16 MaxSSkill  = battleutils::GetMaxSkill(skillType, PChar->GetSJob(), PChar->GetSLevel());
+        int16  skillBonus = 0;         
+
+        skillBonus += PChar->PMeritPoints->GetMeritValue(skillMods.first, PChar);
+        meritIndex++;
+
+        // Add 79 to get the modifier ID
+        skillBonus += PChar->getMod(skillMods.second);
+
+        if (MaxMSkill != 0)
+        {
+            auto cap{ PChar->RealSkills.skill[skillType] / 10 >= MaxMSkill };
+            PChar->WorkingSkills.skill[skillType] = std::max<uint16>(0, cap ? skillBonus + MaxMSkill : skillBonus + PChar->RealSkills.skill[skillType] / 10);
+            if (cap)
+            {
+                PChar->WorkingSkills.skill[skillType] |= 0x8000;
+            }
+        }
+        else if (MaxSSkill != 0)
+        {
+            auto cap{ PChar->RealSkills.skill[skillType] / 10 >= MaxSSkill };
+            PChar->WorkingSkills.skill[skillType] = std::max<uint16>(0, cap ? skillBonus + MaxSSkill : skillBonus + PChar->RealSkills.skill[skillType] / 10);
+            if (cap)
+            {
+                PChar->WorkingSkills.skill[skillType] |= 0x8000;
+            }
+        }
+        else
+        {
+            PChar->WorkingSkills.skill[skillType] = std::max<uint16>(0, skillBonus) | 0x8000;
         }
     }
 }; // namespace charutils
