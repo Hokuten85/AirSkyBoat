@@ -119,6 +119,10 @@ static constexpr int32                               ExpTableRowCount = 60;
 std::array<std::array<uint16, 20>, ExpTableRowCount> g_ExpTable;
 std::array<uint16, 100>                              g_ExpPerLevel;
 
+std::array<Mod, 14> g_CombatMods{
+    Mod::HTH, Mod::DAGGER, Mod::SWORD, Mod::GSWORD, Mod::AXE, Mod::GAXE, Mod::SCYTHE, Mod::POLEARM, Mod::KATANA, Mod::GKATANA, Mod::CLUB, Mod::STAFF, Mod::ARCHERY, Mod::MARKSMAN
+};
+
 /************************************************************************
  *                                                                       *
  *                                                                       *
@@ -1881,9 +1885,9 @@ namespace charutils
 
             if (equipSlotID != SLOT_MAIN && equipSlotID != SLOT_RANGED && equipSlotID != SLOT_SUB)
             {
-                for (int32 i = (int32)Mod::HTH; i < (int32)Mod::MARKSMAN; ++i)
+                for (auto mod : g_CombatMods)
                 {
-                    if (((CItemEquipment*)PItem)->getModifier((Mod)i) != 0)
+                    if (((CItemEquipment*)PItem)->getModifier(mod) != 0)
                     {
                         charutils::BuildingCharWeaponSkills(PChar);
                         PChar->pushPacket(new CCharAbilitiesPacket(PChar));
@@ -2765,9 +2769,9 @@ namespace charutils
         }
         else
         {
-            for (int32 i = (int32)Mod::HTH; i < (int32)Mod::MARKSMAN; ++i)
+            for (auto mod : g_CombatMods)
             {
-                if (((CItemEquipment*)PItem)->getModifier((Mod)i) != 0)
+                if (((CItemEquipment*)PItem)->getModifier(mod) != 0)
                 {
                     charutils::BuildingCharWeaponSkills(PChar);
                     PChar->pushPacket(new CCharAbilitiesPacket(PChar));
