@@ -1883,7 +1883,7 @@ namespace charutils
 
             luautils::OnItemUnequip(PChar, PItem);
 
-            if (equipSlotID != SLOT_MAIN && equipSlotID != SLOT_RANGED && equipSlotID != SLOT_SUB)
+            if (equipSlotID != SLOT_MAIN && equipSlotID != SLOT_RANGED && equipSlotID != SLOT_SUB && PItem != nullptr)
             {
                 for (auto mod : g_CombatMods)
                 {
@@ -2767,7 +2767,7 @@ namespace charutils
             charutils::BuildingCharWeaponSkills(PChar);
             PChar->pushPacket(new CCharAbilitiesPacket(PChar));
         }
-        else
+        else if (PItem != nullptr)
         {
             for (auto mod : g_CombatMods)
             {
