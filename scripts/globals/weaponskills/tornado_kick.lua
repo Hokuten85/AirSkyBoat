@@ -17,8 +17,8 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     params.numHits = 2
     -- This is a 3 hit ws but H2H ws are done in a different way, the off hand hit is been taking into account in another place
     -- stat-modifiers (0.0 = 0%, 0.2 = 20%, 0.5 = 50%..etc)
-    params.str_wsc = 0.32        params.dex_wsc = 0.0
-    params.vit_wsc = 0.32        params.agi_wsc = 0.0
+    params.str_wsc = 0.5        params.dex_wsc = 0.0
+    params.vit_wsc = 0.5        params.agi_wsc = 0.0
     params.int_wsc = 0.0         params.mnd_wsc = 0.0
     params.chr_wsc = 0.0
 
@@ -33,7 +33,7 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     params.acc100 = 1.0 params.acc200 = 1.0 params.acc300 = 1.0
 
     -- attack multiplier (only some WSes use this, this varies the actual ratio value, see Tachi: Kasha) 1 is default.
-    params.atk100 = 1; params.atk200 = 1; params.atk300 = 1
+    params.atk100 = 1.25; params.atk200 = 1.25; params.atk300 = 1.25
     params.kick = true -- https://www.bluegartr.com/threads/112776-Dev-Tracker-Findings-Posts-%28NO-DISCUSSION%29?p=6712150&viewfull=1#post6712150
     params.multiHitfTP = true -- http://wiki.ffo.jp/html/20199.html
 

@@ -59,10 +59,10 @@ m:addOverride("xi.globals.weaponskills.ascetics_fury.onUseWeaponSkill", function
     local params = {}
     params.numHits = 1
     -- This is a 2 hit ws but H2H ws are done in a different way, the off hand hit is been taking into account in another place
-    params.ftp100 = 1 params.ftp200 = 1 params.ftp300 = 1
+    params.ftp100 = 1.5 params.ftp200 = 1.5 params.ftp300 = 1.5
     params.str_wsc = 0.5 params.dex_wsc = 0.2 params.vit_wsc = 0.5 params.agi_wsc = 0.0 params.int_wsc = 0.0
     params.mnd_wsc = 0.0 params.chr_wsc = 0.0
-    params.crit100 = 0.1 params.crit200 = 0.2 params.crit300 = 0.4
+    params.crit100 = 0.4 params.crit200 = 0.5 params.crit300 = 0.6
     params.canCrit = true
     params.acc100 = 1.0 params.acc200 = 1.0 params.acc300 = 1.0
     params.atk100 = 1 params.atk200 = 1 params.atk300 = 1
@@ -342,7 +342,7 @@ end)
 m:addOverride("xi.globals.weaponskills.blade_ku.onUseWeaponSkill", function(player, target, wsID, tp, primary, action, taChar)
     local params = {}
     params.numHits = 5
-    params.ftp100 = 1.0 params.ftp200 = 1.0 params.ftp300 = 1.0
+    params.ftp100 = 1.25 params.ftp200 = 1.25 params.ftp300 = 1.25
     params.str_wsc = 0.2 params.dex_wsc = 0.2 params.vit_wsc = 0.0
     params.agi_wsc = 0.0 params.int_wsc = 0.0 params.mnd_wsc = 0.0
     params.chr_wsc = 0.0
@@ -351,7 +351,7 @@ m:addOverride("xi.globals.weaponskills.blade_ku.onUseWeaponSkill", function(play
     -- Sufficient data for ACC bonus/penalty does not exist assuming no penalty and 10% increase per 1000 TP
     -- http://wiki.ffo.jp/html/732.html does not list ACC Bonus
     -- https://www.bg-wiki.com/ffxi/Blade:_Ku does not list ACC Bonus
-    params.acc100 = 1.0 params.acc200 = 1.1 params.acc300 = 1.2 -- TODO: verify -- "Accuracy varies with TP" in retail. All current evidence points to that this modifier is static values, not percentages.
+    params.acc100 = 1.25 params.acc200 = 1.5 params.acc300 = 1.75 -- TODO: verify -- "Accuracy varies with TP" in retail. All current evidence points to that this modifier is static values, not percentages.
     params.atk100 = 1.0 params.atk200 = 1.0 params.atk300 = 1.0
     params.multiHitfTP = true
 
@@ -920,7 +920,7 @@ end)
 m:addOverride("xi.globals.weaponskills.drakesbane.onUseWeaponSkill", function(player, target, wsID, tp, primary, action, taChar)
     local params = {}
     params.numHits = 4
-    params.ftp100 = 1 params.ftp200 = 1 params.ftp300 = 1
+    params.ftp100 = 1.2 params.ftp200 = 1.2 params.ftp300 = 1.2
     params.str_wsc = 0.5 params.dex_wsc = 0.0 params.vit_wsc = 0.0 params.agi_wsc = 0.0 params.int_wsc = 0.0
     params.mnd_wsc = 0.0 params.chr_wsc = 0.0
     params.crit100 = 0.1 params.crit200 = 0.3 params.crit300 = 0.5
@@ -3527,7 +3527,7 @@ end)
 m:addOverride("xi.globals.weaponskills.tachi_rana.onUseWeaponSkill", function(player, target, wsID, tp, primary, action, taChar)
     local params = {}
     params.numHits = 3
-    params.ftp100 = 1 params.ftp200 = 1 params.ftp300 = 1
+    params.ftp100 = 1.25 params.ftp200 = 1.25 params.ftp300 = 1.25
     params.str_wsc = 0.5 params.dex_wsc = 0.0 params.vit_wsc = 0.0 params.agi_wsc = 0.0 params.int_wsc = 0.0
     params.mnd_wsc = 0.0 params.chr_wsc = 0.0
     params.crit100 = 0.0 params.crit200 = 0.0 params.crit300 = 0.0

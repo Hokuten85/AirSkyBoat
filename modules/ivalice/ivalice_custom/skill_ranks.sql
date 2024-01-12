@@ -3,6 +3,7 @@ UPDATE skill_ranks SET war = 3, rdm = 1, thf = 1, brd = 3, rng = 3 WHERE name = 
 UPDATE skill_ranks SET war = 3, rdm = 1, thf = 5, brd = 5, blu = 1 WHERE name = 'sword';
 UPDATE skill_ranks SET war = 1, rng = 3 WHERE name = 'axe';
 UPDATE skill_ranks SET war = 3 WHERE name = 'polearm';
+UPDATE skill_ranks SET nin = 1 WHERE name = 'katana';
 UPDATE skill_ranks SET war = 3, pld = 1 WHERE name = 'club';
 UPDATE skill_ranks SET war = 3 WHERE name = 'staff';
 UPDATE skill_ranks SET rng = 1, sam = 3 WHERE name = 'archery';

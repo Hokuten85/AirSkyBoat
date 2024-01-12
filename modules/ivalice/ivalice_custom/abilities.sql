@@ -34,7 +34,7 @@ UPDATE abilities SET recastTime = 2400 WHERE name = 'trance';
 UPDATE abilities SET recastTime = 2400 WHERE name = 'tabula_rasa';
 UPDATE abilities SET recastTime = 180 WHERE name = 'sekkanoki';
 UPDATE abilities SET level = 75 WHERE name = 'restraint';
-UPDATE abilities SET level = 75 WHERE name = 'impetus';
+UPDATE abilities SET level = 75, recastTime = 300 WHERE name = 'impetus';
 UPDATE abilities SET level = 75 WHERE name = 'divine_caress';
 UPDATE abilities SET level = 75 WHERE name = 'enmity_douse';
 UPDATE abilities SET level = 75 WHERE name = 'saboteur';

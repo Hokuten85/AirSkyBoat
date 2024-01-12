@@ -23,7 +23,7 @@ local weaponskillObject = {}
 weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary, action, taChar)
     local params = {}
     params.numHits = 5
-    params.ftp100 = 1.0 params.ftp200 = 1.0 params.ftp300 = 1.0
+    params.ftp100 = 1.25 params.ftp200 = 1.25 params.ftp300 = 1.25
     params.str_wsc = 0.2 params.dex_wsc = 0.2 params.vit_wsc = 0.0
     params.agi_wsc = 0.0 params.int_wsc = 0.0 params.mnd_wsc = 0.0
     params.chr_wsc = 0.0
@@ -32,7 +32,7 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     -- Sufficient data for ACC bonus/penalty does not exist; assuming no penalty and 10% increase per 1000 TP
     -- http://wiki.ffo.jp/html/732.html does not list ACC Bonus
     -- https://www.bg-wiki.com/ffxi/Blade:_Ku does not list ACC Bonus
-    params.acc100 = 1.0 params.acc200 = 1.1 params.acc300 = 1.2 -- TODO: verify -- "Accuracy varies with TP" in retail. All current evidence points to that this modifier is static values, not percentages.
+    params.acc100 = 1.25 params.acc200 = 1.5 params.acc300 = 1.75 -- TODO: verify -- "Accuracy varies with TP" in retail. All current evidence points to that this modifier is static values, not percentages.
     params.atk100 = 1.0 params.atk200 = 1.0 params.atk300 = 1.0
     params.multiHitfTP = true
 
