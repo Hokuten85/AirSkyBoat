@@ -32,8 +32,8 @@ local loot =
             { itemid =  1797, droprate =  477 }, -- Virgin Image
         },
         {
-            { itemid =     0, droprate =  736 }, -- nothing
-            { itemid =  1790, droprate =  167 }, -- Impetuous Vision
+            { itemid =     0, droprate =  600 }, -- nothing
+            { itemid =  1790, droprate =  303 }, -- Impetuous Vision
             { itemid =  1792, droprate =   66 }, -- Snide Vision
             { itemid =  1791, droprate =   31 }, -- Tenuous Vision
         },

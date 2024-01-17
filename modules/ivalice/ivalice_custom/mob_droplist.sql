@@ -152,3 +152,6 @@ INSERT INTO `mob_droplist` VALUES (946,0,0,1000,1404,@VCOMMON);       -- Seal Of
 INSERT INTO `mob_droplist` VALUES (2196,0,0,1000,1405,@VCOMMON);      -- Seal Of Seiryu (24.0%)
 INSERT INTO `mob_droplist` VALUES (2362,0,0,1000,1407,@VCOMMON);       -- Seal Of Suzaku (24.0%)
 INSERT INTO `mob_droplist` VALUES (394,0,0,1000,1406,@VCOMMON);      -- Seal Of Byakko (24.0%)
+
+REPLACE INTO `mob_droplist` VALUES (1450,1,0,1000,13415,950);    -- Pixie Earring (Group 3 - 95.0%)
+REPLACE INTO `mob_droplist` VALUES (1450,1,0,1000,13566,50);     -- Defending Ring (Group 3 - Rare, 5%)

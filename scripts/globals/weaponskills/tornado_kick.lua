@@ -23,7 +23,7 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     params.chr_wsc = 0.0
 
     -- ftp damage mods (for Damage Varies with TP lines are calculated in the function ftp)
-    params.ftp100 = 2.25 params.ftp200 = 2.75 params.ftp300 = 3.5
+    params.ftp100 = 2.0 params.ftp200 = 2.5 params.ftp300 = 3.0
 
     -- critical modifiers (0.0 = 0%, 0.2 = 20%, 0.5 = 50%..etc)
     params.crit100 = 0.0 params.crit200 = 0.0 params.crit300 = 0.0

@@ -19,10 +19,12 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     local params = {}
     params.numHits = 4
     -- This is a 5 hit ws but H2H ws are done in a different way, the off hand hit is been taking into account in another place
-    params.ftp100 = 1.5 params.ftp200 = 1.5 params.ftp300 = 1.5
-    params.str_wsc = 0.0 params.dex_wsc = 0.70 + (player:getMerit(xi.merit.SHIJIN_SPIRAL) * 0.03) params.vit_wsc = 0.0 params.agi_wsc = 0.0 params.int_wsc = 0.0 params.mnd_wsc = 0.0 params.chr_wsc = 0.0
-    params.crit100 = 0.0 params.crit200 = 0.0 params.crit300 = 0.0
-    params.canCrit = false
+    params.ftp100 = 1.5 params.ftp200 = 1.6 params.ftp300 = 1.7
+    params.str_wsc = 0.70 + (player:getMerit(xi.merit.SHIJIN_SPIRAL) * 0.03)
+	params.dex_wsc = 0.0 params.vit_wsc = 0.0 params.agi_wsc = 0.0
+	params.int_wsc = 0.0 params.mnd_wsc = 0.0 params.chr_wsc = 0.0
+    params.crit100 = 0.1 params.crit200 = 0.2 params.crit300 = 0.3
+    params.canCrit = true
     params.acc100 = 1.0 params.acc200 = 1.0 params.acc300 = 1.0
     params.atk100 = 1.10; params.atk200 = 1.15; params.atk300 = 1.20
     params.multiHitfTP = true -- http://wiki.ffo.jp/html/25607.html
