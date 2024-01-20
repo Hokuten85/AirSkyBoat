@@ -48,8 +48,8 @@ function onTrigger(player, zoneName, wave)
     end
 
     wave = tonumber(wave)
-    if not wave or wave < 1 or wave > 3 then
-        error(player, string.format("[DynaSetWave] Invalid wave provided. Must be 1-3"))
+    if not wave or wave < 1 or wave > 5 then
+        error(player, string.format("[DynaSetWave] Invalid wave provided. Must be 1-5"))
         return
     end
 
