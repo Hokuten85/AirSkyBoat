@@ -58,6 +58,8 @@ UPDATE traits SET level = 75 WHERE traitid = 13 and job = 4 and rank = 2;
 UPDATE traits SET level = 75 WHERE traitid = 12 and job = 5 and rank = 4;
 -- GIVE RDM MAGIC BURST BONUS;
 UPDATE traits SET level = 75 WHERE traitid = 110 and job = 5 and rank = 1;
+-- MAB III
+UPDATE traits SET level = 75 WHERE traitid = 5 AND job = 5 AND rank = 3;
 
 -- GIVE DRK ATT BONUS
 UPDATE traits SET level = 75 WHERE traitid = 3 and job = 8 and rank = 5;
@@ -126,6 +128,10 @@ UPDATE traits SET level = 75 WHERE traitid = 108 and job = 19 and rank = 1;
 
 -- GIVE SCH Magic Burst Bonus
 UPDATE traits SET level = 75 WHERE traitid = 110 and job = 20 and rank = 1;
+-- MAB
+INSERT INTO `traits` VALUES (5,'magic atk. bonus',20,20,1,28,20,NULL,0);
+INSERT INTO `traits` VALUES (5,'magic atk. bonus',20,40,2,28,24,NULL,0);
+INSERT INTO `traits` VALUES (5,'magic atk. bonus',20,75,3,28,28,'ABYSSEA',0);
 
 --BLUE MAGE
 INSERT INTO traits VALUES ('10','auto refresh','16','30','1','369','1',null,0);
