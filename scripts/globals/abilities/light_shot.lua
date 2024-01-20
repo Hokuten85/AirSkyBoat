@@ -28,7 +28,7 @@ abilityObject.onUseAbility = function(player, target, ability)
     local params = {}
     params.element = xi.magic.ele.EARTH
     params.skillType = xi.skill.NONE
-    params.maccBonus = player:getStat(xi.mod.AGI) / 2 + player:getMerit(xi.merit.QUICK_DRAW_ACCURACY) + player:getMod(xi.mod.QUICK_DRAW_MACC)
+    params.maccBonus = player:getStat(xi.mod.AGI) / 2 + player:getMerit(xi.merit.QUICK_DRAW_ACCURACY) + player:getMod(xi.mod.QUICK_DRAW_MACC) + 100
 
     local duration = 60
     local resist = xi.magic.applyAbilityResistance(player, target, params)

@@ -276,7 +276,7 @@ local tier2ChipValue = 10
 local cosmoReady = 2147483649 -- BITMASK for the purchase
 
 local function getCosmoCleanseTime(player)
-    local cosmoWaitTime = player:hasKeyItem(xi.ki.RHAPSODY_IN_MAUVE) and 3600 or 72000
+    local cosmoWaitTime = player:hasKeyItem(xi.ki.RHAPSODY_IN_MAUVE) and 3600 or 300
     local lastCosmoTime = player:getCharVar("Cosmo_Cleanse_TIME")
 
     if lastCosmoTime ~= 0 then
