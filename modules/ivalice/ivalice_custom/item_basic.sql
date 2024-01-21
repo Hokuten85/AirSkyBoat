@@ -40,3 +40,10 @@ UPDATE item_basic SET name = 'toolbag_ranka' WHERE name = 'toolbag_(ranka)';
 UPDATE item_basic SET name = 'toolbag_furu' WHERE name = 'toolbag_(furu)';
 
 UPDATE item_basic SET aH = 46 WHERE itemid = 8740; -- pizza_cutter
+
+-- Remove EX
+update item_basic set flags = flags ^ 0x4000
+where itemid in (4064,4065,4066,4067,4068,4069,4070,4071,4072,4073); -- chapters 1-10
+
+update item_basic set flags = flags ^ 0x4000
+where itemid in (1784,1785,1786,1787,1788); -- phuabo_organ,xzomit_organ,aern_organ,hpemde_organ,yovra_organ

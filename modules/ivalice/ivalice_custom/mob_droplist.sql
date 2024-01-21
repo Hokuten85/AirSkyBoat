@@ -153,4 +153,4 @@ INSERT INTO `mob_droplist` VALUES (2196,0,0,1000,1405,@VCOMMON);      -- Seal Of
 INSERT INTO `mob_droplist` VALUES (2362,0,0,1000,1407,@VCOMMON);       -- Seal Of Suzaku (24.0%)
 INSERT INTO `mob_droplist` VALUES (394,0,0,1000,1406,@VCOMMON);      -- Seal Of Byakko (24.0%)
 
-UPDATE mob_droplist SET dropType = 0, groupId = 0 WHERE itemId (13415,13566); -- Pixie Earring, Defending Ring
+UPDATE mob_droplist SET dropType = 0, groupId = 0 WHERE itemId IN (13415,13566); -- Pixie Earring, Defending Ring
