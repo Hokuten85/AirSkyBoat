@@ -61,7 +61,7 @@ return {
     [456] = {id=456,en="Kick Attack Rate",ja="蹴撃確率",endesc="Increase kick attack rate by 1 percent.",jadesc="能力値1で蹴撃確率を1%アップします。"},
     [512] = {id=512,en="Divine Seal Recast",ja="女神の印使用間隔",endesc="Shorten recast time by 20 seconds.",jadesc="能力値1で使用間隔を20秒短縮します。"},
     [514] = {id=514,en="Cure Cast Time",ja="ケアル詠唱時間",endesc="Shorten cast time of all Cure spells by 4 percent.",jadesc="能力値1でケアルの詠唱時間を4%短縮します。"},
-    [516] = {id=516,en="Bar Spell Effect",ja="属性耐性魔法効果",endesc="Increase potency of Bar spells and add a magic defense bonus of 2 points.",jadesc="能力値1で属性耐性魔法の属性耐性、および魔法防御力を+2します。"},
+    [516] = {id=516,en="Bar Spell Effect",ja="属性耐性魔法効果",endesc="Increase potency of Bar spells and add a magic defense bonus of 3 points.",jadesc="能力値1で属性耐性魔法の属性耐性、および魔法防御力を+2します。"},
     [518] = {id=518,en="Banish Effect",ja="バニシュ効果",endesc="Increase damage of Banish by 2, and length of def. down effect by 2 seconds.",jadesc="能力値1でバニシュの魔法攻撃力を+2、特殊防御力ダウン時間を2秒延長します。"},
     [520] = {id=520,en="Regen Effect",ja="リジェネ効果",endesc="Increase the amount of HP recovered each interval by 1.",jadesc="リジェネの単位時間あたりの回復量が、能力値分増加します。"},
     [576] = {id=576,en="Elemental Seal Recast",ja="精霊の印使用間隔",endesc="Shorten recast time by 20 seconds.",jadesc="能力値1で使用間隔を20秒短縮します。"},
@@ -83,7 +83,7 @@ return {
     [708] = {id=708,en="Sneak Attack Recast",ja="不意打ち使用間隔",endesc="Shorten recast time by 2 seconds.",jadesc="能力値1で使用間隔を2秒短縮します。"},
     [710] = {id=710,en="Trick Attack Recast",ja="だまし討ち使用間隔",endesc="Shorten recast time by 2 seconds.",jadesc="能力値1で使用間隔を2秒短縮します。"},
     [712] = {id=712,en="Triple Attack Rate",ja="トリプルアタック確率",endesc="Increase triple attack rate by 1 percent.",jadesc="能力値1でトリプルアタック確率を1%アップします。"},
-    [768] = {id=768,en="Shield Bash Recast",ja="シールドバッシュ使用間隔",endesc="Shorten recast time by 2 seconds.",jadesc="能力値1で使用間隔を2秒短縮します。"},
+    [768] = {id=768,en="Shield Bash Recast",ja="シールドバッシュ使用間隔",endesc="Shorten recast time by 3 seconds.",jadesc="能力値1で使用間隔を2秒短縮します。"},
     [770] = {id=770,en="Holy Circle Recast",ja="ホーリーサークル使用間隔",endesc="Shorten recast time by 10 seconds.",jadesc="能力値1で使用間隔を10秒短縮します。"},
     [772] = {id=772,en="Sentinel Recast",ja="センチネル使用間隔",endesc="Shorten recast time by 10 seconds.",jadesc="能力値1で使用間隔を10秒短縮します。"},
     [774] = {id=774,en="Cover Effect Length",ja="かばう効果時間",endesc="Lengthen time of effect by 4 seconds.",jadesc="能力値1で効果時間を4秒延長します。"},
@@ -293,14 +293,14 @@ return {
     [3394] = {id=3394,en="Radial Arcana",ja="レイディアルアルカナ",endesc="Causes your luopan to vanish and \nrestores MP of party members within area of effect. \nRecast: 5min. Increase amount of MP restored by 3 percent.",jadesc="羅盤を消失し、範囲内のパーティメンバーのMPを回\n復する。使用間隔:5分\n能力値1でMP回復量を3%アップします。"},
     [3396] = {id=3396,en="Curative Recantation",ja="キュアリカント",endesc="Grants a healing effect to Full Circle. \nIncrease amount of HP healed by 5 percent.",jadesc="フルサークルにHP回復の効果を得る。\n能力値1でHP回復量を5%アップします。"},
     [3398] = {id=3398,en="Primeval Zeal",ja="プライムジール",endesc="Shortens casting times of elemental magic spells while under the effects of Collimated Fervor. \nShorten cast time by 10 percent.",jadesc="コリメイトファーバー中、精霊魔法の詠唱時間短縮の\n効果を得る。能力値1で詠唱時間を10%短縮します。"},
-    [3456] = {id=3456,en="Battuta",ja="バットゥタ",endesc="Increases the likelihood of parrying and deals counter damage after parrying dependent upon harbored runes. \nRecast: 5min. Increase chance of parrying by 4 percent and increase counter damage by 4 points per rune harbored.",jadesc="受け流し確率にボーナスを得る。\nさらに、受け流し発動時エンチャントルーンに依存し\nた反撃ダメージを与える。使用間隔:5分。\n能力値1で受け流し確率を4%アップ、反撃ダメージを\nエンチャントルーン１つにつき+4アップします。"},
+    [3456] = {id=3456,en="Battuta",ja="バットゥタ",endesc="Increases the likelihood of parrying and deals counter damage after parrying dependent upon harbored runes. \nRecast: 5min. Increase chance of parrying by 4 percent and increase counter damage by 4 points per rune harbored.",jadesc="受け流し確率にボーナスを得る。\nさらに、受け流し発動時エンチャントルーンに依存し\nた反撃ダメージを与える。使用間隔:5分。\n能力値1で受け流し確率を4%アップ、反撃ダメージを\nエンチャントルーン1つにつき+4アップします。"},
     [3458] = {id=3458,en="Rayke",ja="レイク",endesc="Expends runes to reduce elemental resistance of the target. \nRecast: 5min. Increase duration of effect by 3 seconds.",jadesc="ルーンを消費して、対象の属性耐性をダウンさせる。\n使用間隔:5分。\n能力値1で効果時間を3秒延長します。"},
     [3460] = {id=3460,en="Inspiration",ja="インスパイア",endesc="Grants a \"Fast Cast\" effect to Vallation and Valiance. \nIncrease cast speed by 10 percent.",jadesc="ヴァレション、ヴァリエンスに魔法詠唱時間短縮の効\n果を得る。\n能力値1で魔法詠唱時間を10%短縮します。"},
     [3462] = {id=3462,en="Sleight of Sword",ja="スライトソード",endesc="Grants a \"Subtle Blow\" effect during Swordplay. \nIncrease the maximum value of Subtle Blow by 5 points.",jadesc="ソードプレイ中、モクシャの効果を得る。\n能力値1でモクシャの効果の最大値を5アップします。"},
 }, {"id", "en", "ja", "endesc", "jadesc"}
 
 --[[
-Copyright © 2013-2023, Windower
+Copyright © 2013-2024, Windower
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:

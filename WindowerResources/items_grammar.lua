@@ -3375,6 +3375,8 @@ return {
     [3533] = {id=3533,article=0,plural="Mog Kupons A-Sap"},
     [3534] = {id=3534,article=0,plural="Mog Kupons A-Jad"},
     [3537] = {id=3537,article=0,plural="Mog Kupons A-Rub"},
+    [3538] = {id=3538,article=0,plural="Mog Kupons W-Eth"},
+    [3539] = {id=3539,article=0,plural="Mog Kupons I-Aby"},
     [3541] = {id=3541,article=0,plural="seasoning stones"},
     [3542] = {id=3542,article=0,plural="fossilized bones"},
     [3543] = {id=3543,article=0,plural="fossilized fangs"},
@@ -7597,6 +7599,7 @@ return {
     [9946] = {id=9946,article=1,plural="Ambuscade chits: leggear +1"},
     [9947] = {id=9947,article=1,plural="Ambuscade chits: footgear +1"},
     [9948] = {id=9948,article=1,plural="Ambuscade chits: ring"},
+    [9950] = {id=9950,article=0,plural="chunks of guimauve meat"},
     [10049] = {id=10049,article=0,plural="♪Raptors"},
     [10050] = {id=10050,article=0,plural="♪Tigerｓ"},
     [10051] = {id=10051,article=0,plural="♪Crabs"},
@@ -19652,6 +19655,7 @@ return {
     [23834] = {id=23834,article=2,plural="pairs of ruby cuffs"},
     [23835] = {id=23835,article=2,plural="pairs of ruby slops"},
     [23836] = {id=23836,article=2,plural="pairs of ruby pigaches"},
+    [23861] = {id=23861,article=0,plural="suits of adamantite armor"},
     [23862] = {id=23862,article=0,plural="Boudox's masques"},
     [23863] = {id=23863,article=0,plural="Boudox's suits"},
     [23864] = {id=23864,article=0,plural="Magh Bihu's masques"},
@@ -22702,24 +22706,13 @@ return {
     [29328] = {id=29328,article=0,plural="moogle storage slips 17"},
     [29329] = {id=29329,article=0,plural="moogle storage slips 18"},
     [29330] = {id=29330,article=0,plural="moogle storage slips 19"},
-    [29331] = {id=29331,article=0,plural="moogle storage slips 20"},
-    [29332] = {id=29332,article=0,plural="moogle storage slips 21"},
-    [29333] = {id=29333,article=0,plural="moogle storage slips 22"},
-    [29334] = {id=29334,article=0,plural="moogle storage slips 23"},
-    [29335] = {id=29335,article=0,plural="moogle storage slips 24"},
-    [29336] = {id=29336,article=0,plural="moogle storage slips 25"},
-    [29337] = {id=29337,article=0,plural="moogle storage slips 26"},
-    [29338] = {id=29338,article=0,plural="moogle storage slips 27"},
-    [29339] = {id=29339,article=0,plural="moogle storage slips 28"},
-    [29340] = {id=29340,article=0,plural="moogle storage slips 29"},
-    [29341] = {id=29341,article=0,plural="moogle storage slips 30"},
-    [29342] = {id=29342,article=0,plural="moogle storage slips 31"},
+    [29694] = {id=29694,article=0,plural="."},
     [29695] = {id=29695,article=0,plural="mangled messes"},
     [65535] = {id=65535,article=0,plural="Gils"},
 }, {"id", "article", "plural"}
 
 --[[
-Copyright © 2013-2023, Windower
+Copyright © 2013-2024, Windower
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
