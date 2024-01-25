@@ -40,3 +40,15 @@ UPDATE weapon_skills SET secondary_sc = 1 WHERE weaponskillid = 129; -- blade_re
 
 UPDATE weapon_skills SET jobs = 0x00000000000100000002000000000000000001000000 WHERE weaponskillid = 23; -- dancing_edge
 UPDATE weapon_skills SET jobs = 0x02000000000002020002000000000002000000000002 WHERE weaponskillid = 40; -- vorpal_blade	
+
+UPDATE weapon_skills SET jobs = HEX(jobs) | 0x WHERE type = 25; -- Archery ws for sam
+
+UPDATE weapon_skills SET jobs = 0x00000000000000000000020100000000000000000000 WHERE weaponskillid = 192; -- flaming_arrow
+UPDATE weapon_skills SET jobs = 0x00000000000000000000020100000000000000000000 WHERE weaponskillid = 193; -- piercing_arrow
+UPDATE weapon_skills SET jobs = 0x00000000000000000000020100000000000000000000 WHERE weaponskillid = 194; -- dulling_arrow
+UPDATE weapon_skills SET jobs = 0x00000000000000000000020100000000000000000000 WHERE weaponskillid = 196; -- sidewinder
+UPDATE weapon_skills SET jobs = 0x00000000000000000000010100000000000000000000 WHERE weaponskillid = 197; -- blast_arrow
+UPDATE weapon_skills SET jobs = 0x00000000000000000000010100000000000000000000 WHERE weaponskillid = 198; -- arching_arrow
+UPDATE weapon_skills SET jobs = 0x00000000000000000000010100000000000000000000 WHERE weaponskillid = 199; -- empyreal_arrow
+UPDATE weapon_skills SET jobs = 0x00000000000000000000020100000000000000000000 WHERE weaponskillid = 201; -- refulgent_arrow
+UPDATE weapon_skills SET jobs = 0x00000000000000000000020100000000000000000000 WHERE weaponskillid = 202; -- jishnus_radiance

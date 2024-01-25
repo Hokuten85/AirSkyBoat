@@ -298,7 +298,7 @@ xi.weaponskills.getRangedHitRate = function(attacker, target, capHitRate, bonus,
         bonus = bonus + accVarryTP
     end
 
-    return utils.clamp(attacker:getCRangedHitRate(target, bonus) / 100, 0.2, 0.95)
+    return utils.clamp(attacker:getCRangedHitRate(target, bonus) / 100, 0.2, 0.99)
 end
 
 -- Function to calculate if a hit in a WS misses, criticals, and the respective damage done
@@ -336,11 +336,11 @@ local function getSingleHitDamage(attacker, target, dmg, wsParams, calcParams, f
         end
     end
 
-    calcParams.hitRate = utils.clamp(calcParams.hitRate, 0.2, 0.95)
+    calcParams.hitRate = utils.clamp(calcParams.hitRate, 0.2, 0.99)
 
     if firstHitAccBonus ~= nil and firstHitAccBonus then
         calcParams.hitRate = calcParams.hitRate + 0.5 -- First hit gets a +100 ACC bonus which translates to +50 hit
-        calcParams.hitRate = utils.clamp(calcParams.hitRate, 0.2, 0.95)
+        calcParams.hitRate = utils.clamp(calcParams.hitRate, 0.2, 0.99)
     end
 
     local missChance = math.random()
@@ -1186,7 +1186,7 @@ xi.weaponskills.getHitRate = function(attacker, target, capHitRate, bonus, isSub
         hitrate = attacker:getCHitRate(target, 0, bonus)
     end
 
-    return utils.clamp((hitrate / 100), 0.2, 0.95)
+    return utils.clamp((hitrate / 100), 0.2, 0.99)
 end
 
 xi.weaponskills.fTP = function(tp, ftp1, ftp2, ftp3)
