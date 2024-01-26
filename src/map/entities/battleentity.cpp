@@ -817,10 +817,10 @@ uint16 CBattleEntity::RATT(uint8 skill, float distance, uint16 bonusSkill)
 
     int32 ATT = 8 + GetSkill(skill == 48 ? 0 : skill) + bonusSkill + m_modStat[Mod::RATT] + battleutils::GetRangedAttackBonuses(this) + STR() / 2;
 
-    if ((this->objtype == TYPE_PC) || (this->objtype == TYPE_PET && this->PMaster->objtype == TYPE_PC && ((CPetEntity*)this)->getPetType() == PET_TYPE::AUTOMATON)) // PC or PC Automaton
-    {
-        ATT = int32((float)ATT * battleutils::GetRangedDistanceCorrection(this, distance, true));
-    }
+    //if ((this->objtype == TYPE_PC) || (this->objtype == TYPE_PET && this->PMaster->objtype == TYPE_PC && ((CPetEntity*)this)->getPetType() == PET_TYPE::AUTOMATON)) // PC or PC Automaton
+    //{
+    //    ATT = int32((float)ATT * battleutils::GetRangedDistanceCorrection(this, distance, true));
+    //}
 
     return std::clamp(ATT + (ATT * m_modStat[Mod::RATTP] / 100) + std::min<int16>((ATT * m_modStat[Mod::FOOD_RATTP] / 100), m_modStat[Mod::FOOD_RATT_CAP]), 0, 65535);
 }
@@ -856,13 +856,13 @@ uint16 CBattleEntity::RACC(uint8 skill, float distance, uint16 bonusSkill)
     acc += battleutils::GetRangedAccuracyBonuses(this);
     acc += AGI() * 0.75;
 
-    if ((this->objtype == TYPE_PC) || (this->objtype == TYPE_PET && this->PMaster->objtype == TYPE_PC && ((CPetEntity*)this)->getPetType() == PET_TYPE::AUTOMATON)) // PC or PC Automaton
-    {
-        if (!this->StatusEffectContainer->HasStatusEffect(EFFECT_SHARPSHOT))
-        {
-            acc = int16((float)acc * battleutils::GetRangedDistanceCorrection(this, distance, false));
-        }
-    }
+    //if ((this->objtype == TYPE_PC) || (this->objtype == TYPE_PET && this->PMaster->objtype == TYPE_PC && ((CPetEntity*)this)->getPetType() == PET_TYPE::AUTOMATON)) // PC or PC Automaton
+    //{
+    //    if (!this->StatusEffectContainer->HasStatusEffect(EFFECT_SHARPSHOT))
+    //    {
+    //        acc = int16((float)acc * battleutils::GetRangedDistanceCorrection(this, distance, false));
+    //    }
+    //}
 
     return std::clamp(acc + std::min<int16>(((100 + getMod(Mod::FOOD_RACCP) * acc) / 100), getMod(Mod::FOOD_RACC_CAP)), 0, 65535);
 }
