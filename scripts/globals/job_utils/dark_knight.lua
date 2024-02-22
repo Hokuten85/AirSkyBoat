@@ -60,10 +60,7 @@ xi.job_utils.dark_knight.useArcaneCircle = function(player, target, ability)
         power = 5
     end
 
-    local subPower = 0
-    if (player:getID() ~= target:getID()) then
-        subPower = player:getMod(xi.mod.LIFESTEAL)
-    end
+    local subPower = utils.clamp(target:getMod(xi.mod.LIFESTEAL) + 5, 0, 50)
 
     target:addStatusEffect(xi.effect.ARCANE_CIRCLE, power, 0, duration, 0, subPower)
 end

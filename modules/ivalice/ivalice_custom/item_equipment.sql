@@ -116,7 +116,7 @@ UPDATE item_equipment SET jobs = jobs | 512 WHERE name IN ('morrigans_robe','mor
 
 UPDATE item_equipment SET jobs = jobs | 65536 WHERE name = 'silver_bullet'; -- ADD COR
 
-UPDATE item_equipment SET jobs = jobs | 128 WHERE name = 'joyeuse'; -- ADD DRK
+UPDATE item_equipment SET jobs = jobs | 32768 | 128 WHERE name = 'joyeuse'; -- ADD DRK
 
 UPDATE item_equipment SET jobs = jobs | 65536 | 8192 | 64 | 32 WHERE itemid = 12818; -- Byakko's Haidate add THF, PLD, DRG, COR
 

@@ -7365,7 +7365,7 @@ m:addOverride("xi.globals.mobskills.horrible_roar.onMobWeaponSkill", function(ta
 end)
 
 m:addOverride("xi.globals.mobskills.horrid_roar_1.onMobWeaponSkill", function(target, mob, skill)
-    local dispel = target:dispelStatusEffect(bit.bor(xi.effectFlag.DISPELABLE, xi.effectFlag.FOOD))
+    local dispel = target:dispelStatusEffect(xi.effectFlag.DISPELABLE)
 
     if dispel == xi.effect.NONE then
         -- no effect
@@ -7380,7 +7380,7 @@ m:addOverride("xi.globals.mobskills.horrid_roar_1.onMobWeaponSkill", function(ta
 end)
 
 m:addOverride("xi.globals.mobskills.horrid_roar_2.onMobWeaponSkill", function(target, mob, skill)
-    local dispel =  target:dispelAllStatusEffect(bit.bor(xi.effectFlag.DISPELABLE, xi.effectFlag.FOOD))
+    local dispel =  target:dispelAllStatusEffect(xi.effectFlag.DISPELABLE)
 
     if dispel == 0 then
         -- no effect
@@ -7395,7 +7395,7 @@ m:addOverride("xi.globals.mobskills.horrid_roar_2.onMobWeaponSkill", function(ta
 end)
 
 m:addOverride("xi.globals.mobskills.horrid_roar_3.onMobWeaponSkill", function(target, mob, skill)
-    local dispel =  target:dispelAllStatusEffect(bit.bor(xi.effectFlag.DISPELABLE, xi.effectFlag.FOOD))
+    local dispel =  target:dispelAllStatusEffect(xi.effectFlag.DISPELABLE)
 
     if dispel == 0 then
         -- no effect
