@@ -19,7 +19,7 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     local params = {}
     params.numHits = 4
     -- This is a 5 hit ws but H2H ws are done in a different way, the off hand hit is been taking into account in another place
-    params.ftp100 = 1.5 params.ftp200 = 1.6 params.ftp300 = 1.7
+    params.ftp100 = 1.5 params.ftp200 = 1.6 params.ftp300 = 2.3
     params.str_wsc = 0.70 + (player:getMerit(xi.merit.SHIJIN_SPIRAL) * 0.03)
 	params.dex_wsc = 0.0 params.vit_wsc = 0.0 params.agi_wsc = 0.0
 	params.int_wsc = 0.0 params.mnd_wsc = 0.0 params.chr_wsc = 0.0
