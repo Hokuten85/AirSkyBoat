@@ -1,4 +1,4 @@
-UPDATE skill_ranks SET thf = 5, dnc = 5 WHERE name = 'hand2hand';
+UPDATE skill_ranks SET thf = 5, dnc = 5, pup = 2 WHERE name = 'hand2hand';
 UPDATE skill_ranks SET war = 3, rdm = 1, thf = 1, brd = 3, rng = 3 WHERE name = 'dagger';
 UPDATE skill_ranks SET war = 3, rdm = 1, thf = 5, brd = 5, blu = 1 WHERE name = 'sword';
 UPDATE skill_ranks SET drk = 1 WHERE name = 'great sword';

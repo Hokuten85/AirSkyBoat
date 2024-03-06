@@ -17,7 +17,7 @@ local weaponskillObject = {}
 
 weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary, action, taChar)
     local params = {}
-    params.numHits = 1
+    params.numHits = 2
     params.ftp100 = 5 params.ftp200 = 6 params.ftp300 = 7
     params.str_wsc = 0.0 params.dex_wsc = 0.0 params.vit_wsc = 0.0
     params.agi_wsc = 0.7 + (player:getMerit(xi.merit.APEX_ARROW) * 0.03) params.int_wsc = 0.0 params.mnd_wsc = 0.0

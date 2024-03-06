@@ -19,8 +19,8 @@ local weaponskillObject = {}
 weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary, action, taChar)
     local params = {}
     params.numHits = 3
-    params.ftp100 = 1.75 params.ftp200 = 1.75 params.ftp300 = 1.75
-    params.str_wsc = 0.0 params.dex_wsc = 0.0 params.vit_wsc = 0.0
+    params.ftp100 = 2.25 params.ftp200 = 3.0 params.ftp300 = 4.0
+    params.str_wsc = 0.0 params.dex_wsc = 0.6 params.vit_wsc = 0.0
     params.agi_wsc = 0.6 params.int_wsc = 0.0 params.mnd_wsc = 0.0
     params.chr_wsc = 0.0
     params.crit100 = 0.15 params.crit200 = 0.2 params.crit300 = 0.25
@@ -39,9 +39,9 @@ weaponskillObject.onUseWeaponSkill = function(player, target, wsID, tp, primary,
     local damage, criticalHit, tpHits, extraHits, shadowsAbsorbed = xi.weaponskills.doRangedWeaponskill(player, target, wsID, params, tp, action, primary)
 
     if shadowsAbsorbed + tpHits + extraHits == 3 then
-        action:speceffect(target:getID(), bit.bor(action:speceffect(target:getID()), 8))
+        action:speceffect(target:getID(), 8)
     elseif shadowsAbsorbed + tpHits + extraHits == 2 then
-        action:speceffect(target:getID(), bit.bor(action:speceffect(target:getID()), 4))
+        action:speceffect(target:getID(), 4)
     end
 
     return tpHits, extraHits, criticalHit, damage

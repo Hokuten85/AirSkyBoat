@@ -21,7 +21,7 @@
 
 #include "common/kernel.h"
 
-#include "common/debug.h"
+//#include "common/debug.h"
 #include "common/logging.h"
 #include "common/lua.h"
 #include "common/settings.h"
@@ -217,7 +217,7 @@ void usercheck()
 #ifndef DEFINE_OWN_MAIN
 int main(int argc, char** argv)
 {
-    debug::init();
+    //debug::init();
 
 #ifdef _WIN32
     // Disable Quick Edit Mode (Mark) in Windows Console to prevent users from accidentially
@@ -250,17 +250,17 @@ int main(int argc, char** argv)
         auto watchdog = Watchdog(2000ms, [&]()
         {
             ShowCritical("Process main tick has taken 2000ms or more.");
-            if (debug::isRunningUnderDebugger())
+            /*if (debug::isRunningUnderDebugger())
             {
                 ShowCritical("Detaching watchdog thread, it will not fire again until restart.");
             }
             else
-            {
+            {*/
 #ifndef SIGKILL
 #define SIGKILL 9
 #endif // SIGKILL
                 std::raise(SIGKILL);
-            }
+            //}
         });
         // clang-format on
 

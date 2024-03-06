@@ -44,10 +44,10 @@ set(COMMON_SOURCES
     ${CMAKE_CURRENT_SOURCE_DIR}/watchdog.h
     ${CMAKE_CURRENT_SOURCE_DIR}/zlib.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/zlib.h
-    $<$<PLATFORM_ID:Windows>:${CMAKE_CURRENT_SOURCE_DIR}/debug_windows.cpp>
-    $<$<PLATFORM_ID:Windows>:${CMAKE_CURRENT_SOURCE_DIR}/WheatyExceptionReport.cpp>
-    $<$<PLATFORM_ID:Windows>:${CMAKE_CURRENT_SOURCE_DIR}/WheatyExceptionReport.h>
-    $<$<PLATFORM_ID:Darwin>:${CMAKE_CURRENT_SOURCE_DIR}/debug_osx.cpp>
-    $<$<PLATFORM_ID:Linux>:${CMAKE_CURRENT_SOURCE_DIR}/debug_linux.cpp>
+    # $<$<PLATFORM_ID:Windows>:${CMAKE_CURRENT_SOURCE_DIR}/debug_windows.cpp>
+    # $<$<PLATFORM_ID:Windows>:${CMAKE_CURRENT_SOURCE_DIR}/WheatyExceptionReport.cpp>
+    # $<$<PLATFORM_ID:Windows>:${CMAKE_CURRENT_SOURCE_DIR}/WheatyExceptionReport.h>
+    # $<$<PLATFORM_ID:Darwin>:${CMAKE_CURRENT_SOURCE_DIR}/debug_osx.cpp>
+    # $<$<PLATFORM_ID:Linux>:${CMAKE_CURRENT_SOURCE_DIR}/debug_linux.cpp>
     PARENT_SCOPE
 )

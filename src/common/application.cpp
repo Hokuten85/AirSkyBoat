@@ -20,7 +20,7 @@
 */
 
 #include "application.h"
-#include "debug.h"
+//#include "debug.h"
 #include "logging.h"
 #include "lua.h"
 #include "settings.h"
@@ -59,7 +59,7 @@ Application::Application(std::string serverName, int argc, char** argv)
     settings::init();
     ShowInfo("Begin %s-server initialisation...", serverName);
 
-    debug::init();
+    //debug::init();
 
     ShowInfo("The %s-server is ready to work...", serverName);
     ShowInfo("=======================================================================");

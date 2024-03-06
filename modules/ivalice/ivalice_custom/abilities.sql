@@ -59,5 +59,26 @@ UPDATE abilities SET `range` = 12 WHERE abilityId IN (98,99,100,101,102,103,104,
 UPDATE abilities SET level = 50 WHERE name = 'retaliation';
 UPDATE abilities SET recastTime = 60 WHERE abilityId = 170; -- angon
 UPDATE abilities SET recastTime = 5 WHERE abilityId = 229; -- pianissimo
+UPDATE abilities SET recastTime = 600 WHERE name = 'diffusion';
+UPDATE abilities SET recastTime = 600 WHERE name = 'warriors_charge';
+UPDATE abilities SET recastTime = 600 WHERE name = 'martyr';
+UPDATE abilities SET recastTime = 600 WHERE name = 'devotion';
+UPDATE abilities SET recastTime = 600 WHERE name = 'assassins_charge';
+UPDATE abilities SET recastTime = 600 WHERE name = 'feint';
+UPDATE abilities SET recastTime = 600 WHERE name = 'fealty';
+UPDATE abilities SET recastTime = 600 WHERE name = 'chivalry';
+UPDATE abilities SET recastTime = 600 WHERE name = 'dark_seal';
+UPDATE abilities SET recastTime = 600 WHERE name = 'diabolic_eye';
+UPDATE abilities SET recastTime = 600 WHERE name = 'feral_howl';
+UPDATE abilities SET recastTime = 600 WHERE name = 'killer_instinct';
+UPDATE abilities SET recastTime = 600 WHERE name = 'nightingale';
+UPDATE abilities SET recastTime = 600 WHERE name = 'troubadour';
+UPDATE abilities SET recastTime = 600 WHERE name = 'flashy_shot';
+UPDATE abilities SET recastTime = 600 WHERE name = 'blade_bash';
+UPDATE abilities SET recastTime = 600 WHERE name = 'deep_breathing';
+UPDATE abilities SET recastTime = 600 WHERE name = 'sange';
+UPDATE abilities SET recastTime = 600 WHERE name = 'diffusion';
+UPDATE abilities SET recastTime = 600 WHERE name = 'snake_eye';
+UPDATE abilities SET recastTime = 600 WHERE name = 'fold';
 
 UPDATE abilities SET content_tag = NULL;
