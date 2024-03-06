@@ -73,7 +73,7 @@ xi.job_utils.warrior.useRestraint = function(player, target, ability)
 end
 
 xi.job_utils.warrior.useRetaliation = function(player, target, ability)
-    player:addStatusEffect(xi.effect.RETALIATION, 1, 0, 180)
+    player:addStatusEffect(xi.effect.RETALIATION, 1, 0, 1800)
 end
 
 xi.job_utils.warrior.useTomahawk = function(player, target, ability)
