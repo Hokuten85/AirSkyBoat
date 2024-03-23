@@ -2654,6 +2654,13 @@ namespace charutils
                 PChar->pushPacket(new CMessageBasicPacket(PChar, PChar, 0, 0, 0x200));
                 return;
             }
+
+            // Disallow everything but shields if you're using H2H
+            // Equipping a shield will unequip the H2H weapon and you will go barefisted with a shield
+            if (PMainItem && PMainItem->getSkillType() == SKILL_HAND_TO_HAND)
+            {
+                return;
+            }
         }
 
         if (slotID == 0)
@@ -2794,8 +2801,7 @@ namespace charutils
         PChar->pushPacket(new CCharAppearancePacket(PChar));
 
         BuildingCharWeaponSkills(PChar);
-        SaveCharEquip(PChar);
-        SaveCharLook(PChar);
+        PChar->RequestPersist(CHAR_PERSIST::EQUIP);
     }
 
     void RemoveAllEquipment(CCharEntity* PChar)
@@ -2815,8 +2821,7 @@ namespace charutils
         CheckUnarmedWeapon(PChar);
 
         BuildingCharWeaponSkills(PChar);
-        SaveCharEquip(PChar);
-        SaveCharLook(PChar);
+        PChar->RequestPersist(CHAR_PERSIST::EQUIP);
     }
 
     /************************************************************************
@@ -6154,7 +6159,6 @@ namespace charutils
         // Days start at 0 and the 0th day is Firesday
         // Affinity starts at 0 and the 0th affinity is FIRE_AFFINITY
         // petElement and petElementIdx exist to bridge these gaps here!
-
         auto*   PPet             = static_cast<CPetEntity*>(PChar->PPet);
         ELEMENT petElement       = static_cast<ELEMENT>(PPet->m_Element);
         uint8   petElementIdx    = static_cast<uint8>(petElement) - 1;
@@ -6169,6 +6173,12 @@ namespace charutils
 
         static const WEATHER weatherStrong[8] = { WEATHER_HOT_SPELL, WEATHER_SNOW, WEATHER_WIND, WEATHER_DUST_STORM,
                                                   WEATHER_THUNDER, WEATHER_RAIN, WEATHER_AURORAS, WEATHER_GLOOM };
+
+        // Fire Spirit through Dark Spirit
+        if (PPet->m_PetID <= PETID_DARKSPIRIT)
+        {
+            perpReduction += PChar->PMeritPoints->GetMeritValue(MERIT_ELEMENTAL_PERP_REDUCTION, PChar);
+        }
 
         // If you wear a fire staff, you have +2 perp affinity reduction for fire, but -2 for ice as mods.
         perpReduction += PChar->getMod(strong[petElementIdx]);
