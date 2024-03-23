@@ -160,8 +160,14 @@ void CMobEntity::setEntityFlags(uint32 EntityFlags)
 
 CMobEntity::~CMobEntity()
 {
-    destroy(PEnmityContainer);
-    destroy(SpellContainer);
+    if (PEnmityContainer != NULL)
+    {
+        destroy(PEnmityContainer);
+    }
+    if (SpellContainer != NULL)
+    {
+        destroy(SpellContainer);
+    }
 }
 
 /************************************************************************

@@ -247,28 +247,28 @@ int main(int argc, char** argv)
         duration next = std::chrono::milliseconds(200);
 
         // clang-format off
-        auto watchdog = Watchdog(2000ms, [&]()
-        {
-            ShowCritical("Process main tick has taken 2000ms or more.");
-            /*if (debug::isRunningUnderDebugger())
-            {
-                ShowCritical("Detaching watchdog thread, it will not fire again until restart.");
-            }
-            else
-            {*/
-#ifndef SIGKILL
-#define SIGKILL 9
-#endif // SIGKILL
-                std::raise(SIGKILL);
-            //}
-        });
+//        auto watchdog = Watchdog(2000ms, [&]()
+//        {
+//            ShowCritical("Process main tick has taken 2000ms or more.");
+//            if (debug::isRunningUnderDebugger())
+//            {
+//                ShowCritical("Detaching watchdog thread, it will not fire again until restart.");
+//            }
+//            else
+//            {
+//#ifndef SIGKILL
+//#define SIGKILL 9
+//#endif // SIGKILL
+//                std::raise(SIGKILL);
+//            }
+//        });
         // clang-format on
 
         while (gRunFlag)
         {
             next = CTaskMgr::getInstance()->DoTimer(server_clock::now());
             do_sockets(&rfd, next);
-            watchdog.update();
+            //watchdog.update();
         }
     }
 
