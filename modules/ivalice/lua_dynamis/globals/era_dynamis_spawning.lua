@@ -16,22 +16,22 @@ require("modules/module_utils")
 --------------------------------------------
 --       Module Extended Scripts          --
 --------------------------------------------
-require("modules/ivalice/lua_dynamis/mobs/era_beaucedine_mobs")
-require("modules/ivalice/lua_dynamis/mobs/era_buburimu_mobs")
-require("modules/ivalice/lua_dynamis/mobs/era_qufim_mobs")
-require("modules/ivalice/lua_dynamis/mobs/era_tavnazia_mobs")
-require("modules/ivalice/lua_dynamis/mobs/era_valkurm_mobs")
-require("modules/ivalice/lua_dynamis/mobs/era_xarcabard_mobs")
-require("modules/ivalice/lua_dynamis/mob_spawning_files/dynamis_bastok_mobs")
-require("modules/ivalice/lua_dynamis/mob_spawning_files/dynamis_beaucedine_mobs")
-require("modules/ivalice/lua_dynamis/mob_spawning_files/dynamis_buburimu_mobs")
-require("modules/ivalice/lua_dynamis/mob_spawning_files/dynamis_jeuno_mobs")
-require("modules/ivalice/lua_dynamis/mob_spawning_files/dynamis_qufim_mobs")
-require("modules/ivalice/lua_dynamis/mob_spawning_files/dynamis_tavnazia_mobs")
-require("modules/ivalice/lua_dynamis/mob_spawning_files/dynamis_san_d_oria_mobs")
-require("modules/ivalice/lua_dynamis/mob_spawning_files/dynamis_valkurm_mobs")
-require("modules/ivalice/lua_dynamis/mob_spawning_files/dynamis_windurst_mobs")
-require("modules/ivalice/lua_dynamis/mob_spawning_files/dynamis_xarcabard_mobs")
+require("modules/era/lua_dynamis/mobs/era_beaucedine_mobs")
+require("modules/era/lua_dynamis/mobs/era_buburimu_mobs")
+require("modules/era/lua_dynamis/mobs/era_qufim_mobs")
+require("modules/era/lua_dynamis/mobs/era_tavnazia_mobs")
+require("modules/era/lua_dynamis/mobs/era_valkurm_mobs")
+require("modules/era/lua_dynamis/mobs/era_xarcabard_mobs")
+require("modules/era/lua_dynamis/mob_spawning_files/dynamis_bastok_mobs")
+require("modules/era/lua_dynamis/mob_spawning_files/dynamis_beaucedine_mobs")
+require("modules/era/lua_dynamis/mob_spawning_files/dynamis_buburimu_mobs")
+require("modules/era/lua_dynamis/mob_spawning_files/dynamis_jeuno_mobs")
+require("modules/era/lua_dynamis/mob_spawning_files/dynamis_qufim_mobs")
+require("modules/era/lua_dynamis/mob_spawning_files/dynamis_tavnazia_mobs")
+require("modules/era/lua_dynamis/mob_spawning_files/dynamis_san_d_oria_mobs")
+require("modules/era/lua_dynamis/mob_spawning_files/dynamis_valkurm_mobs")
+require("modules/era/lua_dynamis/mob_spawning_files/dynamis_windurst_mobs")
+require("modules/era/lua_dynamis/mob_spawning_files/dynamis_xarcabard_mobs")
 require("scripts/zones/Dynamis-Xarcabard/IDs")
 --------------------------------------------
 
@@ -442,7 +442,7 @@ xi.dynamis.normalDynamicSpawn = function(oMob, oMobIndex, target)
                 end,
 
                 onMobDeath = function(mobArg, player, optParams)
-                    xi.dynamis.mobOnDeath(mobArg)
+                    xi.dynamis.mobOnDeath(mobArg, player, optParams)
                 end,
 
                 onMobDespawn = function(mob)
@@ -755,7 +755,7 @@ xi.dynamis.nonStandardDynamicSpawn = function(mobIndex, oMob, forceLink, zoneID,
         onMobFight = mobFunctions[mobMobType]["onMobFight"][1],
         onMobRoam =  mobFunctions[mobMobType]["onMobRoam"][1],
         onMobDeath = function(mob, player, optParams)
-            xi.dynamis.mobOnDeath(mob)
+            xi.dynamis.mobOnDeath(mob, player, optParams)
         end,
 
         onMobDespawn = function(mob)
@@ -1212,8 +1212,8 @@ xi.dynamis.nmDynamicSpawn = function(mobIndex, oMobIndex, forceLink, zoneID, tar
             ["onMobWeaponSkill"] = { function(mob)
             end },
 
-            ["onMobDeath"] = { function(mob, player, optParams)
-                xi.dynamis.megaBossOnDeath(mob, player)
+            ["onMobDeath"] = { function(mobArg, player, optParams)
+                xi.dynamis.megaBossOnDeath(mobArg, player, optParams)
             end },
 
             ["mixins"] = {   },
@@ -1247,7 +1247,7 @@ xi.dynamis.nmDynamicSpawn = function(mobIndex, oMobIndex, forceLink, zoneID, tar
             end },
 
             ["onMobDeath"] = { function(mob, player, optParams)
-                xi.dynamis.megaBossOnDeath(mob, player)
+                xi.dynamis.megaBossOnDeath(mob, player, optParams)
             end },
 
             ["mixins"] = {   },
@@ -1475,8 +1475,8 @@ xi.dynamis.nmDynamicSpawn = function(mobIndex, oMobIndex, forceLink, zoneID, tar
             ["onMobWeaponSkill"] = { function(mob)
             end },
 
-            ["onMobDeath"] = { function(mob, player, optParams)
-                xi.dynamis.megaBossOnDeath(mob, player)
+            ["onMobDeath"] = { function(mobArg, player, optParams)
+                xi.dynamis.megaBossOnDeath(mobArg, player, optParams)
             end },
 
             ["mixins"] = {   },
@@ -1508,8 +1508,8 @@ xi.dynamis.nmDynamicSpawn = function(mobIndex, oMobIndex, forceLink, zoneID, tar
             ["onMobWeaponSkill"] = { function(mob)
             end },
 
-            ["onMobDeath"] = { function(mob, player, optParams)
-                xi.dynamis.megaBossOnDeath(mob, player)
+            ["onMobDeath"] = { function(mobArg, player, optParams)
+                xi.dynamis.megaBossOnDeath(mobArg, player, optParams)
             end },
 
             ["mixins"] = {   },
@@ -1920,7 +1920,8 @@ xi.dynamis.nmDynamicSpawn = function(mobIndex, oMobIndex, forceLink, zoneID, tar
             ["onMobWeaponSkill"] = { function(mob)
             end },
 
-            ["onMobDeath"] = { function(mob) xi.dynamis.wormDeath(mob)
+            ["onMobDeath"] = { function(mobArg, player, optParams)
+                xi.dynamis.wormDeath(mobArg, player, optParams)
             end },
 
             ["mixins"] = {   },
@@ -1949,8 +1950,8 @@ xi.dynamis.nmDynamicSpawn = function(mobIndex, oMobIndex, forceLink, zoneID, tar
             ["onMobWeaponSkill"] = { function(mob)
             end },
 
-            ["onMobDeath"] = { function(mob)
-                xi.dynamis.antlionDeath(mob)
+            ["onMobDeath"] = { function(mobArg, player, optParams)
+                xi.dynamis.antlionDeath(mobArg, player, optParams)
             end },
 
             ["mixins"] = { require("scripts/mixins/families/antlion_ambush") },
@@ -1980,8 +1981,8 @@ xi.dynamis.nmDynamicSpawn = function(mobIndex, oMobIndex, forceLink, zoneID, tar
             ["onMobWeaponSkill"] = { function(mobTarget, mob, skill)
             end },
 
-            ["onMobDeath"] = { function(mob, player, optParams)
-                xi.dynamis.mobOnDeath(mob, player, optParams)
+            ["onMobDeath"] = { function(mobArg, player, optParams)
+                xi.dynamis.mobOnDeath(mobArg, player, optParams)
             end },
 
             ["mixins"] = {   },
@@ -3052,7 +3053,7 @@ xi.dynamis.mobOnDeath = function(mob, player, optParams)
             if zoneID == xi.zone.DYNAMIS_VALKURM then
                 local flies = { 21, 22, 23 }
                 if mobIndex == flies[1] or mobIndex == flies[2] or mobIndex == flies[3] then
-                    xi.dynamis.nightmareFlyCheck(mob, zone, zoneID)
+                    xi.dynamis.nightmareFlyCheck(zone)
                 end
             end
         end
@@ -3085,27 +3086,32 @@ xi.dynamis.mobOnDespawn = function(mob)
     zone:setLocalVar(string.format("%s", mob:getID()), 0)
 end
 
-m:addOverride("xi.dynamis.megaBossOnDeath", function(mob, player)
-    local zoneID = mob:getZoneID()
-    local mobIndex = mob:getZone():getLocalVar(string.format("MobIndex_%s", mob:getID()))
-    local mobVar = xi.dynamis.mobList[mob:getZoneID()][mobIndex].info[5]
+m:addOverride("xi.dynamis.megaBossOnDeath", function(mob, player, optParams)
+    if mob:getLocalVar("dynamisMobOnDeathTriggered") == 1 then return -- Don't trigger more than once.
+    else -- Stops execution of code below if the above is true.
+        local zoneID = mob:getZoneID()
+        local mobIndex = mob:getZone():getLocalVar(string.format("MobIndex_%s", mob:getID()))
+        local mobVar = xi.dynamis.mobList[mob:getZoneID()][mobIndex].info[5]
 
-    if mob:getLocalVar("GaveTimeExtension") ~= 1 then -- Ensure we don't give more than 1 time extension.
-        xi.dynamis.mobOnDeath(mob, player, mobVar) -- Process time extension and wave spawning
-        local winQM = GetNPCByID(xi.dynamis.dynaInfoEra[zoneID].winQM) -- Set winQM
-        local pos = mob:getPos()
-        winQM:setPos(pos.x, pos.y, pos.z, pos.rot) -- Set winQM to death pos
-        winQM:setStatus(xi.status.NORMAL) -- Make visible
-        mob:setLocalVar("GaveTimeExtension", 1)
-    end
-
-    local zone = mob:getZone()
-    if zone:getLocalVar('TitleGranted') < 1 then
-        for _, p in pairs(zone:getPlayers()) do
-            p:addTitle(xi.dynamis.dynaInfoEra[zoneID].winTitle) -- Give player the title
+        if mob:getLocalVar("GaveTimeExtension") ~= 1 then -- Ensure we don't give more than 1 time extension.
+            xi.dynamis.mobOnDeath(mob, player, mobVar) -- Process time extension and wave spawning
+            local winQM = GetNPCByID(xi.dynamis.dynaInfoEra[zoneID].winQM) -- Set winQM
+            local pos = mob:getPos()
+            winQM:setPos(pos.x, pos.y, pos.z, pos.rot) -- Set winQM to death pos
+            winQM:setStatus(xi.status.NORMAL) -- Make visible
+            mob:setLocalVar("GaveTimeExtension", 1)
         end
 
-        zone:setLocalVar('TitleGranted', 1)
+        local zone = mob:getZone()
+        if zone:getLocalVar('TitleGranted') < 1 then
+            for _, p in pairs(zone:getPlayers()) do
+                p:addTitle(xi.dynamis.dynaInfoEra[zoneID].winTitle) -- Give player the title
+            end
+
+            zone:setLocalVar('TitleGranted', 1)
+        end
+
+        mob:setLocalVar("dynamisMobOnDeathTriggered", 1) -- onDeath lua happens once per party member that killed the mob, but we want this to only run once per mob
     end
 end)
 

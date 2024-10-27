@@ -48,13 +48,18 @@ function onTrigger(player, zoneName, wave)
     end
 
     wave = tonumber(wave)
-    if not wave or wave < 1 or wave > 5 then
-        error(player, string.format("[DynaSetWave] Invalid wave provided. Must be 1-5"))
+    if xi.dynamis.mobList[zone:getID()][wave].wave == nil then
+        error(player, string.format("[DynaSetWave] Invalid Wave Number (%d)", wave))
+        return
+    end
+
+    if not wave or wave < 1 or wave > 9 then
+        error(player, string.format("[DynaSetWave] Invalid wave provided. Must be 1-3"))
         return
     end
 
     player:PrintToPlayer(string.format("[DynaSetWave] Despawning current wave for %s...", zone:getName()))
     xi.dynamis.despawnAll(zone)
     xi.dynamis.spawnWave(zone, zone:getID(), wave)
-    player:PrintToPlayer(string.format("[DynaSetWave] Finished Spawning Wave %s for %s", wave, zone:getName()))
+    player:PrintToPlayer(string.format("[DynaSetWave] Finished Spawning Wave %d for %s", wave, zone:getName()))
 end
